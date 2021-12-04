@@ -1,0 +1,57 @@
+@import "../../../variable";
+
+nav {
+  background-image: url('../../../assets/background-brown.png');
+  height: 80px;
+  padding-bottom: 0;
+  padding-top: 0;
+  .navbar-brand {
+    font-size:24px;
+    text-transform: lowercase;
+    font-family: "Louis George Cafe", sans-serif;
+    color: $thirdColor;
+    span {
+      &:first-child {
+        color: $primaryColor;
+      }
+    }
+  }
+  .nav-wrap {
+    width: 150px;
+    justify-content: flex-end;
+    gap:10px;
+    .burger {
+      position: relative;
+      top:2px;
+    }
+  }
+}
+
+.burger-collapse {
+  height: 100vh;
+  position: absolute;
+  background-image: url('../../../assets/background-brown.png');
+  left: 0;
+  right: 0;
+  .border {
+    background-image: url('../../../assets/bordure-white.png');
+    background-repeat: repeat;
+    height: 7px;
+    border: 0 !important;
+  }
+  ul {
+    list-style: none;
+    padding-top:52px;
+    padding-bottom: 52px;
+    li {
+      text-transform: uppercase;
+      font-size:70px;
+      color: $thirdColor;
+      line-height: 55px;
+      font-family: 'Bebas Neue', cursive;
+    }
+    li + li {
+      margin-top:54px;
+    }
+  }
+}
