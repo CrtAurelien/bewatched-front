@@ -51,6 +51,16 @@ nav {
     width: 150px;
     justify-content: flex-end;
     gap: 10px;
+    .panier {
+      .badge {
+        display: none;
+      }
+    }
+    .search {
+      input {
+        display: none;
+      }
+    }
     @media screen and(min-width: $desktop-breakpoint) {
       width: 50%;
       .mobile {
@@ -87,6 +97,7 @@ nav {
         .search {
           input {
             width: 360px;
+            display: flex;
             background: rgba(255,255,255, 0.3);
             border: 0;
             box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
@@ -120,7 +131,7 @@ nav {
             background-image: url('../../../assets/background-brown.png');
             justify-content: center;
             border-radius: 72% 28% 0% 100% / 59% 17% 83% 41%;
-            transition: height  ease-in-out 0.2s;
+            transition: all $variable-burger-animation-time $variable-menu-animation-function2;
           }
           &.open {
             position: absolute;

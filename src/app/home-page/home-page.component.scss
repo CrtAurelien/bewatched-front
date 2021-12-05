@@ -13,18 +13,52 @@
     .intro-desktop {
       display: none;
     }
+    button {
+      display: none;
+    }
     @media screen and(min-width: $desktop-breakpoint) {
       display: flex;
       flex:1;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      .background {
+
+      }
       .intro-desktop {
         display: flex;
         flex-direction: column;
+
       }
       .intro-mobile {
         display: none;
+      }
+      button {
+        display: flex;
+        position: relative;
+        top:28px;
+        vertical-align: baseline;
+        line-height: 1;
+        z-index: 111;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 270px;
+        background-image: url('../../assets/background-brown.png');
+        border: 0 !important;
+        border-radius: 50px;
+        font-size: 14px;
+        font-family: "Louis George Cafe", sans-serif;
+        height: 52px;
+
+        .chevron {
+          transform: rotate(270deg);
+        }
+        &.anim {
+          animation: boutonDesktop 3s;
+        }
+        &:hover {
+          animation: shake 1s;
+        }
       }
     }
 
@@ -62,6 +96,7 @@
       justify-content: center;
       .montre-desktop {
         display: flex !important;
+        z-index: 111;
       }
     }
     .montre-desktop {
@@ -77,6 +112,7 @@
   .btn-mobile {
     display: flex;
     align-items: center;
+    z-index: 111;
     padding-top: 32px;
     justify-content: center;
     @media screen and(min-width: $desktop-breakpoint) {
@@ -97,5 +133,17 @@
         transform: rotate(270deg);
       }
     }
+  }
+}
+
+.border {
+  background-image: url('../../assets/coutures-brown.png');
+  background-repeat: repeat;
+  height: 7px;
+  border: 0 !important;
+  position: relative;
+  top: -30px;
+  @media screen and(min-width: $desktop-breakpoint) {
+    top:-100px;
   }
 }

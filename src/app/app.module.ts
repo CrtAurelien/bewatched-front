@@ -9,6 +9,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { TemplateGeneriqueComponent } from './template-generique/template-generique.component';
 import { ListeMontresComponent } from './shared/liste-montres/liste-montres.component';
 import {SwiperModule} from "swiper/angular";
+import { ShopComponent } from './shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {SwiperModule} from "swiper/angular";
     FooterComponent,
     HomePageComponent,
     TemplateGeneriqueComponent,
-    ListeMontresComponent
+    ListeMontresComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,

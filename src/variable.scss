@@ -14,6 +14,7 @@ $variable-menu-animation-time: 1s;
 $variable-burger-animation-time: .35s;
 
 $variable-menu-animation-function:    cubic-bezier(.25, .1, .25, 1);
+$variable-menu-animation-function2:    cubic-bezier(1, .25, .1, .25);
 $variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
 
 @keyframes checkboxCheckedAnimation {
@@ -28,9 +29,48 @@ $variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
   }
 }
 
+@keyframes checkboxCheckedAnimationOut {
+  50% {
+    width: 100vw;
+    height: 100vh;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+
+  }
+}
+
 @keyframes checkboxUncheckedAnimation {
   0% {
     width: 100vw;
     height: 100vh;
+  }
+}
+
+@keyframes boutonDesktop {
+  0% {
+    transform: translate(0%, 0px);
+  }
+  100% {
+    transform: translate(450%, 0px);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
   }
 }

@@ -1,5 +1,5 @@
-<div class="main-wrapper d-flex">
-  <div class="intro">
+<div class="main-wrapper d-flex position-relative">
+  <div class="intro ">
     <div class="intro-mobile">
       <span>Découvrez</span>
       <span> Notre collection</span>
@@ -8,8 +8,12 @@
       <span>Offrez-vous</span>
       <span>le plaisir</span>
     </div>
-
-    <img src="assets/vintage.png" alt="">
+    <img src="assets/vintage.png" class="background" alt="">
+    <button type="button" id="btn-desktop" class="btn btn-primary {{clickGoToShop ? 'anim' : ''}}" (click)="goToShop()">
+      DÉCOUVRIR NOS MONTRES
+      <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 342.43363 198.54124">
+        <defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:57.55696px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><line class="cls-1" x1="313.65515" y1="28.77848" x2="172.67087" y2="169.76276"/><line class="cls-1" x1="28.77848" y1="28.77848" x2="169.76276" y2="169.76276"/></g></g></svg>
+    </button>
   </div>
   <div class="montres">
     <div class="liste-montres-mobile">
@@ -26,4 +30,6 @@
         <defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:57.55696px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><line class="cls-1" x1="313.65515" y1="28.77848" x2="172.67087" y2="169.76276"/><line class="cls-1" x1="28.77848" y1="28.77848" x2="169.76276" y2="169.76276"/></g></g></svg>
     </button>
   </div>
+</div>
+<div class="border">
 </div>
