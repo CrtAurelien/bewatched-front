@@ -1,0 +1,54 @@
+@import "../../variable";
+
+.main-wrapper {
+  flex-direction: column;
+  .intro {
+    width: 100%;
+    padding-top: 32px;
+    text-align: center;
+    span {
+      color: #553d33;
+      font-family: 'Bebas Neue', cursive;
+      font-size:32px;
+      text-transform: uppercase;
+      line-height: 32px;
+      &:first-child {
+        color: #37251d;
+      }
+    }
+    img {
+      padding-top:15px;
+      width: 150px;
+    }
+  }
+  .montres {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 38px;
+    app-liste-montres {
+      width: 100%;
+    }
+  }
+  .btn-mobile {
+    display: flex;
+    align-items: center;
+    padding-top: 32px;
+    justify-content: center;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 270px;
+      background-image: url('../../assets/background-brown.png');
+      border: 0 !important;
+      border-radius: 50px;
+      font-size: 14px;
+      font-family: "Louis George Cafe", sans-serif;
+      height: 52px;
+      .chevron {
+        transform: rotate(270deg);
+      }
+    }
+  }
+}

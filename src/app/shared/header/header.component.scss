@@ -23,6 +23,11 @@ nav {
     .burger {
       position: relative;
       top:2px;
+      svg {
+        .cls-1 {
+          stroke-width: 10px !important;
+        }
+      }
     }
   }
 }
@@ -32,6 +37,7 @@ nav {
   position: absolute;
   background-image: url('../../../assets/background-brown.png');
   left: 0;
+  z-index: 9;
   right: 0;
   .border {
     background-image: url('../../../assets/bordure-white.png');

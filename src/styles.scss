@@ -1,5 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import "variable";
 body {
-  background: $primaryColor !important;
+  background-image: url('assets/background-white.png');
 }
+.swiper-wrapper {
+ align-items: center;
+}
+
+.realWidth {
+  &.little {
+    img {
+      transform: scale(1);
+      width: 250px !important;
+      height: 280px;
+      transition: transform 0.3s
+    }
+  }
+}
+  .little {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      transform: scale(0.6);
+      transition: transform 0.3s;
+    }
+  }
+
+

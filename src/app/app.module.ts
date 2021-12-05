@@ -7,6 +7,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { TemplateGeneriqueComponent } from './template-generique/template-generique.component';
+import { ListeMontresComponent } from './shared/liste-montres/liste-montres.component';
+import {SwiperModule} from "swiper/angular";
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { TemplateGeneriqueComponent } from './template-generique/template-generi
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
-    TemplateGeneriqueComponent
+    TemplateGeneriqueComponent,
+    ListeMontresComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
