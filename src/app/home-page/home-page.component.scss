@@ -54,11 +54,9 @@
           transform: rotate(270deg);
         }
         &.anim {
-          animation: boutonDesktop 3s;
+          animation: boutonDesktop 1.5s;
         }
-        &:hover {
-          animation: shake 1s;
-        }
+
       }
     }
 

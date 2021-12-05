@@ -26,6 +26,7 @@ nav {
     text-transform: lowercase;
     font-family: "Louis George Cafe", sans-serif;
     color: $thirdColor;
+    z-index: 114;
     @media screen and(min-width: $desktop-breakpoint) {
       background-image: url('../../../assets/background-logo.png');
       height: 200px;
@@ -67,6 +68,9 @@ nav {
         display: none;
       }
       &.icons {
+
+        z-index: 115;
+        position: relative;
         width: auto;
         margin-left: auto;
         margin-right: 20%;
@@ -145,7 +149,7 @@ nav {
             transition: $variable-burger-animation-time $variable-menu-animation-function;
             height: 100vh !important;
             border-radius: 0;
-            z-index: 10;
+            z-index: 112;
             svg {
               position: relative;
               top: 50px;
@@ -165,7 +169,7 @@ nav {
     }
 
     .desktop-menu {
-      z-index: 11;
+      z-index: 113;
       color: white;
       display: flex;
       width: 100%;
