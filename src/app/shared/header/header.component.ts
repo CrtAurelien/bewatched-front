@@ -14,11 +14,6 @@ export class HeaderComponent implements OnInit {
 
   toggleBurgerMenu() {
     this.showBurgerMenu = !this.showBurgerMenu
-    const burger = document.getElementById('burgerMenu');
-    if(burger) {
-      burger.classList.add('animate__animated', 'animate__fadeInDown')
-    }
-
   }
 
 }

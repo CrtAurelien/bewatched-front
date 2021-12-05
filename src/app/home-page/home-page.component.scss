@@ -2,10 +2,32 @@
 
 .main-wrapper {
   flex-direction: column;
+  @media screen and(min-width: $desktop-breakpoint) {
+    flex-direction: row;
+    padding: 10px 30px;
+  }
   .intro {
     width: 100%;
     padding-top: 32px;
     text-align: center;
+    .intro-desktop {
+      display: none;
+    }
+    @media screen and(min-width: $desktop-breakpoint) {
+      display: flex;
+      flex:1;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .intro-desktop {
+        display: flex;
+        flex-direction: column;
+      }
+      .intro-mobile {
+        display: none;
+      }
+    }
+
     span {
       color: #553d33;
       font-family: 'Bebas Neue', cursive;
@@ -15,19 +37,41 @@
       &:first-child {
         color: #37251d;
       }
+      @media screen and(min-width: $desktop-breakpoint) {
+        font-size: 70px;
+        line-height: 70px;
+      }
     }
     img {
       padding-top:15px;
       width: 150px;
+      @media screen and(min-width: $desktop-breakpoint) {
+        width: 345px;
+        position: relative;
+        top:-60px;
+      }
     }
   }
   .montres {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding-top: 38px;
+    @media screen and(min-width: $desktop-breakpoint) {
+      flex:1;
+      display: flex;
+      padding-top: 0;
+      align-items: center;
+      justify-content: center;
+      .montre-desktop {
+        display: flex !important;
+      }
+    }
+    .montre-desktop {
+      display: none;
+    }
     app-liste-montres {
       width: 100%;
+      @media screen and(min-width: $desktop-breakpoint) {
+        display: none;
+      }
     }
   }
   .btn-mobile {
@@ -35,6 +79,9 @@
     align-items: center;
     padding-top: 32px;
     justify-content: center;
+    @media screen and(min-width: $desktop-breakpoint) {
+      display: none;
+    }
     button {
       display: flex;
       align-items: center;

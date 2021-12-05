@@ -6,3 +6,31 @@ $thirdColor: #e3c4a4;
   font-family: "Louis George Cafe";
   src: url("assets/fonts/Louis-George-Cafe-Bold.ttf") format("truetype")
 }
+
+$tablet-breakpoint: '640px';
+$desktop-breakpoint: '1024px';
+
+$variable-menu-animation-time: 1s;
+$variable-burger-animation-time: .35s;
+
+$variable-menu-animation-function:    cubic-bezier(.25, .1, .25, 1);
+$variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
+
+@keyframes checkboxCheckedAnimation {
+  50% {
+    width: 100vw;
+    height: 100vh;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+@keyframes checkboxUncheckedAnimation {
+  0% {
+    width: 100vw;
+    height: 100vh;
+  }
+}

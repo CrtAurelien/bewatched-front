@@ -1,43 +1,218 @@
 @import "../../../variable";
 
+.container-fluid {
+  @media screen and(min-width: $desktop-breakpoint){
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 nav {
   background-image: url('../../../assets/background-brown.png');
   height: 80px;
   padding-bottom: 0;
   padding-top: 0;
+  svg {
+    cursor: pointer;
+  }
+  @media screen and(min-width: $desktop-breakpoint) {
+    height: 150px;
+    display: flex;
+    align-items: flex-start;
+    background-image: url('../../../assets/background-white.png');
+  }
   .navbar-brand {
     font-size:24px;
     text-transform: lowercase;
     font-family: "Louis George Cafe", sans-serif;
     color: $thirdColor;
+    @media screen and(min-width: $desktop-breakpoint) {
+      background-image: url('../../../assets/background-logo.png');
+      height: 200px;
+      width: 450px;
+      position: absolute;
+      top:-9px;
+      background-position-y: bottom;
+      padding-left:30px;
+      span {
+        position: relative;
+        top:7px;
+        font-size: 64px;
+      }
+    }
     span {
       &:first-child {
         color: $primaryColor;
       }
     }
   }
+
   .nav-wrap {
     width: 150px;
     justify-content: flex-end;
-    gap:10px;
-    .burger {
-      position: relative;
-      top:2px;
-      svg {
-        .cls-1 {
-          stroke-width: 10px !important;
+    gap: 10px;
+    @media screen and(min-width: $desktop-breakpoint) {
+      width: 50%;
+      .mobile {
+        display: none;
+      }
+      &.icons {
+        width: auto;
+        margin-left: auto;
+        margin-right: 20%;
+        margin-top:15px;
+        .badge {
+          top: 8px !important;
+          left:50px !important;
+          background-color: $secondaryColor !important;
+        }
+        .panier {
+          width: 60px;
+          height: 60px;
+          background: rgba(255,255,255,0.3);
+          position: relative;
+          border-radius: 50px;
+          box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            fill: $secondaryColor;
+            position: absolute;
+            opacity: 1;
+            margin:auto;
+            width: 60px;
+          }
+        }
+        .search {
+          input {
+            width: 360px;
+            background: rgba(255,255,255, 0.3);
+            border: 0;
+            box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
+            padding: 18px 35px;
+            border-radius: 50px;
+          }
+          svg {
+            display: none;
+          }
         }
       }
     }
   }
-}
+
+    .desktop {
+      display: none !important;
+      @media screen and(min-width: $desktop-breakpoint) {
+        display: flex !important;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .burger {
+        @media screen and(min-width: $desktop-breakpoint) {
+          &.close {
+            width: 171px !important;
+            height: 127px;
+            position: absolute;
+            display: flex;
+            right: 0;
+            align-items: center;
+            background-image: url('../../../assets/background-brown.png');
+            justify-content: center;
+            border-radius: 72% 28% 0% 100% / 59% 17% 83% 41%;
+            transition: height  ease-in-out 0.2s;
+          }
+          &.open {
+            position: absolute;
+            display: flex;
+            top:0;
+            right: 0;
+            background-image: url('../../../assets/background-brown.png');
+            align-items: flex-start;
+            justify-content: flex-end;
+            width: 100% !important;
+            transition: $variable-burger-animation-time $variable-menu-animation-function;
+            height: 100vh !important;
+            border-radius: 0;
+            z-index: 10;
+            svg {
+              position: relative;
+              top: 50px;
+              left: -45px;
+            }
+          }
+
+          svg {
+            position: relative;
+            left: 21px;
+            .cls-1 {
+              stroke-width: 70px !important;
+            }
+          }
+        }
+      }
+    }
+
+    .desktop-menu {
+      z-index: 11;
+      color: white;
+      display: flex;
+      width: 100%;
+      list-style: none;
+      justify-content: space-between;
+      margin-top: 12%;
+      align-items: center;
+      background-image: url('../../../assets/background-white.png');
+      max-height: 220px;
+      padding:40px;
+      animation: checkboxCheckedAnimation $variable-menu-animation-time $variable-menu-animation-function both;
+      li {
+        text-transform: uppercase;
+        font-size:70px;
+        color: $secondaryColor;
+        line-height: 55px;
+        font-family: 'Bebas Neue', cursive;
+        &:hover {
+          padding: 105px 5px;
+          width: 320px;
+          height: 320px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-image: url('../../../assets/background-white.png');
+          position: relative;
+          border-radius: 100%;
+        }
+      }
+    }
+
+    .burger {
+      position: relative;
+      top:2px;
+
+      svg {
+        .cls-1 {
+          stroke-width: 10px;
+        }
+      }
+    }
+  }
+
 
 .burger-collapse {
-  height: 100vh;
+  height: 0;
+  opacity: 0;
+  position: absolute;
   background-image: url('../../../assets/background-brown.png');
   left: 0;
-  z-index: 9;
+
   right: 0;
+  transition: all 0.3s;
+  &.active {
+    height: 100vh;
+    z-index: 9;
+    opacity: 1;
+  }
   .border {
     background-image: url('../../../assets/bordure-white.png');
     background-repeat: repeat;
@@ -58,6 +233,9 @@ nav {
     li + li {
       margin-top:54px;
     }
+  }
+  @media screen and(min-width: $desktop-breakpoint){
+    display: none;
   }
 }
 
