@@ -10,6 +10,7 @@ import { TemplateGeneriqueComponent } from './template-generique/template-generi
 import { ListeMontresComponent } from './shared/liste-montres/liste-montres.component';
 import {SwiperModule} from "swiper/angular";
 import { ShopComponent } from './shop/shop.component';
+import {PopoverModule} from "ngx-bootstrap/popover";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ShopComponent } from './shop/shop.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    PopoverModule.forRoot(),
     SwiperModule
   ],
   providers: [],

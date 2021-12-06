@@ -4,7 +4,12 @@ $thirdColor: #e3c4a4;
 
 @font-face {
   font-family: "Louis George Cafe";
-  src: url("assets/fonts/Louis-George-Cafe-Bold.ttf") format("truetype")
+  src: url("assets/fonts/Louis-George-Cafe.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: "social media";
+  src: url("assets/fonts/social-media.ttf") format("truetype")
 }
 
 $tablet-breakpoint: '640px';
@@ -16,6 +21,12 @@ $variable-burger-animation-time: .35s;
 $variable-menu-animation-function:    cubic-bezier(.25, .1, .25, 1);
 $variable-menu-animation-function2:    cubic-bezier(1, .25, .1, .25);
 $variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
+
+popover-container {
+  top:10px !important;
+  left: -18px !important;
+
+}
 
 @keyframes checkboxCheckedAnimation {
   50% {

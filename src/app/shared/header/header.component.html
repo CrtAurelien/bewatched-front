@@ -1,8 +1,12 @@
 <nav class="navbar navbar-light bg-light" >
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <span>be</span>
-      <span>watched</span>
+      <h1>be</h1>
+      <h1>watched</h1>
+      <div>
+        <small>Lorem ipsum dolor sit amet. </small>
+      </div>
+
     </a>
     <div class="navbar-text nav-wrap d-flex justify-content-center align-items-center icons">
       <span class="navbar-text search">
@@ -15,7 +19,7 @@
         </g>
       </svg>
       </span>
-      <span class="navbar-text panier position-relative">
+      <span class="navbar-text panier position-relative {{panierIsOpen ? 'open' : ''}}" (click)="openPanier(pop)" [popover]="popTemplate" placement="bottom right" triggers="" #pop="bs-popover">
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0
     <span class="visually-hidden">unread messages</span>
   </span>
@@ -44,20 +48,10 @@
     </div>
     <div class="navbar-text nav-wrap d-flex desktop">
       <div (click)="toggleBurgerMenu()" class="navbar-text burger {{showBurgerMenu ? 'open' : 'close'}}">
-        <svg *ngIf="!showBurgerMenu" xmlns="http://www.w3.org/2000/svg" width="40" height="50" viewBox="0 0 477.55501 199.50786">
-        <defs>
-          <style>
-            .cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:10px;}
-          </style>
-        </defs>
-          <g id="Calque_1-2" data-name="Calque 1">
-            <line class="cls-1" x1="9.0275" y1="9.0275" x2="339.43418" y2="9.0275"/>
-            <line class="cls-1" x1="9.93026" y1="190.48035" x2="340.33694" y2="190.48035"/>
-            <line class="cls-1" x1="64.99804" y1="99.30255" x2="468.5275" y2="99.30255"/>
-          </g>
-      </svg>
+        <img *ngIf="!showBurgerMenu" src="assets/menu-burger-desktop.png" alt="" class="desktop-burger">
         <svg *ngIf="showBurgerMenu" xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="#ffffff" viewBox="0 0 192.53637 200.16239">
           <defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:10.34239px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M29.17119,29.17119l67.097,70.91,67.097,70.91m-134.194,0,67.097-70.91,67.097-70.91"/></g></g></svg>
+
       </div>
       <ul *ngIf="showBurgerMenu" class="desktop-menu">
         <li>Accueil</li>
@@ -80,4 +74,6 @@
   </ul>
   <div class="border"></div>
 </div>
+
+<ng-template #popTemplate>Contenu panier</ng-template>
 

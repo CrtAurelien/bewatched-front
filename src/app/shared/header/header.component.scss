@@ -25,27 +25,48 @@ nav {
     font-size:24px;
     text-transform: lowercase;
     font-family: "Louis George Cafe", sans-serif;
+    font-weight: bold;
     color: $thirdColor;
     z-index: 114;
+    small {
+      display:none;
+    }
+    h1 {
+      display: inline;
+      font-family: "Louis George Cafe", sans-serif;
+      position: relative;
+      font-weight: bold;
+    }
     @media screen and(min-width: $desktop-breakpoint) {
       background-image: url('../../../assets/background-logo.png');
-      height: 200px;
-      width: 450px;
+      height: 220px;
+      width: 452px;
       position: absolute;
-      top:-9px;
-      background-position-y: bottom;
+      top:0;
       padding-left:30px;
-      span {
+      h1 {
+        display: inline;
+        font-family: "Louis George Cafe", sans-serif;
         position: relative;
+        font-weight: bold;
         top:7px;
         font-size: 64px;
       }
     }
-    span {
+    h1 {
       &:first-child {
         color: $primaryColor;
       }
     }
+  }
+
+  .badge {
+      display: block !important;
+      top: 8px !important;
+      left:50px !important;
+    font-size:14px;
+      background-color: $secondaryColor !important;
+
   }
 
   .nav-wrap {
@@ -53,9 +74,6 @@ nav {
     justify-content: flex-end;
     gap: 10px;
     .panier {
-      .badge {
-        display: none;
-      }
     }
     .search {
       input {
@@ -64,6 +82,7 @@ nav {
     }
     @media screen and(min-width: $desktop-breakpoint) {
       width: 50%;
+
       .mobile {
         display: none;
       }
@@ -74,12 +93,8 @@ nav {
         width: auto;
         margin-left: auto;
         margin-right: 20%;
-        margin-top:15px;
-        .badge {
-          top: 8px !important;
-          left:50px !important;
-          background-color: $secondaryColor !important;
-        }
+        margin-top:40px;
+
         .panier {
           width: 60px;
           height: 60px;
@@ -90,6 +105,9 @@ nav {
           display: flex;
           align-items: center;
           justify-content: center;
+          &.open {
+            background: rgba(255,255,255,1);
+          }
           svg {
             fill: $secondaryColor;
             position: absolute;
@@ -122,6 +140,10 @@ nav {
         display: flex !important;
         width: 100%;
         justify-content: space-between;
+        .desktop-burger {
+          position: relative;
+          left:20px;
+        }
       }
       .burger {
         @media screen and(min-width: $desktop-breakpoint) {
@@ -131,11 +153,12 @@ nav {
             position: absolute;
             display: flex;
             right: 0;
+            top:25px;
             align-items: center;
             background-image: url('../../../assets/background-brown.png');
             justify-content: center;
             border-radius: 72% 28% 0% 100% / 59% 17% 83% 41%;
-            transition: all $variable-burger-animation-time $variable-menu-animation-function2;
+            //transition: all $variable-burger-animation-time $variable-menu-animation-function2;
           }
           &.open {
             position: absolute;
