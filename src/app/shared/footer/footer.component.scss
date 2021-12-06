@@ -4,18 +4,12 @@
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 90px;
   .insta-wrap {
     display:flex;
     justify-content: space-between;
     width: 100%;
     align-items: center;
-    .insta {
-      font-family: "social media";
-      font-size:40px;
-      padding-left: 45px;
-      cursor: pointer;
-    }
+
 
   }
 
@@ -24,7 +18,14 @@
     align-items: center;
     padding: 0 31px 31px 0;
     justify-content: flex-end;
-    span {
+    .insta {
+      font-family: "social media";
+      font-size:40px;
+      position: absolute;
+      left: 40px;
+      cursor: pointer;
+    }
+    .copyright {
       position:absolute;
       width: 100%;
       font-size:13px;
