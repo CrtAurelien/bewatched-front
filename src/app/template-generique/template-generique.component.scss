@@ -4,5 +4,8 @@
   height: 100vh;
   overflow: hidden;
   justify-content: space-between;
-
+  app-footer {
+    position: relative;
+    z-index: 113;
+  }
 }

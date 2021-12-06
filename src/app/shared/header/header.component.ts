@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BurgerService} from "../services/burger-service.service";
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   showBurgerMenu = false;
   panierIsOpen = false;
-  constructor() { }
+  constructor(private burgerService: BurgerService) { }
 
   ngOnInit(): void {
   }
 
   toggleBurgerMenu() {
-    this.showBurgerMenu = !this.showBurgerMenu
+    this.showBurgerMenu = !this.showBurgerMenu;
+    this.burgerService.setBurgerMenuIsOpen(this.showBurgerMenu);
   }
 
   openPanier(pop: any) {
