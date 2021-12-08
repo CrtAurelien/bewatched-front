@@ -27,6 +27,10 @@ export class HomePageComponent implements OnInit {
     this.clickGoToShop = true;
   }
 
+  navigateToShop() {
+    this.router.navigate(['shop'])
+  }
+
 
 
 }
