@@ -11,6 +11,7 @@ import { ListeMontresComponent } from './shared/liste-montres/liste-montres.comp
 import {SwiperModule} from "swiper/angular";
 import { ShopComponent } from './shop/shop.component';
 import {PopoverModule} from "ngx-bootstrap/popover";
+import { MontreDetailImageComponent } from './shared/montre-detail-image/montre-detail-image.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {PopoverModule} from "ngx-bootstrap/popover";
     HomePageComponent,
     TemplateGeneriqueComponent,
     ListeMontresComponent,
-    ShopComponent
+    ShopComponent,
+    MontreDetailImageComponent
   ],
   imports: [
     BrowserModule,

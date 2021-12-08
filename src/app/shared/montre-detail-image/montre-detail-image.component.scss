@@ -1,0 +1,228 @@
+.wrapper {
+  display: flex;
+  width: 600px;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-image: url('../../../assets/homeOmega copie.png');
+  background-position:center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 600px;
+  .left, .right {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    height: 100%;
+    justify-content: space-between;
+    div {
+      flex:1;
+      span {
+        color:black;
+      }
+    }
+    .content {
+      position: absolute;
+      display:flex;
+      border:0;
+      align-items: center;
+      span {
+        font-weight: bold;
+        text-decoration: underline;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+      .trait, hr {
+        height: 1px;
+        border: 2px dotted white;
+        background: transparent;
+        position:relative;
+        opacity: 1;
+      }
+
+    }
+    .rond {
+      width: 42px;
+      height: 42px;
+      border-radius: 50px;
+      background: white;
+      position: absolute;
+      opacity: 0.4;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+      animation: pulse-white 2s infinite;
+    }
+  }
+
+  .left {
+    .content-A {
+      animation-delay: 0.5s;
+      position:relative;
+      .content {
+        bottom: 42px;
+        .trait, hr {
+          width: 55px;
+          left: 32px;
+          top:30px;
+          transform:matrix(-2, 1.5, 0.1, 1, 0, -68)
+        }
+        .hr-wrap {
+          animation: displayTrait 2s;
+        }
+
+      }
+      .rond {
+        right: 62px;
+        top: 33px;
+      }
+    }
+    .content-B {
+      animation-delay: 2s;
+      position:relative;
+      .content {
+        top: 55px;
+        .trait, hr {
+          width: 90px;
+          left: 44px;
+          top:13px;
+          transform:matrix(2, 0.5, 0.1, 1, -1, 19)
+        }
+        .hr-wrap {
+          animation: displayTrait 2s;
+        }
+
+      }
+      .rond {
+        right: -1px;
+        bottom: 52px;
+      }
+    }
+    .content-C {
+      position:relative;
+      animation-delay: 2.5s;
+      .content {
+        top: -18px;
+        .trait, hr {
+          width: 50px;
+          left: 40px;
+          top:19px;
+          transform:matrix(-2.2, 0.6, 0.1, 1, -1, -33)
+        }
+        .hr-wrap {
+          animation: displayTrait 2s;
+        }
+
+      }
+      .rond {
+        right: 62px;
+        top: -58px;
+      }
+    }
+  }
+  .right {
+    .content-A {
+      position:relative;
+      animation-delay: 1s;
+      .content {
+        bottom: 53px;
+        right: -45px;
+        text-align: right;
+        .trait, hr {
+          width: 31px;
+          left: -122px;
+          top:42px;
+          transform:matrix(-4, 0.3, 0.1, -1, -45, -40)
+        }
+        .hr-wrap {
+          animation: displayTrait 2s;
+        }
+
+      }
+      .rond {
+        left: 56px;
+        bottom: 44px;
+      }
+    }
+    .content-B {
+      position:relative;
+      animation-delay: 1.5s;
+      .content {
+        top: 79px;
+        right: -45px;
+        text-align: right;
+        .trait, hr {
+          width: 20px;
+          left: -114px;
+          top:45px;
+          transform:matrix(3, 1.1, 0.1, -1, -27, -58)
+        }
+        .hr-wrap {
+          animation: displayTrait 2s;
+        }
+
+      }
+      .rond {
+        left: 124px;
+        bottom: 111px;
+      }
+    }
+  }
+}
+
+
+
+
+
+.animate {
+  animation-duration: 0.75s;
+  animation-name: animate-fade;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-fill-mode: backwards;
+}
+
+/* Glow In */
+.animate.glow {
+  animation-name: animate-glow;
+  animation-timing-function: ease;
+}
+
+
+
+@keyframes animate-glow {
+  0% {
+    opacity: 0;
+    filter: brightness(3) saturate(3);
+    transform: scale(0.8, 0.8);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1) saturate(1);
+    transform: scale(1, 1);
+  }
+}
+
+.delay-1 {
+  animation-delay: 0.6s;
+}
+.delay-2 {
+  animation-delay: 0.7s;
+}
+.delay-3 {
+  animation-delay: 0.8s;
+}
+
+
+@keyframes pulse-white {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
