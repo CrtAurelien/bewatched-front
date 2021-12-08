@@ -1,3 +1,5 @@
+@import "../../../variable";
+
 .wrapper {
   display: flex;
   width: 600px;
@@ -17,7 +19,9 @@
     div {
       flex:1;
       span {
-        color:black;
+        color:$secondaryColor;
+        font-size: 20px;
+        font-family: 'Bebas Neue', cursive;
       }
     }
     .content {
@@ -59,10 +63,10 @@
       .content {
         bottom: 42px;
         .trait, hr {
-          width: 55px;
-          left: 32px;
+          width: 42px;
+          left: 56px;
           top:30px;
-          transform:matrix(-2, 1.5, 0.1, 1, 0, -68)
+          transform:matrix(-3, 1.9, 0.1, 1, 0, -68)
         }
         .hr-wrap {
           animation: displayTrait 2s;
@@ -80,10 +84,10 @@
       .content {
         top: 55px;
         .trait, hr {
-          width: 90px;
-          left: 44px;
+          width: 64px;
+          left: 34px;
           top:13px;
-          transform:matrix(2, 0.5, 0.1, 1, -1, 19)
+          transform:matrix(3, 0.8, 0.1, 1, 38, 13)
         }
         .hr-wrap {
           animation: displayTrait 2s;
@@ -101,10 +105,10 @@
       .content {
         top: -18px;
         .trait, hr {
-          width: 50px;
-          left: 40px;
+          width: 59px;
+          left: 39px;
           top:19px;
-          transform:matrix(-2.2, 0.6, 0.1, 1, -1, -33)
+          transform:matrix(-2.2, 0.9, 0.1, 1, 5, -33)
         }
         .hr-wrap {
           animation: displayTrait 2s;
@@ -149,10 +153,10 @@
         right: -45px;
         text-align: right;
         .trait, hr {
-          width: 20px;
+          width: 30px;
           left: -114px;
           top:45px;
-          transform:matrix(3, 1.1, 0.1, -1, -27, -58)
+          transform:matrix(3, 1.1, 0.1, -1, -5, -58)
         }
         .hr-wrap {
           animation: displayTrait 2s;

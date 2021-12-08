@@ -11,7 +11,7 @@ body {
   &.little {
     img {
       transform: scale(1);
-      width: 250px !important;
+      width: auto !important;
       height: 280px;
       transition: transform 0.3s
     }

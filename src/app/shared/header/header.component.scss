@@ -70,9 +70,11 @@ nav {
       display: block !important;
       top: 8px !important;
       left:50px !important;
-    font-size:14px;
+      font-size:14px;
       background-color: $secondaryColor !important;
-
+    &.menu-open {
+      background-color:white !important;
+    }
   }
 
   .nav-wrap {
@@ -99,7 +101,7 @@ nav {
         width: auto;
         margin-left: auto;
         margin-right: 20%;
-        margin-top:40px;
+        margin-top:20px;
 
         .panier {
           width: 60px;
@@ -113,6 +115,15 @@ nav {
           justify-content: center;
           &.open {
             background: rgba(255,255,255,1);
+          }
+          &.menu-open {
+            .badge {
+              background-color: white;
+              color: $secondaryColor !important;
+            }
+            svg {
+              fill: white;
+            }
           }
           svg {
             fill: $secondaryColor;
@@ -131,9 +142,16 @@ nav {
             box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
             padding: 18px 35px;
             border-radius: 50px;
+            color: #593c30;
+            &.menu-open {
+              color:white;
+            }
           }
           input.form-control::placeholder {
             color: #593c30;
+          }
+          input.menu-open::placeholder {
+            color: white;
           }
           svg {
             display: none;
@@ -162,7 +180,7 @@ nav {
             position: absolute;
             display: flex;
             right: 0;
-            top:25px;
+            top:4px;
             align-items: center;
             background-image: url('../../../assets/background-brown.png');
             justify-content: center;
