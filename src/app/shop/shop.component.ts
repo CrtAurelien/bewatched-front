@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+interface Food {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

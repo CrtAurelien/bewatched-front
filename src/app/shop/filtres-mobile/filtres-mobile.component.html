@@ -1,0 +1,12 @@
+<div class="filter-wrapper {{openFiltresMobile ? 'open' : 'close'}}">
+  <div class="filter-by" (click)="toggleFiltresMobiles()">
+    <span>filtrer par</span>
+    <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="11" height="8" viewBox="0 0 342.43363 198.54124">
+      <defs><style>.cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:57.55696px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><line class="cls-1" x1="313.65515" y1="28.77848" x2="172.67087" y2="169.76276"/><line class="cls-1" x1="28.77848" y1="28.77848" x2="169.76276" y2="169.76276"/></g></g></svg>
+  </div>
+  <div class="liste-filtres" *ngIf="openFiltresMobile">
+    <ng-container *ngFor="let filtre of listeFiltres">
+      <app-filtre-item [nomFiltre]="filtre.nomFiltre"></app-filtre-item>
+    </ng-container>
+  </div>
+</div>

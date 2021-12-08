@@ -1,0 +1,15 @@
+@import "../../../../variable";
+.filter-by {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px 20px;
+  span {
+    font-family: "Louis George Cafe", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:#1e1d23;
+    font-size: 14px;
+  }
+}
