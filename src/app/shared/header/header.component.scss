@@ -1,5 +1,4 @@
 @import "../../../variable";
-
 .container-fluid {
   @media screen and(min-width: $desktop-breakpoint){
     padding-right: 0;
@@ -28,6 +27,8 @@ nav {
     font-weight: bold;
     color: $thirdColor;
     z-index: 114;
+    transition: 1.3s cubic-bezier(0.4, 2, .4, .6);
+
     small {
       display:none;
     }
@@ -62,6 +63,11 @@ nav {
     h1 {
       &:first-child {
         color: $primaryColor;
+        transition: 0.2s ease-out;
+      }
+      &:hover{
+        letter-spacing: -2px;
+        transition: 0.2s ease-in;
       }
     }
   }
@@ -91,6 +97,11 @@ nav {
     @media screen and(min-width: $desktop-breakpoint) {
       width: 50%;
 
+      input:focus{
+        font-size: 14px;
+        transition: 0.3s ease-in;
+        background: rgb(255 255 255 / 70%) !important;
+      }
       .mobile {
         display: none;
       }
@@ -113,6 +124,8 @@ nav {
           display: flex;
           align-items: center;
           justify-content: center;
+          &:hover{
+          }
           &.open {
             background: rgba(255,255,255,1);
           }
@@ -131,6 +144,11 @@ nav {
             opacity: 1;
             margin:auto;
             width: 60px;
+            transition: .3s ease-in;
+            &:hover {
+              height: 25px;
+              transition: .3s ease-out;
+            }
           }
         }
         .search {
@@ -143,6 +161,9 @@ nav {
             padding: 18px 35px;
             border-radius: 50px;
             color: #593c30;
+            line-height: 1;
+            transition: 0.3s ease-out;
+            min-height: 60px;
             &.menu-open {
               color:white;
             }
@@ -174,6 +195,35 @@ nav {
       }
       .burger {
         @media screen and(min-width: $desktop-breakpoint) {
+          animation: bounce 1.3s cubic-bezier(.5, 2, 0.4, 0.4);
+          @keyframes bounce {
+            from {
+              opacity: 1;
+              transform: translateX(300px);
+            }
+            to{
+              transform: translateX(0px);
+            }
+          }
+          img{
+            animation: bounce 1s cubic-bezier(0.27, 2.4, 0.91, 0.4);
+            animation-delay: 0.2s;
+            @keyframes bounce {
+              from {
+                opacity: 1;
+                transform: translateX(300px);
+              }
+              to{
+                transform: translateX(0px);
+              }
+            }
+            transition: 0.1s ease-in;
+
+            &:hover{
+              transition: 0.1s ease-in;
+              transform: scale(1.15);
+            }
+          }
           &.close {
             width: 171px !important;
             height: 127px;
@@ -184,7 +234,11 @@ nav {
             align-items: center;
             background-image: url('../../../assets/background-brown.png');
             justify-content: center;
+            cursor:pointer;
             border-radius: 72% 28% 0% 100% / 59% 17% 83% 41%;
+            &:hover{
+            }
+
             //transition: all $variable-burger-animation-time $variable-menu-animation-function2;
           }
           &.open {

@@ -5,50 +5,88 @@
 }
 
 .footer-wrapper {
-  display:flex;
-  flex-direction: column;
-  justify-content: space-between;
-  .insta-wrap {
-    display:flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-
-
-  }
-
-  .content-footer {
-    display: flex;
-    align-items: center;
-    padding: 0 31px 31px 0;
-    justify-content: flex-end;
-    .insta {
-      font-family: "social media";
-      font-size:40px;
-      position: absolute;
-      left: 40px;
-      cursor: pointer;
-    }
-    .copyright {
-      position:absolute;
-      width: 100%;
-      font-size:13px;
-      font-family: "Louis George Cafe", sans-serif;
-      text-align: center;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      display: flex;
-      justify-content: space-evenly;
-      li {
-        font-size:13px;
-        font-family: "Louis George Cafe", sans-serif;
-      }
-      li + li {
-        margin-left:15px;
-      }
-    }
-  }
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 40px;
+  justify-content: center;
+  min-height: 75px;
 }
+
+.content-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  .insta {
+    @media screen and(min-width: $desktop-breakpoint) {
+      img{
+        border-radius: 50px;
+        animation: pulse-white 1.5s infinite;
+        transition: 0.4s ease-out;
+      }
+    }
+  }
+  @media screen and(min-width: $desktop-breakpoint) {
+    flex-direction: row;
+    align-items: center;
+  }
+  ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 20px 0;
+    @media screen and(min-width: $desktop-breakpoint) {
+      flex-direction: row;
+      order: unset;
+      justify-content: center;
+      margin: 0 30px 0 0;    }
+  }
+  ul, li {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    margin: 0;
+    @media screen and(min-width: $desktop-breakpoint) {
+      order: unset;
+      justify-content: center;
+      margin: 0 0 0 30px;
+      a{
+        color: #252525;
+      }
+    }
+  }
+}
+
+a {
+  flex: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  .insta {
+    font-size: 40px;
+    text-decoration: none;
+    color: $secondaryColor;
+
+    &:hover {
+      filter: brightness(0.2);
+    }
+  }
+}
+
+.copyright {
+  display: flex;
+  flex: 1;
+  justify-content: left;
+  font-size: 14px;
+  order: 1;
+  margin-bottom: 10px;
+  @media screen and(min-width: $desktop-breakpoint) {
+    order: unset;
+    justify-content: center;
+    margin: 0;
+    font-size: inherit;
+  }
+}
+
+
+
