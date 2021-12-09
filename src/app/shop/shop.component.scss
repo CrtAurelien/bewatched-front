@@ -3,6 +3,13 @@
   padding: 35px 25px;
   z-index: 1111;
   position: relative;
+  app-filtres-mobile {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
+    padding: 0 20px;
+  }
 
 }
 

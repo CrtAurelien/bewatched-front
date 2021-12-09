@@ -17,6 +17,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { FiltresMobileComponent } from './shop/filtres-mobile/filtres-mobile.component';
 import { FiltreItemComponent } from './shop/filtres-mobile/filtre-item/filtre-item.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import { ListeMontresShopComponent } from './shop/liste-montres-shop/liste-montres-shop.component';
+import { MontreItemComponent } from './shop/liste-montres-shop/montre-item/montre-item.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     ShopComponent,
     MontreDetailImageComponent,
     FiltresMobileComponent,
-    FiltreItemComponent
+    FiltreItemComponent,
+    ListeMontresShopComponent,
+    MontreItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+@import "../../../../variable";
+.modele {
+  color: #1e1d23;
+  font-family: "Louis George Cafe", sans-serif;
+  font-style: italic;
+  font-size:16px;
+}
+
+.prix {
+  color: #1e1d23;
+  font-family: "Louis George Cafe", sans-serif;
+  font-weight: bold;
+  font-size:23px;
+  padding: 12px 0
+}
+
+.btn {
+  background: #eddaca;
+  border: 0 !important;
+  border-radius: 50px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color:#1e1d23;
+  box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 18%);
+  font-family: "Louis George Cafe", sans-serif;
+  font-weight: bold;
+}
