@@ -4,12 +4,121 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 6px 20px;
+  padding: 6px 20px 10px;
+  .title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
   span {
     font-family: "Louis George Cafe", sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     color:#1e1d23;
     font-size: 14px;
+  }
+
+    svg {
+      &.open {
+        transform: rotate(180deg);
+        transition: transform 0.5s;
+      }
+    &.close {
+        transform: rotate(0deg);
+        transition: transform 0.5s;
+
+    }
+    }
+  }
+
+.liste {
+  padding: 0 0 10px;
+}
+
+.wrap-filtre + .wrap-filtre {
+  margin-top:5px;
+}
+
+.wrap-filtre {
+  padding: 0 25px;
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+  span {
+    color:#1e1d23;
+    font-size:12px;
+    margin-top: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Louis George Cafe", sans-serif;
+  }
+
+  input {
+    appearance: none !important;
+    display: none;
+  }
+  .check {
+    position: relative;
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: 3px solid #1e1d23;
+    margin-right: 15px;
+    .check-circle {
+      position: relative;
+      width: 12px;
+      top: -2px;
+      left:1px;
+      height: 12px;
+      border-radius: 50px;
+      background: #1e1d23;
+      margin-right: 15px;
+    }
+    &.decoche {
+      .check-circle {
+        animation: animate-decheck 0.2s;
+        display:none;
+      }
+    }
+    &.coche {
+      .check-circle {
+        display:inline-block;
+        animation: animate-check 0.2s;
+      }
+    }
+
+  }
+}
+
+
+@keyframes animate-check {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes animate-decheck {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
   }
 }

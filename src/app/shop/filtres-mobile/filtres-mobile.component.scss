@@ -2,7 +2,7 @@
 .filter-wrapper {
   display: flex;
   flex-direction: column;
-  background-color: rgba(237, 218, 202, 0.4);
+  background-color: rgba(237, 218, 202, 0.6);
   border: 0;
   box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
   height: 35px;
@@ -39,6 +39,46 @@
     }
   }
   .liste-filtres {
-    padding-top:35px;
+    padding-top:25px;
+    animation-delay: 1s;
+    position: relative;
+    height: 100%;
+    animation: openFiltresMobile 1s;
+  }
+  .btn {
+    width: 100%;
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      display: flex;
+      line-height: 1;
+      width: 90%;
+      z-index: 111;
+      align-items: center;
+      justify-content: center;
+      background: #eddaca;
+      border: 0 !important;
+      border-radius: 50px;
+      font-size: 14px;
+      color:#1e1d23;
+      box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 18%);
+      font-family: "Louis George Cafe", sans-serif;
+      font-weight: bold;
+      height: 52px;
+    }
+  }
+
+}
+
+
+@keyframes openFiltresMobile {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

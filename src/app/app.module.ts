@@ -16,6 +16,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { FiltresMobileComponent } from './shop/filtres-mobile/filtres-mobile.component';
 import { FiltreItemComponent } from './shop/filtres-mobile/filtre-item/filtre-item.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { FiltreItemComponent } from './shop/filtres-mobile/filtre-item/filtre-it
     AppRoutingModule,
     BrowserAnimationsModule,
     PopoverModule.forRoot(),
-    MatSelectModule,
+    MatCheckboxModule,
     SwiperModule
   ],
   providers: [],

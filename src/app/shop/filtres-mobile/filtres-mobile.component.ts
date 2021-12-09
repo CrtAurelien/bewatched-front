@@ -12,10 +12,29 @@ export class FiltresMobileComponent implements OnInit {
       nomFiltre: 'Genre',
       values: [
         {
-          nom: 'Femme'
+          nom: 'Femme',
+          estCoche: false
         },
         {
-          nom: 'Homme'
+          nom: 'Homme',
+          estCoche: false
+        }
+      ]
+    },
+    {
+      nomFiltre: 'Marque',
+      values: [
+        {
+          nom: 'Oméga',
+          estCoche: false
+        },
+        {
+          nom: 'Tissot',
+          estCoche: false
+        },
+        {
+          nom: 'Longines',
+          estCoche: false
         }
       ]
     }
