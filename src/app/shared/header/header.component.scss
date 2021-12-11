@@ -326,10 +326,11 @@ nav {
   position: absolute;
   background-image: url('../../../assets/background-brown.png');
   left: 0;
-
+  display: none;
   right: 0;
   transition: all 0.3s;
   &.active {
+    display: block;
     height: 100vh;
     z-index: 9;
     opacity: 1;

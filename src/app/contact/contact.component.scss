@@ -1,0 +1,33 @@
+@import '../../variable';
+
+.contact-us{
+  display: flex;
+  justify-content: center;
+  margin: 35px 0 50px 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  margin: 0 45px;
+  *, ::placeholder{
+    font-family: "Louis George Cafe", sans-serif;
+    font-style: italic;
+    color: #1e1d23;
+  }
+  input{
+    margin: 0 0 25px 0;
+    border-radius: 50px;
+    border: 0;
+    padding: 10px 25px;
+    background: #ffffff6e;
+  }
+  textarea{
+    border:0;
+    border-radius: 15px;
+    padding: 10px 25px;
+    background: #ffffff6e;
+  }
+}

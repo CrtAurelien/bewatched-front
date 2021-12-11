@@ -57,10 +57,10 @@
 
       </div>
       <ul *ngIf="showBurgerMenu" class="desktop-menu">
-        <li>Accueil</li>
-        <li>La<br>boutique</li>
-        <li>Notre<br>histoire</li>
-        <li>Contact</li>
+        <li><a routerLink="/">Accueil</a></li>
+        <li><a routerLink="shop">La<br>boutique</a></li>
+        <li><a routerLink="our-story">Notre<br>histoire</a></li>
+        <li><a routerLink="contact">Contact</a></li>
       </ul>
     </div>
 
@@ -70,10 +70,10 @@
 <div class="burger-collapse {{showBurgerMenu ? 'active' : ''}}">
   <div class="border"></div>
   <ul>
-    <li>Accueil</li>
-    <li>La boutique</li>
-    <li>Notre<br>histoire</li>
-    <li>Contact</li>
+    <li><a routerLink="/">Accueil</a></li>
+    <li><a routerLink="shop">La<br>boutique</a></li>
+    <li><a routerLink="our-story">Notre<br>histoire</a></li>
+    <li><a routerLink="contact">Contact</a></li>
   </ul>
   <div class="border"></div>
 </div>
