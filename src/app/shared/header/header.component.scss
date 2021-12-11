@@ -375,4 +375,19 @@ nav {
   }
 }
 
+.btn-valider {
+  background: #391f17;
+  border: 0 !important;
+  border-radius: 50px;
+  position: relative;
+  font-size: 18px;
+  color:#efefef;
+  box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 18%);
+  font-family: "Louis George Cafe", sans-serif;
+  font-weight: bold;
+  width: 100%;
+  height: 45px;
+  margin-top: 22px;
+  transition: all 0.2s;
+}
 

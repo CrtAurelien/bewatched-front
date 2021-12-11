@@ -79,6 +79,15 @@
 </div>
 
 <ng-template #popTemplate>
-  <span>Votre panier est actuellement vide.</span>
+  <ng-container *ngIf="badgePanier === 0 then casVide else casItems"></ng-container>
+  <ng-template #casVide>
+    <span>Votre panier est actuellement vide.</span>
+  </ng-template>
+  <ng-template #casItems>
+    <ng-container *ngFor="let montre of panier">
+      <app-montre-item-panier [montre]="montre"></app-montre-item-panier>
+    </ng-container>
+    <button type="button" class="btn btn-valider">Valider la commande</button>
+  </ng-template>
 </ng-template>
 

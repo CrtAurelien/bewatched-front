@@ -12,6 +12,11 @@ $thirdColor: #e3c4a4;
   src: url("assets/fonts/social-media.ttf") format("truetype")
 }
 
+@font-face {
+  font-family: "Biko_Regular";
+  src: url("assets/fonts/Biko_Regular.otf") format("opentype")
+}
+
 $tablet-breakpoint: '640px';
 $desktop-breakpoint: '1024px';
 
@@ -25,6 +30,9 @@ $variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
 popover-container {
   top:0 !important;
   left: 0!important;
+  border: 0 !important;
+  border-radius: 17px !important;
+  width: 301px !important;
   z-index: 1115 !important;
   @media screen and(max-width: $tablet-breakpoint){
   transform: translate3d(65px, 58px, 0) !important;

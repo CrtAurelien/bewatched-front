@@ -1,7 +1,30 @@
+@import "../../../variable";
 .wrapper {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 63px 0 20px;
   gap: 20px;
+  @media screen and(min-width: $desktop-breakpoint) {
+    padding: 63px 105px 20px;
+  }
+  .wrapper-montres {
+    gap: 20px;
+    background-image: url('../../../assets/bg-shop-list.png');
+    background-repeat: no-repeat;
+  }
+
+  span {
+    color: #1e1d23;
+    font-family: "Louis George Cafe", sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+    font-size:25px;
+    padding: 30px 0;
+    &.number {
+      font-family: "Biko_Regular", sans-serif;
+      font-weight: bold;
+    }
+  }
 }

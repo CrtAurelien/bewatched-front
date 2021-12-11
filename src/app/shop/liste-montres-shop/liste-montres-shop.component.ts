@@ -27,6 +27,15 @@ export class ListeMontresShopComponent implements OnInit {
       marque: 'longines',
       modele: 'pr100 sport chic',
       prix: 1490
+    },     {
+      marque: 'longines',
+      modele: 'pr100 sport chic',
+      prix: 1490
+    },
+    {
+      marque: 'longines',
+      modele: 'pr100 sport chic',
+      prix: 1490
     }
 
   ]

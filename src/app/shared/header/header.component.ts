@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {BurgerService} from "../services/burger-service.service";
 import {ShopService} from "../services/shop.service";
 import {Subject, takeUntil, tap} from "rxjs";
+import {Montre} from "../../core/model/Montre.interface";
 
 @Component({
   selector: 'app-header',
@@ -13,12 +14,18 @@ export class HeaderComponent implements OnInit {
   panierIsOpen = false;
   ngUnsubscribe$ = new Subject();
   badgePanier = 0;
+  panier: Montre[] = [];
   constructor(private burgerService: BurgerService, private shopService: ShopService) { }
 
   ngOnInit(): void {
     this.shopService.badgeShopItemsSubject.pipe(
       tap(data => {
         this.badgePanier = data;
+      }), takeUntil(this.ngUnsubscribe$)
+    ).subscribe();
+    this.shopService.panierSubject.pipe(
+      tap(data => {
+        this.panier = data;
       }), takeUntil(this.ngUnsubscribe$)
     ).subscribe()
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FiltresService} from "../../shared/services/filtres.service";
 
 @Component({
   selector: 'app-filtres-mobile',
@@ -7,43 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltresMobileComponent implements OnInit {
   openFiltresMobile = false;
-  listeFiltres = [
-    {
-      nomFiltre: 'Genre',
-      values: [
-        {
-          nom: 'Femme',
-          estCoche: false
-        },
-        {
-          nom: 'Homme',
-          estCoche: false
-        }
-      ]
-    },
-    {
-      nomFiltre: 'Marque',
-      values: [
-        {
-          nom: 'Oméga',
-          estCoche: false
-        },
-        {
-          nom: 'Tissot',
-          estCoche: false
-        },
-        {
-          nom: 'Longines',
-          estCoche: false
-        }
-      ]
-    }
-  ]
+  listeFiltres: any[] = []
 
 
-  constructor() { }
+  constructor(private filtreService: FiltresService) { }
 
   ngOnInit(): void {
+    this.listeFiltres = this.filtreService.getFiltres();
   }
 
   toggleFiltresMobiles() {
