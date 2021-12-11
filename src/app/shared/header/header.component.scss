@@ -371,7 +371,7 @@ nav {
     }
   }
   @media screen and(min-width: $desktop-breakpoint){
-    display: none;
+    display: none !important;
   }
 }
 
