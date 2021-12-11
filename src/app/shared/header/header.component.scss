@@ -345,7 +345,7 @@ nav {
   transition: all 0.3s;
   &.active {
     height: 100vh;
-    z-index: 9;
+    z-index: 9999;
     opacity: 1;
   }
   .border {
