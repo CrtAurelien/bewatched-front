@@ -23,7 +23,7 @@
       </span>
       <span class="navbar-text panier position-relative {{panierIsOpen ? 'open' : ''}} {{showBurgerMenu ? 'menu-open' : ''}}"
             (click)="openPanier(pop)" [popover]="popTemplate" placement="bottom right" triggers="" #pop="bs-popover">
-          <span class="position-absolute top-0 start-100 translate-middle {{showBurgerMenu ? 'menu-open' : ''}} badge rounded-pill bg-danger">0
+          <span class="position-absolute top-0 start-100 translate-middle {{showBurgerMenu ? 'menu-open' : ''}} badge rounded-pill bg-danger">{{badgePanier}}
     <span class="visually-hidden">unread messages</span>
   </span>
       <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="30" height="20" viewBox="0 0 205 195.48004">

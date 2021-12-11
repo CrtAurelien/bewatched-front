@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BurgerService} from "../services/burger-service.service";
+import {ShopService} from "../services/shop.service";
+import {Subject, takeUntil, tap} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -9,9 +11,16 @@ import {BurgerService} from "../services/burger-service.service";
 export class HeaderComponent implements OnInit {
   showBurgerMenu = false;
   panierIsOpen = false;
-  constructor(private burgerService: BurgerService) { }
+  ngUnsubscribe$ = new Subject();
+  badgePanier = 0;
+  constructor(private burgerService: BurgerService, private shopService: ShopService) { }
 
   ngOnInit(): void {
+    this.shopService.badgeShopItemsSubject.pipe(
+      tap(data => {
+        this.badgePanier = data;
+      }), takeUntil(this.ngUnsubscribe$)
+    ).subscribe()
   }
 
   toggleBurgerMenu() {
