@@ -1,0 +1,31 @@
+.our-story-title{
+  display: flex;
+  justify-content: center;
+  margin: 35px 0 50px 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+}
+.our-story{
+  display: flex;
+  flex-direction: column;
+  margin: 0 45px;
+  .paragraph-1{
+    margin: 0 0 40px 0;
+  }
+  .paragraph-1, .paragraph-3{
+    text-align: left;
+    font-family: "Louis George Cafe", sans-serif;
+    font-weight: bold;
+  }
+  .paragraph-2{
+    text-align: right;
+    margin: 0 0 40px 0;
+    font-family: "Louis George Cafe", sans-serif;
+    font-weight: bold;
+  }
+  .signature{
+    font-family: "Belove", sans-serif;
+    font-size: 36px;
+    text-align: right;
+  }
+}

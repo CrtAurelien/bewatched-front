@@ -5,11 +5,11 @@
   width: 600px;
   align-items: flex-start;
   justify-content: space-between;
-  background-image: url('../../../assets/homeOmega copie.png');
+  background-image: url('https://www.omegawatches.com/media/catalog/product/cache/a5c37fddc1a529a1a44fea55d527b9a116f3738da3a2cc38006fcc613c37c391/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21090422001001-l.png');
   background-position:center;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 700px;
   .left, .right {
     display: flex;
     flex-direction: column;
@@ -69,9 +69,9 @@
           transform:matrix(-3, 1.9, 0.1, 1, 0, -68)
         }
         .hr-wrap {
-          transform: rotate(335deg);
-          top: -40px;
-          left: 5px;
+          transform: rotate(348deg);
+          top: -15px;
+          left: 10px;
           position: relative;
           animation: displayTrait 0.7s;
           .dot{
@@ -108,8 +108,8 @@
 
       }
       .rond {
-        right: 62px;
-        top: 33px;
+        right: 50px;
+        top: 110px;
       }
     }
     .content-B {
@@ -124,7 +124,7 @@
           transform:matrix(3, 0.8, 0.1, 1, 38, 13)
         }
         .hr-wrap {
-          transform: rotate(11deg);
+          transform: rotate(14deg);
           top: 30px;
           left: 5px;
           position: relative;
@@ -163,8 +163,8 @@
 
       }
       .rond {
-        right: -45px;
-        bottom: 52px;
+        right: -23px;
+        bottom: 82px;
       }
     }
     .content-C {
@@ -296,8 +296,8 @@
         }
         .hr-wrap {
           transform: rotate(13deg);
-          top: -10px;
-          right: 15px;
+          top: 50px;
+          right: -35px;
           position: relative;
           animation: displayTrait 0.7s;
           .dot{
@@ -331,11 +331,16 @@
             }
           }
         }
+        .desc{
+          right: -50px;
+          top:50px;
+          position: relative;
+        }
 
       }
       .rond {
-        left: 124px;
-        bottom: 111px;
+        left: 165px;
+        bottom: 80px;
       }
     }
   }
