@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Montre} from "../../../core/model/Montre.interface";
 import {ShopService} from "../../../shared/services/shop.service";
-import {MontreItemPanierComponent} from "../../../shared/header/montre-item-panier/montre-item-panier.component";
 
 @Component({
   selector: 'app-montre-item',
