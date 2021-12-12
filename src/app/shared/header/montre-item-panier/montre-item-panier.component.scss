@@ -1,5 +1,9 @@
 @import "../../../../variable";
 
+.shop-container{
+  width: 100%;
+  flex-wrap: wrap;
+}
 .marque, .modele {
   font-family: "Louis George Cafe", sans-serif;
   font-size: 14px;

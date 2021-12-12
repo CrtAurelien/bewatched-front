@@ -26,8 +26,11 @@ export class ShopService {
     this.badgeShopItemsSubject.next(this.badgeShopItems);
   }
 
-  removeToCart(montreParam: Montre) {
-    // TODO supprimer du panier
+  removeToCart(montre: Montre) {
+    this.panier.splice(this.panier.indexOf(montre, 1))
+    this.badgeShopItems -= 1;
+    this.panierSubject.next(this.panier)
+    this.badgeShopItemsSubject.next(this.badgeShopItems)
   }
 
 }

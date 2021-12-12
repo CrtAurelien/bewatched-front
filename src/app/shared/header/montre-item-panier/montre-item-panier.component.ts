@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Montre} from "../../../core/model/Montre.interface";
+import {ShopService} from "../../services/shop.service";
 
 @Component({
   selector: 'app-montre-item-panier',
@@ -9,10 +10,15 @@ import {Montre} from "../../../core/model/Montre.interface";
 export class MontreItemPanierComponent implements OnInit {
   @Input()
   montre!: Montre
+  montreIsDeleted = false;
 
-  constructor() { }
+  constructor(private shopService : ShopService) { }
 
   ngOnInit(): void {
   }
 
+  supprimerMontre(montre: Montre) {
+    this.shopService.removeToCart(montre);
+    this.montreIsDeleted = !this.montreIsDeleted
+  }
 }
