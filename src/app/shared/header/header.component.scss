@@ -44,6 +44,7 @@ nav {
       width: 452px;
       position: absolute;
       top:0;
+      z-index: 11;
       padding-left:30px;
       &.menu-open {
         background-image: none;

@@ -1,14 +1,29 @@
+@import "../../variable";
 .our-story-title{
   display: flex;
   justify-content: center;
   margin: 35px 0 50px 0;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 32px;
+  @media screen and (min-width: $desktop-breakpoint){
+    justify-content: flex-start;
+    margin: 130px 185px 15px;
+    font-size: 70px;
+  }
+}
+.coutures{
+  background-image: url("../../assets/coutures-brown.png");
+  height: 7px;
+  margin-bottom: 65px;
 }
 .our-story{
   display: flex;
   flex-direction: column;
   margin: 0 45px;
+  @media screen and (min-width: $desktop-breakpoint){
+    font-size: 22px;
+    margin: 0 185px;
+  }
   .paragraph-1{
     margin: 0 0 40px 0;
   }
@@ -16,12 +31,14 @@
     text-align: left;
     font-family: "Louis George Cafe", sans-serif;
     font-weight: bold;
+    font-style: italic;
   }
   .paragraph-2{
     text-align: right;
     margin: 0 0 40px 0;
     font-family: "Louis George Cafe", sans-serif;
     font-weight: bold;
+    font-style: italic;
   }
   .signature{
     font-family: "Belove", sans-serif;
