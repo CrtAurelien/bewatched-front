@@ -58,7 +58,7 @@
 
   .left {
     .content-A {
-      animation-delay: 0.5s;
+      animation-delay: 0.1s;
       position:relative;
       .content {
         bottom: 42px;
@@ -113,7 +113,7 @@
       }
     }
     .content-B {
-      animation-delay: 2s;
+      animation-delay: 0.7s;
       position:relative;
       .content {
         top: 55px;
@@ -169,7 +169,7 @@
     }
     .content-C {
       position:relative;
-      animation-delay: 2.5s;
+      animation-delay: 1.3s;
       .content {
         top: -18px;
         .trait, hr {
@@ -226,7 +226,7 @@
   .right {
     .content-A {
       position:relative;
-      animation-delay: 1s;
+      animation-delay: 0.4s;
       .content {
         bottom: 53px;
         right: -45px;
@@ -251,7 +251,7 @@
             background-color: #ffffff;
             opacity: 0.6;
             box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
-                        animation: scaling 4s ease-out infinite;
+            animation: scaling 4s ease-out infinite;
             display: inline-block;
             margin:.5rem;
             &:nth-child(0){
@@ -283,7 +283,7 @@
     }
     .content-B {
       position:relative;
-      animation-delay: 1.5s;
+      animation-delay: 1s;
       .content {
         top: 79px;
         right: -45px;

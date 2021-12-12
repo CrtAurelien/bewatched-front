@@ -1,15 +1,28 @@
+@import "../../variable";
 .content-wrap {
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  overflow: hidden;
   .main-wrapper {
     flex:1;
     z-index: 12;
-    margin: 80px 200px;
+    margin: 80px 200px 0;
   }
   app-footer {
     position: relative;
     z-index: 113;
+  }
+}
+.border {
+  background-image: url('../../assets/coutures-brown.png');
+  background-repeat: repeat;
+  height: 7px;
+  border: 0 !important;
+  position: relative;
+  top: -30px;
+  @media screen and(min-width: $desktop-breakpoint) {
+    top:-148px;
   }
 }

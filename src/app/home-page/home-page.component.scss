@@ -57,7 +57,7 @@
           transform: rotate(270deg);
         }
         &.anim {
-          animation: boutonDesktop 1.5s;
+          animation: boutonDesktop 1.7s;
         }
 
       }
@@ -89,6 +89,7 @@
   }
   .montres {
     padding-top: 38px;
+    z-index: 999;
     @media screen and(min-width: $desktop-breakpoint) {
       flex:1;
       display: flex;
@@ -139,14 +140,4 @@
   }
 }
 
-.border {
-  background-image: url('../../assets/coutures-brown.png');
-  background-repeat: repeat;
-  height: 7px;
-  border: 0 !important;
-  position: relative;
-  top: -30px;
-  @media screen and(min-width: $desktop-breakpoint) {
-    top:-100px;
-  }
-}
+

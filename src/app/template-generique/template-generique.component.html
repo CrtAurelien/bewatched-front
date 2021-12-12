@@ -3,6 +3,8 @@
   <div class="main-wrapper {{burgerIsOpen ? 'open' : ''}}">
     <router-outlet #outlet='outlet'></router-outlet>
   </div>
+  <div class="border">
+  </div>
   <app-footer [burgerIsOpen]="burgerIsOpen"></app-footer>
 </div>
 
