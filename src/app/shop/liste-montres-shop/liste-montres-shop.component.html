@@ -1,13 +1,8 @@
 
 <div class="wrapper flex-wrap flex-column">
-  <div class="intro">
-    <span class="number">{{listeMontres.length}}</span>
-    <span> montres trouvées</span>
-  </div>
   <div class="d-flex wrapper-montres flex-wrap justify-content-between">
     <ng-container *ngFor="let montre of listeMontres">
       <app-montre-item [montre]="montre"></app-montre-item>
     </ng-container>
   </div>
-
 </div>

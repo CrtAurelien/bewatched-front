@@ -1,5 +1,12 @@
 <div class="wrap">
   <app-filtres-mobile></app-filtres-mobile>
   <app-filtres-dsktop></app-filtres-dsktop>
-  <app-liste-montres-shop></app-liste-montres-shop>
+  <div class="intro">
+    <span class="number">{{nombreMontres}}</span>
+    <span> montres trouvées</span>
+  </div>
+  <ng-container *ngFor="let listeMontre of finalListeMontre">
+    <app-liste-montres-shop [listeMontres]="listeMontre"></app-liste-montres-shop>
+  </ng-container>
+
 </div>

@@ -6,6 +6,13 @@
   }
 }
 
+.navbar {
+  &.open {
+    position: relative;
+    z-index: 125 !important;
+  }
+}
+
 nav {
   background-image: url('../../../assets/background-brown.png');
   height: 80px;
@@ -251,14 +258,15 @@ nav {
             display: flex;
             top:0;
             right: 0;
+            bottom: 0;
             background-image: url('../../../assets/background-brown.png');
             align-items: flex-start;
             justify-content: flex-end;
             width: 100% !important;
             transition: $variable-burger-animation-time $variable-menu-animation-function;
-            height: 100vh !important;
+            min-height: 100vh !important;
             border-radius: 0;
-            z-index: 112;
+            z-index: 120;
             svg {
               position: relative;
               top: 50px;
@@ -278,7 +286,7 @@ nav {
     }
 
     .desktop-menu {
-      z-index: 113;
+      z-index: 120;
       color: white;
       display: flex;
       width: 100%;

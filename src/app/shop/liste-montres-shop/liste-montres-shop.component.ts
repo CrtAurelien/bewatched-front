@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Montre} from "../../core/model/Montre.interface";
 
 @Component({
@@ -7,38 +7,9 @@ import {Montre} from "../../core/model/Montre.interface";
   styleUrls: ['./liste-montres-shop.component.scss']
 })
 export class ListeMontresShopComponent implements OnInit {
-  listeMontres: Montre[] = [
-    {
-      marque: 'oméga',
-      modele: 'pr100 sport chic',
-      prix: 1490
-    },
-    {
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      prix: 1490
-    },
-    {
-      marque: 'oméga',
-      modele: 'pr100 sport chic',
-      prix: 1490
-    },
-    {
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      prix: 1490
-    },     {
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      prix: 1490
-    },
-    {
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      prix: 1490
-    }
+  @Input()
+  listeMontres!: Montre[]
 
-  ]
 
   constructor() { }
 

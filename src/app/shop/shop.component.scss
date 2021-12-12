@@ -1,6 +1,6 @@
 @import "../../variable";
 .wrap {
-  padding: 35px 25px;
+  padding: 35px 0;
   z-index: 11;
   position: relative;
   app-filtres-mobile {
@@ -20,6 +20,22 @@
       position: relative;
       z-index: 1115;
       padding: 0 120px;
+    }
+  }
+  .intro {
+    padding: 80px 100px 0;
+  }
+  span {
+    color: #1e1d23;
+    font-family: "Louis George Cafe", sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+    font-size:25px;
+    &.number {
+      font-family: "Biko_Regular", sans-serif;
+      font-weight: bold;
     }
   }
 
