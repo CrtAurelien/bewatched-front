@@ -2,14 +2,14 @@
 
 .wrapper {
   display: flex;
-  width: 600px;
+  width: 500px;
   align-items: flex-start;
   justify-content: space-between;
-  background-image: url('https://www.omegawatches.com/media/catalog/product/cache/a5c37fddc1a529a1a44fea55d527b9a116f3738da3a2cc38006fcc613c37c391/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21090422001001-l.png');
+  background-image: url('../../../assets/home-watch.png');
   background-position:center;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 700px;
+  height: 600px;
   .left, .right {
     display: flex;
     flex-direction: column;
