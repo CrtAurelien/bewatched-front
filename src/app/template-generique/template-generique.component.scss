@@ -4,11 +4,10 @@
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
-  overflow: hidden;
-  .main-wrapper {
+  .main-wrapper-dynamique {
     flex:1;
     z-index: 12;
-    margin: 80px 200px 0;
+    margin: 0 0 0;
   }
   app-footer {
     position: relative;

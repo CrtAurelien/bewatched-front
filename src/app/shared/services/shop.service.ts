@@ -10,6 +10,7 @@ export class ShopService {
   panierSubject = new Subject<Montre[]>()
   badgeShopItems = 0;
   badgeShopItemsSubject = new Subject<number>()
+  allMontres : Montre[] = [];
 
   constructor() { }
 
@@ -32,5 +33,6 @@ export class ShopService {
     this.panierSubject.next(this.panier)
     this.badgeShopItemsSubject.next(this.badgeShopItems)
   }
+
 
 }

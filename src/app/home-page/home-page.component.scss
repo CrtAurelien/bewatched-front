@@ -5,8 +5,8 @@
   @media screen and(min-width: $desktop-breakpoint) {
     flex-direction: row;
     padding: 10px 30px;
+    margin: 0 100px;
     max-width: 1366px;
-    margin:auto;
   }
   .intro {
     width: 100%;
@@ -46,12 +46,15 @@
         justify-content: space-evenly;
         width: 270px;
         background-image: url('../../assets/background-brown.png');
-        border: 0 !important;
         border-radius: 50px;
         font-size: 14px;
         font-family: "Louis George Cafe", sans-serif;
         font-weight: bold;
         height: 52px;
+        outline: none !important;
+        box-shadow: none;
+        border: 0;
+
 
         .chevron {
           transform: rotate(270deg);
@@ -141,3 +144,7 @@
 }
 
 
+
+*:focus {
+  outline: none !important;
+}

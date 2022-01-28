@@ -23,6 +23,7 @@ import { MontreItemComponent } from './shop/liste-montres-shop/montre-item/montr
 import { MontreItemPanierComponent } from './shared/header/montre-item-panier/montre-item-panier.component';
 import { FiltresDsktopComponent } from './shop/filtres-dsktop/filtres-dsktop.component';
 import { FiltreItemDesktopComponent } from './shop/filtres-dsktop/filtre-item-desktop/filtre-item-desktop.component';
+import { DetailMontrePageComponent } from './detail-montre-page/detail-montre-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FiltreItemDesktopComponent } from './shop/filtres-dsktop/filtre-item-de
     MontreItemComponent,
     MontreItemPanierComponent,
     FiltresDsktopComponent,
-    FiltreItemDesktopComponent
+    FiltreItemDesktopComponent,
+    DetailMontrePageComponent
   ],
   imports: [
     BrowserModule,

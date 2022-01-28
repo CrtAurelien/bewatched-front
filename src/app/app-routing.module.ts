@@ -5,6 +5,7 @@ import {TemplateGeneriqueComponent} from "./template-generique/template-generiqu
 import {ShopComponent} from "./shop/shop.component";
 import {ContactComponent} from "./contact/contact.component";
 import {OurStoryComponent} from "./our-story/our-story.component";
+import {DetailMontrePageComponent} from "./detail-montre-page/detail-montre-page.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactComponent
+      },
+      {
+        path: 'detail/:montre',
+        component: DetailMontrePageComponent
       }
     ]
   }

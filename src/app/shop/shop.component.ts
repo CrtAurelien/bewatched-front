@@ -12,68 +12,81 @@ interface Food {
 export class ShopComponent implements OnInit {
   listeMontres: Montre[] = [
     {
+      id: 1,
       marque: 'oméga',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 2,
       marque: 'longines',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id:3,
       marque: 'oméga',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 4,
       marque: 'longines',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 5,
       marque: 'longines',
       modele: 'pr100 sport chic',
       prix: 1490
     },
 
     {
+      id: 6,
       marque: 'oméga',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 7,
       marque: 'longines',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 8,
       marque: 'oméga',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 9,
       marque: 'longines',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 10,
       marque: 'longines',
       modele: 'pr100 sport chic',
       prix: 1490
     },
 
     {
+      id: 11,
       marque: 'oméga 1',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 12,
       marque: 'longines 1',
       modele: 'pr100 sport chic',
       prix: 1490
     },
     {
+      id: 13,
       marque: 'oméga 1',
       modele: 'pr100 sport chic',
       prix: 1490
