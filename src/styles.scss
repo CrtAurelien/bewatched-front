@@ -33,3 +33,22 @@ a{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.theme-default {
+  nav {
+    background-image: url('assets/background-brown.png');
+  }
+  .burger {
+    &.close {
+      background-image: url("assets/background-brown.png");
+    }
+  }
+}
+
+.theme-longine {
+
+}
+
+.theme-tissot {
+
+}

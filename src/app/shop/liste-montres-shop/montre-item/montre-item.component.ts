@@ -25,7 +25,7 @@ export class MontreItemComponent implements OnInit {
   }
 
   navigateToDetailMontre() {
-    this.router.navigate(['/detail', this.montre.id ]);
+    this.router.navigate(['/detail', this.montre.id]);
   }
 
 

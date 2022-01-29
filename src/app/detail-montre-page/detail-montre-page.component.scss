@@ -1,7 +1,41 @@
 .main-wrap{
-  padding: 0px 100px 0;
+  padding: 0 0 0 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.detail, .montre {
+  flex:1;
 }
 
 .detail {
-  flex:1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 0 50px;
+  .logo {
+    img {
+      width: 415px;
+    }
+  }
+  .modele {
+    width: 100%;
+    align-items: center;
+    .ref-label {
+      text-transform: uppercase;
+      color: #2d2d2d;
+      font-size: 18px;
+    }
+    .ref {
+      width: 100%;
+      font-size:18px;
+      margin-left: 10px;
+      background-image: url('../../assets/background-brown.png');
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      color:#e5cdb9;
+      text-transform: capitalize;
+      padding: 5px 20px;
+    }
+  }
 }

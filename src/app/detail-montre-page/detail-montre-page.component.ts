@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Location} from "@angular/common";
 import {Montre} from "../core/model/Montre.interface";
 import {ActivatedRoute} from "@angular/router";
+import {ShopService} from "../shared/services/shop.service";
 
 @Component({
   selector: 'app-detail-montre-page',
@@ -10,11 +11,17 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class DetailMontrePageComponent implements OnInit {
   montre!: Montre;
+  urlImageLogoMontre = ''
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private shopService: ShopService) { }
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.paramMap.get('montre'));
+    const idMontre = this.route.snapshot.paramMap.get('montre');
+    if(idMontre) {
+      console.log(this.shopService.getAllMontres())
+      this.montre = this.shopService.getMontreById(idMontre);
+      this.urlImageLogoMontre += this.montre?.marque.toLowerCase() + '-logo.png';
+    }
   }
 
 }
