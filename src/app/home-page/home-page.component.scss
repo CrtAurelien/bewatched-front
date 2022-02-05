@@ -1,5 +1,9 @@
 @import "../../variable";
 
+:host {
+  flex:1;
+}
+
 .main-wrapper {
   flex-direction: column;
   @media screen and(min-width: $desktop-breakpoint) {

@@ -8,10 +8,16 @@
   .wrapper-montres {
     gap: 20px;
     background-image: url('../../../assets/bg-shop-list.png');
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-repeat-y: no-repeat;
+    background-repeat-x: repeat;
     padding: 0 100px;
   }
 
+  .sub-wrap {
+    flex: 1;
+    max-width: 1400px;
+    margin: auto;
+    align-items: center;
+  }
 
 }

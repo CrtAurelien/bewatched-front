@@ -7,8 +7,11 @@
   .main-wrapper-dynamique {
     flex:1;
     z-index: 12;
+    display: grid;
+    grid-template-columns: 1fr;
     margin: auto;
-    width: 1400px;
+    width: 100%;
+
   }
   app-footer {
     position: relative;
@@ -18,11 +21,14 @@
 .border {
   background-image: url('../../assets/coutures-brown.png');
   background-repeat: repeat;
-  height: 7px;
+  min-height: 7px;
   border: 0 !important;
   position: relative;
   top: -30px;
   @media screen and(min-width: $desktop-breakpoint) {
-    top:-148px;
+    top:-100px;
+  }
+  @media screen and(min-width: $large-screen) {
+    top:-212px;
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Montre} from "../../core/model/Montre.interface";
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -92,6 +92,8 @@ export class ShopService {
       prix: 1490
     }
   ];
+  theme = 'theme-default';
+  themeSubject = new BehaviorSubject<string>('theme-default')
 
   constructor() { }
 
@@ -120,8 +122,31 @@ export class ShopService {
   }
 
   getMontreById(idMontre: any) : Montre {
-    console.log(this.allMontres);
     return <Montre>this.allMontres.find(elm => elm.id === parseInt(idMontre));
+  }
+
+  switchTheme(marqueMontre: string) {
+    console.log(marqueMontre)
+    switch (marqueMontre) {
+      case 'omega':
+        this.prevenirChangementTheme('theme-default')
+        break;
+      case 'longines':
+        this.prevenirChangementTheme('theme-longine')
+        break;
+      case 'tissot':
+        this.prevenirChangementTheme('theme-tissot')
+        break
+      default:
+        this.prevenirChangementTheme('theme-default')
+        break;
+    }
+  }
+
+
+  prevenirChangementTheme(theme: string) {
+    this.theme = theme;
+    this.themeSubject.next(this.theme)
   }
 
 
