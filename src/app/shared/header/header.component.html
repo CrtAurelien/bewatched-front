@@ -22,7 +22,7 @@
       </svg>
       </span>
       <span class="navbar-text panier position-relative {{panierIsOpen ? 'open' : ''}} {{showBurgerMenu ? 'menu-open' : ''}}"
-            (click)="openPanier(pop)" [popover]="popTemplate" placement="bottom right" triggers="" #pop="bs-popover">
+            (onHidden)="onHidden()" [outsideClick]="true" (click)="openPanier(pop)" [popover]="popTemplate" placement="bottom right" triggers="" #pop="bs-popover">
           <span class="position-absolute top-0 start-100 translate-middle {{showBurgerMenu ? 'menu-open' : ''}} badge rounded-pill bg-danger">{{badgePanier}}
     <span class="visually-hidden">unread messages</span>
   </span>
@@ -87,7 +87,7 @@
     <ng-container *ngFor="let montre of panier">
       <app-montre-item-panier [montre]="montre"></app-montre-item-panier>
     </ng-container>
-    <button type="button" class="btn btn-valider">Valider la commande</button>
+    <button (click)="goToRecapPanier()" type="button" class="btn btn-valider">Valider la commande</button>
   </ng-template>
 </ng-template>
 

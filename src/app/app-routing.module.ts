@@ -6,6 +6,7 @@ import {ShopComponent} from "./shop/shop.component";
 import {ContactComponent} from "./contact/contact.component";
 import {OurStoryComponent} from "./our-story/our-story.component";
 import {DetailMontrePageComponent} from "./detail-montre-page/detail-montre-page.component";
+import {RecapCommandeComponent} from "./shop/recap-commande/recap-commande.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'detail/:montre',
         component: DetailMontrePageComponent
+      },
+      {
+        path: 'recapitulatif-panier',
+        component: RecapCommandeComponent
       }
     ]
   }

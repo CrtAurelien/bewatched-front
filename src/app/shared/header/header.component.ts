@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {BurgerService} from "../services/burger-service.service";
 import {ShopService} from "../services/shop.service";
 import {Subject, takeUntil, tap} from "rxjs";
 import {Montre} from "../../core/model/Montre.interface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,9 @@ export class HeaderComponent implements OnInit {
   ngUnsubscribe$ = new Subject();
   badgePanier = 0;
   panier: Montre[] = [];
-  constructor(private burgerService: BurgerService, private shopService: ShopService) { }
+  pop: any;
+  constructor(private burgerService: BurgerService, private shopService: ShopService, private router: Router) { }
+
 
   ngOnInit(): void {
     this.shopService.badgeShopItemsSubject.pipe(
@@ -37,10 +40,22 @@ export class HeaderComponent implements OnInit {
 
   openPanier(pop: any) {
     this.panierIsOpen = !this.panierIsOpen;
+    this.pop = pop;
     if(this.panierIsOpen) {
       pop.show();
     } else {
       pop.hide();
+    }
+  }
+
+  goToRecapPanier() {
+    this.router.navigate(['recapitulatif-panier']);
+    this.openPanier(this.pop);
+  }
+
+  onHidden(): void {
+    if(this.panierIsOpen) {
+      this.panierIsOpen = !this.panierIsOpen;
     }
   }
 
