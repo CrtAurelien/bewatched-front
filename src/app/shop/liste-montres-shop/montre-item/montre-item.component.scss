@@ -3,7 +3,6 @@
 .montre {
   position: relative;
   top: -32px;
-  cursor: pointer;
 
   &:hover {
     img {
@@ -30,6 +29,8 @@
 img {
   width:150px;
   transition: all 0.5s;
+
+  cursor: pointer;
   @media screen and(min-width: $desktop-breakpoint){
     width: 200px;
   }

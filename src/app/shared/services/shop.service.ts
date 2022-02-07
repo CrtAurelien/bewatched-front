@@ -9,7 +9,9 @@ export class ShopService {
   panier: Montre[] = [];
   panierSubject = new Subject<Montre[]>()
   badgeShopItems = 0;
-  badgeShopItemsSubject = new Subject<number>()
+  badgeShopItemsSubject = new Subject<number>();
+  montreWasDeleted = false;
+  montreWasDeletedSubject = new Subject<boolean>();
   allMontres : Montre[] = [
     {
       id: 1,
@@ -94,6 +96,8 @@ export class ShopService {
   ];
   theme = 'theme-default';
   themeSubject = new BehaviorSubject<string>('theme-default')
+  searchInProgress: string = '';
+  searchingSubject = new BehaviorSubject<string>('');
 
   constructor() { }
 
@@ -111,10 +115,12 @@ export class ShopService {
   }
 
   removeToCart(montre: Montre) {
+    this.montreWasDeleted = true;
     this.panier.splice(this.panier.indexOf(montre, 1))
     this.badgeShopItems -= 1;
     this.panierSubject.next(this.panier)
     this.badgeShopItemsSubject.next(this.badgeShopItems)
+    this.montreWasDeletedSubject.next(this.montreWasDeleted);
   }
 
   getAllMontres() : Montre[] {
@@ -126,7 +132,6 @@ export class ShopService {
   }
 
   switchTheme(marqueMontre: string) {
-    console.log(marqueMontre)
     switch (marqueMontre) {
       case 'omega':
         this.prevenirChangementTheme('theme-default')
@@ -143,10 +148,19 @@ export class ShopService {
     }
   }
 
+  getPanierEnCours() : Montre[] {
+    return this.panier
+  }
+
 
   prevenirChangementTheme(theme: string) {
     this.theme = theme;
     this.themeSubject.next(this.theme)
+  }
+
+  searching(search: string) {
+    this.searchInProgress = search;
+    this.searchingSubject.next(this.searchInProgress);
   }
 
 
