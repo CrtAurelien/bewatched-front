@@ -59,7 +59,5 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  search(event: any) {
-    this.shopService.searching(event.target.value);}
-
+  search(event: any) {}
 }

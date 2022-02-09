@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Montre} from "../../core/model/Montre.interface";
 import {BehaviorSubject, Subject} from "rxjs";
+import {Filtre, FiltreObject} from "../../core/model/Filtre.interface";
+import {UtilsService} from "./utils.service";
 
 @Injectable({
   providedIn: 'root'
@@ -97,9 +99,13 @@ export class ShopService {
   theme = 'theme-default';
   themeSubject = new BehaviorSubject<string>('theme-default')
   searchInProgress: string = '';
-  searchingSubject = new BehaviorSubject<string>('');
+  searchingSubject = new BehaviorSubject<any>('');
+  searchingbyMarque = new BehaviorSubject<string>('');
+  categoriesFiltres : Filtre[] = []
+  filtresActifs : string[] = [];
+  resetAFilterSubject = new BehaviorSubject<any>('')
 
-  constructor() { }
+  constructor(private utilService: UtilsService) { }
 
   /**
    * Cette méthode ajouter au panier la montre passée en paramètre
@@ -158,10 +164,33 @@ export class ShopService {
     this.themeSubject.next(this.theme)
   }
 
-  searching(search: string) {
-    this.searchInProgress = search;
-    this.searchingSubject.next(this.searchInProgress);
+  searchWithFilter(filtre: Filtre, nomFiltreActive: FiltreObject) {
+    if(!this.filtresActifs.find(elm => elm === nomFiltreActive.nom)) {
+      this.filtresActifs.push(nomFiltreActive.nom);
+    }
+    this.searchingSubject.next(nomFiltreActive)
+  }
+
+  removeAFilter(filtre: FiltreObject) {
+    this.filtresActifs.splice(this.filtresActifs.indexOf(filtre.nom), 1);
+    this.resetAFilterSubject.next(filtre);
+  }
+
+  getCategorieFiltre(nomFiltre: string) : string{
+    switch (nomFiltre) {
+      case 'Oméga':
+      case 'Longines':
+      case 'Tissot':
+        return 'marque'
+      default:
+        return ''
+    }
+  }
+
+  getFiltresActifs() : string[] {
+    return this.filtresActifs
   }
 
 
-}
+
+  }

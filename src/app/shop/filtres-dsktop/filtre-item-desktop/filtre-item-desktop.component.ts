@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ShopService} from "../../../shared/services/shop.service";
+import {Filtre, FiltreObject} from "../../../core/model/Filtre.interface";
 
 @Component({
   selector: 'app-filtre-item-desktop',
@@ -13,8 +15,10 @@ export class FiltreItemDesktopComponent implements OnInit {
   @Input()
   type!: string;
   showFilter = false;
+  @Input()
+  filtre!: Filtre;
 
-  constructor() { }
+  constructor(private shopService: ShopService) { }
 
   ngOnInit(): void {
   }
@@ -24,8 +28,13 @@ export class FiltreItemDesktopComponent implements OnInit {
    * Active ou désactive le style de la custom checkbox
    * @param nomFiltre
    */
-  activerOuDesactiverFiltre(filtre: any) {
+  activerOuDesactiverFiltre(filtre: FiltreObject) {
     filtre.estCoche = !filtre.estCoche;
+    if(filtre.estCoche) {
+      this.shopService.searchWithFilter(this.filtre, filtre)
+    } else {
+      this.shopService.removeAFilter(filtre)
+    }
   }
 
   /**

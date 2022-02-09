@@ -1,16 +1,16 @@
 <div class="filter-wrapper {{showFilter ? 'open' : 'close'}}">
   <div class="filter-by position-relative" (click)="toggleFiltre()">
-    <span>{{nomFiltre}}</span>
+    <span>{{filtre.nom}}</span>
     <svg class="chevron " xmlns="http://www.w3.org/2000/svg" width="11" height="8" viewBox="0 0 342.43363 198.54124">
       <defs><style>.cls-1{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:57.55696px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><line class="cls-1" x1="313.65515" y1="28.77848" x2="172.67087" y2="169.76276"/><line class="cls-1" x1="28.77848" y1="28.77848" x2="169.76276" y2="169.76276"/></g></g></svg>
   </div>
   <div class="liste-filtres" *ngIf="showFilter">
-    <ng-container *ngFor="let filtre of values">
-      <div class="wrap-filtre" (click)="activerOuDesactiverFiltre(filtre)">
-    <span class="check {{filtre.estCoche ? 'coche' : 'decoche'}}">
+    <ng-container *ngFor="let filter of filtre.values">
+      <div class="wrap-filtre" (click)="activerOuDesactiverFiltre(filter)">
+    <span class="check {{filter.estCoche ? 'coche' : 'decoche'}}">
           <span class="check-circle"></span>
     </span>
-        <span>{{filtre.nom}}</span>
+        <span>{{filter.nom}}</span>
       </div>
     </ng-container>
   </div>

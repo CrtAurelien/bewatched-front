@@ -1,7 +1,7 @@
 <div class="filter-wrapper {{openFiltresMobile ? 'open' : 'close'}}">
   <div class="liste-filtres d-flex justify-content-start align-items-start position-absolute">
     <ng-container *ngFor="let filtre of listeFiltres">
-      <app-filtre-item-desktop [nomFiltre]="filtre.nomFiltre" [values]="filtre.values"></app-filtre-item-desktop>
+      <app-filtre-item-desktop [filtre]="filtre" [nomFiltre]="filtre.nomFiltre" [values]="filtre.values"></app-filtre-item-desktop>
     </ng-container>
   </div>
 </div>

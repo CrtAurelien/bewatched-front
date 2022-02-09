@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
+import {Filtre} from "../../core/model/Filtre.interface";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FiltresService {
-  listeFiltres = [
+  listeFiltres : Filtre[] = [
     {
-      nomFiltre: 'Genre',
+      nom: 'Genre',
       values: [
         {
           nom: 'Femme',
@@ -19,7 +20,7 @@ export class FiltresService {
       ]
     },
     {
-      nomFiltre: 'Marque',
+      nom: 'Marque',
       values: [
         {
           nom: 'Oméga',
