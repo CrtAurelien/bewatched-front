@@ -5,13 +5,14 @@
   justify-content: center;
   margin: 35px 0 50px 0;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px;
+  font-size: 52px;
 }
 
 .contact-form{
   display: flex;
   flex-direction: column;
-  margin: 0 45px;
+  margin: auto;
+  max-width: 875px;
   ::placeholder{
     font-family: "Louis George Cafe", sans-serif;
     font-style: italic;
@@ -22,7 +23,7 @@
     border-radius: 50px;
     border: 0;
     padding: 10px 25px;
-    background: #ffffff6e;
+    background: #ffffff9e;
     font-family: "Louis George Cafe", sans-serif;
     font-style: italic;
     color: #1e1d23;
@@ -31,7 +32,7 @@
     border:0;
     border-radius: 15px;
     padding: 10px 25px;
-    background: #ffffff6e;
+    background: #ffffff9e;
     font-family: "Louis George Cafe", sans-serif;
     font-style: italic;
     color: #1e1d23;

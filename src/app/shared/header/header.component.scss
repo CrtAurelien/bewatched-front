@@ -219,7 +219,7 @@ nav {
             }
           }
           img{
-            animation: bounce 1s cubic-bezier(0.27, 2.4, 0.91, 0.4);
+            animation: bounce 1.2s cubic-bezier(0.27, 2.4, 0.53, 0.01);
             animation-delay: 0.2s;
             @keyframes bounce {
               from {
