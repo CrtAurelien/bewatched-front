@@ -35,6 +35,40 @@ export class FiltresService {
           estCoche: false
         }
       ]
+    },
+    {
+      nom: 'Année',
+      values: [
+        {
+          nom: '1969',
+          estCoche: false
+        },
+        {
+          nom: '1976',
+          estCoche: false
+        },
+        {
+          nom: '1987',
+          estCoche: false
+        }
+      ]
+    },
+    {
+      nom: 'Mouvement',
+      values: [
+        {
+          nom: 'Mécanique',
+          estCoche: false
+        },
+        {
+          nom: 'Quartz',
+          estCoche: false
+        },
+        {
+          nom: '1987',
+          estCoche: false
+        }
+      ]
     }
   ]
 

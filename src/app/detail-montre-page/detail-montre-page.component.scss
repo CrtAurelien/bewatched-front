@@ -23,14 +23,20 @@
   background-color: #432f2466;
   border: none;
   color: white;
-  margin-right: 90px;
+  margin-right: 40px;
   margin-top: 30px;
   font-family: "Louis George Cafe", sans-serif;
   text-transform: uppercase;
+  span{
+    height: 20px;
+  }
   svg{
     fill: white;
     width: 25px;
     margin-right: 10px;
+    &:hover{
+      transition: 0.3s ease-out;
+    }
   }
 }
 .details {
@@ -38,6 +44,7 @@
   flex-direction: column;
   align-items: flex-end;
   position: relative;
+  right: -100px;
   .informations{
     font-family: "Bebas Neue", sans-serif;
     align-items: center;
