@@ -5,6 +5,8 @@
 }
 body {
   background-image: url('assets/background-watches/omega.png');
+  background-size: contain;
+  background-position: center;
 }
 .swiper-wrapper {
  align-items: center;
