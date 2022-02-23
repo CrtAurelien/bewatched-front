@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "variable";
 body {
-  background-image: url('assets/background-white.png');
+  background-image: url('assets/background-watches/omega.png');
 }
 .swiper-wrapper {
  align-items: center;
@@ -36,7 +36,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .theme-default {
   nav {
-    background-image: url('assets/background-brown.png');
+    background: none;
+    --bs-bg-opacity: 0;
   }
   .burger {
     &.close {

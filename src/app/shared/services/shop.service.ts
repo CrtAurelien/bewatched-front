@@ -29,7 +29,7 @@ export class ShopService {
     },
     {
       id:3,
-      marque: 'oméga',
+      marque: 'omega',
       modele: 'pr100 sport chic',
       prix: 1490
     },
@@ -48,7 +48,7 @@ export class ShopService {
 
     {
       id: 6,
-      marque: 'oméga',
+      marque: 'omega',
       modele: 'pr100 sport chic',
       prix: 1490
     },
@@ -60,7 +60,7 @@ export class ShopService {
     },
     {
       id: 8,
-      marque: 'oméga',
+      marque: 'omega',
       modele: 'pr100 sport chic',
       prix: 1490
     },
@@ -79,7 +79,7 @@ export class ShopService {
 
     {
       id: 11,
-      marque: 'oméga 1',
+      marque: 'omega 1',
       modele: 'pr100 sport chic',
       prix: 1490
     },
@@ -91,7 +91,7 @@ export class ShopService {
     },
     {
       id: 13,
-      marque: 'oméga 1',
+      marque: 'omega 1',
       modele: 'pr100 sport chic',
       prix: 1490
     }
@@ -143,7 +143,7 @@ export class ShopService {
         this.prevenirChangementTheme('theme-default')
         break;
       case 'longines':
-        this.prevenirChangementTheme('theme-longine')
+        this.prevenirChangementTheme('theme-longines')
         break;
       case 'tissot':
         this.prevenirChangementTheme('theme-tissot')
