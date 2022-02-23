@@ -4,9 +4,11 @@
       <span class="number">{{nombreMontres}}</span>
       <span> montres trouvées</span>
     </ng-container><span *ngIf="nombreMontres == 0">Aucune montre trouvée</span>
+    <div class="filters">
+      <app-filtres-mobile></app-filtres-mobile>
+      <app-filtres-dsktop></app-filtres-dsktop>
+    </div>
   </div>
-  <app-filtres-mobile></app-filtres-mobile>
-  <app-filtres-dsktop></app-filtres-dsktop>
   <ng-container *ngFor="let listeMontre of finalListeMontre">
     <app-liste-montres-shop [listeMontres]="listeMontre"></app-liste-montres-shop>
   </ng-container>

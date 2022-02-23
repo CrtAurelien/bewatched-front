@@ -23,7 +23,14 @@
     }
   }
   .intro {
-    padding: 60px 120px 10px
+    padding: 60px 120px 10px;
+    position: fixed;
+    z-index: 99;
+  }
+  .filters{
+    position: fixed;
+    margin-top: 10px;
+    z-index: 9999;
   }
   span {
     color: #1e1d23;
