@@ -19,30 +19,35 @@ export class ShopService {
       id: 1,
       marque: 'omega',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 2,
       marque: 'longines',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id:3,
       marque: 'omega',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 4,
       marque: 'longines',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 5,
       marque: 'longines',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
 
@@ -50,30 +55,35 @@ export class ShopService {
       id: 6,
       marque: 'omega',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 7,
       marque: 'longines',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 8,
       marque: 'omega',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 9,
       marque: 'longines',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 10,
       marque: 'longines',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
 
@@ -81,18 +91,21 @@ export class ShopService {
       id: 11,
       marque: 'omega 1',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 12,
       marque: 'longines 1',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     },
     {
       id: 13,
       marque: 'omega 1',
       modele: 'pr100 sport chic',
+      year: 1976,
       prix: 1490
     }
   ];
