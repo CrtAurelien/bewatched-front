@@ -10,7 +10,6 @@
     flex-direction: row;
     padding: 10px 30px;
     margin: auto;
-    max-width: 1366px;
   }
   .couture {
     background-image: url('../../assets/coutures-brown.png');
@@ -62,20 +61,21 @@
         z-index: 111;
         align-items: center;
         justify-content: space-evenly;
-        width: 270px;
+        width: 300px;
         background-image: url('../../assets/background-brown.png');
         border-radius: 50px;
-        font-size: 14px;
+        font-size: 16px;
         font-family: "Louis George Cafe", sans-serif;
         font-weight: bold;
-        height: 52px;
+        height: 55px;
         outline: none !important;
         box-shadow: none;
         border: 0;
 
 
-        .chevron {
-          transform: rotate(270deg);
+        .search {
+          fill: white;
+          width: 20px;
         }
         &.anim {
           animation: boutonDesktop 1.7s;
@@ -94,8 +94,8 @@
         color: #37251d;
       }
       @media screen and(min-width: $desktop-breakpoint) {
-        font-size: 70px;
-        line-height: 70px;
+        font-size: 110px;
+        line-height: 90px;
       }
     }
     img {
@@ -154,8 +154,9 @@
       font-family: "Louis George Cafe", sans-serif;
       font-weight: bold;
       height: 52px;
-      .chevron {
-        transform: rotate(270deg);
+      .search {
+        fill: white;
+        width: 20px;
       }
     }
   }
