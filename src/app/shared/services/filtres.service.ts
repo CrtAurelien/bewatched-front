@@ -63,10 +63,6 @@ export class FiltresService {
         {
           nom: 'Quartz',
           estCoche: false
-        },
-        {
-          nom: '1987',
-          estCoche: false
         }
       ]
     }
