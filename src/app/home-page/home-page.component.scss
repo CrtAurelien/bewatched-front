@@ -12,6 +12,20 @@
     margin: auto;
     max-width: 1366px;
   }
+  .couture {
+    background-image: url('../../assets/coutures-brown.png');
+    background-repeat: repeat;
+    min-height: 7px;
+    border: 0 !important;
+    position: relative;
+    top: -30px;
+    @media screen and(min-width: $desktop-breakpoint) {
+      top:-100px;
+    }
+    @media screen and(min-width: $large-screen) {
+      top:-180px;
+    }
+  }
   .intro {
     width: 100%;
     padding-top: 32px;
