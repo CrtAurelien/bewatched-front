@@ -47,8 +47,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .theme-longine {
   nav {
-    background-image:none;
-    background: red;
+    .navbar-brand{
+      background-image:none !important;
+    }
+    background-image:none !important;
   }
 }
 

@@ -2,18 +2,34 @@
   padding: 0 0 0 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
 }
 
 .detail, .montre {
   flex:1;
 }
 
-.detail {
+.details {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0 0 0 50px;
+  align-items: flex-end;
+  padding-left: 50px;
+  .informations{
+    font-family: "Bebas Neue", sans-serif;
+    align-items: center;
+    justify-content: flex-start;
+    flex: auto;
+    gap: 15px;
+    margin-top: 25px;
+    padding-left: 20px;
+    span{
+      margin-left: 10px;
+      font-size: 18px;
+    }
+  }
   .logo {
+    display: flex;
+    align-items: center;
     img {
       width: 415px;
     }
