@@ -89,21 +89,21 @@ export class ShopService {
 
     {
       id: 11,
-      marque: 'omega 1',
+      marque: 'omega',
       modele: 'pr100 sport chic',
       year: 1976,
       prix: 1490
     },
     {
       id: 12,
-      marque: 'longines 1',
+      marque: 'longines',
       modele: 'pr100 sport chic',
       year: 1976,
       prix: 1490
     },
     {
       id: 13,
-      marque: 'omega 1',
+      marque: 'omega',
       modele: 'pr100 sport chic',
       year: 1976,
       prix: 1490
