@@ -19,9 +19,13 @@ export class DetailMontrePageComponent implements OnInit{
     const idMontre = this.route.snapshot.paramMap.get('montre');
     if(idMontre) {
       this.montre = this.shopService.getMontreById(idMontre);
-
       this.urlImageLogoMontre += this.montre?.marque.toLowerCase() + '-logo.png';
     }
+  }
+
+  ajouterMontre(montre: Montre) {
+    this.shopService.addToCart(montre);
+    /* this.montreIsAdd = !this.montreIsAdd */
   }
 
   ngAfterContentInit() {

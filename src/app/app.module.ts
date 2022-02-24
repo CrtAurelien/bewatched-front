@@ -25,6 +25,7 @@ import { FiltresDsktopComponent } from './shop/filtres-dsktop/filtres-dsktop.com
 import { FiltreItemDesktopComponent } from './shop/filtres-dsktop/filtre-item-desktop/filtre-item-desktop.component';
 import { DetailMontrePageComponent } from './detail-montre-page/detail-montre-page.component';
 import { RecapCommandeComponent } from './shop/recap-commande/recap-commande.component';
+import { MontreItemRecapComponent } from './shop/recap-commande/montre-item-recap/montre-item-recap.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { RecapCommandeComponent } from './shop/recap-commande/recap-commande.com
     FiltresDsktopComponent,
     FiltreItemDesktopComponent,
     DetailMontrePageComponent,
-    RecapCommandeComponent
+    RecapCommandeComponent,
+    MontreItemRecapComponent
   ],
   imports: [
     BrowserModule,
