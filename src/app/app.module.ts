@@ -26,6 +26,7 @@ import { FiltreItemDesktopComponent } from './shop/filtres-dsktop/filtre-item-de
 import { DetailMontrePageComponent } from './detail-montre-page/detail-montre-page.component';
 import { RecapCommandeComponent } from './shop/recap-commande/recap-commande.component';
 import { MontreItemRecapComponent } from './shop/recap-commande/montre-item-recap/montre-item-recap.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MontreItemRecapComponent } from './shop/recap-commande/montre-item-reca
     BrowserAnimationsModule,
     PopoverModule.forRoot(),
     MatCheckboxModule,
-    SwiperModule
+    SwiperModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

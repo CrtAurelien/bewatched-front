@@ -1,7 +1,17 @@
 export interface Montre {
   id : number;
+  description: string;
   marque: string;
-  modele: string;
+  model: string;
+  reference : string;
+  complication: string;
+  movement : any;
+  genre: string;
+  strap: string;
+  dimensions: string;
   year: number;
-  prix: number;
+  price: number;
+  case: string;
+  dial: string;
+  glass:string;
 }

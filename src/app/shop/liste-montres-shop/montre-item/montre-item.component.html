@@ -1,11 +1,11 @@
-<div class="montre flex-column d-flex" >
-  <div class="header d-flex align-items-center justify-content-center" (click)="navigateToDetailMontre()">
-    <img src="../../../../assets/watches/{{montre.marque}}.png" alt="">
+<div class="montre flex-column d-flex" (click)="navigateToDetailMontre()">
+  <div class="header d-flex align-items-center justify-content-center">
+    <img src="../../../../assets/watches/omega.png" alt="" class="">
   </div>
   <div class="informations d-flex flex-column align-items-center">
-    <span>{{montre.marque}}</span>
-    <span class="modele">{{montre.modele}}</span>
-    <span class="prix">{{montre.prix}} €</span>
+    <span>{{montre.model}}</span>
+    <span class="modele" *ngIf="montre.reference">{{montre.reference}}</span>
+    <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
     <button *ngIf="!montreIsAdd" type="button" class="btn btn-mobile" (click)="ajouterMontre(montre)">Ajouter au panier</button>
     <div class=" cart-button {{montreIsAdd ? 'clicked' : '' }}" *ngIf="montreIsAdd" >
       <span class="added">Ajouté</span>

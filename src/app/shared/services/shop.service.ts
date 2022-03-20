@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Montre} from "../../core/model/Montre.interface";
-import {BehaviorSubject, Subject} from "rxjs";
+import {BehaviorSubject, Observable, Subject, tap} from "rxjs";
 import {Filtre, FiltreObject} from "../../core/model/Filtre.interface";
 import {UtilsService} from "./utils.service";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -14,101 +15,9 @@ export class ShopService {
   badgeShopItemsSubject = new Subject<number>();
   montreWasDeleted = false;
   montreWasDeletedSubject = new Subject<boolean>();
-  allMontres : Montre[] = [
-    {
-      id: 1,
-      marque: 'omega',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 2,
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id:3,
-      marque: 'omega',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 4,
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 5,
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-
-    {
-      id: 6,
-      marque: 'omega',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 7,
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 8,
-      marque: 'omega',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 9,
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 10,
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-
-    {
-      id: 11,
-      marque: 'omega',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 12,
-      marque: 'longines',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    },
-    {
-      id: 13,
-      marque: 'omega',
-      modele: 'pr100 sport chic',
-      year: 1976,
-      prix: 1490
-    }
-  ];
+  urlMontres = "http://localhost:8888/bewatched/backend/public/api/watches"
+  urlDetailMontre = "http://localhost:8888/bewatched/backend/public/api/watch/"
+  allMontres : Montre[] = []
   theme = 'theme-default';
   themeSubject = new BehaviorSubject<string>('theme-default')
   searchInProgress: string = '';
@@ -118,7 +27,7 @@ export class ShopService {
   filtresActifs : string[] = [];
   resetAFilterSubject = new BehaviorSubject<any>('')
 
-  constructor(private utilService: UtilsService) { }
+  constructor(private utilService: UtilsService, private http: HttpClient) { }
 
   /**
    * Cette méthode ajouter au panier la montre passée en paramètre
@@ -134,21 +43,33 @@ export class ShopService {
   }
 
   removeToCart(montre: Montre) {
-    this.montreWasDeleted = true;
-    this.panier.splice(this.panier.indexOf(montre, 1))
-    this.badgeShopItems -= 1;
-    this.panierSubject.next(this.panier)
-    this.badgeShopItemsSubject.next(this.badgeShopItems)
-    this.montreWasDeletedSubject.next(this.montreWasDeleted);
+    if (this.badgeShopItems > 0){
+      // TODO verfier si la montre est déjà présente dans la panier
+      this.montreWasDeleted = true;
+      this.panier.splice(this.panier.indexOf(montre, 1))
+      this.badgeShopItems -= 1;
+      this.panierSubject.next(this.panier)
+      this.badgeShopItemsSubject.next(this.badgeShopItems)
+      this.montreWasDeletedSubject.next(this.montreWasDeleted);
+    }
   }
 
-  getAllMontres() : Montre[] {
-    return this.allMontres;
+  getAllMontres() : Observable<Montre[]>{
+    return this.http.get<Montre[]>(this.urlMontres);
   }
 
-  getMontreById(idMontre: any) : Montre {
-    return <Montre>this.allMontres.find(elm => elm.id === parseInt(idMontre));
+  checkIfMontreIsInCard(montre: Montre):boolean{
+    const isInCard = this.getPanierEnCours().find(elm => elm.id === montre.id)
+    return !!isInCard;
+
   }
+
+  getMontreById(id: any): Observable<Montre>{
+    const url = `${this.urlDetailMontre}${id}`;
+    return this.http.get<Montre>(url);
+  }
+
+
 
   switchTheme(marqueMontre: string) {
     switch (marqueMontre) {

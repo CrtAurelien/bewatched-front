@@ -10,7 +10,7 @@ import {Subject, takeUntil, tap} from "rxjs";
 })
 export class RecapCommandeComponent implements OnInit {
   panier : Montre[] = [];
-  ngUnsubscribe = new Subject();
+  ngUnsubscribed = new Subject();
 
   constructor(private shopService : ShopService) { }
 
@@ -19,8 +19,7 @@ export class RecapCommandeComponent implements OnInit {
     this.shopService.panierSubject.pipe(
       tap(data => {
         this.panier = data;
-      }), takeUntil(this.ngUnsubscribe)
+      }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
   }
-
 }

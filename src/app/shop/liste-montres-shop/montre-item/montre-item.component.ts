@@ -14,7 +14,8 @@ export class MontreItemComponent implements OnInit {
   @Input()
   montre!: Montre
   montreIsAdd = false;
-  ngUnsubscribed$ = new Subject()
+  montreIsDeleted = false;
+  ngUnsubscribed = new Subject()
 
 
   constructor(private shopService: ShopService, private router: Router) { }
@@ -23,9 +24,9 @@ export class MontreItemComponent implements OnInit {
     this.shopService.montreWasDeletedSubject.pipe(
       tap(data => {
         if(data) {
-          this.cheifIfMontreWasDeleted()
+          this.checkIfMontreWasDeleted()
         }
-      }), takeUntil(this.ngUnsubscribed$)
+      }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
   }
 
@@ -38,7 +39,7 @@ export class MontreItemComponent implements OnInit {
     this.router.navigate(['/detail', this.montre.id]);
   }
 
-  cheifIfMontreWasDeleted() {
+  checkIfMontreWasDeleted() {
     const isDeleted = this.shopService.getPanierEnCours().find(elm => elm === this.montre);
     if(!isDeleted) {
       this.montreIsAdd = false;

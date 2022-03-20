@@ -10,11 +10,11 @@ export class FiltresService {
       nom: 'Genre',
       values: [
         {
-          nom: 'Femme',
+          nom: 'Homme',
           estCoche: false
         },
         {
-          nom: 'Homme',
+          nom: 'Femme',
           estCoche: false
         }
       ]
@@ -37,18 +37,26 @@ export class FiltresService {
       ]
     },
     {
-      nom: 'Année',
+      nom: 'Années',
       values: [
         {
-          nom: '1969',
+          nom: '1950',
           estCoche: false
         },
         {
-          nom: '1976',
+          nom: '1960',
           estCoche: false
         },
         {
-          nom: '1987',
+          nom: '1970',
+          estCoche: false
+        },
+        {
+          nom: '1980',
+          estCoche: false
+        },
+        {
+          nom: '1990',
           estCoche: false
         }
       ]
@@ -57,7 +65,11 @@ export class FiltresService {
       nom: 'Mouvement',
       values: [
         {
-          nom: 'Mécanique',
+          nom: 'Automatique',
+          estCoche: false
+        },
+        {
+          nom: 'Manuel',
           estCoche: false
         },
         {

@@ -5,35 +5,38 @@
     </div>
     <div class="details">
       <div class="logo">
-        <img src="assets/logo-montres/{{urlImageLogoMontre}}" alt="Logo marque de la montre">
+        <img src="assets/logo-montres/omega-logo.png" alt="Logo marque de la montre">
       </div>
       <div class="modele d-flex">
-        <span class="ref"><a href="">{{montre.modele}}</a></span>
-        <span class="ref"><a href="">{{montre.year}}</a></span>
+        <span class="ref" *ngIf="montre.model"><a href="">{{montre.model}}</a></span>
+        <span class="ref" *ngIf="montre.year"><a href="">{{montre.year}}</a></span>
       </div>
       <div class="informations d-flex flex-wrap">
-        <div class="engrenange">
-          <img src="../../assets/icones/engrenage.svg" width="30" alt=""><span>MOUVEMENT : QUARTZ</span>
+        <div class="movement" *ngIf="montre.movement">
+          <img src="../../assets/icones/engrenage.svg" width="30" alt="">
+          <ng-container [ngSwitch]="montre.movement">
+            <span *ngSwitchCase="'manual'">MOUVEMENT : Manuel</span>
+            <span *ngSwitchCase="'automatic'">MOUVEMENT : Automatique</span>
+            <span *ngSwitchCase="'quartz'">MOUVEMENT : Quartz</span>
+          </ng-container>
         </div>
-        <div class="sexe">
-          <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>GENRE : HOMME</span>
+        <div class="sexe" *ngIf="montre.genre">
+          <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>GENRE : {{montre.genre}}</span>
         </div>
-        <div class="engrenange">
-          <img src="../../assets/icones/engrenage.svg" width="30" alt=""><span>MOUVEMENT : QUARTZ</span>
-        </div>
-        <div class="engrenange">
-          <img src="../../assets/icones/engrenage.svg" width="30" alt=""><span>MOUVEMENT : QUARTZ</span>
-        </div>
-        <div class="engrenange">
-          <img src="../../assets/icones/engrenage.svg" width="30" alt=""><span>MOUVEMENT : QUARTZ</span>
+        <div class="strap" *ngIf="montre.strap">
+          <img src="../../assets/icones/engrenage.svg" width="30" alt="">
+          <ng-container [ngSwitch]="montre.strap">
+            <span *ngSwitchCase="'cuir'">BRACELET : Cuir</span>
+            <span *ngSwitchCase="'synthetic'">BRACELET : Synthétique</span>
+          </ng-container>
         </div>
         <div class="description">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum eaque in iste nesciunt nulla quas sed. Aliquam delectus deleniti mollitia omnis pariatur qui repudiandae tempore? Adipisci atque deleniti facere officiis!
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci aut, eligendi enim, eos est excepturi illum molestias nemo nesciunt pariatur porro, possimus rem sint sunt vitae voluptates. At, delectus.</p>
+          <p>{{montre.description}}</p>
         </div>
       </div>
-      <button (click)="ajouterMontre(montre)" class="add-to-cart"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 209.1948 199.48004"><path d="M175.82573,36.20605h-21.6644a52.02806,52.02806,0,0,0-99.12786,0H33.36907A33.408,33.408,0,0,0,0,69.57518v96.53573A33.408,33.408,0,0,0,33.36907,199.48H175.82573a33.408,33.408,0,0,0,33.36907-33.36913V69.57518A33.408,33.408,0,0,0,175.82573,36.20605ZM104.5974,11.18429a40.90584,40.90584,0,0,1,37.65509,25.02176H66.94231A40.90584,40.90584,0,0,1,104.5974,11.18429Zm94.39278,154.92662a23.18651,23.18651,0,0,1-23.16445,23.16451H33.36907a23.18651,23.18651,0,0,1-23.16445-23.16451V69.57518A23.18651,23.18651,0,0,1,33.36907,46.41067H175.82573a23.18651,23.18651,0,0,1,23.16445,23.16451Z"/></svg>
-          Ajouter au panier
+      <button (click)="shopButton(montre)" class="add-to-cart" >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 209.1948 199.48004"><path d="M175.82573,36.20605h-21.6644a52.02806,52.02806,0,0,0-99.12786,0H33.36907A33.408,33.408,0,0,0,0,69.57518v96.53573A33.408,33.408,0,0,0,33.36907,199.48H175.82573a33.408,33.408,0,0,0,33.36907-33.36913V69.57518A33.408,33.408,0,0,0,175.82573,36.20605ZM104.5974,11.18429a40.90584,40.90584,0,0,1,37.65509,25.02176H66.94231A40.90584,40.90584,0,0,1,104.5974,11.18429Zm94.39278,154.92662a23.18651,23.18651,0,0,1-23.16445,23.16451H33.36907a23.18651,23.18651,0,0,1-23.16445-23.16451V69.57518A23.18651,23.18651,0,0,1,33.36907,46.41067H175.82573a23.18651,23.18651,0,0,1,23.16445,23.16451Z"/></svg>
+        {{textButton}}
       </button>
     </div>
   </div>

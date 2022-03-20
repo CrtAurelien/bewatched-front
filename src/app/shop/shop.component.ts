@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Montre} from "../core/model/Montre.interface";
 import {ShopService} from "../shared/services/shop.service";
-import {last, Subject, take, takeUntil, tap} from "rxjs";
+import {last, Observable, Subject, take, takeUntil, tap} from "rxjs";
 import {UtilsService} from "../shared/services/utils.service";
 import {FiltreObject} from "../core/model/Filtre.interface";
 @Component({
@@ -10,9 +10,9 @@ import {FiltreObject} from "../core/model/Filtre.interface";
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent implements OnInit {
-  listeMontres: Montre[] = []
+  listeMontres: Montre[] = [];
   nombreMontres = 0;
-  ngUnsubscribed$ = new Subject();
+  ngUnsubscribed = new Subject();
   finalListeMontre : any[] = [];
   listeSearchEnCours : Montre[] = []
 
@@ -21,25 +21,29 @@ export class ShopComponent implements OnInit {
 
   ngOnInit(): void {
     // On fait une copie de l'objet get par le service, car d'autre component travaillent avec cette liste
-    // Sans le JSON PARSE / STRINGIFY l'instance de l'objet est partagée partout.
-    this.listeMontres =  JSON.parse(JSON.stringify(this.shopService.getAllMontres()));
-    this.nombreMontres = this.listeMontres.length;
-    this.createListesMontre();
+    this.shopService.getAllMontres().pipe(
+      tap((data)  => {
+        this.listeMontres = data as Montre[]
+        this.nombreMontres = this.listeMontres.length;
+        this.createListesMontre();
+      }), takeUntil(this.ngUnsubscribed)
+    ).subscribe()
+
     this.shopService.searchingSubject.pipe(
       tap(data => {
         if(data !== '') {
-          console.log('on veut filtrer sur', data)
           this.searchByFilter(data);
         }
-      }), takeUntil(this.ngUnsubscribed$)
+      }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
+
+
     this.shopService.resetAFilterSubject.pipe(
       tap(data => {
         if(data !== '') {
-          console.log('on veut remove le filtre sur', data)
           this.removeFilter(data);
         }
-      }), takeUntil(this.ngUnsubscribed$)
+      }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
   }
 
@@ -100,9 +104,4 @@ export class ShopComponent implements OnInit {
       this.startSearching(allFiltreActifs, filtreObj.nom)
     }
   }
-
-
-
-
-
 }

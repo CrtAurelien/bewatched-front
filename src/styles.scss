@@ -3,6 +3,10 @@
 ::-webkit-scrollbar {
   display: none;
 }
+.bg-light {
+  --bs-bg-opacity: 0;
+  background-color: transparent!important;
+}
 body {
   @media screen and (min-width: $desktop-breakpoint) {
     background-image: url('assets/background-watches/bg-omega.png');
