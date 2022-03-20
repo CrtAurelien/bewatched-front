@@ -27,6 +27,9 @@ import { DetailMontrePageComponent } from './detail-montre-page/detail-montre-pa
 import { RecapCommandeComponent } from './shop/recap-commande/recap-commande.component';
 import { MontreItemRecapComponent } from './shop/recap-commande/montre-item-recap/montre-item-recap.component';
 import {HttpClientModule} from "@angular/common/http";
+import { CgvComponent } from './cgv/cgv.component';
+import { PrivacyPoliciesComponent } from './privacy-policies/privacy-policies.component';
+import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import {HttpClientModule} from "@angular/common/http";
     FiltreItemDesktopComponent,
     DetailMontrePageComponent,
     RecapCommandeComponent,
-    MontreItemRecapComponent
+    MontreItemRecapComponent,
+    CgvComponent,
+    PrivacyPoliciesComponent,
+    MentionsLegalesComponent
   ],
   imports: [
     BrowserModule,

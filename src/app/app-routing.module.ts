@@ -7,6 +7,9 @@ import {ContactComponent} from "./contact/contact.component";
 import {OurStoryComponent} from "./our-story/our-story.component";
 import {DetailMontrePageComponent} from "./detail-montre-page/detail-montre-page.component";
 import {RecapCommandeComponent} from "./shop/recap-commande/recap-commande.component";
+import {CgvComponent} from "./cgv/cgv.component";
+import {MentionsLegalesComponent} from "./mentions-legales/mentions-legales.component";
+import {PrivacyPoliciesComponent} from "./privacy-policies/privacy-policies.component";
 
 const routes: Routes = [
   {
@@ -24,6 +27,18 @@ const routes: Routes = [
       {
         path: 'our-story',
         component: OurStoryComponent
+      },
+      {
+        path: 'conditions-generales-vente',
+        component: CgvComponent
+      },
+      {
+        path: 'mentions-legales',
+        component: MentionsLegalesComponent
+      },
+      {
+        path: 'politique-de-confidentialite',
+        component: PrivacyPoliciesComponent
       },
       {
         path: 'contact',

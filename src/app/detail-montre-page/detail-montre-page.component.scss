@@ -7,7 +7,21 @@
   width: 100%;
   margin: auto;
 }
-
+.back-to-shop{
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  width: 240px;
+  justify-content: center;
+  padding: 10px 30px;
+  background-color: #432f2466;
+  border: none;
+  color: white;
+  margin-left: 40px;
+  margin-top: 30px;
+  font-family: "Louis George Cafe", sans-serif;
+  text-transform: uppercase;
+}
 .detail {
   flex:1;
 }
