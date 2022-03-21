@@ -8,10 +8,12 @@
     overflow: scroll;
     flex:1;
     z-index: 12;
-    display: grid;
-    grid-template-columns: 1fr;
     margin: auto;
     width: 100%;
+    @media screen and(min-width: $desktop-breakpoint) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
   }
   app-footer {
     position: relative;

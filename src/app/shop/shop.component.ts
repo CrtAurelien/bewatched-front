@@ -20,10 +20,10 @@ export class ShopComponent implements OnInit {
   constructor(private shopService: ShopService, private utilService: UtilsService) { }
 
   ngOnInit(): void {
-    // On fait une copie de l'objet get par le service, car d'autre component travaillent avec cette liste
     this.shopService.getAllMontres().pipe(
       tap((data)  => {
         this.listeMontres = data as Montre[]
+        this.shopService.allMontres = data;
         this.nombreMontres = this.listeMontres.length;
         this.createListesMontre();
       }), takeUntil(this.ngUnsubscribed)
