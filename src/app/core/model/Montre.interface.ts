@@ -1,7 +1,7 @@
 export interface Montre {
   id : number;
   description: string;
-  marque: string;
+  brand: Brand;
   model: string;
   reference : string;
   complication: string;
@@ -14,4 +14,8 @@ export interface Montre {
   case: string;
   dial: string;
   glass:string;
+}
+
+export interface Brand {
+  name: string
 }

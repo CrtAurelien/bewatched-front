@@ -15,9 +15,10 @@ export class ShopService {
   badgeShopItemsSubject = new Subject<number>();
   montreWasDeleted = false;
   montreWasDeletedSubject = new Subject<boolean>();
-  urlMontres = "http://localhost:8888/bewatched/backend/public/api/watches"
-  urlDetailMontre = "http://localhost:8888/bewatched/backend/public/api/watch/"
-  allMontres : Montre[] = []
+  urlMontres = "http://localhost:8888/bewatched/public/api/watches"
+  urlDetailMontre = "http://localhost:8888/bewatched/public/api/watch/"
+  allMontres : Montre[] = [];
+  montresSave: Montre[] = [];
   theme = 'theme-default';
   themeSubject = new BehaviorSubject<string>('theme-default')
   searchInProgress: string = '';

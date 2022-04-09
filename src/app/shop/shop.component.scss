@@ -3,6 +3,9 @@
   padding: 35px 0;
   z-index: 11;
   position: relative;
+  display: flex;
+  flex-direction: column;
+
   app-filtres-mobile {
     position: absolute;
     left: 0;
@@ -17,18 +20,18 @@
     display:none;
     @media screen and(min-width: $desktop-breakpoint) {
       display: block;
-      position: relative;
+      //position: relative;
       z-index: 1115;
       padding: 0 120px;
     }
   }
   .intro {
     padding: 60px 120px 10px;
-    position: fixed;
+   // position: fixed;
     z-index: 99;
   }
   .filters{
-    position: fixed;
+    //position: fixed;
     margin-top: 10px;
     z-index: 9999;
   }
@@ -44,6 +47,9 @@
       font-family: "Biko_Regular", sans-serif;
       font-size: 24.5px;
     }
+  }
+
+  .wrap-shop {
   }
 
 }

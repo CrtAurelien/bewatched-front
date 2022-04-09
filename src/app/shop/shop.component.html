@@ -1,4 +1,4 @@
-<div class="wrap">
+<div class="wrap ">
   <div class="intro">
     <ng-container *ngIf="nombreMontres >= 1">
       <span class="number">{{nombreMontres}}</span>
@@ -9,9 +9,12 @@
       <app-filtres-dsktop></app-filtres-dsktop>
     </div>
   </div>
-  <ng-container *ngFor="let listeMontre of finalListeMontre">
-    <div class="wrap-shop">
-    <app-liste-montres-shop [listeMontres]="listeMontre"></app-liste-montres-shop>
+  <div class="wrap-shop" *ngIf="!isLoading">
+    <ng-container *ngFor="let listeMontre of finalListeMontre">
+      <app-liste-montres-shop  [listeMontres]="listeMontre"></app-liste-montres-shop>
+    </ng-container>
+  </div>
+    <div class="wrap-shop" *ngIf="isLoading">
+        <app-liste-montres-shop ></app-liste-montres-shop>
     </div>
-  </ng-container>
 </div>

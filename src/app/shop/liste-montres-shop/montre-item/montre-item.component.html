@@ -3,7 +3,7 @@
     <img src="../../../../assets/watches/omega.png" alt="" class="">
   </div>
   <div class="informations d-flex flex-column align-items-center">
-    <span>{{montre.model}}</span>
+    <span>{{montre.brand.name}}</span>
     <span class="modele" *ngIf="montre.reference">{{montre.reference}}</span>
     <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
     <button *ngIf="!montreIsAdd" type="button" class="btn btn-mobile" (click)="ajouterMontre(montre)">Ajouter au panier</button>

@@ -7,19 +7,6 @@ import {Filtre} from "../../core/model/Filtre.interface";
 export class FiltresService {
   listeFiltres : Filtre[] = [
     {
-      nom: 'Genre',
-      values: [
-        {
-          nom: 'Homme',
-          estCoche: false
-        },
-        {
-          nom: 'Femme',
-          estCoche: false
-        }
-      ]
-    },
-    {
       nom: 'Marque',
       values: [
         {

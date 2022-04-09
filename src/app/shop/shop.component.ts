@@ -14,17 +14,19 @@ export class ShopComponent implements OnInit {
   nombreMontres = 0;
   ngUnsubscribed = new Subject();
   finalListeMontre : any[] = [];
-  listeSearchEnCours : Montre[] = []
-
+  listeSearchEnCours : Montre[] = [];
+  isLoading = false;
 
   constructor(private shopService: ShopService, private utilService: UtilsService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.shopService.getAllMontres().pipe(
       tap((data)  => {
-        this.listeMontres = data as Montre[]
+        this.listeMontres = [...data] as Montre[]
         this.shopService.allMontres = data;
         this.nombreMontres = this.listeMontres.length;
+        this.isLoading = false;
         this.createListesMontre();
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
@@ -66,7 +68,7 @@ export class ShopComponent implements OnInit {
   }
 
   reset() {
-    this.listeMontres =  JSON.parse(JSON.stringify(this.shopService.getAllMontres()));
+    this.listeMontres =  JSON.parse(JSON.stringify(this.shopService.allMontres));
     this.nombreMontres = this.listeMontres.length;
     this.finalListeMontre = [];
     this.createListesMontre();
@@ -75,12 +77,13 @@ export class ShopComponent implements OnInit {
   startSearching(filtre : any[], lastFilter : string) {
     let newListeMontre : Montre[] = [];
     // On recuperer dans une variable tmp la liste de toutes les montres
-    let allMontresDisponibles =  [...JSON.parse(JSON.stringify(this.shopService.getAllMontres()))];
+    let allMontresDisponibles =  [...JSON.parse(JSON.stringify(this.shopService.allMontres))];
     let resultatMarque : any[]= [];
     filtre.forEach(filter => {
       if(this.shopService.getCategorieFiltre(filter) === 'marque') {
         const filterFormate = this.utilService.removeDiacritics(filter).toLowerCase();
-        resultatMarque.push(allMontresDisponibles.filter(elm => this.utilService.removeDiacritics(elm.marque).toLowerCase().includes(filterFormate)))
+        console.log(allMontresDisponibles)
+        resultatMarque.push(allMontresDisponibles.filter(elm => this.utilService.removeDiacritics(elm.brand.name)?.toLowerCase().includes(filterFormate)))
       }
     })
     resultatMarque.forEach(listeresult => {

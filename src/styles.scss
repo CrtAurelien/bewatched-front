@@ -8,11 +8,6 @@
   background-color: transparent!important;
 }
 body {
-  @media screen and (min-width: $desktop-breakpoint) {
-    background-image: url('assets/background-watches/bg-omega.png');
-    background-size: contain;
-    background-position: center;
-  }
   background-image: url('assets/background-watches/bg-omega.png');
   background-position: center;
 }

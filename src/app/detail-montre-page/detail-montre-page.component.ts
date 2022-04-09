@@ -34,7 +34,7 @@ export class DetailMontrePageComponent implements OnInit{
         this.montre = data as Montre
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
-    this.urlImageLogoMontre += this.montre?.marque.toLowerCase() + '-logo.png';
+    this.urlImageLogoMontre += this.montre?.brand.name.toLowerCase() + '-logo.png';
     this.montreIsInCard = this.shopService.checkIfMontreIsInCard(this.montre);
     this.shopService.montreWasDeletedSubject.pipe(
       tap(data => {

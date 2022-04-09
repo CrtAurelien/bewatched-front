@@ -16,6 +16,8 @@ export class MontreItemComponent implements OnInit {
   montreIsAdd = false;
   montreIsDeleted = false;
   ngUnsubscribed = new Subject()
+  @Input()
+  loadingMode!: boolean;
 
 
   constructor(private shopService: ShopService, private router: Router) { }
