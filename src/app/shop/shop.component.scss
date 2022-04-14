@@ -1,4 +1,7 @@
 @import "../../variable";
+:host(app-shop){
+  width: 100%;
+}
 .wrap {
   padding: 35px 0;
   z-index: 11;
@@ -53,7 +56,4 @@
   }
 
 }
-
-
-
 
