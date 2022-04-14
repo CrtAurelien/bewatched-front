@@ -1,6 +1,9 @@
 @import "../../variable";
 :host{
-  width: 100%;
+  @media screen and(min-width: $desktop-breakpoint) {
+    width: 100%;
+  }
+
 }
 .main-wrap{
   display: flex;
@@ -13,10 +16,13 @@
   @media screen and(min-width: $desktop-breakpoint) {
     flex-direction: row;
   }
+  .montre{
+     width: 100%;
+  }
 }
 
 .swiper {
-  max-width:500px;
+  max-width:650px;
   justify-content: center !important;
   align-items: center !important;
 }
