@@ -16,6 +16,9 @@
   @media screen and(min-width: $desktop-breakpoint) {
     flex-direction: row;
   }
+  .montre{
+     width: 100%;
+  }
 }
 
 .swiper {
