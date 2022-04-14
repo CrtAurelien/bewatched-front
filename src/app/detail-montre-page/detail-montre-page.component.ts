@@ -5,13 +5,14 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
-  OnInit
+  OnInit, ViewChild
 } from '@angular/core';
 import {Location} from "@angular/common";
 import {Montre} from "../core/model/Montre.interface";
 import {ActivatedRoute} from "@angular/router";
 import {ShopService} from "../shared/services/shop.service";
 import {Subject, takeUntil, tap} from "rxjs";
+import {SwiperComponent} from "swiper/angular";
 
 @Component({
   selector: 'app-detail-montre-page',
@@ -25,8 +26,17 @@ export class DetailMontrePageComponent implements OnInit{
   montreIsDeleted = false;
   textButton = "Ajouter au panier";
   ngUnsubscribed = new Subject();
-  idMontre = this.route.snapshot.paramMap.get('montre')
+  idMontre = this.route.snapshot.paramMap.get('montre');
+  @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
   constructor(private route: ActivatedRoute, private shopService: ShopService, private cd:ChangeDetectorRef) { }
+
+
+  slideNext(){
+    this.swiper?.swiperRef.slideNext(100);
+  }
+  slidePrev(){
+    this.swiper?.swiperRef.slidePrev(100);
+  }
 
   ngOnInit(): void {
     this.shopService.getMontreById(this.idMontre).pipe(

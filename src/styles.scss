@@ -72,3 +72,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .theme-tissot {
 
 }
+
+.montre {
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
