@@ -1,4 +1,8 @@
 @import "../../../variable";
+:host{
+  width: 100%;
+}
+
 .our-story-title{
   display: flex;
   justify-content: center;

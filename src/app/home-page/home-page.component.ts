@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {UtilsService} from "../shared/services/utils.service";
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +11,10 @@ export class HomePageComponent implements OnInit {
   clickGoToShop = false;
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private utilService: UtilsService) {
+    utilService.setActiveFlexSubject(true)
+
+  }
 
   ngOnInit(): void {
     const btnDesktop = document.getElementById('btn-desktop');

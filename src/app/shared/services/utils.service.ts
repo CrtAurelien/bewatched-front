@@ -1,11 +1,20 @@
 import { Injectable } from '@angular/core';
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilsService {
 
+  activeFlex = true;
+  activeFlexSubject = new BehaviorSubject<boolean>(true)
+
   constructor() { }
+
+  setActiveFlexSubject(value:boolean){
+    this.activeFlex = value
+    this.activeFlexSubject.next(this.activeFlex)
+  }
 
   /**
    * Méthode permettant de supprimer les accents d'une string
