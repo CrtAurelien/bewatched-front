@@ -9,6 +9,15 @@
     <ng-container *ngFor="let montre of panier">
       <app-montre-item-recap [montre]="montre"></app-montre-item-recap>
     </ng-container>
+    <div class="total d-flex justify-content-end">
+      TOTAL PANIER
+    </div>
+    <div class="checkbox d-flex justify-content-end">
+      CHECKBOX LEGALE
+    </div>
+    <div class="button d-flex justify-content-end">
+      <button  type="button" class="btn btn-mobile" (click)="redirectToLivraison()" >Continuer</button>
+    </div>
   </div>
 </div>
 

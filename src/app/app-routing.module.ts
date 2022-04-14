@@ -10,6 +10,7 @@ import {RecapCommandeComponent} from "./shop/recap-commande/recap-commande.compo
 import {CgvComponent} from "./cgv/cgv.component";
 import {MentionsLegalesComponent} from "./mentions-legales/mentions-legales.component";
 import {PrivacyPoliciesComponent} from "./privacy-policies/privacy-policies.component";
+import {LivraisonComponent} from "./livraison/livraison.component";
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
       {
         path: 'recapitulatif-panier',
         component: RecapCommandeComponent
+      },
+      {
+        path: 'commande',
+        component: LivraisonComponent
       }
     ]
   }

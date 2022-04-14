@@ -3,6 +3,7 @@ import {Montre} from "../../core/model/Montre.interface";
 import {ShopService} from "../../shared/services/shop.service";
 import {Subject, takeUntil, tap} from "rxjs";
 import {UtilsService} from "../../shared/services/utils.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-recap-commande',
@@ -13,7 +14,7 @@ export class RecapCommandeComponent implements OnInit {
   panier : Montre[] = [];
   ngUnsubscribed = new Subject();
 
-  constructor(private shopService : ShopService, private utilService : UtilsService) {
+  constructor(private shopService : ShopService, private utilService : UtilsService, private router: Router) {
     utilService.setActiveFlexSubject(false);
   }
 
@@ -25,4 +26,9 @@ export class RecapCommandeComponent implements OnInit {
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
   }
+
+  redirectToLivraison() {
+    this.router.navigate(['commande'])
+  }
+
 }
