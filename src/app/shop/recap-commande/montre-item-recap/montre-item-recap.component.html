@@ -1,12 +1,20 @@
 <div class="wrapper d-flex">
-  <div class="image">IMAGE</div>
-  <div class="infos d-flex flex-column">
+  <div class="image">
+    <img src="{{montre.photos[0]?.path}}" alt="">
+  </div>
+  <div class="infos d-flex flex-column justify-content-center ">
     <span>{{montre.brand.name}}</span>
-    <span>modele</span>
-    <span>infos livraisons</span>
+    <span class="modele">{{montre.model}}</span>
+    <span class="info">
+      Expédition sous 24h <br>
+      Garantie 6 mois <br>
+      Retour gratuit (30j)
+    </span>
   </div>
   <div class="tarifs">
-    tarif
+    {{montre.price}}€
   </div>
-  <div class="delete-btn">SUPPRIMER</div>
+  <div class="delete-btn">
+    <button  type="button" class="btn btn-mobile" >Supprimer</button>
+  </div>
 </div>

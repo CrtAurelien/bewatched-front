@@ -10,10 +10,10 @@
       <app-montre-item-recap [montre]="montre"></app-montre-item-recap>
     </ng-container>
     <div class="total d-flex justify-content-end">
-      TOTAL PANIER
+      Total de votre panier : {{totalPanier}}€
     </div>
     <div class="checkbox d-flex justify-content-end">
-      CHECKBOX LEGALE
+      <span>En cliquant sur Continuer, vous acceptez les Conditions Générales de Vente</span>
     </div>
     <div class="button d-flex justify-content-end">
       <button  type="button" class="btn btn-mobile" (click)="redirectToLivraison()" >Continuer</button>

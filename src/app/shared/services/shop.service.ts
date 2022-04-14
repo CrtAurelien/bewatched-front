@@ -10,7 +10,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ShopService {
   panier: Montre[] = [];
-  panierSubject = new Subject<Montre[]>()
+  panierSubject = new BehaviorSubject<Montre[]>(this.panier)
   badgeShopItems = 0;
   badgeShopItemsSubject = new Subject<number>();
   montreWasDeleted = false;

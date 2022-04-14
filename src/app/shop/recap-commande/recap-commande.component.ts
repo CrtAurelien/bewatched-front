@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {Montre} from "../../core/model/Montre.interface";
 import {ShopService} from "../../shared/services/shop.service";
 import {Subject, takeUntil, tap} from "rxjs";
@@ -13,6 +13,7 @@ import {Router} from "@angular/router";
 export class RecapCommandeComponent implements OnInit {
   panier : Montre[] = [];
   ngUnsubscribed = new Subject();
+  totalPanier! :number;
 
   constructor(private shopService : ShopService, private utilService : UtilsService, private router: Router) {
     utilService.setActiveFlexSubject(false);
@@ -22,13 +23,26 @@ export class RecapCommandeComponent implements OnInit {
     this.panier = this.shopService.getPanierEnCours()
     this.shopService.panierSubject.pipe(
       tap(data => {
-        this.panier = data;
+        if(data.length > 0) {
+          this.panier = data;
+          console.log(data);
+          this.calculerTotalPanier();
+        }
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
   }
 
+
+
   redirectToLivraison() {
     this.router.navigate(['commande'])
+  }
+
+  calculerTotalPanier() {
+    this.panier.forEach(montre => {
+      this.totalPanier = parseInt(montre.price)
+      console.log("total :", this.totalPanier)
+    })
   }
 
 }
