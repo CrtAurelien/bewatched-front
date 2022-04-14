@@ -1,5 +1,7 @@
 @import "../../../variable";
-
+:host{
+  width: 700px;
+}
 .wrapper {
   display: flex;
   width: 500px;
