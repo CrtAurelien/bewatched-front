@@ -5,10 +5,12 @@
   height: 100vh;
   justify-content: space-between;
   .main-wrapper-dynamique {
+    display: flex;
     flex:1;
     z-index: 12;
     margin: auto;
     width: 100%;
+    align-items: center;
   }
   app-footer {
     position: relative;
