@@ -1,0 +1,55 @@
+@import "../../variable";
+
+:host{
+  width: 100%;
+}
+
+.our-story-title{
+  display: flex;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  @media screen and (min-width: $desktop-breakpoint){
+    font-size: 70px;
+  }
+}
+.coutures{
+  background-image: url("../../assets/coutures-brown.png");
+  height: 7px;
+  margin-bottom: 65px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 40%;
+  margin:auto;
+  form {
+    width: 100%;
+    .form-control {
+      background: rgba(255,255,255, 0.3);
+      border: 0 !important;
+      border-radius: 50px;
+      font-size: 16px;
+      margin: 10px 0;
+      color:#272727;
+      box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 18%);
+      font-family: "Louis George Cafe", sans-serif;
+      font-weight: bold;
+    }
+  }
+  .total, .paiement {
+    width: 100%;
+  }
+}
+
+.flex-one {
+  flex:1;
+}
+
+.flex-one + .flex-one {
+  margin-left:20px;
+}
+
+

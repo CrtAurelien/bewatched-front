@@ -1,0 +1,52 @@
+<h1 class="our-story-title">
+  <span style="color: #37251d;">Informations de</span>&nbsp;
+  <span style="color: #553d33;">livraison</span>
+</h1>
+<div class="coutures"></div>
+
+<div class="form">
+  <form class="d-flex flex-column">
+    <div class="identite d-flex justify-content-between">
+      <div class="input-nom flex-one">
+        <input type="text" class="form-control" placeholder="Nom" required>
+      </div>
+      <div class="input-prenom flex-one">
+        <input type="text" class="form-control" placeholder="Prénom" required>
+      </div>
+    </div>
+    <div class="adresse-top d-flex justify-content-between">
+      <div class="input-rue flex-one">
+        <input type="text" class="form-control" placeholder="Numéro et nom de la rue" required>
+      </div>
+      <div class="input-apt flex-one">
+        <input type="text" class="form-control" placeholder="N° d'apt, étage, code (facultatif)" >
+      </div>
+    </div>
+    <div class="info-supp">
+      <input type="email" class="form-control" placeholder="Informations complémentaires (facultatif)" required>
+    </div>
+    <div class="adresse-bottom d-flex justify-content-between">
+      <div class="input-cp flex-one">
+        <input type="number" class="form-control" placeholder="Code postal" required>
+      </div>
+      <div class="input-ville flex-one">
+        <input type="text" class="form-control" placeholder="Ville" required>
+      </div>
+    </div>
+    <div class="input-pays">
+      <input type="text" class="form-control" placeholder="Pays" required>
+    </div>
+    <div class="coordonnee d-flex justify-content-between">
+      <div class="input-mail flex-one">
+        <input type="email" class="form-control" placeholder="Adresse email" required>
+      </div>
+      <div class="input-tel flex-one">
+        <input type="number" class="form-control" placeholder="Numéro de téléphone" required>
+      </div>
+    </div>
+  </form>
+  <div class="total d-flex justify-content-end">TOTAL COMMANDE</div>
+  <div class="paiement d-flex justify-content-end">
+    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+  </div>
+</div>
