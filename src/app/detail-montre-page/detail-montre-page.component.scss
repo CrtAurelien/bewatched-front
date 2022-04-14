@@ -77,6 +77,7 @@
   height: 45px;
   padding: 5px 30px;
   background-color: #432f2466;
+  margin-left: auto;
   border: none;
   color: white;
   margin-top: 30px;
@@ -102,7 +103,7 @@
   position: relative;
   inset: auto;
   @media screen and(min-width: $desktop-breakpoint) {
-    max-width: 600px;
+    width: 100%;
     align-items: flex-end;
   }
   .informations{
