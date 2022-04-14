@@ -14,6 +14,7 @@ export interface Montre {
   case: string;
   dial: string;
   glass:string;
+  photos: any;
 }
 
 export interface Brand {

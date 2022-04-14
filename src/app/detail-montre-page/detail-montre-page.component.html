@@ -2,7 +2,22 @@
   <a [routerLink]="['/shop']" class="back-to-shop">Retour à la boutique</a>
   <div class="main-wrap ">
     <div class="montre">
-      <app-montre-detail-image></app-montre-detail-image>
+
+
+        <!--<ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>-->
+
+      <swiper [navigation]="true" class="swiper">
+        <ng-template swiperSlide>Slide 1</ng-template
+        ><ng-template swiperSlide>Slide 2</ng-template
+      ><ng-template swiperSlide>Slide 3</ng-template
+      ><ng-template swiperSlide>Slide 4</ng-template
+      ><ng-template swiperSlide>Slide 5</ng-template
+      ><ng-template swiperSlide>Slide 6</ng-template
+      ><ng-template swiperSlide>Slide 7</ng-template
+      ><ng-template swiperSlide>Slide 8</ng-template
+      ><ng-template swiperSlide>Slide 9</ng-template>
+      </swiper>
+
     </div>
     <div class="details">
       <div class="logo">

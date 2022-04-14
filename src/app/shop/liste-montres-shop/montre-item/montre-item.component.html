@@ -3,9 +3,14 @@
     <img src="../../../../assets/watches/omega.png" alt="" class="">
   </div>
   <div class="informations d-flex flex-column align-items-center">
-    <span>{{montre.brand.name}}</span>
-    <span class="modele" *ngIf="montre.reference">{{montre.reference}}</span>
-    <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
+    <div class="d-flex ">
+      <div class="info d-flex flex-column">
+        <span>{{montre.brand.name}}</span>
+        <span class="modele" *ngIf="montre.reference">{{montre.reference}}</span>
+      </div>
+      <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
+    </div>
+
     <button *ngIf="!montreIsAdd" type="button" class="btn btn-mobile" (click)="ajouterMontre(montre)">Ajouter au panier</button>
     <div class=" cart-button {{montreIsAdd ? 'clicked' : '' }}" *ngIf="montreIsAdd" >
       <span class="added">Ajouté</span>

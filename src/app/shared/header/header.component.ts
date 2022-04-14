@@ -79,4 +79,8 @@ export class HeaderComponent implements OnInit {
     this.searchString = event.target.value;
     this.searchResult = this.shopService.generalSearch(this.searchString, this.allMontresForSearch);
   }
+
+  redirectHome() {
+    this.router.navigate(['/']);
+  }
 }

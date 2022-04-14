@@ -10,7 +10,6 @@ export class ListeMontresShopComponent implements OnInit {
   @Input()
   listeMontres!: Montre[]
 
-
   constructor() { }
 
   ngOnInit(): void {

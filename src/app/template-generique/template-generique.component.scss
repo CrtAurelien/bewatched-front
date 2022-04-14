@@ -9,10 +9,6 @@
     z-index: 12;
     margin: auto;
     width: 100%;
-    @media screen and(min-width: $desktop-breakpoint) {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
   }
   app-footer {
     position: relative;

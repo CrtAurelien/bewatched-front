@@ -1,6 +1,6 @@
 <nav class="navbar {{showBurgerMenu ? 'open' : ''}}" >
   <div class="container-fluid">
-    <a class="navbar-brand {{showBurgerMenu ? 'menu-open' : ''}}" href="#">
+    <span class="navbar-brand {{showBurgerMenu ? 'menu-open' : ''}}" (click)="redirectHome()">
       <h1>
         <span>be</span>
         <span>watched</span>
@@ -8,19 +8,8 @@
       <div>
         <small>La passion du vintage</small>
       </div>
-
-    </a>
+    </span>
     <div class="navbar-text nav-wrap d-flex justify-content-center align-items-start icons">
-      <!--<span class="navbar-text search">
-        <input type="text" (keyup)="search($event)" placeholder="Recherchez une montre, un modèle..." class="form-control {{showBurgerMenu ? 'menu-open' : ''}}">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="22" height="19" viewBox="0 0 212.955 209">
-        <g id="Calque_2" data-name="Calque 2">
-          <g id="Calque_1-2" data-name="Calque 1">
-            <path d="M143.455,0a69.4935,69.4935,0,0,0-57.35,108.75L2.925,191.93a9.9985,9.9985,0,1,0,14.14,14.14l82.6-82.6A69.50021,69.50021,0,1,0,143.455,0Zm0,128a58.36161,58.36161,0,0,1-35.97-12.35,59.08279,59.08279,0,0,1-7.34-6.8A58.51543,58.51543,0,1,1,143.455,128Z"/>
-          </g>
-        </g>
-      </svg>
-      </span>-->
       <span class="navbar-text search {{searchString !== '' ? 'border-search' : ''}}">
         <div class="input">
           <input type="text" (keyup)="search($event)" placeholder="Recherchez une montre, un modèle..." class="form-control {{showBurgerMenu ? 'menu-open' : ''}}">

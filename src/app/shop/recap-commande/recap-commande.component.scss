@@ -1,0 +1,25 @@
+@import "../../../variable";
+.our-story-title{
+  display: flex;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  @media screen and (min-width: $desktop-breakpoint){
+    font-size: 70px;
+  }
+}
+.coutures{
+  background-image: url("../../../assets/coutures-brown.png");
+  height: 7px;
+  margin-bottom: 65px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .container {
+    max-width: 530px;
+  }
+}
+
