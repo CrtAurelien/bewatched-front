@@ -11,6 +11,12 @@
     width: 100%;
     align-items: center;
   }
+  .flex{
+      display: block;
+    @media screen and(min-width: $desktop-breakpoint) {
+      display: flex;
+    }
+  }
   app-footer {
     position: relative;
     z-index: 113;

@@ -1,12 +1,15 @@
 @import "../../../variable";
 .wrapper {
-  display: flex;
+  flex: 1;
   justify-content: space-between;
   padding: 63px 0 20px;
   gap: 20px;
   top:80px;
   position: relative;
-  .wrapper-montres {
+  @media screen and(min-width: $desktop-breakpoint) {
+    display: flex;
+  }
+    .wrapper-montres {
     gap: 20px;
     background-image: url('../../../assets/bg-shop-list.png');
     background-repeat-y: no-repeat;
