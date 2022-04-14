@@ -165,9 +165,9 @@ nav {
           }
         }
         .search {
-          input {
             width: 360px;
             display: flex;
+            flex-direction: column;
             background: rgba(255,255,255, 0.3);
             border: 0;
             box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
@@ -175,12 +175,23 @@ nav {
             border-radius: 50px;
             color: #593c30;
             line-height: 1;
-            transition: 0.3s ease-out;
             min-height: 60px;
+            &.border-search {
+              border-radius: 30px;
+            }
+            input {
+              display: flex;
+              transition: 0.3s ease-out;
+              background: transparent !important;
+              outline: 0 !important;
+              box-shadow: none !important;
+              border:0;
+              padding: 0;
+            }
             &.menu-open {
               color:white;
             }
-          }
+
           input.form-control::placeholder {
             color: #593c30;
           }

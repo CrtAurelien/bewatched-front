@@ -1,7 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {BurgerService} from "../services/burger-service.service";
 import {ShopService} from "../services/shop.service";
-import {Subject, takeUntil, tap} from "rxjs";
+import {Subject, take, takeUntil, tap} from "rxjs";
 import {Montre} from "../../core/model/Montre.interface";
 import {Router} from "@angular/router";
 
@@ -17,6 +17,9 @@ export class HeaderComponent implements OnInit {
   badgePanier = 0;
   panier: Montre[] = [];
   pop: any;
+  searchString = '';
+  allMontresForSearch: Montre[] = [];
+  searchResult: Montre[] = [];
   constructor(private burgerService: BurgerService, private shopService: ShopService, private router: Router) { }
 
 
@@ -31,6 +34,15 @@ export class HeaderComponent implements OnInit {
         this.panier = data;
       }), takeUntil(this.ngUnsubscribe$)
     ).subscribe()
+    if(this.shopService.allMontres.length > 0) {
+      this.allMontresForSearch = this.shopService.allMontres;
+    } else {
+      this.shopService.getAllMontres().pipe(
+        tap(data => {
+          this.allMontresForSearch = data;
+        }), takeUntil(this.ngUnsubscribe$)
+      ).subscribe()
+    }
   }
 
   toggleBurgerMenu() {
@@ -59,5 +71,12 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  search(event: any) {}
+  /**
+   * Methode qui lance la recherche globale
+   * @param event
+   */
+  search(event: any) {
+    this.searchString = event.target.value;
+    this.searchResult = this.shopService.generalSearch(this.searchString, this.allMontresForSearch);
+  }
 }

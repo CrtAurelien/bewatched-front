@@ -127,5 +127,12 @@ export class ShopService {
   }
 
 
+  generalSearch(stringSearch: string, listeMontre: Montre[]): Montre[] {
+    const filterByName = [...listeMontre.filter(elm => this.utilService.removeDiacritics(elm.model).toLowerCase().includes(stringSearch))];
+    const filterByBrand = [...listeMontre.filter(elm => this.utilService.removeDiacritics(elm.brand.name).toLowerCase().includes(stringSearch))];
+    const searchResult = [...new Set([...filterByName ,...filterByBrand])]
+    return searchResult
+  }
+
 
   }
