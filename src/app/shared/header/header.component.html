@@ -1,10 +1,12 @@
 <nav class="navbar {{showBurgerMenu ? 'open' : ''}}" >
   <div class="container-fluid">
     <span class="navbar-brand {{showBurgerMenu ? 'menu-open' : ''}}" (click)="redirectHome()">
-      <h1>
-        <span>be</span>
-        <span>watched</span>
-      </h1>
+      <a routerLink="/">
+        <h1>
+          <span>be</span>
+          <span>watched</span>
+        </h1>
+      </a>
       <div>
         <small>La passion du vintage</small>
       </div>

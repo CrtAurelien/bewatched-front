@@ -36,11 +36,20 @@
 }
 
 .checkbox {
+  display: flex;
+  justify-content: flex-end;
   span {
+    display: flex;
+    align-items: center;
     color: #1e1d23;
     font-family: "Louis George Cafe", sans-serif;
-    font-size: 14px;
+    font-size: 1em;
     margin: 50px 0 50px 0;
+    input[type="checkbox"]{
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
   }
 }
 

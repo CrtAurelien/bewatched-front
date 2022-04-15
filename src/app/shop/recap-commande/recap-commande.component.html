@@ -12,8 +12,9 @@
     <div class="total d-flex justify-content-end">
       Total de votre panier : {{totalPanier}}€
     </div>
-    <div class="checkbox d-flex justify-content-end">
-      <span>En cliquant sur Continuer, vous acceptez les Conditions Générales de Vente</span>
+    <div class="checkbox">
+      <span>
+        <input type="checkbox" required> En cliquant sur Continuer, vous acceptez les Conditions Générales de Vente</span>
     </div>
     <div class="button d-flex justify-content-end">
       <button  type="button" class="btn btn-mobile" (click)="redirectToLivraison()" >Continuer</button>

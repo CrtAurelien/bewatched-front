@@ -30,7 +30,6 @@ import {HttpClientModule} from "@angular/common/http";
 import { CgvComponent } from './cgv/cgv.component';
 import { PrivacyPoliciesComponent } from './privacy-policies/privacy-policies.component';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
-import { LivraisonComponent } from './livraison/livraison.component';
 import {NgxPayPalModule} from "ngx-paypal";
 
 @NgModule({
@@ -58,7 +57,6 @@ import {NgxPayPalModule} from "ngx-paypal";
     CgvComponent,
     PrivacyPoliciesComponent,
     MentionsLegalesComponent,
-    LivraisonComponent
   ],
   imports: [
     BrowserModule,
