@@ -12,9 +12,14 @@
     align-items: center;
   }
   .flex{
-      display: block;
+    display: block;
+    background-image: url(../../assets/background-watches/bg-omega.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     @media screen and(min-width: $desktop-breakpoint) {
       display: flex;
+      background: none;
     }
   }
   app-footer {

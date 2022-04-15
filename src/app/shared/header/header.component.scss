@@ -412,6 +412,10 @@ nav {
     list-style: none;
     padding-top: 52px;
     padding-bottom: 52px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
 
     li {
       text-transform: uppercase;

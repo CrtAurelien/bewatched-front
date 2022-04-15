@@ -11,10 +11,12 @@
   z-index: 120;
   bottom: 0;
   width: 100%;
-  right: 30px;
+  right: 0;
   justify-content: center;
   min-height: 75px;
-  padding: 0 30px;
+  left: 0;
+  position: fixed;
+  padding: 0 50px;
 }
 
 .content-footer {
