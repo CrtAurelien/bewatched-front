@@ -31,6 +31,7 @@ import { CgvComponent } from './cgv/cgv.component';
 import { PrivacyPoliciesComponent } from './privacy-policies/privacy-policies.component';
 import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.component';
 import {NgxPayPalModule} from "ngx-paypal";
+import {LivraisonComponent} from "./livraison/livraison.component";
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import {NgxPayPalModule} from "ngx-paypal";
     CgvComponent,
     PrivacyPoliciesComponent,
     MentionsLegalesComponent,
+    LivraisonComponent
   ],
   imports: [
     BrowserModule,
