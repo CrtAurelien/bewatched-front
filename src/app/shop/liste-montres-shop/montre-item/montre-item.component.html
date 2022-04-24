@@ -3,10 +3,11 @@
     <img src="../../../../assets/watches/omega.png" alt="" class="">
   </div>
   <div class="informations d-flex flex-column align-items-center">
-    <div class="d-flex ">
+    <div><img src="assets/logo-montres/omega-logo.png" class="marque" alt="Logo marque de la montre"></div>
+
+    <div class="d-flex content ">
       <div class="info d-flex flex-column">
-        <span>{{montre.brand.name}}</span>
-        <span class="modele" *ngIf="montre.reference">{{montre.reference}}</span>
+        <div><span class="modele" *ngIf="montre.reference">{{montre.reference}}</span></div>
       </div>
       <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
     </div>

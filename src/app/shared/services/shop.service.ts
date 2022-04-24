@@ -15,8 +15,8 @@ export class ShopService {
   badgeShopItemsSubject = new Subject<number>();
   montreWasDeleted = false;
   montreWasDeletedSubject = new Subject<boolean>();
-  urlMontres = "http://localhost:8888/bewatched/backend/public/api/watches"
-  urlDetailMontre = "http://localhost:8888/bewatched/backend/public/api/watch/"
+  urlMontres = "http://localhost:8888/bewatched/public/api/watches"
+  urlDetailMontre = "http://localhost:8888/bewatched/public/api/watch/"
   allMontres : Montre[] = [];
   montresSave: Montre[] = [];
   theme = 'theme-default';
@@ -62,15 +62,12 @@ export class ShopService {
   checkIfMontreIsInCard(montre: Montre):boolean{
     const isInCard = this.getPanierEnCours().find(elm => elm.id === montre.id)
     return !!isInCard;
-
   }
 
   getMontreById(id: any): Observable<Montre>{
     const url = `${this.urlDetailMontre}${id}`;
     return this.http.get<Montre>(url);
   }
-
-
 
   switchTheme(marqueMontre: string) {
     switch (marqueMontre) {
@@ -92,7 +89,6 @@ export class ShopService {
   getPanierEnCours() : Montre[] {
     return this.panier
   }
-
 
   prevenirChangementTheme(theme: string) {
     this.theme = theme;

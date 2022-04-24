@@ -111,13 +111,13 @@
     align-items: center;
     justify-content: flex-start;
     gap: 30px;
-
     column-gap: 40px;
     margin-top: 40px;
     padding: 0 40px;
     line-height: 0;
     @media screen and(min-width: $desktop-breakpoint) {
       max-width: 720px;
+      margin-top: 10px;
       margin-right: 30px;
       padding: 0 0 0 20px;
     }
@@ -165,4 +165,12 @@
       padding: 5px 20px;
     }
   }
+}
+
+.details-montre {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
 }

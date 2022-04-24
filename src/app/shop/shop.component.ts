@@ -50,11 +50,14 @@ export class ShopComponent implements OnInit {
   }
 
   createListesMontre() {
-    const nbBoucle = (this.listeMontres.length + 1) / 5;
+    const nbBoucle = Math.round((this.listeMontres.length + 1) / 5);
+    console.log(nbBoucle)
     for(let i = 0; i < nbBoucle; i++) {
+      console.log('on boucle')
       const sousListe = this.listeMontres.splice(0, 5);
       this.finalListeMontre.push(sousListe);
     }
+    console.log(this.finalListeMontre)
   }
 
 

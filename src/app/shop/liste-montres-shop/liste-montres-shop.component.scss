@@ -23,13 +23,11 @@
   }
   .sub-wrap {
     justify-content: center;
-    gap: 70px;
+    //gap: 70px;
     @media screen and(min-width: $desktop-breakpoint) {
       flex: 1;
       width: 100%;
-      align-items: center;
-      gap: 170px;
-      justify-content: flex-start;
+      justify-content: space-between;
     }
   }
 
