@@ -67,10 +67,10 @@
 
       </div>
       <ul *ngIf="showBurgerMenu" class="desktop-menu">
-        <li><a routerLink="">Accueil</a></li>
-        <li><a routerLink="shop">La<br>boutique</a></li>
-        <li><a routerLink="our-story">Notre<br>histoire</a></li>
-        <li><a routerLink="contact">Contact</a></li>
+        <li><a routerLink="" (click)="toggleBurgerMenu()">Accueil</a></li>
+        <li><a routerLink="shop" (click)="toggleBurgerMenu()">La<br>boutique</a></li>
+        <li><a routerLink="our-story" (click)="toggleBurgerMenu()">Notre<br>histoire</a></li>
+        <li><a routerLink="contact" (click)="toggleBurgerMenu()">Contact</a></li>
       </ul>
     </div>
 
