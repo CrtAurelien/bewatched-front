@@ -5,9 +5,8 @@
   height: 100vh;
   justify-content: space-between;
   .main-wrapper-dynamique {
-    flex:1;
     z-index: 12;
-    margin: auto;
+    margin: auto auto 50px;
     width: 100%;
     align-items: center;
   }
@@ -17,14 +16,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    flex-direction: column;
     @media screen and(min-width: $desktop-breakpoint) {
       display: flex;
       background: none;
     }
   }
   app-footer {
-    position: relative;
-    z-index: 113;
+    display: flex;
+    width: 100%;
   }
 }
 .border {

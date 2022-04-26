@@ -50,7 +50,12 @@ export class ShopComponent implements OnInit {
   }
 
   createListesMontre() {
-    const nbBoucle = Math.round((this.listeMontres.length + 1) / 5);
+    let nbBoucle = 0;
+    if (this.listeMontres.length >= 5){
+      nbBoucle = Math.round((this.listeMontres.length + 1) / 5);
+    }else{
+      nbBoucle = ((this.listeMontres.length + 1) / 5);
+    }
     console.log(nbBoucle)
     for(let i = 0; i < nbBoucle; i++) {
       console.log('on boucle')

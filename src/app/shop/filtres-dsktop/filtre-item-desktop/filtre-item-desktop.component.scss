@@ -57,11 +57,10 @@ input {
   width: auto;
   background-color: rgba(237, 218, 202, 0.8);
   border: 0;
-  box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
+  box-shadow: 0 0 20px 0 #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
   height: 35px;
   border-radius: 17.5px;
   color: #593c30;
-  min-width: 140px;
   transition: height 0.5s;
   &.open {
     height: min-content;
@@ -85,6 +84,7 @@ input {
     width: 100%;
     padding: 6px 15px;
     cursor: pointer;
+    gap: 10px;
     span {
       font-family: "Louis George Cafe", sans-serif;
       text-transform: uppercase;

@@ -285,6 +285,7 @@ nav {
           justify-content: center;
           cursor: pointer;
           border-radius: 72% 28% 0% 100% / 59% 17% 83% 41%;
+          transition: $variable-burger-animation-time $variable-menu-animation-function;
 
           &:hover {
           }
