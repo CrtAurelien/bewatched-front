@@ -16,6 +16,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   height: 600px;
+  margin: auto;
 
   .left, .right{
     display: none;
@@ -282,7 +283,7 @@
 
         .content {
           bottom: 53px;
-          right: -45px;
+          right: -0px;
           text-align: right;
 
           .trait, hr {
@@ -351,7 +352,7 @@
 
         .content {
           top: 79px;
-          right: -45px;
+          right: 0px;
           text-align: right;
 
           .trait, hr {

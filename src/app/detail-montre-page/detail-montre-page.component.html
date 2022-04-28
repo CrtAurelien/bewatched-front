@@ -6,20 +6,24 @@
 
         <!--<ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>-->
 
-      <swiper #swiper class="swiper" [loop]="true">
+      <swiper #swiper class="swiper"
+              [autoplay]="{delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: false, stopOnLastSlide : false}"
+              [slidesPerView]="1" [preloadImages]="true" [effect]="'coverflow'"
+              [coverflowEffect]="{rotate: 30, slideShadows: false}" [speed]="850" [simulateTouch]="false"
+              [thumbs]="{ swiper: thumbsSwiper }">
         <ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>
-        <ng-template swiperSlide>Slide 2</ng-template
-      ><ng-template swiperSlide>Slide 3</ng-template
-      ><ng-template swiperSlide>Slide 4</ng-template
-      ><ng-template swiperSlide>Slide 5</ng-template
-      ><ng-template swiperSlide>Slide 6</ng-template
-      ><ng-template swiperSlide>Slide 7</ng-template
-      ><ng-template swiperSlide>Slide 8</ng-template
-      ><ng-template swiperSlide>Slide 9</ng-template>
+        <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-2.jpg" /></ng-template>
+        <ng-template swiperSlide ><img src="https://swiperjs.com/demos/images/nature-3.jpg" /></ng-template>
+      </swiper>
+      <br>
+      <swiper
+        (swiper)="thumbsSwiper = $event" [spaceBetween]="25" [slidesPerView]="3" [freeMode]="true" [watchSlidesProgress]="true"
+        class="mySwiper">
+        <ng-template swiperSlide><img src="assets/watches/omega.png" /></ng-template>
+        <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-2.jpg" /></ng-template>
+        <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-3.jpg" /></ng-template>
       </swiper>
 
-      <button (click)="slidePrev()">Prev slide</button>
-      <button (click)="slideNext()">Next slide</button>
 
 
     </div>

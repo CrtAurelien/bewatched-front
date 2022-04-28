@@ -13,6 +13,9 @@ import {ActivatedRoute} from "@angular/router";
 import {ShopService} from "../shared/services/shop.service";
 import {Subject, takeUntil, tap} from "rxjs";
 import {SwiperComponent} from "swiper/angular";
+import SwiperCore, { Navigation, Autoplay, Thumbs } from "swiper";
+
+SwiperCore.use([Navigation, Autoplay, Thumbs]);
 
 @Component({
   selector: 'app-detail-montre-page',
@@ -20,6 +23,7 @@ import {SwiperComponent} from "swiper/angular";
   styleUrls: ['./detail-montre-page.component.scss']
 })
 export class DetailMontrePageComponent implements OnInit{
+  thumbsSwiper: any;
   montre!: Montre;
   urlImageLogoMontre = ''
   montreIsInCard! : boolean;
@@ -31,12 +35,6 @@ export class DetailMontrePageComponent implements OnInit{
   constructor(private route: ActivatedRoute, private shopService: ShopService, private cd:ChangeDetectorRef) { }
 
 
-  slideNext(){
-    this.swiper?.swiperRef.slideNext(100);
-  }
-  slidePrev(){
-    this.swiper?.swiperRef.slidePrev(100);
-  }
 
   ngOnInit(): void {
     this.shopService.getMontreById(this.idMontre).pipe(
