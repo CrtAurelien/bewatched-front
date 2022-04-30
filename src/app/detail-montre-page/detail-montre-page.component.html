@@ -12,16 +12,18 @@
               [coverflowEffect]="{rotate: 30, slideShadows: false}" [speed]="850" [simulateTouch]="false"
               [thumbs]="{ swiper: thumbsSwiper }">
         <ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>
-        <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-2.jpg" /></ng-template>
-        <ng-template swiperSlide ><img src="https://swiperjs.com/demos/images/nature-3.jpg" /></ng-template>
+        <ng-container *ngFor="let photo of montre.photos">
+          <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
+        </ng-container>
       </swiper>
       <br>
       <swiper
         (swiper)="thumbsSwiper = $event" [spaceBetween]="25" [slidesPerView]="3" [freeMode]="true" [watchSlidesProgress]="true"
-        class="mySwiper">
-        <ng-template swiperSlide><img src="assets/watches/omega.png" /></ng-template>
-        <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-2.jpg" /></ng-template>
-        <ng-template swiperSlide><img src="https://swiperjs.com/demos/images/nature-3.jpg" /></ng-template>
+        class="swiper-gallery">
+        <ng-template swiperSlide>DÉTAILS VISUELS</ng-template>
+        <ng-container *ngFor="let photo of montre.photos">
+          <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
+        </ng-container>
       </swiper>
 
 

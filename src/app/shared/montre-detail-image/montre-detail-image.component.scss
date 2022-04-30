@@ -11,10 +11,9 @@
   width: 500px;
   align-items: flex-start;
   justify-content: space-between;
-  background-image: url('../../../assets/watches/omega.png');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-position: center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
   height: 600px;
   margin: auto;
 
