@@ -58,7 +58,6 @@ export class ShopComponent implements OnInit {
     }
     console.log(nbBoucle)
     for(let i = 0; i < nbBoucle; i++) {
-      console.log('on boucle')
       const sousListe = this.listeMontres.splice(0, 5);
       this.finalListeMontre.push(sousListe);
     }
@@ -86,12 +85,12 @@ export class ShopComponent implements OnInit {
     let newListeMontre : Montre[] = [];
     // On recuperer dans une variable tmp la liste de toutes les montres
     let allMontresDisponibles =  [...JSON.parse(JSON.stringify(this.shopService.allMontres))];
+    console.log(allMontresDisponibles)
     let resultatMarque : any[]= [];
     filtre.forEach(filter => {
       if(this.shopService.getCategorieFiltre(filter) === 'marque') {
         const filterFormate = this.utilService.removeDiacritics(filter).toLowerCase();
-        console.log(allMontresDisponibles)
-        resultatMarque.push(allMontresDisponibles.filter(elm => this.utilService.removeDiacritics(elm.brand.name)?.toLowerCase().includes(filterFormate)))
+        resultatMarque.push(allMontresDisponibles.filter(elm => this.utilService.removeDiacritics(elm?.brand?.name)?.toLowerCase().includes(filterFormate)))
       }
     })
     resultatMarque.forEach(listeresult => {

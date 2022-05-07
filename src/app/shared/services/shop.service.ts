@@ -15,8 +15,9 @@ export class ShopService {
   badgeShopItemsSubject = new Subject<number>();
   montreWasDeleted = false;
   montreWasDeletedSubject = new Subject<boolean>();
-  urlMontres = "http://localhost:8888/bewatched/backend/public/api/watches"
-  urlDetailMontre = "http://localhost:8888/bewatched/backend/public/api/watch/"
+  urlMontres = "http://localhost:8888/bewatched/public/api/watches"
+  urlDetailMontre = "http://localhost:8888/bewatched/public/api/watch/"
+  urlHomeMontre = "http://localhost:8888/bewatched/public/api/watch/home"
   allMontres : Montre[] = [];
   montresSave: Montre[] = [];
   theme = 'theme-default';
@@ -67,6 +68,10 @@ export class ShopService {
   getMontreById(id: any): Observable<Montre>{
     const url = `${this.urlDetailMontre}${id}`;
     return this.http.get<Montre>(url);
+  }
+
+  getHomeMontre(): Observable<Montre> {
+    return this.http.get<Montre>(this.urlHomeMontre);
   }
 
   switchTheme(marqueMontre: string) {

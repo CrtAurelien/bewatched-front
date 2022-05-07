@@ -1,35 +1,39 @@
-<div class="main-wrapper d-flex position-relative">
-  <div class="intro ">
-    <div class="intro-mobile">
-      <span>Découvrez</span>
-      <span> Notre collection</span>
-    </div>
-    <div class="intro-desktop">
-      <span>Offrez-vous</span>
-      <span>le plaisir</span>
-    </div>
-    <img src="assets/vintage.png" class="background" alt="">
-    <button type="button" id="btn-desktop" class="btn btn-primary {{clickGoToShop ? 'anim' : ''}}" (click)="goToShop()">
-      DÉCOUVRIR NOS MONTRES
-      <svg class="search" xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 203.79213 200"><path d="M137.28447,0A66.50429,66.50429,0,0,0,82.4,104.06589L2.8055,183.66041a9.56812,9.56812,0,1,0,13.53136,13.53136L95.37841,118.1503A66.50707,66.50707,0,1,0,137.28447,0Zm0,122.48728A55.88427,55.88427,0,0,1,102.85966,110.669a55.38844,55.38844,0,0,1-12.87-14.1928,55.98774,55.98774,0,1,1,47.2948,26.01111Z"/></svg>
+<ng-container *ngIf="montreToDisplay">
+  <div class="main-wrapper d-flex position-relative">
+    <div class="intro ">
+      <div class="intro-mobile">
+        <span>Découvrez</span>
+        <span> Notre collection</span>
+      </div>
+      <div class="intro-desktop">
+        <span>Offrez-vous</span>
+        <span>le plaisir</span>
+      </div>
+      <img src="assets/vintage.png" class="background" alt="">
+      <button type="button" id="btn-desktop" class="btn btn-primary {{clickGoToShop ? 'anim' : ''}}" (click)="goToShop()">
+        DÉCOUVRIR NOS MONTRES
+        <svg class="search" xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 203.79213 200"><path d="M137.28447,0A66.50429,66.50429,0,0,0,82.4,104.06589L2.8055,183.66041a9.56812,9.56812,0,1,0,13.53136,13.53136L95.37841,118.1503A66.50707,66.50707,0,1,0,137.28447,0Zm0,122.48728A55.88427,55.88427,0,0,1,102.85966,110.669a55.38844,55.38844,0,0,1-12.87-14.1928,55.98774,55.98774,0,1,1,47.2948,26.01111Z"/></svg>
 
-    </button>
-  </div>
-  <div class="montres">
-    <div class="liste-montres-mobile">
-      <app-liste-montres></app-liste-montres>
+      </button>
     </div>
-    <div class="montre-desktop">
-      <app-montre-detail-image></app-montre-detail-image>
+    <div class="montres">
+      <div class="liste-montres-mobile">
+        <app-liste-montres></app-liste-montres>
+      </div>
+      <div class="montre-desktop">
+        <app-montre-detail-image [montre]="montreToDisplay"></app-montre-detail-image>
+      </div>
+    </div>
+    <div class="couture"></div>
+    <div class="btn-mobile">
+      <button type="button" class="btn btn-primary" (click)="navigateToShop()">
+        DÉCOUVRIR NOS MONTRES
+        <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 342.43363 198.54124">
+          <defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:57.55696px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><line class="cls-1" x1="313.65515" y1="28.77848" x2="172.67087" y2="169.76276"/><line class="cls-1" x1="28.77848" y1="28.77848" x2="169.76276" y2="169.76276"/></g></g></svg>
+      </button>
     </div>
   </div>
-  <div class="couture"></div>
-  <div class="btn-mobile">
-    <button type="button" class="btn btn-primary" (click)="navigateToShop()">
-      DÉCOUVRIR NOS MONTRES
-      <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 342.43363 198.54124">
-        <defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:57.55696px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><line class="cls-1" x1="313.65515" y1="28.77848" x2="172.67087" y2="169.76276"/><line class="cls-1" x1="28.77848" y1="28.77848" x2="169.76276" y2="169.76276"/></g></g></svg>
-    </button>
-  </div>
-</div>
+</ng-container>
+
+
 

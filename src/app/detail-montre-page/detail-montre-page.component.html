@@ -2,8 +2,6 @@
   <a [routerLink]="['/shop']" class="back-to-shop">Retour à la boutique</a>
   <div class="main-wrap ">
     <div class="montre">
-
-
         <!--<ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>-->
 
       <swiper #swiper class="swiper"
@@ -11,7 +9,7 @@
               [slidesPerView]="1" [preloadImages]="true" [effect]="'coverflow'"
               [coverflowEffect]="{rotate: 30, slideShadows: false}" [speed]="850" [simulateTouch]="false"
               [thumbs]="{ swiper: thumbsSwiper }">
-        <ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>
+        <ng-template swiperSlide><app-montre-detail-image [montre]="montre"></app-montre-detail-image></ng-template>
         <ng-container *ngFor="let photo of montre.photos">
           <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
         </ng-container>
@@ -31,7 +29,7 @@
     </div>
     <div class="details">
       <div class="logo">
-        <img src="assets/logo-montres/omega-logo.png" alt="Logo marque de la montre">
+        <img src="assets/logo-montres/{{montre.brand.name}}-logo.png" alt="Logo marque de la montre">
       </div>
       <div class="modele d-flex">
         <span class="ref" *ngIf="montre.model"><a href="">{{montre.model}}</a></span>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Montre} from "../../core/model/Montre.interface";
 
 @Component({
   selector: 'app-montre-detail-image',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./montre-detail-image.component.scss']
 })
 export class MontreDetailImageComponent implements OnInit {
+  @Input()
+  montre!: Montre
 
   constructor() { }
 
