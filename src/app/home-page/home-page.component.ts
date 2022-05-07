@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {UtilsService} from "../shared/services/utils.service";
 import {ShopService} from "../shared/services/shop.service";
@@ -9,9 +9,10 @@ import {Montre} from "../core/model/Montre.interface";
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent implements OnInit, AfterViewChecked {
   clickGoToShop = false;
   montreToDisplay!: Montre;
+  btnDesktop! : any;
 
 
   constructor(private router: Router, private utilService: UtilsService, private shopService: ShopService) {
@@ -25,10 +26,12 @@ export class HomePageComponent implements OnInit {
         this.montreToDisplay = data;
       }
     )
+  }
 
-    const btnDesktop = document.getElementById('btn-desktop');
-    if(btnDesktop) {
-      btnDesktop.addEventListener('animationend', (ev) => {
+  ngAfterViewChecked() {
+    if(!this.btnDesktop) {
+      this.btnDesktop = document.getElementById('btn-desktop');
+      this.btnDesktop.addEventListener('animationend', (ev: any) => {
         if (ev.animationName === 'boutonDesktop') {
           this.router.navigate(['shop'])
         }

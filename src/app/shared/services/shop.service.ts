@@ -118,6 +118,8 @@ export class ShopService {
       case 'Longines':
       case 'Tissot':
         return 'marque'
+      case '1970':
+        return 'annee'
       default:
         return ''
     }

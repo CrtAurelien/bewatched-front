@@ -87,10 +87,19 @@ export class ShopComponent implements OnInit {
     let allMontresDisponibles =  [...JSON.parse(JSON.stringify(this.shopService.allMontres))];
     console.log(allMontresDisponibles)
     let resultatMarque : any[]= [];
+    let resultatYears: any[] = [];
+    let resultatsMouvement: any[] = [];
     filtre.forEach(filter => {
       if(this.shopService.getCategorieFiltre(filter) === 'marque') {
         const filterFormate = this.utilService.removeDiacritics(filter).toLowerCase();
         resultatMarque.push(allMontresDisponibles.filter(elm => this.utilService.removeDiacritics(elm?.brand?.name)?.toLowerCase().includes(filterFormate)))
+      }
+      if(this.shopService.getCategorieFiltre(filter) === 'annee') {
+        resultatYears.push(allMontresDisponibles.filter(elm => elm.year === parseInt(filter)))
+      }
+      if(this.shopService.getCategorieFiltre(filter) === 'mouvement') {
+        const filterFormate = this.utilService.removeDiacritics(filter).toLowerCase();
+        resultatsMouvement.push(allMontresDisponibles.filter(elm => this.utilService.removeDiacritics(elm.movement)?.toLowerCase().includes(filterFormate)))
       }
     })
     resultatMarque.forEach(listeresult => {
@@ -99,7 +108,19 @@ export class ShopComponent implements OnInit {
       })
     })
 
-    this.listeMontres = newListeMontre;
+    resultatYears.forEach(listeresult => {
+      listeresult?.forEach((resultat : Montre) => {
+        newListeMontre.push(resultat)
+      })
+    })
+
+    resultatsMouvement.forEach(listeresult => {
+      listeresult?.forEach((resultat : Montre) => {
+        newListeMontre.push(resultat)
+      })
+    })
+
+    this.listeMontres =  [...new Set(newListeMontre)];
     this.finalListeMontre = [];
     this.nombreMontres = this.listeMontres.length;
     this.createListesMontre();
