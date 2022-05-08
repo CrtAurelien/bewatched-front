@@ -9,7 +9,7 @@
               [slidesPerView]="1" [preloadImages]="true" [effect]="'coverflow'"
               [coverflowEffect]="{rotate: 30, slideShadows: false}" [speed]="850" [simulateTouch]="false"
               [thumbs]="{ swiper: thumbsSwiper }">
-        <!--<ng-template swiperSlide><app-montre-detail-image [montre]="montre"></app-montre-detail-image></ng-template>-->
+        <ng-template swiperSlide><app-montre-detail-image [montre]="montre"></app-montre-detail-image></ng-template>
         <ng-container *ngFor="let photo of montre.photos">
           <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
         </ng-container>
@@ -44,8 +44,8 @@
             <span *ngSwitchCase="'quartz'">MOUVEMENT : Quartz</span>
           </ng-container>
         </div>
-        <div class="sexe" *ngIf="montre.genre">
-          <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>GENRE : {{montre.genre}}</span>
+        <div class="sexe" *ngIf="montre.dial">
+          <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>Cadran : {{montre.dial}}</span>
         </div>
         <div class="strap" *ngIf="montre.strap">
           <img src="../../assets/icones/engrenage.svg" width="30" alt="">

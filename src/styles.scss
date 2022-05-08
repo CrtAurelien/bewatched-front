@@ -14,10 +14,7 @@ ul,li{
   background-color: transparent!important;
 }
 body {
-  background-image: url('assets/background-watches/bg-omega.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
 }
 .swiper-wrapper {
  align-items: center;
@@ -25,6 +22,7 @@ body {
 .swiper-slide img{
   display: block;
   width: 100%;
+  max-width: 450px;
   height: 100%;
   object-fit: cover;
 }
@@ -63,6 +61,11 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .theme-default {
+  background-image: url('assets/background-watches/bg-omega.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
   nav {
     background: none;
     --bs-bg-opacity: 0;
@@ -91,6 +94,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .swiper-slide {
     text-align: center;
     font-size: 18px;
+    max-width: 650px;
     display: flex;
     justify-content: center !important;
     align-items: center !important;

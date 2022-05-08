@@ -2,25 +2,18 @@
 .content-wrap {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: space-between;
   .main-wrapper-dynamique {
     z-index: 12;
-    margin: auto auto 50px;
+    margin: auto;
     width: 100%;
+    height: 100%;
     align-items: center;
+    padding: 0 20px 30px 20px;
   }
   .flex{
-    display: block;
-    background-image: url(../../assets/background-watches/bg-omega.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
     flex-direction: column;
-    @media screen and(min-width: $desktop-breakpoint) {
-      display: flex;
-      background: none;
-    }
   }
   app-footer {
     display: flex;
