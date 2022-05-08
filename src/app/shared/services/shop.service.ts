@@ -75,9 +75,8 @@ export class ShopService {
     return this.http.get<Montre>(this.urlHomeMontre);
   }
 
-  switchTheme(marqueMontre: string) {
-    console.log(marqueMontre)
-    switch (marqueMontre) {
+  switchTheme(theme: string) {
+    switch (theme) {
       case 'omega':
         this.prevenirChangementTheme('theme-default')
         break;
@@ -89,9 +88,6 @@ export class ShopService {
         break
       case 'jaeger lecoultre':
         this.prevenirChangementTheme('theme-jaeger')
-        break
-      case 'default':
-        this.prevenirChangementTheme('theme-default')
         break
       default:
         this.prevenirChangementTheme('theme-default')

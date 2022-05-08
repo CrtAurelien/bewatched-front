@@ -21,6 +21,7 @@ export class ShopComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
+    this.shopService.switchTheme('default')
     this.shopService.getAllMontres().pipe(
       tap((data)  => {
         this.listeMontres = [...data] as Montre[]
