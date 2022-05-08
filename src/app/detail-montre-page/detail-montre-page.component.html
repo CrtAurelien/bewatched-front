@@ -14,15 +14,6 @@
           <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
         </ng-container>
       </swiper>
-      <br>
-      <swiper
-        (swiper)="thumbsSwiper = $event" [spaceBetween]="25" [slidesPerView]="3" [freeMode]="true" [watchSlidesProgress]="true"
-        class="swiper-gallery">
-        <ng-template swiperSlide>DÉTAILS VISUELS</ng-template>
-        <ng-container *ngFor="let photo of montre.photos">
-          <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
-        </ng-container>
-      </swiper>
 
 
 
