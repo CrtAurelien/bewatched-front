@@ -37,8 +37,9 @@ nav {
     font-family: "Louis George Cafe", sans-serif;
     font-weight: bold;
     color: $thirdColor;
-    z-index: 114;
+    z-index: 999;
     transition: 1.3s cubic-bezier(0.4, 2, .4, .6);
+    border-radius: 37% 63% 62% 38%/47% 32% 70% 50%;
 
     small {
       display: none;
@@ -52,12 +53,16 @@ nav {
     }
 
     @media screen and(min-width: $desktop-breakpoint) {
-      height: 220px;
-      width: 452px;
-      position: absolute;
-      top: 0;
-      z-index: 11;
-      padding-left: 30px;
+      height: 150px;
+      width: 450px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      left: 10px;
+      top:4px;
+      a{
+
+      }
       &.menu-open {
         background-image: none;
       }
@@ -131,12 +136,11 @@ nav {
       }
       &.icons {
 
-        z-index: 115;
+        z-index: 999;
         position: relative;
         width: auto;
         margin-left: auto;
-        margin-right: 20%;
-        margin-top: 20px;
+        margin-right: auto;
 
         .panier {
           width: 60px;
@@ -270,25 +274,7 @@ nav {
             transform: translateX(0px);
           }
         }
-        img {
-          animation: bounce 1.2s cubic-bezier(0.27, 2.4, 0.53, 0.01);
-          @keyframes bounce {
-            from {
-              opacity: 0;
-              transform: translateX(300px);
-            }
-            to {
-              opacity: 1;
-              transform: translateX(1px);
-            }
-          }
-          transition: 0.7s ease-in;
 
-          &:hover {
-            transition: 0.1s ease-in;
-            transform: scale(1.15);
-          }
-        }
         &.close {
           width: 171px !important;
           height: 127px;
@@ -301,8 +287,9 @@ nav {
           cursor: pointer;
           border-radius: 72% 28% 0% 100% / 59% 17% 83% 41%;
           transition: $variable-burger-animation-time $variable-menu-animation-function;
-
           &:hover {
+            box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.27);
+            transition: $variable-burger-animation-time $variable-menu-animation-function;;
           }
 
           //transition: all $variable-burger-animation-time $variable-menu-animation-function2;

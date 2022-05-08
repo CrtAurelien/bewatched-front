@@ -92,7 +92,8 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   background-size: 60%;
   .navbar-brand {
     @media screen and(min-width: $desktop-breakpoint) {
-      background-image: url('assets/background-logo.png');
+      background-image: url('assets/background-brown.png');
+      background-size: 45%;
     }
   }
 
@@ -216,7 +217,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       color: #9a9999 !important;
     }
     @media screen and(min-width: $desktop-breakpoint) {
-      background-image: url('assets/background-logo-black-white.png');
+        background-image: url('assets/background-black-white.png');
     }
   }
   .burger {
