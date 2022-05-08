@@ -64,7 +64,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-image: url('assets/background-home.png');
   background-position: left;
   background-repeat: repeat;
-  background-size: contain;
+  background-size: auto;
   height: 100vh;
   .navbar-brand {
     @media screen and(min-width: $desktop-breakpoint) {
