@@ -60,6 +60,28 @@ a{
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+
+.montre {
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    max-width: 650px;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+
+.paypal-button-container {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+}
+
+
+/**
+THEME DYNAMIQUE EN FONCTION DE LA MARQUE
+ */
 .theme-default {
   background-image: url('assets/background-home.png');
   background-position: left;
@@ -85,7 +107,31 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
   }
 }
+.theme-omega {
+  background-image: url('assets/background-watches/bg-omega.png');
+  background-position: left;
+  background-repeat: repeat;
+  background-size: contain;
+  height: 100vh;
+  .navbar-brand {
+    @media screen and(min-width: $desktop-breakpoint) {
+      background-image: url('assets/background-logo.png');
+    }
+  }
 
+  .burger {
+    &.close {
+      background-image: url("assets/background-brown.png");
+    }
+  }
+  .details {
+    .modele {
+      .ref {
+        background-image: url('assets/background-brown.png');
+      }
+    }
+  }
+}
 .theme-longines {
   background-image: url('assets/background-watches/bg-longines.png');
   background-position: center;
@@ -114,23 +160,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
   }
 }
-
-.theme-tissot {
-}
-
-.montre {
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    max-width: 650px;
-    display: flex;
-    justify-content: center !important;
-    align-items: center !important;
+.theme-jaeger {
+  background-image: url('assets/background-watches/bg-black-white.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  .navbar-brand {
+    color: white !important;
+    h1 {
+      color: #9a9999 !important;
+    }
+    @media screen and(min-width: $desktop-breakpoint) {
+      background-image: url('assets/background-logo-black-white.png');
+    }
+  }
+  .burger {
+    &.close {
+      background-image: url("assets/background-black-white.png");
+    }
+  }
+  .details {
+    .modele {
+      .ref {
+        background-image: url('assets/background-black-white.png');
+      }
+    }
   }
 }
-
-
-.paypal-button-container {
-    display: flex !important;
-    flex-direction: row-reverse !important;
+.theme-tissot {
 }

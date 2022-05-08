@@ -76,6 +76,7 @@ export class ShopService {
   }
 
   switchTheme(marqueMontre: string) {
+    console.log(marqueMontre)
     switch (marqueMontre) {
       case 'omega':
         this.prevenirChangementTheme('theme-default')
@@ -85,6 +86,12 @@ export class ShopService {
         break;
       case 'tissot':
         this.prevenirChangementTheme('theme-tissot')
+        break
+      case 'jaeger lecoultre':
+        this.prevenirChangementTheme('theme-jaeger')
+        break
+      case 'default':
+        this.prevenirChangementTheme('theme-default')
         break
       default:
         this.prevenirChangementTheme('theme-default')
