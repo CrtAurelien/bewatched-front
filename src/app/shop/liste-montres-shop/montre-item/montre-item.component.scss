@@ -2,18 +2,17 @@
 
 .montre {
   position: relative;
-  top: -32px;
-
   &:hover {
-    img, .content, .btn {
-      -webkit-animation: slide-top 0.5s forwards;
-      animation: slide-top 0.5s forwards;
+    transition: .4s;
+
+    .img-montre {
+      transition: .4s;
+      transform: scale(1.1);
     }
   }
   &:not(:hover) {
     img, .content, .btn {
-      -webkit-animation: slide-bottom 0.5s forwards;
-      animation: slide-bottom 0.5s forwards;
+
     }
   }
 }
