@@ -99,6 +99,19 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       background-image: url("assets/background-brown.png");
       background-size: 120%;
     }
+    &.open {
+      background-image: url('assets/background-brown.png');
+      background-size: 120%;
+    }
+  }
+  .desktop-menu {
+    background-image: url('assets/background-home.png');
+    li {
+      &:hover {
+        background-image: url('assets/background-home.png');
+        background-size: 120%;
+      }
+    }
   }
   .details {
     .modele {
@@ -123,6 +136,20 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .burger {
     &.close {
       background-image: url("assets/background-brown.png");
+      background-size: 120%;
+    }
+    &.open {
+      background-image: url("assets/background-brown.png");
+      background-size: 120%;
+    }
+  }
+  .desktop-menu {
+    background-image: url('assets/background-watches/bg-omega.png');
+    li {
+      &:hover {
+        background-image: url('assets/background-home.png');
+        background-size: 120%;
+      }
     }
   }
   .details {
@@ -151,6 +178,20 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .burger {
     &.close {
       background-image: url("assets/background-blue.png");
+      background-size: 120%;
+    }
+    &.open {
+      background-image: url('assets/background-blue.png');
+      background-size: 120%;
+    }
+  }
+  .desktop-menu {
+    background-image: url('assets/background-watches/background-black-white.png');
+    li {
+      &:hover {
+        background-image: url('assets/background-watches/background-black-white.png');
+        background-size: 120%;
+      }
     }
   }
   .details {
@@ -179,6 +220,20 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .burger {
     &.close {
       background-image: url("assets/background-black-white.png");
+      background-size: 120%;
+    }
+    &.open {
+      background-image: url("assets/background-black-white.png");
+      background-size: 120%;
+    }
+  }
+  .desktop-menu {
+    background-image: url('assets/background-watches/background-black-white.png');
+    li {
+      &:hover {
+        background-image: url('assets/background-watches/background-black-white.png');
+        background-size: 120%;
+      }
     }
   }
   .details {

@@ -90,7 +90,12 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectMontreDetailFromSearch(montreId: number) {
-    this.router.navigate(['/detail', montreId]);
+    this.redirectTo('/detail/'+montreId);
+  }
+
+  redirectTo(uri:string){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+      this.router.navigate([uri]));
   }
 
 }

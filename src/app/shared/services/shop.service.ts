@@ -29,6 +29,8 @@ export class ShopService {
   filtresActifs : string[] = [];
   resetAFilterSubject = new BehaviorSubject<any>('')
   montreMiseEnAvant!: Montre;
+  redirectFromSearch = false;
+  redirectFromSearchSubject = new Subject<boolean>();
 
   constructor(private utilService: UtilsService, private http: HttpClient) { }
 
@@ -149,5 +151,9 @@ export class ShopService {
     return searchResult
   }
 
+  setRedirectFromSearch(value: boolean) {
+    this.redirectFromSearch = value;
+    this.redirectFromSearchSubject.next(this.redirectFromSearch);
+  }
 
   }

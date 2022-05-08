@@ -70,7 +70,6 @@ export class DetailMontrePageComponent implements OnInit{
     this.cd.detectChanges()
   }
 
-
   ngAfterContentInit() {
     // this.shopService.switchTheme(this.montre.marque)
   }

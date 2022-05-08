@@ -313,7 +313,6 @@ nav {
           top: 0;
           right: 0;
           bottom: 0;
-          background-image: url('../../../assets/background-brown.png');
           background-size: 15%;
           align-items: flex-start;
           justify-content: flex-end;
@@ -351,7 +350,6 @@ nav {
     justify-content: space-between;
     margin-top: 12%;
     align-items: center;
-    background-image: url('../../../assets/background-white.png');
     background-size: 15%;
     max-height: 220px;
     padding: 40px;
@@ -372,9 +370,6 @@ nav {
       position: relative;
 
       &:hover {
-
-        background-image: url('../../../assets/background-white.png');
-
         border-radius: 100%;
       }
     }
