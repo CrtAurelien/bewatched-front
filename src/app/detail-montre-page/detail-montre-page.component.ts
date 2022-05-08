@@ -37,7 +37,6 @@ export class DetailMontrePageComponent implements OnInit{
 
 
   ngOnInit(): void {
-
     this.shopService.getMontreById(this.idMontre).pipe(
       tap(data => {
         this.montre = data as Montre
