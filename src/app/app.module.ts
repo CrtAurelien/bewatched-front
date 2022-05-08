@@ -33,6 +33,7 @@ import { MentionsLegalesComponent } from './mentions-legales/mentions-legales.co
 import {NgxPayPalModule} from "ngx-paypal";
 import {LivraisonComponent} from "./livraison/livraison.component";
 import {HomeResolver} from "./template-generique/home.resolver";
+import {DetailMontreResolver} from "./detail-montre-page/detail-montre.resolver";
 
 @NgModule({
   declarations: [
@@ -71,7 +72,7 @@ import {HomeResolver} from "./template-generique/home.resolver";
     NgxPayPalModule,
     HttpClientModule
   ],
-  providers: [HomeResolver],
+  providers: [HomeResolver, DetailMontreResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

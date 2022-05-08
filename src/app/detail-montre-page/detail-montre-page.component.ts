@@ -32,17 +32,14 @@ export class DetailMontrePageComponent implements OnInit{
   ngUnsubscribed = new Subject();
   idMontre = this.route.snapshot.paramMap.get('montre');
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
-  constructor(private route: ActivatedRoute, private shopService: ShopService, private cd:ChangeDetectorRef) { }
+  constructor(private route: ActivatedRoute, private shopService: ShopService, private cd:ChangeDetectorRef) {
+    this.montre = route.snapshot.data['montre'];
+    shopService.switchTheme(this.montre.brand.name.toLowerCase())
+  }
 
 
 
   ngOnInit(): void {
-    this.shopService.getMontreById(this.idMontre).pipe(
-      tap(data => {
-        this.montre = data as Montre
-        this.shopService.switchTheme(this.montre.brand.name.toLowerCase())
-      }), takeUntil(this.ngUnsubscribed)
-    ).subscribe()
     this.urlImageLogoMontre += this.montre?.brand.name.toLowerCase() + '-logo.png';
     this.montreIsInCard = this.shopService.checkIfMontreIsInCard(this.montre);
     this.shopService.montreWasDeletedSubject.pipe(

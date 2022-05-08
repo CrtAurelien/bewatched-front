@@ -13,6 +13,7 @@ import {PrivacyPoliciesComponent} from "./privacy-policies/privacy-policies.comp
 import {LivraisonComponent} from "./livraison/livraison.component";
 import {LivraisonGuard} from "./livraison/livraison.guard";
 import {HomeResolver} from "./template-generique/home.resolver";
+import {DetailMontreResolver} from "./detail-montre-page/detail-montre.resolver";
 
 const routes: Routes = [
   {
@@ -52,7 +53,10 @@ const routes: Routes = [
       },
       {
         path: 'detail/:montre',
-        component: DetailMontrePageComponent
+        component: DetailMontrePageComponent,
+        resolve: {
+          montre: DetailMontreResolver
+        }
       },
       {
         path: 'recapitulatif-panier',
