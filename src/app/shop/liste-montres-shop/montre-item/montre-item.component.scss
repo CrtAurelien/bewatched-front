@@ -2,17 +2,11 @@
 
 .montre {
   position: relative;
-  &:hover {
-    transition: .4s;
-
     .img-montre {
       transition: .4s;
-      transform: scale(1.1);
-    }
-  }
-  &:not(:hover) {
-    img, .content, .btn {
-
+      &:hover {
+        transition: .4s;
+        transform: scale(1.1);
     }
   }
 }
