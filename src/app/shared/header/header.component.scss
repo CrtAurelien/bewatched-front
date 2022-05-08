@@ -314,6 +314,7 @@ nav {
           right: 0;
           bottom: 0;
           background-image: url('../../../assets/background-brown.png');
+          background-size: 15%;
           align-items: flex-start;
           justify-content: flex-end;
           width: 100% !important;
@@ -351,6 +352,7 @@ nav {
     margin-top: 12%;
     align-items: center;
     background-image: url('../../../assets/background-white.png');
+    background-size: 15%;
     max-height: 220px;
     padding: 40px;
     animation: checkboxCheckedAnimation $variable-menu-animation-time $variable-menu-animation-function both;
