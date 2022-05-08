@@ -61,10 +61,10 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .theme-default {
-  background-image: url('assets/background-watches/bg-omega.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('assets/background-home.png');
+  background-position: left;
+  background-repeat: repeat-x;
+  background-size: contain;
   height: 100vh;
   nav {
     background: none;
