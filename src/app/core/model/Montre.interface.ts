@@ -14,9 +14,17 @@ export interface Montre {
   case: string;
   dial: string;
   glass:string;
-  photos: any;
+  photos: Photo[];
 }
 
 export interface Brand {
   name: string
+}
+
+export interface Photo {
+  id: number;
+  path: string;
+  is_video: boolean;
+  watch_id: number;
+  isPhotoDetail: boolean;
 }

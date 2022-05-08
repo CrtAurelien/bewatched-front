@@ -14,6 +14,10 @@ export class FiltresService {
           estCoche: false
         },
         {
+          nom: 'Jaeger Lecoultre',
+          estCoche: false
+        },
+        {
           nom: 'Tissot',
           estCoche: false
         },

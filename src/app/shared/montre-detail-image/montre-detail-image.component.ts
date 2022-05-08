@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Montre} from "../../core/model/Montre.interface";
+import {Montre, Photo} from "../../core/model/Montre.interface";
 
 @Component({
   selector: 'app-montre-detail-image',
@@ -9,10 +9,15 @@ import {Montre} from "../../core/model/Montre.interface";
 export class MontreDetailImageComponent implements OnInit {
   @Input()
   montre!: Montre
+  pathImageDetailMontre!: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    const photoDetail = this.montre.photos.find(elm => elm.isPhotoDetail);
+    if(photoDetail)  {
+      this.pathImageDetailMontre = photoDetail.path
+    }
   }
 
 }

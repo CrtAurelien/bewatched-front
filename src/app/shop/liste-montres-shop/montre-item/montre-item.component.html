@@ -1,9 +1,9 @@
 <div class="montre flex-column d-flex">
   <div class="header d-flex align-items-center justify-content-center" (click)="navigateToDetailMontre()">
-    <img src="http://bewatched.fr/assets/watches/jaegerlecoultre/5.png" alt="" class="">
+    <img src="{{pathImageDetailMontre}}" alt="" class="">
   </div>
   <div class="informations d-flex flex-column align-items-center">
-    <div><img src="../../../../assets/logo-montres/Omega-logo.png" class="marque" alt="Logo marque de la montre"></div>
+    <div><img src="../../../../assets/logo-montres/{{montre.brand.name}}-logo.png" class="marque" alt="Logo marque de la montre"></div>
 
     <div class="d-flex content ">
       <div class="info d-flex flex-column">

@@ -18,11 +18,16 @@ export class MontreItemComponent implements OnInit {
   ngUnsubscribed = new Subject()
   @Input()
   loadingMode!: boolean;
+  pathImageDetailMontre! : string;
 
 
   constructor(private shopService: ShopService, private router: Router) { }
 
   ngOnInit(): void {
+    const photoDetail = this.montre.photos.find(elm => elm.isPhotoDetail);
+    if(photoDetail) {
+      this.pathImageDetailMontre = photoDetail.path;
+    }
     this.shopService.montreWasDeletedSubject.pipe(
       tap(data => {
         if(data) {

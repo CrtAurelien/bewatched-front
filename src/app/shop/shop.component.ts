@@ -99,7 +99,8 @@ export class ShopComponent implements OnInit {
       }
       if(this.shopService.getCategorieFiltre(filter) === 'mouvement') {
         const filterFormate = this.utilService.removeDiacritics(filter).toLowerCase();
-        resultatsMouvement.push(allMontresDisponibles.filter(elm => this.utilService.removeDiacritics(elm.movement)?.toLowerCase().includes(filterFormate)))
+        const filtreMovementEnum = this.formatMovmentFilter(filterFormate)
+        resultatsMouvement.push(allMontresDisponibles.filter(elm => elm.movement.toLowerCase().includes(filtreMovementEnum)))
       }
     })
     resultatMarque.forEach(listeresult => {
@@ -124,6 +125,16 @@ export class ShopComponent implements OnInit {
     this.finalListeMontre = [];
     this.nombreMontres = this.listeMontres.length;
     this.createListesMontre();
+  }
+
+  formatMovmentFilter(filtre: string): string {
+    switch (filtre) {
+      case 'Manuel':
+        return 'manual'
+      default:
+        return ''
+    }
+
   }
 
   removeFilter(filtreObj: FiltreObject) {

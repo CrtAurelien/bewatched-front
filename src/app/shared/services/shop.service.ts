@@ -116,10 +116,17 @@ export class ShopService {
     switch (nomFiltre) {
       case 'Oméga':
       case 'Longines':
+      case 'Jaeger Lecoultre':
       case 'Tissot':
         return 'marque'
+      case '1950':
+      case '1960':
       case '1970':
+      case '1980':
+      case '1990':
         return 'annee'
+      case 'Manuel':
+        return 'mouvement'
       default:
         return ''
     }
