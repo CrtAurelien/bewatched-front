@@ -1,5 +1,9 @@
 @import "../../../../variable";
 
+:host {
+  flex:1;
+}
+
 .montre {
   position: relative;
     .img-montre {

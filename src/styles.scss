@@ -109,6 +109,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .desktop-menu {
     background-image: url('assets/background-home.png');
     li {
+      color: $secondaryColor;
       &:hover {
         background-image: url('assets/background-home.png');
         background-size: 120%;
@@ -147,6 +148,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .desktop-menu {
     background-image: url('assets/background-watches/bg-omega.png');
     li {
+      color: $secondaryColor;
       &:hover {
         background-image: url('assets/background-home.png');
         background-size: 120%;
@@ -188,6 +190,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .desktop-menu {
     background-image: url('assets/background-watches/background-black-white.png');
     li {
+      color: #93a5b9 !important;
       &:hover {
         background-image: url('assets/background-watches/background-black-white.png');
         background-size: 120%;
@@ -229,6 +232,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .desktop-menu {
     background-image: url('assets/background-watches/background-black-white.png');
     li {
+      color: #9a9999 !important;
       &:hover {
         background-image: url('assets/background-watches/background-black-white.png');
         background-size: 120%;
