@@ -15,7 +15,7 @@ export class MontreDetailImageComponent implements OnInit {
 
   ngOnInit(): void {
     const photoDetail = this.montre.photos.find(elm => elm.isPhotoDetail);
-    console.log(this.montre)
+    console.log(photoDetail)
     if(photoDetail)  {
       this.pathImageDetailMontre = photoDetail.path
     }
