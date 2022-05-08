@@ -28,6 +28,7 @@ export class ShopService {
   categoriesFiltres : Filtre[] = []
   filtresActifs : string[] = [];
   resetAFilterSubject = new BehaviorSubject<any>('')
+  montreMiseEnAvant!: Montre;
 
   constructor(private utilService: UtilsService, private http: HttpClient) { }
 

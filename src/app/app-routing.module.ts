@@ -11,15 +11,20 @@ import {CgvComponent} from "./cgv/cgv.component";
 import {MentionsLegalesComponent} from "./mentions-legales/mentions-legales.component";
 import {PrivacyPoliciesComponent} from "./privacy-policies/privacy-policies.component";
 import {LivraisonComponent} from "./livraison/livraison.component";
+import {LivraisonGuard} from "./livraison/livraison.guard";
+import {HomeResolver} from "./template-generique/home.resolver";
 
 const routes: Routes = [
   {
     path: '',
     component: TemplateGeneriqueComponent,
+    resolve: {
+      montreEnAvant: HomeResolver
+    },
     children: [
       {
         path: '',
-        component: HomePageComponent
+        component: HomePageComponent,
       },
       {
         path: 'shop',
@@ -55,7 +60,8 @@ const routes: Routes = [
       },
       {
         path: 'commande',
-        component: LivraisonComponent
+        component: LivraisonComponent,
+        canActivate: [LivraisonGuard]
       }
     ]
   }
