@@ -189,6 +189,7 @@ nav {
           flex-direction: column;
           background: rgba(255, 255, 255, 0.3);
           border: 0;
+          position: relative;
           box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
           padding: 18px 35px;
           border-radius: 50px;
@@ -199,6 +200,21 @@ nav {
 
           &.border-search {
             border-radius: 30px;
+            height: auto;
+          }
+
+          .delete-search {
+            right: 27px;
+            cursor: pointer;
+            position: absolute;
+            top: 22px;
+          }
+
+          .search-item {
+            cursor:pointer;
+            &:hover {
+              text-decoration: underline;
+            }
           }
 
           input {

@@ -80,7 +80,17 @@ export class HeaderComponent implements OnInit {
     this.searchResult = this.shopService.generalSearch(this.searchString, this.allMontresForSearch);
   }
 
+  deleteSearch() {
+    this.searchString = '';
+    this.searchResult = [];
+  }
+
   redirectHome() {
     this.router.navigate(['/']);
   }
+
+  redirectMontreDetailFromSearch(montreId: number) {
+    this.router.navigate(['/detail', montreId]);
+  }
+
 }
