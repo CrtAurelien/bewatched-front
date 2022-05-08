@@ -66,28 +66,56 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-repeat: repeat;
   background-size: contain;
   height: 100vh;
-  nav {
-    background: none;
-    --bs-bg-opacity: 0;
+  .navbar-brand {
+    @media screen and(min-width: $desktop-breakpoint) {
+      background-image: url('assets/background-logo.png');
+    }
   }
+
   .burger {
     &.close {
       background-image: url("assets/background-brown.png");
     }
   }
+  .details {
+    .modele {
+      .ref {
+        background-image: url('assets/background-brown.png');
+      }
+    }
+  }
 }
 
-.theme-longine {
-  nav {
-    .navbar-brand{
-      background-image:none !important;
+.theme-longines {
+  background-image: url('assets/background-watches/bg-longines.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  .navbar-brand {
+    color: white !important;
+    h1 {
+      color: #93a5b9 !important;
     }
-    background-image:none !important;
+    @media screen and(min-width: $desktop-breakpoint) {
+      background-image: url('assets/background-logo-longines.png');
+    }
+  }
+  .burger {
+    &.close {
+      background-image: url("assets/background-blue.png");
+    }
+  }
+  .details {
+    .modele {
+      .ref {
+        background-image: url('assets/background-blue.png');
+      }
+    }
   }
 }
 
 .theme-tissot {
-
 }
 
 .montre {

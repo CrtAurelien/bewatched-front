@@ -37,10 +37,11 @@ export class DetailMontrePageComponent implements OnInit{
 
 
   ngOnInit(): void {
+
     this.shopService.getMontreById(this.idMontre).pipe(
       tap(data => {
         this.montre = data as Montre
-        console.log(this.montre)
+        this.shopService.switchTheme(this.montre.brand.name.toLowerCase())
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
     this.urlImageLogoMontre += this.montre?.brand.name.toLowerCase() + '-logo.png';

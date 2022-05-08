@@ -35,12 +35,17 @@
   justify-content: space-around;
 }
 
+.header {
+  max-width: 200px;
+  max-height: 300px;
+}
+
 img {
-  width:150px;
+
   transition: all 0.5s;
   cursor: pointer;
   @media screen and(min-width: $desktop-breakpoint){
-    width: 200px;
+    width: 100%;
   }
 }
 
