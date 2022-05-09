@@ -78,9 +78,10 @@ export class ShopService {
   }
 
   switchTheme(theme: string) {
+    console.log(theme)
     switch (theme) {
       case 'omega':
-        this.prevenirChangementTheme('theme-default')
+        this.prevenirChangementTheme('theme-omega')
         break;
       case 'longines':
         this.prevenirChangementTheme('theme-longines')
