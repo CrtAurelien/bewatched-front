@@ -9,10 +9,15 @@ import {Montre} from "../../../core/model/Montre.interface";
 export class MontreItemRecapComponent implements OnInit {
   @Input()
   montre!: Montre;
+  pathImageDetail!: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    const photoDetail = this.montre.photos.find(elm => elm.isPhotoDetail);
+    if(photoDetail)  {
+      this.pathImageDetail = photoDetail.path
+    }
   }
 
 }
