@@ -30,7 +30,6 @@ export class RecapCommandeComponent implements OnInit {
       tap(data => {
         if(data.length > 0) {
           this.panier = data;
-          console.log(data);
           this.calculerTotalPanier();
         }
       }), takeUntil(this.ngUnsubscribed)
@@ -46,8 +45,8 @@ export class RecapCommandeComponent implements OnInit {
   calculerTotalPanier() {
     this.panier.forEach(montre => {
       this.totalPanier = parseInt(montre.price)
-      console.log("total :", this.totalPanier)
     })
+    this.shopService.tarifCommande = this.totalPanier;
   }
 
 }

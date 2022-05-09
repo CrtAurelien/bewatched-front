@@ -11,6 +11,10 @@ export class UtilsService {
 
   constructor() { }
 
+  retournerArrondiNSignificatif(valeurNumerique: number, nbSignificatif =2) : number{
+    return parseFloat(valeurNumerique.toFixed(nbSignificatif));
+  }
+
   setActiveFlexSubject(value:boolean){
     this.activeFlex = value
     this.activeFlexSubject.next(this.activeFlex)

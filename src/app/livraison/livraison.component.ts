@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ICreateOrderRequest, IPayPalConfig} from "ngx-paypal";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ShopService} from "../shared/services/shop.service";
+import {Montre} from "../core/model/Montre.interface";
+import {UtilsService} from "../shared/services/utils.service";
 
 @Component({
   selector: 'app-livraison',
@@ -8,7 +11,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./livraison.component.scss']
 })
 export class LivraisonComponent implements OnInit {
+  tarifCommande!: number;
+  tarifCommandeFormate!: any;
   public payPalConfig!: IPayPalConfig;
+  panier! : Montre[];
   commande = new FormGroup({
     nom: new FormControl('', Validators.required),
     prenom: new FormControl('', Validators.required),
@@ -21,15 +27,15 @@ export class LivraisonComponent implements OnInit {
     pays: new FormControl('', Validators.required),
     telephone: new FormControl('',  [Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
   });
-  constructor() { }
+  constructor(private shopService: ShopService, private utilService: UtilsService) { }
 
   ngOnInit(): void {
-    this.commande.valueChanges.subscribe(data => {
-      console.log(this.commande.valid)
-    })
+    this.tarifCommande =  this.shopService.tarifCommande;
+    this.panier = this.shopService.getPanierEnCours();
     this.initConfig()
   }
   private initConfig(): void {
+    this.tarifCommandeFormate = this.utilService.retournerArrondiNSignificatif(this.tarifCommande);
     this.payPalConfig = {
       currency: 'EUR',
       clientId: 'sb',
@@ -39,24 +45,15 @@ export class LivraisonComponent implements OnInit {
           {
             amount: {
               currency_code: 'EUR',
-              value: '10',
+              value: this.tarifCommandeFormate,
               breakdown: {
                 item_total: {
                   currency_code: 'EUR',
-                  value:'10',
+                  value:this.tarifCommandeFormate,
                 }
               }
             },
-            items: [
-              {
-                name: 'name',
-                quantity: '1',
-                unit_amount: {
-                  currency_code: 'EUR',
-                  value: '10',
-                },
-              }
-            ]
+            items: this.createMontreItemPaypal()
           }
         ]
       },
@@ -83,6 +80,22 @@ export class LivraisonComponent implements OnInit {
         console.log('onClick', data, actions);
       },
     };
+  }
+
+  createMontreItemPaypal(): any[] {
+    let configItem: any[] = [];
+    this.panier.forEach(montre => {
+      let config = {
+        name: montre.model,
+        quantity: '1',
+        unit_amount: {
+          currency_code: 'EUR',
+          value:montre.price,
+        },
+      }
+      configItem.push(config)
+    })
+    return configItem
   }
 
 }

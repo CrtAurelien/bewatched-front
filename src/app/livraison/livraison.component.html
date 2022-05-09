@@ -93,7 +93,9 @@
       </div>
     </div>
   </form>
-  <div class="total d-flex justify-content-end">TOTAL COMMANDE</div>
+  <div class="total d-flex justify-content-end">
+    Total de votre panier : {{tarifCommande}}€
+  </div>
   <div class="paiement d-flex justify-content-end" *ngIf="commande.valid">
     <ngx-paypal [config]="payPalConfig"></ngx-paypal>
   </div>

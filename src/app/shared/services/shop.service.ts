@@ -31,6 +31,7 @@ export class ShopService {
   montreMiseEnAvant!: Montre;
   redirectFromSearch = false;
   redirectFromSearchSubject = new Subject<boolean>();
+  tarifCommande: number = 0;
 
   constructor(private utilService: UtilsService, private http: HttpClient) { }
 
