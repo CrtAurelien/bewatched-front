@@ -2,6 +2,7 @@
 
 :host {
 flex:1;
+  width: 100%;
   @media screen and(min-width: $desktop-breakpoint) {
   display:flex;
   width: 100%;
@@ -15,21 +16,6 @@ flex:1;
     width: 100%;
     align-items: center;
   }
-  .couture {
-    background-image: url('../../assets/coutures-brown.png');
-    background-repeat: repeat-x;
-    height: 10px;
-    border: 0 !important;
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-    background-size: 65%;
-    background-position: bottom;
-    @media screen and(min-width: $desktop-breakpoint) {
-    }
-    @media screen and(min-width: $large-screen) {
-    }
-  }
   .intro {
     width: 100%;
     padding-top: 32px;
@@ -42,7 +28,7 @@ flex:1;
     }
     @media screen and(min-width: $desktop-breakpoint) {
       display: flex;
-      flex:1;
+      flex:3;
       align-items: center;
       justify-content: center;
       flex-direction: column;
@@ -118,11 +104,10 @@ flex:1;
     padding-top: 38px;
     z-index: 999;
     @media screen and(min-width: $desktop-breakpoint) {
-      flex:1;
+      flex:2;
       display: flex;
       padding-top: 0;
       align-items: center;
-      justify-content: center;
       .montre-desktop {
         display: flex !important;
         z-index: 8;
@@ -167,7 +152,31 @@ flex:1;
     }
   }
 }
-
+.couture {
+  background: none;
+  @media screen and(min-width: $desktop-breakpoint) {
+  background-image: url('../../assets/coutures-brown.png');
+  background-repeat: repeat-x;
+  height: 10px;
+  border: 0 !important;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  background-size: 55%;
+  background-position: left bottom;
+  }
+  @media screen and(min-width: $large-screen) {
+  background-image: url('../../assets/coutures-brown.png');
+  background-repeat: repeat-x;
+  height: 10px;
+  border: 0 !important;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  background-size: 55%;
+  background-position: left bottom;
+  }
+}
 
 
 *:focus {

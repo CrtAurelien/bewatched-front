@@ -18,8 +18,12 @@ nav {
   height: 80px;
   padding-bottom: 0;
   padding-top: 0;
-  background-image: url('../../../assets/background-logo.png');
+  background: url("../../../assets/background-brown.png");
+  background-size: 50%;
+  @media screen and(min-width: $desktop-breakpoint){
+    background-size: 13%;
 
+  }
   svg {
     cursor: pointer;
   }
@@ -28,7 +32,7 @@ nav {
     height: 150px;
     display: flex;
     align-items: flex-start;
-    background-image: inherit;
+
   }
 
   .navbar-brand {
@@ -172,7 +176,7 @@ nav {
           }
 
           svg {
-            fill: $secondaryColor;
+            fill: #d2d2d2;
             position: absolute;
             opacity: 1;
             margin: auto;
@@ -235,7 +239,7 @@ nav {
           }
 
           input.form-control::placeholder {
-            color: #593c30;
+            color: #d2d2d2;
           }
 
           input.menu-open::placeholder {
@@ -264,16 +268,7 @@ nav {
 
     .burger {
       @media screen and(min-width: $desktop-breakpoint) {
-        animation: bounce 1.3s cubic-bezier(.5, 2, 0.4, 0.4);
-        @keyframes bounce {
-          from {
-            opacity: 1;
-            transform: translateX(300px);
-          }
-          to {
-            transform: translateX(0px);
-          }
-        }
+
 
         &.close {
           width: 171px !important;
@@ -286,10 +281,7 @@ nav {
           justify-content: center;
           cursor: pointer;
           border-radius: 72% 28% 0% 100% / 59% 17% 83% 41%;
-          transition: $variable-burger-animation-time $variable-menu-animation-function;
           &:hover {
-            box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.27);
-            transition: $variable-burger-animation-time $variable-menu-animation-function;;
           }
 
           //transition: all $variable-burger-animation-time $variable-menu-animation-function2;
@@ -300,7 +292,8 @@ nav {
           top: 0;
           right: 0;
           bottom: 0;
-          background-size: 15%;
+          background: url('../../../assets/background-brown.png') top left;
+          background-size: 10%;
           align-items: flex-start;
           justify-content: flex-end;
           width: 100% !important;
