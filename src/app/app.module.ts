@@ -35,6 +35,8 @@ import {LivraisonComponent} from "./livraison/livraison.component";
 import {HomeResolver} from "./template-generique/home.resolver";
 import {DetailMontreResolver} from "./detail-montre-page/detail-montre.resolver";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ErreurTechniqueComponent } from './erreur-technique/erreur-technique.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     PrivacyPoliciesComponent,
     MentionsLegalesComponent,
     LivraisonComponent,
+    ErreurTechniqueComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

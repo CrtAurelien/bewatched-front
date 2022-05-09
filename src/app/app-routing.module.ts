@@ -14,6 +14,8 @@ import {LivraisonComponent} from "./livraison/livraison.component";
 import {LivraisonGuard} from "./livraison/livraison.guard";
 import {HomeResolver} from "./template-generique/home.resolver";
 import {DetailMontreResolver} from "./detail-montre-page/detail-montre.resolver";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {ErreurTechniqueComponent} from "./erreur-technique/erreur-technique.component";
 
 const routes: Routes = [
   {
@@ -76,7 +78,10 @@ const routes: Routes = [
         component: LivraisonComponent,
         data: { animationState: 'commande'},
         canActivate: [LivraisonGuard]
-      }
+      },
+      { path: '404', component: PageNotFoundComponent},
+      { path: '**', redirectTo: '/404'},
+      { path: 'erreur-technique', component: ErreurTechniqueComponent},
     ]
   }
 ];

@@ -1,11 +1,10 @@
-<div class="montre flex-column d-flex" (click)="navigateToDetailMontre()">
-  <div class="header d-flex align-items-center justify-content-center">
+<div class="montre flex-column d-flex">
+  <div class="header d-flex align-items-center justify-content-center" (click)="navigateToDetailMontre()">
     <img src="{{pathImageDetailMontre}}" alt="" class="img-montre">
   </div>
   <div class="informations d-flex flex-column align-items-center">
-    <div><img src="../../../../assets/logo-montres/{{montre.brand.name}}-logo.png" class="marque" alt="Logo marque de la montre"></div>
-
-    <div class="d-flex content ">
+    <div (click)="navigateToDetailMontre()"><img src="../../../../assets/logo-montres/{{montre.brand.name}}-logo.png" class="marque" alt="Logo marque de la montre"></div>
+    <div (click)="navigateToDetailMontre()" class="d-flex content ">
       <div class="info d-flex flex-column">
         <div><span class="modele" *ngIf="montre.reference">{{montre.reference}}</span></div>
       </div>
