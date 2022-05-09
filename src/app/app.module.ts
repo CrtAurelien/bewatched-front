@@ -60,7 +60,7 @@ import {DetailMontreResolver} from "./detail-montre-page/detail-montre.resolver"
     CgvComponent,
     PrivacyPoliciesComponent,
     MentionsLegalesComponent,
-    LivraisonComponent
+    LivraisonComponent,
   ],
   imports: [
     BrowserModule,

@@ -26,45 +26,55 @@ const routes: Routes = [
       {
         path: '',
         component: HomePageComponent,
+        data: { animationState: 'accueil'}
       },
       {
         path: 'shop',
-        component: ShopComponent
+        component: ShopComponent,
+        data: { animationState: 'shop'}
       },
       {
         path: 'our-story',
-        component: OurStoryComponent
+        component: OurStoryComponent,
+        data: { animationState: 'our-story'}
       },
       {
         path: 'conditions-generales-vente',
-        component: CgvComponent
+        component: CgvComponent,
+        data: { animationState: 'cgv'}
       },
       {
         path: 'mentions-legales',
-        component: MentionsLegalesComponent
+        component: MentionsLegalesComponent,
+        data: { animationState: 'mentions-legales'}
       },
       {
         path: 'politique-de-confidentialite',
-        component: PrivacyPoliciesComponent
+        component: PrivacyPoliciesComponent,
+        data: { animationState: 'politique-de-confidentialite'}
       },
       {
         path: 'contact',
-        component: ContactComponent
+        component: ContactComponent,
+        data: { animationState: 'contact'}
       },
       {
         path: 'detail/:montre',
         component: DetailMontrePageComponent,
+        data: { animationState: 'detail-montre'},
         resolve: {
           montre: DetailMontreResolver
         }
       },
       {
         path: 'recapitulatif-panier',
-        component: RecapCommandeComponent
+        component: RecapCommandeComponent,
+        data: { animationState: 'recapitulatif-panier'}
       },
       {
         path: 'commande',
         component: LivraisonComponent,
+        data: { animationState: 'commande'},
         canActivate: [LivraisonGuard]
       }
     ]
