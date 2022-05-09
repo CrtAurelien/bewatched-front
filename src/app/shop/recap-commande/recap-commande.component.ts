@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
 export class RecapCommandeComponent implements OnInit {
   panier : Montre[] = [];
   ngUnsubscribed = new Subject();
-  totalPanier! :number;
+  totalPanier:number = 0;
 
   constructor(private shopService : ShopService, private utilService : UtilsService, private router: Router) {
     utilService.setActiveFlexSubject(false);
@@ -44,7 +44,7 @@ export class RecapCommandeComponent implements OnInit {
 
   calculerTotalPanier() {
     this.panier.forEach(montre => {
-      this.totalPanier = parseInt(montre.price)
+      this.totalPanier += parseInt(montre.price) || 0
     })
     this.shopService.tarifCommande = this.totalPanier;
   }
