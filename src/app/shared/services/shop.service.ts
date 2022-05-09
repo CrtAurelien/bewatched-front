@@ -45,6 +45,7 @@ export class ShopService {
     this.badgeShopItems += 1;
     this.panierSubject.next(this.panier);
     this.badgeShopItemsSubject.next(this.badgeShopItems);
+    sessionStorage.setItem('panier', JSON.stringify(this.panier));
   }
 
   removeToCart(montre: Montre) {
@@ -100,6 +101,17 @@ export class ShopService {
 
   getPanierEnCours() : Montre[] {
     return this.panier
+  }
+
+  initCustomData() {
+    const storage = sessionStorage.getItem('panier')
+    if(storage) {
+      this.panier = JSON.parse(storage) as Montre[]
+      this.badgeShopItems = this.panier.length;
+      this.panierSubject.next(this.panier);
+      this.badgeShopItemsSubject.next(this.badgeShopItems);
+      console.log(this.panier)
+    }
   }
 
   prevenirChangementTheme(theme: string) {

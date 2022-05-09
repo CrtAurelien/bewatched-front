@@ -22,6 +22,7 @@ export class TemplateGeneriqueComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.shopService.initCustomData()
     this.utilService.activeFlexSubject.pipe(
       tap(data => {
         this.activeFlex = data;

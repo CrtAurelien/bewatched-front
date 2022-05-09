@@ -21,6 +21,11 @@ export class RecapCommandeComponent implements OnInit {
 
   ngOnInit(): void {
     this.panier = this.shopService.getPanierEnCours()
+    if(this.panier.length === 0) {
+      this.shopService.initCustomData();
+      this.panier = this.shopService.getPanierEnCours()
+      this.calculerTotalPanier();
+    }
     this.shopService.panierSubject.pipe(
       tap(data => {
         if(data.length > 0) {

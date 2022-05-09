@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, HostListener, OnInit} from '@angular/core';
 import {BurgerService} from "../services/burger-service.service";
 import {ShopService} from "../services/shop.service";
 import {Subject, take, takeUntil, tap} from "rxjs";
@@ -20,10 +20,16 @@ export class HeaderComponent implements OnInit {
   searchString = '';
   allMontresForSearch: Montre[] = [];
   searchResult: Montre[] = [];
-  constructor(private burgerService: BurgerService, private shopService: ShopService, private router: Router) { }
+  constructor(private burgerService: BurgerService, private cd: ChangeDetectorRef, private shopService: ShopService, private router: Router) { }
 
 
   ngOnInit(): void {
+    if(this.panier.length === 0) {
+      this.shopService.initCustomData();
+      this.panier = this.shopService.getPanierEnCours()
+      this.badgePanier = this.panier.length;
+      console.log(this.panier)
+    }
     this.shopService.badgeShopItemsSubject.pipe(
       tap(data => {
         this.badgePanier = data;
@@ -52,6 +58,7 @@ export class HeaderComponent implements OnInit {
 
   openPanier(pop: any) {
     this.panierIsOpen = !this.panierIsOpen;
+    console.log(this.panier)
     this.pop = pop;
     if(this.panierIsOpen) {
       pop.show();
