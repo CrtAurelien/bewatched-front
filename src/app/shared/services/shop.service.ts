@@ -57,6 +57,7 @@ export class ShopService {
       this.panierSubject.next(this.panier)
       this.badgeShopItemsSubject.next(this.badgeShopItems)
       this.montreWasDeletedSubject.next(this.montreWasDeleted);
+      sessionStorage.setItem('panier', JSON.stringify(this.panier));
     }
   }
 

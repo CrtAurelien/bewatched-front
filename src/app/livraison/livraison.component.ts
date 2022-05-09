@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ICreateOrderRequest, IPayPalConfig} from "ngx-paypal";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-livraison',
@@ -8,9 +9,24 @@ import {ICreateOrderRequest, IPayPalConfig} from "ngx-paypal";
 })
 export class LivraisonComponent implements OnInit {
   public payPalConfig!: IPayPalConfig;
+  commande = new FormGroup({
+    nom: new FormControl('', Validators.required),
+    prenom: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    numEtNomRue: new FormControl('', Validators.required),
+    numEtageAppart: new FormControl(''),
+    infoSupp: new FormControl(''),
+    codePostal: new FormControl('', Validators.required),
+    ville: new FormControl('', Validators.required),
+    pays: new FormControl('', Validators.required),
+    telephone: new FormControl('',  [Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
+  });
   constructor() { }
 
   ngOnInit(): void {
+    this.commande.valueChanges.subscribe(data => {
+      console.log(this.commande.valid)
+    })
     this.initConfig()
   }
   private initConfig(): void {

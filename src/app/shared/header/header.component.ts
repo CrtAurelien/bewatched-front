@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit {
       this.shopService.initCustomData();
       this.panier = this.shopService.getPanierEnCours()
       this.badgePanier = this.panier.length;
-      console.log(this.panier)
     }
     this.shopService.badgeShopItemsSubject.pipe(
       tap(data => {

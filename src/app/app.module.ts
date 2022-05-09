@@ -34,6 +34,7 @@ import {NgxPayPalModule} from "ngx-paypal";
 import {LivraisonComponent} from "./livraison/livraison.component";
 import {HomeResolver} from "./template-generique/home.resolver";
 import {DetailMontreResolver} from "./detail-montre-page/detail-montre.resolver";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import {DetailMontreResolver} from "./detail-montre-page/detail-montre.resolver"
     MatCheckboxModule,
     SwiperModule,
     NgxPayPalModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [HomeResolver, DetailMontreResolver],
