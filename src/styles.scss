@@ -108,7 +108,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
 
     }
     &.open {
-
+      background: url('assets/background-brown.png') top left;
     }
   }
   .desktop-menu {
@@ -146,7 +146,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       background-size: 120%;
     }
     &.open {
-      background-image: url("assets/background-brown.png");
+      background: url('assets/background-brown.png') top left;
       background-size: 120%;
     }
   }
