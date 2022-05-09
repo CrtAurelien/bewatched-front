@@ -6,8 +6,17 @@
 
 .montre {
   position: relative;
+    .informations{
+      div{
+        height: 50px;
+        display: flex;
+        align-items: center;
+      }
+    }
     .img-montre {
       transition: .4s;
+      width: auto;
+      height: 300px;
       &:hover {
         transition: .4s;
         transform: scale(1.1);
