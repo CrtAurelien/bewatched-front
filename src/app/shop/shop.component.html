@@ -1,11 +1,11 @@
 <div class="wrap ">
-  <div class="intro">
+  <div class="intro" *ngIf="!isLoading">
     <ng-container *ngIf="nombreMontres >= 1">
       <span class="number">{{nombreMontres}}</span>
       <span> montres trouvées</span>
     </ng-container><span *ngIf="nombreMontres == 0">Aucune montre trouvée</span>
   </div>
-  <div class="filters">
+  <div class="filters" *ngIf="!isLoading">
     <app-filtres-mobile></app-filtres-mobile>
     <app-filtres-dsktop></app-filtres-dsktop>
   </div>
@@ -14,7 +14,7 @@
       <app-liste-montres-shop  [listeMontres]="listeMontre"></app-liste-montres-shop>
     </ng-container>
   </div>
-    <div class="wrap-shop" *ngIf="isLoading">
-        <app-liste-montres-shop ></app-liste-montres-shop>
+    <div class="loader" *ngIf="isLoading">
+      <app-loader></app-loader>
     </div>
 </div>

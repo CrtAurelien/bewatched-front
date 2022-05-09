@@ -31,7 +31,6 @@ export class TemplateGeneriqueComponent implements OnInit {
         this.activeFlex = data;
       }), takeUntil(this.ngUnsubscribe)
     ).subscribe()
-
     this.burgerService.burgerIsOpenSubject.pipe(
       tap(data => {
         this.burgerIsOpen = data;
