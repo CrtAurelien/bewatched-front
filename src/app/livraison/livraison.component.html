@@ -7,18 +7,36 @@
 <div class="form">
   <form [formGroup]="commande" class="d-flex flex-column">
     <div class="identite d-flex justify-content-between">
-      <div class="input-nom flex-one">
+      <div class="input-nom flex-one position-relative">
         <input type="text" class="form-control" formControlName="nom" placeholder="Nom" required>
+        <div class="position-absolute check">
+          <svg *ngIf="commande.controls['nom'].valid" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>
+        </div>
       </div>
-      <div class="input-prenom flex-one">
+      <div class="input-prenom flex-one position-relative">
         <input type="text" class="form-control"  formControlName="prenom" placeholder="Prénom" required>
+        <div class="position-absolute check">
+          <svg *ngIf="commande.controls['prenom'].valid" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>
+        </div>
       </div>
     </div>
     <div class="adresse-top d-flex justify-content-between">
-      <div class="input-rue flex-one">
+      <div class="input-rue flex-one position-relative">
         <input type="text" class="form-control"  formControlName="numEtNomRue" placeholder="Numéro et nom de la rue" required>
+        <div class="position-absolute check">
+          <svg *ngIf="commande.controls['numEtNomRue'].valid" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>
+        </div>
       </div>
-      <div class="input-apt flex-one">
+      <div class="input-apt flex-one position-relative">
         <input type="text" class="form-control" formControlName="numEtageAppart" placeholder="N° d'apt, étage, code (facultatif)" >
       </div>
     </div>
@@ -26,22 +44,52 @@
       <input type="email" class="form-control"  formControlName="infoSupp" placeholder="Informations complémentaires (facultatif)">
     </div>
     <div class="adresse-bottom d-flex justify-content-between">
-      <div class="input-cp flex-one">
+      <div class="input-cp flex-one position-relative">
         <input type="number" class="form-control" formControlName="codePostal" placeholder="Code postal" required>
+        <div class="position-absolute check">
+          <svg *ngIf="commande.controls['codePostal'].valid" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>
+        </div>
       </div>
-      <div class="input-ville flex-one">
+      <div class="input-ville flex-one position-relative">
         <input type="text" class="form-control" formControlName="ville" placeholder="Ville" required>
+        <div class="position-absolute check">
+          <svg *ngIf="commande.controls['ville'].valid" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>
+        </div>
       </div>
     </div>
-    <div class="input-pays">
+    <div class="input-pays pointer-event">
       <input type="text" class="form-control" formControlName="pays" placeholder="Pays" required>
+      <div class="position-absolute check">
+        <svg *ngIf="commande.controls['pays'].valid" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+          <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+          <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+        </svg>
+      </div>
     </div>
     <div class="coordonnee d-flex justify-content-between">
-      <div class="input-mail flex-one">
+      <div class="input-mail flex-one position-relative">
         <input type="email" class="form-control" formControlName="email" placeholder="Adresse email" required>
+        <div class="position-absolute check">
+          <svg *ngIf="commande.controls['email'].valid" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>
+        </div>
       </div>
-      <div class="input-tel flex-one">
+      <div class="input-tel flex-one position-relative">
         <input type="text" class="form-control"  formControlName="telephone" placeholder="Numéro de téléphone" required>
+        <div class="position-absolute check">
+          <svg *ngIf="commande.controls['telephone'].valid" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>
+        </div>
       </div>
     </div>
   </form>
