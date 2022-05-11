@@ -11,10 +11,16 @@ export class MontreItemPanierComponent implements OnInit {
   @Input()
   montre!: Montre
   montreIsDeleted = false;
+  pathImageDetail!: string;
 
   constructor(private shopService : ShopService) { }
 
   ngOnInit(): void {
+    this.montre.photos.forEach(photo => {
+      if(photo.isPhotoDetail) {
+        this.pathImageDetail = photo.path;
+      }
+    })
   }
 
   supprimerMontre(montre: Montre) {

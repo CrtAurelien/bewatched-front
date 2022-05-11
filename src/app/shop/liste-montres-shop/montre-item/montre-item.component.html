@@ -10,7 +10,6 @@
       </div>
       <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
     </div>
-
     <button *ngIf="!montreIsAdd" type="button" class="btn btn-mobile" (click)="ajouterMontre(montre)">Ajouter au panier</button>
     <div class=" cart-button {{montreIsAdd ? 'clicked' : '' }}" *ngIf="montreIsAdd" >
       <span class="added">Ajouté</span>

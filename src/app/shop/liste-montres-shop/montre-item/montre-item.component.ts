@@ -28,6 +28,7 @@ export class MontreItemComponent implements OnInit {
     if(photoDetail) {
       this.pathImageDetailMontre = photoDetail.path;
     }
+    this.montreIsAdd = this.shopService.getPanierEnCours().find(elm => elm.id === this.montre.id ) ? true : false
     this.shopService.montreWasDeletedSubject.pipe(
       tap(data => {
         if(data) {
@@ -47,7 +48,7 @@ export class MontreItemComponent implements OnInit {
   }
 
   checkIfMontreWasDeleted() {
-    const isDeleted = this.shopService.getPanierEnCours().find(elm => elm === this.montre);
+    const isDeleted = this.shopService.getPanierEnCours().find(elm => elm.id === this.montre.id);
     if(!isDeleted) {
       this.montreIsAdd = false;
     }
