@@ -112,6 +112,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
             fill: $secondaryColor !important
           }
         }
+        &.menu-open {
+          svg {
+            fill: white;
+          }
+        }
       }
     }
   }
@@ -195,6 +200,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
             fill: $secondaryColor !important
           }
         }
+        &.menu-open {
+          svg {
+            fill: white;
+          }
+        }
       }
     }
   }
@@ -265,6 +275,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
           background: #2a547b;
           svg {
             fill: #93a5b9 !important
+          }
+        }
+        &.menu-open {
+          svg {
+            fill: white !important;
           }
         }
       }
@@ -342,6 +357,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
           background: #2f2f2f;
           svg {
             fill: #9a9999 !important
+          }
+        }
+        &.menu-open {
+          svg {
+            fill: white !important;
           }
         }
       }
