@@ -84,7 +84,6 @@ export class ShopComponent implements OnInit {
     let newListeMontre : Montre[] = [];
     // On recuperer dans une variable tmp la liste de toutes les montres
     let allMontresDisponibles =  [...JSON.parse(JSON.stringify(this.shopService.allMontres))];
-    console.log(allMontresDisponibles)
     let resultatMarque : any[]= [];
     let resultatYears: any[] = [];
     let resultatsMouvement: any[] = [];
@@ -104,23 +103,27 @@ export class ShopComponent implements OnInit {
     })
     resultatMarque.forEach(listeresult => {
       listeresult?.forEach((resultat : Montre) => {
-        newListeMontre.push(resultat)
+        if(!newListeMontre.includes(resultat)) {
+          newListeMontre.push(resultat)
+        }
       })
     })
-
     resultatYears.forEach(listeresult => {
       listeresult?.forEach((resultat : Montre) => {
-        newListeMontre.push(resultat)
+        if(!newListeMontre.includes(resultat)) {
+          newListeMontre.push(resultat)
+        }
       })
     })
-
     resultatsMouvement.forEach(listeresult => {
       listeresult?.forEach((resultat : Montre) => {
-        newListeMontre.push(resultat)
+        if(!newListeMontre.includes(resultat)) {
+          newListeMontre.push(resultat)
+        }
       })
     })
 
-    this.listeMontres =  [...new Set(newListeMontre)];
+  this.listeMontres = newListeMontre
     this.finalListeMontre = [];
     this.nombreMontres = this.listeMontres.length;
     this.createListesMontre();
