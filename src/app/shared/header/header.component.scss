@@ -130,7 +130,7 @@ nav {
       input:focus {
         font-size: 14px;
         transition: 0.3s ease-in;
-        background: rgb(255 255 255 / 70%) !important;
+        background: rgb(239, 239, 239) !important;
       }
       .mobile {
         display: none;
@@ -194,7 +194,6 @@ nav {
           box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
           padding: 18px 35px;
           border-radius: 50px;
-
           line-height: 1;
           height: 60px;
           justify-content: center;
