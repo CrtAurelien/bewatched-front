@@ -8,7 +8,6 @@ import {Observable} from "rxjs";
 export class DetailMontreResolver implements Resolve<Montre> {
   constructor(private shopsService: ShopService) {}
   resolve(route: ActivatedRouteSnapshot): Observable<Montre> {
-    console.log(route.params['montre'])
     const idMontre = route.params['montre'];
     return this.shopsService.getMontreById(idMontre);
   }

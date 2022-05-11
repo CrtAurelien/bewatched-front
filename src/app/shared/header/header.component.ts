@@ -61,7 +61,6 @@ export class HeaderComponent implements OnInit {
 
   openPanier(pop: any) {
     this.panierIsOpen = !this.panierIsOpen;
-    console.log(this.panier)
     this.pop = pop;
     if(this.panierIsOpen) {
       pop.show();
