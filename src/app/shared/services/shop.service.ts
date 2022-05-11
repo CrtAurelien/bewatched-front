@@ -137,6 +137,9 @@ export class ShopService {
       case 'Longines':
       case 'Jaeger Lecoultre':
       case 'Tissot':
+      case 'Zénith':
+      case 'LIP':
+      case 'Seiko':
         return 'marque'
       case '1950':
       case '1960':

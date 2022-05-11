@@ -24,6 +24,22 @@ export class FiltresService {
         {
           nom: 'Longines',
           estCoche: false
+        },
+        {
+          nom: 'Seiko',
+          estCoche: false
+        },
+        {
+          nom: 'LIP',
+          estCoche: false
+        },
+        {
+          nom: 'Zénith',
+          estCoche: false
+        },
+        {
+          nom: 'Autres',
+          estCoche: false
         }
       ]
     },

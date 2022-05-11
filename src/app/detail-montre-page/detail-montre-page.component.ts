@@ -64,8 +64,8 @@ export class DetailMontrePageComponent implements OnInit{
   }
 
   checkIfExists() {
-    const exists = this.shopService.checkIfMontreIsInCard(this.montre)
-    if(!exists) {
+    const isDeleted = this.shopService.getPanierEnCours().find(elm => elm.id === this.montre.id);
+    if(!isDeleted) {
       this.montreIsInCard = false;
     }
   }
