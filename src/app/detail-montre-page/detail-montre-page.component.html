@@ -72,11 +72,7 @@
       >
         <ng-container *ngFor="let photo of montre.photos">
           <ng-template swiperSlide>
-            <ng-container *ngFor="let photo of montre.photos">
-              <ng-container *ngIf="photo.isPhotoDetail">
                 <img src="{{photo.path}}" width="160px"/>
-              </ng-container>
-            </ng-container>
           </ng-template>
         </ng-container>
       </swiper>
@@ -91,7 +87,7 @@
         </div>
         <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
       </div>
-      <button type="button" (click)="shopButton(montre)" class="btn btn-mobile mobile-view-detail">Ajouter au panier</button>
+      <button type="button" (click)="shopButton(montre)" class="btn btn-mobile mobile-view-detail">{{textButton}}</button>
     </div>
     <div class="info-completes">
       <div class="details">
