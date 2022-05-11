@@ -10,6 +10,7 @@ export interface Montre {
   strap: string;
   dimensions: string;
   hands: string;
+  crown: string;
   year: number;
   price: string;
   case: string;
