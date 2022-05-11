@@ -250,7 +250,7 @@ nav {
     display: none !important;
     @media screen and(min-width: $desktop-breakpoint) {
       display: flex !important;
-      width: 100%;
+      width: auto;
       z-index: 999;
       justify-content: space-between;
       position: fixed;
