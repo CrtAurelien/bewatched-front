@@ -1,4 +1,4 @@
-<div class="wrapper flex-wrap flex-column">
+<div class="wrapper flex-wrap flex-column desktop-template">
   <div class="d-flex wrapper-montres flex-wrap justify-content-between">
     <div class="d-flex sub-wrap flex-wrap">
       <ng-container *ngFor="let montre of listeMontres">
@@ -6,4 +6,10 @@
       </ng-container>
     </div>
   </div>
+</div>
+
+<div class="wrapper flex-wrap flex-column mobile-template">
+      <ng-container *ngFor="let montre of listeMontres">
+        <app-montre-item [montre]="montre"></app-montre-item>
+      </ng-container>
 </div>

@@ -91,11 +91,9 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   background-repeat: repeat;
   background-size: 50%;
   nav{
-    @media screen and (min-width: $desktop-breakpoint){
-      background-image: url('assets/background-brown.png');
-      box-shadow: 0 0 20px 5px #36251db5;
-      background-size: 15%;
-    }
+    background-image: url('assets/background-brown.png');
+    box-shadow: 0 0 20px 5px #36251db5;
+    background-size: 15%;
   }
   .navbar-brand {
     @media screen and(min-width: $desktop-breakpoint) {

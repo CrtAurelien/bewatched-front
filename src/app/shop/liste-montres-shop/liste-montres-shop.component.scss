@@ -1,4 +1,28 @@
 @import "../../../variable";
+
+
+.desktop-template {
+  display:none;
+  @media screen and(min-width: $desktop-breakpoint) {
+    display: flex;
+  }
+}
+
+.mobile-template {
+  display:flex;
+  app-montre-item {
+    ::ng-deep .header {
+      background-image: url('../../../assets/bg-shop-list.png');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  @media screen and(min-width: $tablet-breakpoint) {
+    display: none !important;
+  }
+}
+
+
 .wrapper {
   flex: 1;
   justify-content: space-between;

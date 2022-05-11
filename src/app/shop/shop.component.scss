@@ -30,9 +30,14 @@
     }
   }
   .intro {
-    padding: 20px 120px 10px;
-   // position: fixed;
+    padding: 10px 10px 0;
+    margin:auto;
     z-index: 99;
+    @media screen and(min-width: $desktop-breakpoint) {
+      padding: 20px 120px 10px;
+      margin: 0 !important;
+      z-index: 99;
+    }
   }
   .filters{
     //position: fixed;
