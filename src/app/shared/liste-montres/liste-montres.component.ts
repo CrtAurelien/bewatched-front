@@ -2,6 +2,7 @@ import {AfterContentInit, AfterViewChecked, Component, OnInit} from '@angular/co
 import { Swiper } from 'swiper';
 import {ShopService} from "../services/shop.service";
 import {Montre} from "../../core/model/Montre.interface";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -13,7 +14,7 @@ export class ListeMontresComponent implements OnInit {
   listeMontre: Montre[] = []
   displayLoader = false;
 
-  constructor(private shopService: ShopService) { }
+  constructor(private shopService: ShopService, private router: Router) { }
 
   ngOnInit(): void {
     this.displayLoader = true;
@@ -23,6 +24,10 @@ export class ListeMontresComponent implements OnInit {
         this.displayLoader = false;
       }
     )
+  }
+
+  redirectToDetailMontre(montre: Montre) {
+    this.router.navigate(['/detail', montre.id])
   }
 
 }

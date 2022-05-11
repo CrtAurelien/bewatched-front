@@ -18,7 +18,7 @@
       <ng-template swiperSlide>
         <ng-container *ngFor="let photo of montre.photos">
           <ng-container *ngIf="photo.isPhotoDetail">
-            <img src="{{photo.path}}" width="160px"/>
+            <img (click)="redirectToDetailMontre(montre)" src="{{photo.path}}" width="160px"/>
 
           </ng-container>
         </ng-container>
