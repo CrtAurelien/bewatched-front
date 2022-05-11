@@ -20,12 +20,12 @@ body {
   }
 }
 .swiper-wrapper {
-
+  align-items: center !important;
 }
 .swiper-slide img{
   display: block;
   width: 100%;
-  max-width: 450px;
+  max-width: 350px;
   height: 100%;
   object-fit: cover;
 }
