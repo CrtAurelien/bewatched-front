@@ -272,10 +272,13 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
 
 }
 .theme-longines {
-  background-image: url('assets/background-watches/bg-longines.png');
+  background-image: url('assets/background-watches/background-black-white.png');
   background-position: top center;
   background-repeat: repeat;
   background-size: 60%;
+  @media screen and(min-width: $desktop-breakpoint) {
+    background-image: url('assets/background-watches/bg-longines.png');
+  }
   nav {
     background-image: url('assets/background-blue.png');
     box-shadow: 0 0 20px 5px #36251db5;
@@ -359,9 +362,12 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     }
   }
 
-    .add-to-cart, .remove-to-cart, .back-to-shop {
+    .add-to-cart, .remove-to-cart, .back-to-shop, .mobile-view-detail {
       background-color: #2a547b !important;
     }
+  .mobile-view-detail {
+    color:white !important;
+  }
 
 }
 .theme-jaeger {
@@ -371,7 +377,6 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   background-size: 60%;
   @media screen and(min-width: $desktop-breakpoint) {
     background-image: url('assets/background-watches/bg-black-white.png');
-
   }
   nav {
     background-image: url('assets/background-black-white.png');

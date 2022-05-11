@@ -193,6 +193,10 @@
       align-items: center;
       height: 70px;
       gap: 30px;
+
+      img {
+        width: 30px !important;
+      }
       > div{
         display: flex;
         align-items: center;
