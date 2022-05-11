@@ -249,6 +249,7 @@ nav {
       display: flex !important;
       width: 100%;
       justify-content: space-between;
+      position: fixed;
       &.search-result{
 
         ul{
@@ -294,7 +295,7 @@ nav {
           //transition: all $variable-burger-animation-time $variable-menu-animation-function2;
         }
         &.open {
-          position: absolute;
+          position: fixed;
           display: flex;
           top: 0;
           right: 0;
@@ -306,6 +307,7 @@ nav {
           min-height: 100vh !important;
           border-radius: 0;
           z-index: 120;
+
           svg {
             position: relative;
             top: 56px;
@@ -335,7 +337,7 @@ nav {
     box-shadow: 0 0 20px 20px #00000021;
     list-style: none;
     justify-content: center;
-    margin-top: 12%;
+    margin-top: 100vh;
     align-items: center;
     background-size: 65%;
     max-height: 300px;
