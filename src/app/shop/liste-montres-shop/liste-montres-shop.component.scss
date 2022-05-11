@@ -42,7 +42,8 @@
     width: 100%;
     align-items: flex-start;
     @media screen and(min-width: $desktop-breakpoint) {
-
+      background-position: 0px calc(100%/4.5);
+      background-size: contain;
     }
   }
   .sub-wrap {
