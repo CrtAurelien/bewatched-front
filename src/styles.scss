@@ -65,16 +65,14 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-.montre {
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    max-width: 650px;
-    display: flex;
-    justify-content: center !important;
-    align-items: center !important;
-  }
+.swiper-slide  {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
 }
+
 
 
 .paypal-button-container {
