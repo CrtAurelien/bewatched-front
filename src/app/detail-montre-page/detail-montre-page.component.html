@@ -26,9 +26,9 @@
         <div class="movement" *ngIf="montre.movement">
           <img src="../../assets/icones/engrenage.svg" width="30" alt="">
           <ng-container [ngSwitch]="montre.movement">
-            <span *ngSwitchCase="'manual'">MOUVEMENT : Manuel</span>
-            <span *ngSwitchCase="'automatic'">MOUVEMENT : Automatique</span>
-            <span *ngSwitchCase="'quartz'">MOUVEMENT : Quartz</span>
+            <span *ngSwitchCase="'manual'">Manuel</span>
+            <span *ngSwitchCase="'automatic'">Automatique</span>
+            <span *ngSwitchCase="'quartz'">Quartz</span>
           </ng-container>
         </div>
         <div class="sexe" *ngIf="montre.dial">

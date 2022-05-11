@@ -5,6 +5,7 @@
   }
 
 }
+
 .main-wrap{
   display: flex;
   position: relative;
@@ -19,13 +20,14 @@
   .montre{
      width: 100%;
   }
+
 }
 
 .swiper {
   justify-content: center !important;
   align-items: center !important;
   flex:1;
-  .swiper-wrapper{
+  > .swiper-wrapper{
     align-items: center !important;
     justify-content: center !important;
   }
@@ -137,6 +139,9 @@
       margin-top: 30px;
       line-height: 20px;
       font-family: "Louis George Cafe", sans-serif;
+      > p{
+        white-space: break-spaces;
+      }
     }
   }
   .logo {
