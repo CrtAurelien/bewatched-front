@@ -1,4 +1,7 @@
- <swiper
+<app-loader *ngIf="displayLoader"></app-loader>
+
+<ng-container *ngIf="!displayLoader">
+  <swiper
     [slidesPerView]="3"
     [initialSlide]="1"
     [spaceBetween]="180"
@@ -11,12 +14,21 @@
     class="mySwiper"
   >
 
-    <ng-template swiperSlide><img src="../../../assets/watches/longines.png" width="160px"/></ng-template>
-   <ng-template swiperSlide><img src="../../../assets/watches/omega.png" width="160px" /></ng-template>
-   <ng-template swiperSlide><img src="../../../assets/watches/iwc.png" width="160px" /></ng-template>
-    <ng-template swiperSlide><img src="../../../assets/watches/tissot.png" width="160px"/></ng-template>
+    <ng-container *ngFor="let montre of listeMontre">
+      <ng-template swiperSlide>
+        <ng-container *ngFor="let photo of montre.photos">
+          <ng-container *ngIf="photo.isPhotoDetail">
+            <img src="{{photo.path}}" width="160px"/>
 
+          </ng-container>
+        </ng-container>
+      </ng-template>
+
+    </ng-container>
   </swiper>`
+
+</ng-container>
+
 
 
 
