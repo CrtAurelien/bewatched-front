@@ -101,6 +101,17 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     }
   }
 
+  .navbar-text {
+    input {
+      color:#f0c58f;
+    }
+  }
+
+  .search {
+    //color: #593c30;
+    color: white;
+  }
+
   .burger {
     &.close {
 
@@ -180,6 +191,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       background-image: url('assets/background-blue.png');
     }
   }
+  .navbar-text {
+    input {
+      color:#93a5b9;
+    }
+  }
   .burger {
     &.close {
       background-image: url("assets/background-blue.png");
@@ -221,6 +237,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     }
     @media screen and(min-width: $desktop-breakpoint) {
         background-image: url('assets/background-black-white.png');
+    }
+  }
+  .navbar-text {
+    input {
+      color:#9a9999;
     }
   }
   .burger {

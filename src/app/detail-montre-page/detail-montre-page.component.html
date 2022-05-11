@@ -10,9 +10,9 @@
               [coverflowEffect]="{rotate: 30, slideShadows: false}" [speed]="850" [simulateTouch]="false"
               [thumbs]="{ swiper: thumbsSwiper }">
         <ng-template swiperSlide><app-montre-detail-image [montre]="montre"></app-montre-detail-image></ng-template>
-        <ng-container *ngFor="let photo of montre.photos">
+        <!--<ng-container *ngFor="let photo of montre.photos">
           <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
-        </ng-container>
+        </ng-container>-->
       </swiper>
 
 
