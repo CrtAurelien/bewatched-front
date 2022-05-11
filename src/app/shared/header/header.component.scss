@@ -250,12 +250,12 @@ nav {
     display: none !important;
     @media screen and(min-width: $desktop-breakpoint) {
       display: flex !important;
-      width: auto;
+      width: 100%;
       z-index: 999;
       justify-content: space-between;
       position: fixed;
       &.search-result{
-
+        width: auto;
         ul{
           display: flex;
           flex-direction: column;
