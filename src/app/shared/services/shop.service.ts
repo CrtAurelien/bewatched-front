@@ -140,6 +140,7 @@ export class ShopService {
       case 'Zénith':
       case 'LIP':
       case 'Seiko':
+      case 'Autres':
         return 'marque'
       case '1950':
       case '1960':
