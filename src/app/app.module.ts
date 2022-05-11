@@ -38,6 +38,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ErreurTechniqueComponent } from './erreur-technique/erreur-technique.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoaderComponent } from './shared/loader/loader.component';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -80,7 +81,9 @@ import { LoaderComponent } from './shared/loader/loader.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [HomeResolver, DetailMontreResolver],
+  providers: [HomeResolver, DetailMontreResolver,
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
