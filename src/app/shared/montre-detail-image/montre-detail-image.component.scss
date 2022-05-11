@@ -491,7 +491,8 @@
 
         .content {
           top: -70px;
-          right: -40px;
+          right: auto;
+          left: 10px;
           text-align: right;
 
           .trait, hr {
@@ -507,6 +508,7 @@
             right: -35px;
             position: relative;
             animation: displayTrait 0.7s;
+            width: 230px;
             &:before {
               content: "";
               display: inline-block;
