@@ -19,6 +19,10 @@ export class MontreItemComponent implements OnInit {
   @Input()
   loadingMode!: boolean;
   pathImageDetailMontre! : string;
+  @Input()
+  displayImg = true;
+  @Input()
+  mobileViewDetail = false;
 
 
   constructor(private shopService: ShopService, private router: Router) { }

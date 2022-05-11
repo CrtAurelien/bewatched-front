@@ -1,5 +1,5 @@
 <div class="montre flex-column d-flex">
-  <div class="header d-flex align-items-center justify-content-center" (click)="navigateToDetailMontre()">
+  <div *ngIf="displayImg" class="header d-flex align-items-center justify-content-center" (click)="navigateToDetailMontre()">
     <img src="{{pathImageDetailMontre}}" alt="" class="img-montre">
   </div>
   <div class="informations d-flex flex-column align-items-center">
@@ -10,7 +10,7 @@
       </div>
       <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
     </div>
-    <button *ngIf="!montreIsAdd" type="button" class="btn btn-mobile" (click)="ajouterMontre(montre)">Ajouter au panier</button>
+    <button *ngIf="!montreIsAdd" type="button" class="btn btn-mobile {{mobileViewDetail ? 'mobile-view-detail' : ''}}" (click)="ajouterMontre(montre)">Ajouter au panier</button>
     <div class=" cart-button {{montreIsAdd ? 'clicked' : '' }}" *ngIf="montreIsAdd" >
       <span class="added">Ajouté</span>
       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">

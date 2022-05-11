@@ -1,56 +1,131 @@
 <ng-container *ngIf="!!montre">
-  <a [routerLink]="['/shop']" class="back-to-shop">Retour à la boutique</a>
-  <div class="main-wrap">
-    <swiper #swiper class="swiper"
-            [autoplay]="{delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: false, stopOnLastSlide : false}"
-            [slidesPerView]="1" [preloadImages]="true" [effect]="'coverflow'"
-            [coverflowEffect]="{rotate: 30, slideShadows: false}" [speed]="850" [simulateTouch]="false"
-            [thumbs]="{ swiper: thumbsSwiper }">
-      <ng-template swiperSlide><app-montre-detail-image [montre]="montre"></app-montre-detail-image></ng-template>
-      <ng-container *ngFor="let photo of montre.photos">
-        <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
-      </ng-container>
-    </swiper>
+  <div class="desktop-template">
+    <a [routerLink]="['/shop']" class="back-to-shop">Retour à la boutique</a>
+    <div class="main-wrap">
+      <swiper #swiper class="swiper"
+              [autoplay]="{delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: false, stopOnLastSlide : false}"
+              [slidesPerView]="1" [preloadImages]="true" [effect]="'coverflow'"
+              [coverflowEffect]="{rotate: 30, slideShadows: false}" [speed]="850" [simulateTouch]="false"
+              [thumbs]="{ swiper: thumbsSwiper }">
+        <ng-template swiperSlide><app-montre-detail-image [montre]="montre"></app-montre-detail-image></ng-template>
+        <ng-container *ngFor="let photo of montre.photos">
+          <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
+        </ng-container>
+      </swiper>
 
-    <!--<ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>-->
-    <div class="details">
-      <div class="logo">
-        <img src="assets/logo-montres/{{montre.brand.name}}-logo.png" alt="Logo marque de la montre">
+      <!--<ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>-->
+      <div class="details">
+        <div class="logo">
+          <img src="assets/logo-montres/{{montre.brand.name}}-logo.png" alt="Logo marque de la montre">
+        </div>
+        <div class="modele d-flex">
+          <span class="ref" *ngIf="montre.model"><a href="">{{montre.model}}</a></span>
+          <span class="ref" *ngIf="montre.year"><a href="">{{montre.year}}</a></span>
+        </div>
+        <div class="bloc-details">
+          <div class="details-montre">
+            <div class="movement" *ngIf="montre.movement">
+              <img src="../../assets/icones/engrenage.svg" width="30" alt="">
+              <ng-container [ngSwitch]="montre.movement">
+                <span *ngSwitchCase="'manual'">Manuel</span>
+                <span *ngSwitchCase="'automatic'">Automatique</span>
+                <span *ngSwitchCase="'quartz'">Quartz</span>
+              </ng-container>
+            </div>
+            <div class="sexe" *ngIf="montre.dial">
+              <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>Cadran : {{montre.dial}}</span>
+            </div>
+            <div class="strap" *ngIf="montre.strap">
+              <img src="../../assets/icones/engrenage.svg" width="30" alt="">
+              <ng-container [ngSwitch]="montre.strap">
+                <span *ngSwitchCase="'cuir'">BRACELET : Cuir</span>
+                <span *ngSwitchCase="'synthetic'">BRACELET : Synthétique</span>
+              </ng-container>
+            </div>
+          </div>
+          <div class="informations d-flex flex-wrap">
+            <div class="description">
+              <p>{{montre.description}}</p>
+            </div>
+            <button (click)="shopButton(montre)" class="add-to-cart" >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 209.1948 199.48004"><path d="M175.82573,36.20605h-21.6644a52.02806,52.02806,0,0,0-99.12786,0H33.36907A33.408,33.408,0,0,0,0,69.57518v96.53573A33.408,33.408,0,0,0,33.36907,199.48H175.82573a33.408,33.408,0,0,0,33.36907-33.36913V69.57518A33.408,33.408,0,0,0,175.82573,36.20605ZM104.5974,11.18429a40.90584,40.90584,0,0,1,37.65509,25.02176H66.94231A40.90584,40.90584,0,0,1,104.5974,11.18429Zm94.39278,154.92662a23.18651,23.18651,0,0,1-23.16445,23.16451H33.36907a23.18651,23.18651,0,0,1-23.16445-23.16451V69.57518A23.18651,23.18651,0,0,1,33.36907,46.41067H175.82573a23.18651,23.18651,0,0,1,23.16445,23.16451Z"/></svg>
+              {{textButton}}
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="modele d-flex">
-        <span class="ref" *ngIf="montre.model"><a href="">{{montre.model}}</a></span>
-        <span class="ref" *ngIf="montre.year"><a href="">{{montre.year}}</a></span>
+    </div>
+  </div>
+  <div class="mobile-template">
+    <div>
+      <swiper
+        [slidesPerView]="3"
+        [initialSlide]="1"
+        [spaceBetween]="180"
+        [slideToClickedSlide]="true"
+        slideActiveClass="realWidth"
+        slideClass="little"
+        [centeredSlides]="true"
+        [loop]="true"
+        [pagination]="false"
+        class="mySwiper"
+      >
+        <ng-container *ngFor="let photo of montre.photos">
+          <ng-template swiperSlide>
+            <ng-container *ngFor="let photo of montre.photos">
+              <ng-container *ngIf="photo.isPhotoDetail">
+                <img src="{{photo.path}}" width="160px"/>
+              </ng-container>
+            </ng-container>
+          </ng-template>
+        </ng-container>
+      </swiper>
+    </div>
+    <div class="main-infos-montre informations d-flex flex-column align-items-center">
+      <div>
+        <img src="../../../../assets/logo-montres/{{montre.brand.name}}-logo.png" class="marque" alt="Logo marque de la montre">
+      </div>
+      <div class="d-flex content ">
+        <div class="info d-flex flex-column">
+          <div><span class="modele" *ngIf="montre.reference">{{montre.model}}</span></div>
+        </div>
+        <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
+      </div>
+      <button type="button" class="btn btn-mobile mobile-view-detail">Ajouter au panier</button>
+    </div>
+    <div class="info-completes">
+      <div class="details">
+        <div class="modele d-flex">
+          <span class="ref" *ngIf="montre.model"><a href="">{{montre.model}}</a></span>
+          <span class="ref" *ngIf="montre.year"><a href="">{{montre.year}}</a></span>
+        </div>
       </div>
       <div class="bloc-details">
-        <div class="details-montre">
-        <div class="movement" *ngIf="montre.movement">
-          <img src="../../assets/icones/engrenage.svg" width="30" alt="">
-          <ng-container [ngSwitch]="montre.movement">
-            <span *ngSwitchCase="'manual'">Manuel</span>
-            <span *ngSwitchCase="'automatic'">Automatique</span>
-            <span *ngSwitchCase="'quartz'">Quartz</span>
-          </ng-container>
+        <div class="details-montre d-flex flex-column align-items-center justify-content-center">
+          <div class="movement" *ngIf="montre.movement">
+            <img src="../../assets/icones/engrenage.svg" width="30" alt="">
+            <ng-container [ngSwitch]="montre.movement">
+              <span *ngSwitchCase="'manual'">Manuel</span>
+              <span *ngSwitchCase="'automatic'">Automatique</span>
+              <span *ngSwitchCase="'quartz'">Quartz</span>
+            </ng-container>
+          </div>
+          <div class="sexe" *ngIf="montre.dial">
+            <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>Cadran : {{montre.dial}}</span>
+          </div>
+          <div class="strap" *ngIf="montre.strap">
+            <img src="../../assets/icones/engrenage.svg" width="30" alt="">
+            <ng-container [ngSwitch]="montre.strap">
+              <span *ngSwitchCase="'cuir'">BRACELET : Cuir</span>
+              <span *ngSwitchCase="'synthetic'">BRACELET : Synthétique</span>
+            </ng-container>
+          </div>
         </div>
-        <div class="sexe" *ngIf="montre.dial">
-          <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>Cadran : {{montre.dial}}</span>
-        </div>
-        <div class="strap" *ngIf="montre.strap">
-          <img src="../../assets/icones/engrenage.svg" width="30" alt="">
-          <ng-container [ngSwitch]="montre.strap">
-            <span *ngSwitchCase="'cuir'">BRACELET : Cuir</span>
-            <span *ngSwitchCase="'synthetic'">BRACELET : Synthétique</span>
-          </ng-container>
-        </div>
-      </div>
         <div class="informations d-flex flex-wrap">
-        <div class="description">
-          <p>{{montre.description}}</p>
+          <div class="description">
+            <p>{{montre.description}}</p>
+          </div>
         </div>
-        <button (click)="shopButton(montre)" class="add-to-cart" >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 209.1948 199.48004"><path d="M175.82573,36.20605h-21.6644a52.02806,52.02806,0,0,0-99.12786,0H33.36907A33.408,33.408,0,0,0,0,69.57518v96.53573A33.408,33.408,0,0,0,33.36907,199.48H175.82573a33.408,33.408,0,0,0,33.36907-33.36913V69.57518A33.408,33.408,0,0,0,175.82573,36.20605ZM104.5974,11.18429a40.90584,40.90584,0,0,1,37.65509,25.02176H66.94231A40.90584,40.90584,0,0,1,104.5974,11.18429Zm94.39278,154.92662a23.18651,23.18651,0,0,1-23.16445,23.16451H33.36907a23.18651,23.18651,0,0,1-23.16445-23.16451V69.57518A23.18651,23.18651,0,0,1,33.36907,46.41067H175.82573a23.18651,23.18651,0,0,1,23.16445,23.16451Z"/></svg>
-          {{textButton}}
-        </button>
-      </div>
       </div>
     </div>
   </div>
