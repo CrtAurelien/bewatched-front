@@ -86,6 +86,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /**
 THEME DYNAMIQUE EN FONCTION DE LA MARQUE
  */
+.panier {
+  background: rgba(255, 255, 255, 0.3);
+}
 .theme-default {
   background-image: url('assets/background-home.png');
   background-position: left;
@@ -103,6 +106,12 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
         svg {
           fill: white !important
         }
+        &.open {
+          background: rgba(255, 255, 255, 1);
+          svg {
+            fill: $secondaryColor !important
+          }
+        }
       }
     }
   }
@@ -111,7 +120,6 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       background-size: 200%;
     }
   }
-
   .navbar-text {
     input {
       color:#f0c58f;
@@ -124,18 +132,23 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       color:white;
     }
   }
-
-
   .search {
     color: white;
   }
-
+  .btn-valider-panier {
+    background: #391f17;
+  }
   .burger {
     &.close {
 
     }
     &.open {
       background: url('assets/background-brown.png') top left;
+    }
+  }
+  .icon-delete-montre-panier {
+    svg {
+      fill: $secondaryColor !important
     }
   }
   .desktop-menu {
@@ -176,7 +189,18 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
         svg {
           fill: $secondaryColor !important
         }
+        &.open {
+          background: rgba(255, 255, 255, 1) !important;
+          svg {
+            fill: $secondaryColor !important
+          }
+        }
       }
+    }
+  }
+  .icon-delete-montre-panier {
+    svg {
+      fill: $secondaryColor !important
     }
   }
   .navbar-text {
@@ -191,7 +215,9 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       color:white;
     }
   }
-
+  .btn-valider-panier {
+    background: #391f17;
+  }
   .burger {
     &.close {
       background-image: url("assets/background-brown.png");
@@ -235,7 +261,21 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
         svg {
           fill: #2a547b !important
         }
+        &.open {
+          background: #2a547b;
+          svg {
+            fill: #93a5b9 !important
+          }
+        }
       }
+    }
+  }
+  .btn-valider-panier {
+    background: #2a547b;
+  }
+  .icon-delete-montre-panier {
+    svg {
+      fill: #93a5b9 !important
     }
   }
   .navbar-brand {
@@ -298,7 +338,21 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
         svg {
           fill: #2f2f2f !important
         }
+        &.open {
+          background: #2f2f2f;
+          svg {
+            fill: #9a9999 !important
+          }
+        }
       }
+    }
+  }
+  .btn-valider-panier {
+    background: #2f2f2f;
+  }
+  .icon-delete-montre-panier {
+    svg {
+      fill: #9a9999 !important
     }
   }
   .navbar-brand {
