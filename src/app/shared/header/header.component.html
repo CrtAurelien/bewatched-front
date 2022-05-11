@@ -98,7 +98,10 @@
     <ng-container *ngFor="let montre of panier">
       <app-montre-item-panier [montre]="montre"></app-montre-item-panier>
     </ng-container>
-    <button (click)="goToRecapPanier()" type="button" class="btn btn-valider-panier">Valider la commande</button>
+    <div class="d-flex align-items-center justify-content-center">
+      <button (click)="goToRecapPanier()" type="button" class="btn btn-valider-panier">Valider la commande</button>
+
+    </div>
   </ng-template>
 </ng-template>
 

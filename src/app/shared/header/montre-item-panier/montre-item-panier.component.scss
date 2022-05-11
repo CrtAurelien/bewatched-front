@@ -10,3 +10,9 @@
   font-weight: bold;
   line-height: 1.3;
 }
+
+.icon-delete-montre-panier {
+  &:hover {
+    transform: scale(0.8);
+  }
+}
