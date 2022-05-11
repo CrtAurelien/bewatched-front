@@ -139,6 +139,7 @@ nav {
 
         z-index: 999;
         position: relative;
+        padding-left:130px;
         width: auto;
         margin-left: auto;
         margin-right: auto;
@@ -146,7 +147,6 @@ nav {
         .panier {
           width: 60px;
           height: 60px;
-          background: rgba(255, 255, 255, 0.3);
           position: relative;
           border-radius: 50px;
           box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
@@ -157,9 +157,6 @@ nav {
           &:hover {
           }
 
-          &.open {
-            background: rgba(255, 255, 255, 1);
-          }
 
           &.menu-open {
             .badge {
@@ -416,8 +413,7 @@ nav {
   }
 }
 
-.btn-valider {
-  background: #391f17;
+.btn-valider-panier {
   border: 0 !important;
   border-radius: 50px;
   position: relative;
