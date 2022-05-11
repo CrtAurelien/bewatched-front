@@ -2,6 +2,7 @@
 
 .container-fluid {
   @media screen and(min-width: $desktop-breakpoint) {
+    height: 100%;
     padding-right: 0;
     padding-left: 0;
   }
@@ -55,13 +56,13 @@ nav {
     }
 
     @media screen and(min-width: $desktop-breakpoint) {
-      height: 150px;
+      height: 100%;
       width: 450px;
       display: flex;
       justify-content: center;
+      align-items: center;
       position: relative;
-      left: 10px;
-      top:4px;
+      padding: 0;
       a{
 
       }
@@ -200,7 +201,7 @@ nav {
 
           &.border-search {
             border-radius: 30px;
-            height: auto;
+            height: 60px;
           }
 
           .delete-search {
@@ -224,7 +225,7 @@ nav {
             outline: 0 !important;
             box-shadow: none !important;
             border: 0;
-            padding: 0;
+            padding: 0 30px;
           }
 
           &.menu-open {
@@ -246,9 +247,6 @@ nav {
       width: 100%;
       justify-content: space-between;
       .desktop-burger {
-        position: relative;
-        left: 20px;
-        top:8px;
       }
     }
 
@@ -258,11 +256,10 @@ nav {
 
         &.close {
           width: 171px !important;
-          height: 127px;
+          height: 100%;
+          right: 0;
           position: absolute;
           display: flex;
-          right: 0;
-          top: 4px;
           align-items: center;
           justify-content: center;
           cursor: pointer;
@@ -342,7 +339,7 @@ nav {
 
   .burger {
     position: relative;
-    top: 2px;
+    top: 0px;
 
     svg {
       .cls-1 {
