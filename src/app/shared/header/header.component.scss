@@ -1,5 +1,7 @@
 @import "../../../variable";
-
+:host{
+  z-index: 99;
+}
 .container-fluid {
   @media screen and(min-width: $desktop-breakpoint) {
     height: 100%;
@@ -248,6 +250,7 @@ nav {
     @media screen and(min-width: $desktop-breakpoint) {
       display: flex !important;
       width: 100%;
+      z-index: 999;
       justify-content: space-between;
       position: fixed;
       &.search-result{
