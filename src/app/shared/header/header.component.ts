@@ -56,6 +56,9 @@ export class HeaderComponent implements OnInit {
     this.burgerService.setBurgerMenuIsOpen(this.showBurgerMenu);
   }
 
+
+
+
   openPanier(pop: any) {
     this.panierIsOpen = !this.panierIsOpen;
     console.log(this.panier)

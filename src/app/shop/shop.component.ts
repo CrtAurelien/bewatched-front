@@ -4,6 +4,7 @@ import {ShopService} from "../shared/services/shop.service";
 import {last, Observable, Subject, take, takeUntil, tap} from "rxjs";
 import {UtilsService} from "../shared/services/utils.service";
 import {FiltreObject} from "../core/model/Filtre.interface";
+import {BurgerService} from "../shared/services/burger-service.service";
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
