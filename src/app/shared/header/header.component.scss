@@ -99,7 +99,6 @@ nav {
     top: 8px !important;
     left: 27px !important;
     font-size: 11px;
-    background-color: $secondaryColor !important;
     @media screen and(min-width: $tablet-breakpoint) {
       top: 8px !important;
       left: 50px !important;
@@ -233,14 +232,6 @@ nav {
           }
 
           &.menu-open {
-            color: white;
-          }
-
-          input.form-control::placeholder {
-            color: #d2d2d2;
-          }
-
-          input.menu-open::placeholder {
             color: white;
           }
 
