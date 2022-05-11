@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   searchString = '';
   allMontresForSearch: Montre[] = [];
   searchResult: Montre[] = [];
+  toggleMobileSearch = false;
   constructor(private burgerService: BurgerService, private cd: ChangeDetectorRef, private shopService: ShopService, private router: Router) { }
 
 
@@ -96,12 +97,21 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectMontreDetailFromSearch(montreId: number) {
+    this.toggleMobileSearch = false;
     this.redirectTo('/detail/'+montreId);
   }
 
   redirectTo(uri:string){
+    this.toggleMobileSearch = false;
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
       this.router.navigate([uri]));
+  }
+
+  toggleSearchMobile() {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      this.toggleMobileSearch = !this.toggleMobileSearch;
+    }
+
   }
 
 }

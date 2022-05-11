@@ -108,7 +108,6 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   }
 
   .search {
-    //color: #593c30;
     color: white;
   }
 
@@ -140,9 +139,9 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
 }
 .theme-omega {
   background-image: url('assets/background-watches/bg-omega.png');
-  background-position: left;
+  background-position: top center;
   background-repeat: repeat;
-  background-size: contain;
+  background-size: 60%;
   .navbar-brand {
     @media screen and(min-width: $desktop-breakpoint) {
       background-image: url('assets/background-logo.png');
@@ -160,7 +159,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     }
   }
   .desktop-menu {
-    background-image: url('assets/background-watches/bg-omega.png');
+    background-image: url('assets/background-home.png');
     li {
       color: $secondaryColor;
       &:hover {
@@ -179,9 +178,9 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
 }
 .theme-longines {
   background-image: url('assets/background-watches/bg-longines.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-position: top center;
+  background-repeat: repeat;
+  background-size: 60%;
   .navbar-brand {
     color: white !important;
     h1 {
