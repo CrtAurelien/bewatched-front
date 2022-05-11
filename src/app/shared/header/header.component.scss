@@ -249,7 +249,6 @@ nav {
       display: flex !important;
       width: 100%;
       justify-content: space-between;
-      position: fixed;
       &.search-result{
 
         ul{
@@ -307,8 +306,6 @@ nav {
           min-height: 100vh !important;
           border-radius: 0;
           z-index: 120;
-          transition: 1s;
-
           svg {
             position: relative;
             top: 56px;
