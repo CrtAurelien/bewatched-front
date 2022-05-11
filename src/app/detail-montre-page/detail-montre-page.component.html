@@ -91,7 +91,7 @@
         </div>
         <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
       </div>
-      <button type="button" class="btn btn-mobile mobile-view-detail">Ajouter au panier</button>
+      <button type="button" (click)="shopButton(montre)" class="btn btn-mobile mobile-view-detail">Ajouter au panier</button>
     </div>
     <div class="info-completes">
       <div class="details">
