@@ -48,6 +48,7 @@
           text-align: center;
           line-height: 1;
           text-transform: uppercase;
+          max-width: 110px;
         }
 
         .trait, hr {
@@ -87,12 +88,23 @@
           }
 
           .hr-wrap {
-            transform: rotate(20deg);
-            top: 18px;
-            left: 0px;
+            transform: rotate(200deg);
+            top: 20px;
+            right: 0;
             position: relative;
             animation: displayTrait 0.7s;
-
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 35px;
+              height: 35px;
+              border-radius: 50px;
+              background: white;
+              opacity: 0.7;
+              box-shadow: 0 0 0 0 white;
+              animation: pulse-white 3s infinite;
+              vertical-align: -3px;
+            }
             .dot {
               height: 10px;
               width: 10px;
@@ -100,6 +112,7 @@
               transform: scale(1);
               opacity: .7;
               box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+              background-color: #ffffff;
               animation: scaling 4s ease-out infinite;
               display: inline-block;
               margin: .5rem;
@@ -154,12 +167,23 @@
           }
 
           .hr-wrap {
-            transform: rotate(7deg);
-            top: 11px;
-            left: 11px;
+            transform: rotate(13deg);
+            top: -9px;
+            right: -35px;
             position: relative;
             animation: displayTrait 0.7s;
-
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 35px;
+              height: 35px;
+              border-radius: 50px;
+              background: white;
+              opacity: 0.7;
+              box-shadow: 0 0 0 0 white;
+              animation: pulse-white 3s infinite;
+              vertical-align: -3px;
+            }
             .dot {
               height: 10px;
               width: 10px;
@@ -221,12 +245,23 @@
           }
 
           .hr-wrap {
-            transform: rotate(-15deg);
-            top: -20px;
-            left: 5px;
+            transform: rotate(160deg);
+            top: -40px;
+            right: 0;
             position: relative;
             animation: displayTrait 0.7s;
-
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 35px;
+              height: 35px;
+              border-radius: 50px;
+              background: white;
+              opacity: 0.7;
+              box-shadow: 0 0 0 0 white;
+              animation: pulse-white 3s infinite;
+              vertical-align: -3px;
+            }
             .dot {
               height: 10px;
               width: 10px;
