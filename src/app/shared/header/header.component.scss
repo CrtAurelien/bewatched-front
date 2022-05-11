@@ -60,6 +60,7 @@ nav {
       height: 100%;
       width: 450px;
       display: flex;
+      z-index: 1000;
       justify-content: center;
       align-items: center;
       position: relative;
@@ -140,7 +141,7 @@ nav {
       }
       &.icons {
 
-        z-index: 999;
+        z-index: 1000;
         position: relative;
         padding-left:130px;
         width: auto;
