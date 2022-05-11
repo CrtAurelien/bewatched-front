@@ -213,9 +213,7 @@
   padding-top:20px;
   .info-completes {
     margin-top:25px;
-    border-top: 2px dotted black;
     padding-bottom: 25px;
-    border-bottom: 2px dotted black;
     width: 100%;
     .modele {
       width: 100%;
@@ -243,8 +241,19 @@
   .description {
     padding: 0 20px;
   }
+  .couture-mobile {
+    background-repeat: repeat-x;
+    z-index: -1;
+    height: 10px;
+    border: 0 !important;
+    width: 100%;
+    bottom: 50px;
+    background-size: 125%;
+    background-position: left bottom;
+  }
   .informations {
     padding-top: 25px;
+    padding-bottom: 25px;
   }
   @media screen and(min-width: $desktop-breakpoint) {
     display: none;

@@ -91,7 +91,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 THEME DYNAMIQUE EN FONCTION DE LA MARQUE
  */
 .panier {
-  background: rgba(255, 255, 255, 0.3);
+  @media screen and(min-width: $desktop-breakpoint) {
+    background: rgba(255, 255, 255, 0.3);
+  }
 }
 .theme-default {
   background-image: url('assets/background-home.png');

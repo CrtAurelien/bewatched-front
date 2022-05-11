@@ -31,6 +31,7 @@ export class DetailMontrePageComponent implements OnInit{
   textButton = "Ajouter au panier";
   ngUnsubscribed = new Subject();
   idMontre = this.route.snapshot.paramMap.get('montre');
+  nomCoutureMobile = '';
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
   constructor(private route: ActivatedRoute, private shopService: ShopService, private cd:ChangeDetectorRef) {
     this.montre = route.snapshot.data['montre'];
@@ -42,6 +43,17 @@ export class DetailMontrePageComponent implements OnInit{
   ngOnInit(): void {
     this.urlImageLogoMontre += this.montre?.brand.name.toLowerCase() + '-logo.png';
     this.montreIsInCard = this.shopService.checkIfMontreIsInCard(this.montre);
+    switch (this.montre.brand.name.toLowerCase()) {
+      case 'omega':
+        this.nomCoutureMobile = '../../assets/coutures-brown.png';
+        break;
+      case 'longines':
+        this.nomCoutureMobile = '../../assets/coutures-blue.png';
+        break;
+      default :
+        this.nomCoutureMobile = '../../assets/coutures-b&w.png';
+        break;
+    }
     this.shopService.montreWasDeletedSubject.pipe(
       tap(data => {
         if(data) {

@@ -12,8 +12,6 @@
           <ng-template swiperSlide><img src="{{photo.path}}" /></ng-template>
         </ng-container>
       </swiper>
-
-      <!--<ng-template swiperSlide><app-montre-detail-image></app-montre-detail-image></ng-template>-->
       <div class="details">
         <div class="logo">
           <img src="assets/logo-montres/{{montre.brand.name}}-logo.png" alt="Logo marque de la montre">
@@ -77,6 +75,7 @@
         </ng-container>
       </swiper>
     </div>
+
     <div class="main-infos-montre informations d-flex flex-column align-items-center">
       <div>
         <img src="../../../../assets/logo-montres/{{montre.brand.name}}-logo.png" class="marque" alt="Logo marque de la montre">
@@ -88,6 +87,8 @@
         <span class="prix" *ngIf="montre.price">{{montre.price}} €</span>
       </div>
       <button type="button" (click)="shopButton(montre)" class="btn btn-mobile mobile-view-detail">{{textButton}}</button>
+    </div>
+    <div class="couture-mobile"   [ngStyle]="{ 'background-image': 'url(' +  nomCoutureMobile + ')'}">
     </div>
     <div class="info-completes">
       <div class="details">
@@ -123,6 +124,8 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="couture-mobile"   [ngStyle]="{ 'background-image': 'url(' +  nomCoutureMobile + ')'}">
     </div>
   </div>
 </ng-container>
