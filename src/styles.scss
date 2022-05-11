@@ -94,6 +94,16 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     background-image: url('assets/background-brown.png');
     box-shadow: 0 0 20px 5px #36251db5;
     background-size: 15%;
+    .badge {
+      background-color: $secondaryColor !important;
+    }
+    .icons {
+      .panier {
+        svg {
+          fill: white !important
+        }
+      }
+    }
   }
   .navbar-brand {
     @media screen and(min-width: $desktop-breakpoint) {
@@ -105,7 +115,15 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     input {
       color:#f0c58f;
     }
+    input.form-control::placeholder {
+      color:white;
+    }
+
+    input.menu-open::placeholder {
+      color:white;
+    }
   }
+
 
   .search {
     color: white;
@@ -133,6 +151,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     .modele {
       .ref {
         background-image: url('assets/background-brown.png');
+
       }
     }
   }
@@ -145,6 +164,30 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .navbar-brand {
     @media screen and(min-width: $desktop-breakpoint) {
       background-image: url('assets/background-logo.png');
+    }
+  }
+  nav {
+    .badge {
+      background-color: $secondaryColor !important;
+    }
+    .icons {
+      .panier {
+        svg {
+          fill: $secondaryColor !important
+        }
+      }
+    }
+  }
+  .navbar-text {
+    input {
+      color:$secondaryColor;
+    }
+    input.form-control::placeholder {
+      color:$secondaryColor;
+    }
+
+    input.menu-open::placeholder {
+      color:white;
     }
   }
 
@@ -172,6 +215,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     .modele {
       .ref {
         background-image: url('assets/background-brown.png');
+        background-size: 120%;
       }
     }
   }
@@ -181,6 +225,18 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   background-position: top center;
   background-repeat: repeat;
   background-size: 60%;
+  nav {
+    .badge {
+      background-color:  #93a5b9 !important;
+    }
+    .icons {
+      .panier {
+        svg {
+          fill: #2a547b !important
+        }
+      }
+    }
+  }
   .navbar-brand {
     color: white !important;
     h1 {
@@ -193,6 +249,9 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .navbar-text {
     input {
       color:#93a5b9;
+    }
+    input.menu-open::placeholder {
+      color:white;
     }
   }
   .burger {
@@ -219,7 +278,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     .modele {
       .ref {
         background-image: url('assets/background-blue.png');
-        background-size: 100%;
+        background-size: 120%;
       }
     }
   }
@@ -229,6 +288,18 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   background-position: top center;
   background-repeat: repeat;
   background-size: 60%;
+  nav {
+    .badge {
+      background-color:  #9a9999 !important;
+    }
+    .icons {
+      .panier {
+        svg {
+          fill: #2f2f2f !important
+        }
+      }
+    }
+  }
   .navbar-brand {
     color: white !important;
     h1 {
@@ -241,6 +312,9 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   .navbar-text {
     input {
       color:#9a9999;
+    }
+    input.menu-open::placeholder {
+      color:white;
     }
   }
   .burger {
@@ -267,6 +341,7 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     .modele {
       .ref {
         background-image: url('assets/background-black-white.png');
+        background-size: 120%;
       }
     }
   }
