@@ -163,12 +163,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     }
   }
   .desktop-menu {
-    background-image: url('assets/background-home.png');
+    background: url('assets/background-home.png');
     li {
       color: $secondaryColor;
       &:hover {
-        background-image: url('assets/background-home.png');
-        background-size: 120%;
+        background: url('assets/background-home.png');
       }
     }
   }

@@ -264,7 +264,6 @@ nav {
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          border-radius: 72% 28% 0% 100% / 59% 17% 83% 41%;
           &:hover {
           }
 
@@ -276,19 +275,21 @@ nav {
           top: 0;
           right: 0;
           bottom: 0;
-          background-size: 10%;
+          background-size: 13%;
           align-items: flex-start;
           justify-content: flex-end;
           width: 100% !important;
-          transition: $variable-burger-animation-time $variable-menu-animation-function;
           min-height: 100vh !important;
           border-radius: 0;
           z-index: 120;
+          transition: 1s;
 
           svg {
             position: relative;
             top: 56px;
+            width: 56px;
             left: -45px;
+            height: 38px;
           }
         }
 
@@ -309,12 +310,13 @@ nav {
     color: white;
     display: flex;
     width: 100%;
+    box-shadow: 0 0 20px 20px #00000021;
     list-style: none;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 12%;
     align-items: center;
-    background-size: 15%;
-    max-height: 220px;
+    background-size: 65%;
+    max-height: 300px;
     padding: 40px;
     animation: checkboxCheckedAnimation $variable-menu-animation-time $variable-menu-animation-function both;
 
@@ -324,16 +326,19 @@ nav {
       color: $secondaryColor;
       line-height: 55px;
       padding: 105px 5px;
-      width: 320px;
-      height: 320px;
+      width: 420px;
+      height: 420px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Bebas Neue', cursive;
       position: relative;
-
+      cursor: pointer;
       &:hover {
         border-radius: 100%;
+        a{
+          color: white;
+        }
       }
     }
   }
