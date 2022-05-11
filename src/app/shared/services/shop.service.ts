@@ -15,9 +15,9 @@ export class ShopService {
   badgeShopItemsSubject = new Subject<number>();
   montreWasDeleted = false;
   montreWasDeletedSubject = new Subject<boolean>();
-  urlMontres = "http://bewatched.fr/api-bewatched/public/api/watches"
-  urlDetailMontre = "http://bewatched.fr/api-bewatched/public/api/watch/"
-  urlHomeMontre = "http://bewatched.fr/api-bewatched/public/api/watch/home"
+  urlMontres = "https://bewatched.fr/api-bewatched/public/api/watches"
+  urlDetailMontre = "https://bewatched.fr/api-bewatched/public/api/watch/"
+  urlHomeMontre = "https://bewatched.fr/api-bewatched/public/api/watch/home"
   allMontres : Montre[] = [];
   montresSave: Montre[] = [];
   theme = 'theme-default';
@@ -81,7 +81,6 @@ export class ShopService {
   }
 
   switchTheme(theme: string) {
-    console.log(theme)
     switch (theme) {
       case 'omega':
         this.prevenirChangementTheme('theme-omega')
@@ -112,7 +111,6 @@ export class ShopService {
       this.badgeShopItems = this.panier.length;
       this.panierSubject.next(this.panier);
       this.badgeShopItemsSubject.next(this.badgeShopItems);
-      console.log(this.panier)
     }
   }
 

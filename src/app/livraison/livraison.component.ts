@@ -72,12 +72,10 @@ export class LivraisonComponent implements OnInit {
         // SUCCESS
       },
       onCancel: (data, actions) => {
-        console.log('OnCancel', data, actions);
       },
       onError: err => {
       },
       onClick: (data, actions) => {
-        console.log('onClick', data, actions);
       },
     };
   }
