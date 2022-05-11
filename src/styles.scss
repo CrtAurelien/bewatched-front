@@ -183,10 +183,13 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   background-size: 60%;
   .navbar-brand {
     @media screen and(min-width: $desktop-breakpoint) {
-      background-image: url('assets/background-logo.png');
+      background-size: 200%;
     }
   }
   nav {
+    background-image: url('assets/background-brown.png');
+    box-shadow: 0 0 20px 5px #36251db5;
+    background-size: 15%;
     .badge {
       background-color: $secondaryColor !important;
     }
@@ -264,6 +267,9 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   background-repeat: repeat;
   background-size: 60%;
   nav {
+    background-image: url('assets/background-blue.png');
+    box-shadow: 0 0 20px 5px #36251db5;
+    background-size: 15%;
     .badge {
       background-color:  #93a5b9 !important;
     }
@@ -295,12 +301,12 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     }
   }
   .navbar-brand {
+    @media screen and(min-width: $desktop-breakpoint) {
+      background-size: 200%;
+    }
     color: white !important;
     h1 {
       color: #93a5b9 !important;
-    }
-    @media screen and(min-width: $desktop-breakpoint) {
-      background-image: url('assets/background-blue.png');
     }
   }
   .navbar-text {
@@ -346,6 +352,9 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   background-repeat: repeat;
   background-size: 60%;
   nav {
+    background-image: url('assets/background-black-white.png');
+    box-shadow: 0 0 20px 5px #36251db5;
+    background-size: 15%;
     .badge {
       background-color:  #9a9999 !important;
     }
@@ -377,12 +386,12 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     }
   }
   .navbar-brand {
+    @media screen and(min-width: $desktop-breakpoint) {
+      background-size: 200%;
+    }
     color: white !important;
     h1 {
       color: #9a9999 !important;
-    }
-    @media screen and(min-width: $desktop-breakpoint) {
-        background-image: url('assets/background-black-white.png');
     }
   }
   .navbar-text {
