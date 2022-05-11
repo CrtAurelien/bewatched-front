@@ -35,15 +35,14 @@
   .wrapper-montres {
     gap: 20px;
     background-image: url('../../../assets/bg-shop-list.png');
-    background-repeat-y: no-repeat;
-    background-repeat-x: repeat;
+    background-repeat: repeat-x;
     padding: 0 100px 125px;
-    min-height: 50vh;
+    height: 600px;
     width: 100%;
     align-items: flex-start;
     @media screen and(min-width: $desktop-breakpoint) {
-      background-position: 0px calc(100%/4.6);
-      background-size: contain;
+      background-size: 80% 290px;
+      background-position: top;
     }
   }
   .sub-wrap {
