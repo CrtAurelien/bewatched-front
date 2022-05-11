@@ -443,8 +443,8 @@ nav {
 
 .mobile-search-bar {
   display: flex;
-  background-color: rgba(237, 218, 202, 0.9);
-  position: absolute;
+  background-color: rgba(163, 163, 163, 0.9);
+  position: fixed;
   padding: 130px 20px;
   top: 0;
   left: 0;
@@ -465,7 +465,7 @@ nav {
       border: 0;
       padding: 18px 35px;
       border-radius: 50px;
-      background: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.7);
       position: relative;
       box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
     }
