@@ -1,5 +1,3 @@
-
-
 <ng-container >
   <h1 class="our-story-title">
     <span style="color: #37251d;">RECAPITULATIF DE</span>&nbsp;
@@ -21,8 +19,11 @@
         Total de votre panier : {{totalPanier}}€
       </div>
       <div class="checkbox">
-      <span>
-        <input type="checkbox" required> En cliquant sur Continuer, vous acceptez les Conditions Générales de Vente</span>
+      <span label="test">
+        <label>
+          <input type="checkbox" required> En cliquant sur Continuer, vous acceptez les Conditions Générales de Vente
+        </label>
+      </span>
       </div>
       <div class="button d-flex justify-content-end">
         <button  type="button" class="btn btn-mobile" (click)="redirectToLivraison()" >Continuer</button>

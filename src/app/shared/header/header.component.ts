@@ -100,6 +100,10 @@ export class HeaderComponent implements OnInit {
 
   redirectMontreDetailFromSearch(montreId: number) {
     this.toggleMobileSearch = false;
+    if (this.showBurgerMenu){
+      this.toggleBurgerMenu();
+    }
+    this.deleteSearch()
     this.redirectTo('/detail/'+montreId);
   }
 
