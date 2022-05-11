@@ -441,3 +441,56 @@ nav {
   transition: all 0.2s;
 }
 
+.mobile-search-bar {
+  display: flex;
+  background-color: rgba(237, 218, 202, 0.9);
+  position: absolute;
+  padding: 130px 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  svg {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+  }
+  .wrap {
+    width: 100%;
+    input {
+      display: flex;
+      transition: 0.3s ease-out;
+      outline: 0 !important;
+      border: 0;
+      padding: 18px 35px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.3);
+      position: relative;
+      box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 38%);
+    }
+  }
+  .search-result {
+    padding: 25px 20px;
+    width: 100%;
+  }
+
+  @media screen and(min-width: $desktop-breakpoint) {
+    display: none !important;
+  }
+}
+
+.search {
+  &.desktop {
+    display: none !important;
+    @media screen and(min-width: $desktop-breakpoint) {
+      display: flex !important;
+    }
+  }
+  &.mobile {
+    display: flex !important;
+    @media screen and(min-width: $desktop-breakpoint) {
+      display: none !important;
+    }
+  }
+}
