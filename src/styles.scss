@@ -176,6 +176,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       }
     }
   }
+
+    .add-to-cart, .remove-to-cart, .back-to-shop {
+      background-color: #432f2466 !important;
+    }
+
 }
 .theme-omega {
   background-image: url('assets/background-watches/bg-omega.png');
@@ -197,12 +202,12 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     .icons {
       .panier {
         svg {
-          fill: $secondaryColor !important
+          fill: white !important
         }
         &.open {
           background: rgba(255, 255, 255, 1) !important;
           svg {
-            fill: $secondaryColor !important
+            fill: white !important
           }
         }
         &.menu-open {
@@ -220,10 +225,10 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   }
   .navbar-text {
     input {
-      color:$secondaryColor;
+      color:white;
     }
     input.form-control::placeholder {
-      color:$secondaryColor;
+      color:white;
     }
 
     input.menu-open::placeholder {
@@ -261,6 +266,10 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       }
     }
   }
+  .add-to-cart, .remove-to-cart, .back-to-shop {
+      background-color: #432f2466 !important;
+    }
+
 }
 .theme-longines {
   background-image: url('assets/background-watches/bg-longines.png');
@@ -277,12 +286,12 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     .icons {
       .panier {
         svg {
-          fill: #2a547b !important
+          fill: white !important
         }
         &.open {
           background: #2a547b;
           svg {
-            fill: #93a5b9 !important
+            fill: white !important
           }
         }
         &.menu-open {
@@ -312,7 +321,10 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   }
   .navbar-text {
     input {
-      color:#93a5b9;
+      color:white !important;
+    }
+    input::placeholder {
+      color:white !important;
     }
     input.menu-open::placeholder {
       color:white;
@@ -346,6 +358,11 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       }
     }
   }
+
+    .add-to-cart, .remove-to-cart, .back-to-shop {
+      background-color: #2a547b !important;
+    }
+
 }
 .theme-jaeger {
   background-image: url('assets/background-watches/bg-black-white.png');
@@ -362,12 +379,12 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
     .icons {
       .panier {
         svg {
-          fill: #2f2f2f !important
+          fill: white !important
         }
         &.open {
           background: #2f2f2f;
           svg {
-            fill: #9a9999 !important
+            fill: white !important
           }
         }
         &.menu-open {
@@ -397,7 +414,10 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
   }
   .navbar-text {
     input {
-      color:#9a9999;
+      color:white;
+    }
+    input::placeholder {
+      color:white !important;
     }
     input.menu-open::placeholder {
       color:white;
@@ -431,6 +451,10 @@ THEME DYNAMIQUE EN FONCTION DE LA MARQUE
       }
     }
   }
+    .add-to-cart, .remove-to-cart, .back-to-shop {
+      background-color: #2f2f2f !important;
+    }
+
 }
 .theme-tissot {
 }

@@ -1,24 +1,36 @@
-<h1 class="our-story-title">
-  <span style="color: #37251d;">RECAPITULATIF DE</span>&nbsp;
-  <span style="color: #553d33;">VOTRE COMMANDE</span>
-</h1>
-<div class="coutures"></div>
 
-<div class="wrapper">
-  <div class="container">
-    <ng-container *ngFor="let montre of panier">
-      <app-montre-item-recap [montre]="montre"></app-montre-item-recap>
-    </ng-container>
-    <div class="total d-flex justify-content-end">
-      Total de votre panier : {{totalPanier}}€
-    </div>
-    <div class="checkbox">
+
+<ng-container >
+  <h1 class="our-story-title">
+    <span style="color: #37251d;">RECAPITULATIF DE</span>&nbsp;
+    <span style="color: #553d33;">VOTRE COMMANDE</span>
+  </h1>
+  <div class="coutures"></div>
+  <div class="wrapper">
+    <div class="container" >
+      <ng-container *ngFor="let montre of panier">
+        <app-montre-item-recap [montre]="montre"></app-montre-item-recap>
+      </ng-container>
+      <div class="container" *ngIf="activeTemplatePanierVide">
+        <span>Votre panier est vide ...</span>
+        <div class="button d-flex">
+          <button  type="button" class="btn btn-mobile" (click)="redirectToShop()" >Retourner à la boutique</button>
+        </div>
+      </div>
+      <div class="total d-flex justify-content-end">
+        Total de votre panier : {{totalPanier}}€
+      </div>
+      <div class="checkbox">
       <span>
         <input type="checkbox" required> En cliquant sur Continuer, vous acceptez les Conditions Générales de Vente</span>
+      </div>
+      <div class="button d-flex justify-content-end">
+        <button  type="button" class="btn btn-mobile" (click)="redirectToLivraison()" >Continuer</button>
+      </div>
     </div>
-    <div class="button d-flex justify-content-end">
-      <button  type="button" class="btn btn-mobile" (click)="redirectToLivraison()" >Continuer</button>
-    </div>
+
   </div>
-</div>
+</ng-container>
+
+
 

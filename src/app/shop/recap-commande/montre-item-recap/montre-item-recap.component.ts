@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Montre} from "../../../core/model/Montre.interface";
+import {ShopService} from "../../../shared/services/shop.service";
 
 @Component({
   selector: 'app-montre-item-recap',
@@ -11,13 +12,17 @@ export class MontreItemRecapComponent implements OnInit {
   montre!: Montre;
   pathImageDetail!: string;
 
-  constructor() { }
+  constructor(private shopService: ShopService) { }
 
   ngOnInit(): void {
     const photoDetail = this.montre.photos.find(elm => elm.isPhotoDetail);
     if(photoDetail)  {
       this.pathImageDetail = photoDetail.path
     }
+  }
+
+  deleteMontre() {
+    this.shopService.removeToCart(this.montre);
   }
 
 }
