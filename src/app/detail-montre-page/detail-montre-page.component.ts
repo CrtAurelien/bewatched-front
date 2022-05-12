@@ -72,6 +72,7 @@ export class DetailMontrePageComponent implements OnInit{
     const isDeleted = this.shopService.getPanierEnCours().find(elm => elm.id === this.montre.id);
     if(!isDeleted) {
       this.montreIsInCard = false;
+      this.textButton = "Ajouter au panier"
     }
   }
 

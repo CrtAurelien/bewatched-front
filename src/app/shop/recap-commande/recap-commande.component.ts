@@ -22,12 +22,12 @@ export class RecapCommandeComponent implements OnInit {
   hasError = false;
 
   constructor(private shopService : ShopService, private utilService : UtilsService, private router: Router) {
+    shopService.switchTheme('default')
     utilService.setActiveFlexSubject(true);
   }
 
   ngOnInit(): void {
     this.panier = this.shopService.getPanierEnCours()
-    this.shopService.switchTheme('default')
     if(this.panier.length === 0) {
       this.shopService.initCustomData();
       this.panier = this.shopService.getPanierEnCours()
@@ -68,7 +68,6 @@ export class RecapCommandeComponent implements OnInit {
     } else {
       this.hasError = true;
     }
-    //
   }
 
   calculerTotalPanier() {
