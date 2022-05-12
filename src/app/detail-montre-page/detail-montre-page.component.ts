@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import {Location} from "@angular/common";
 import {Montre} from "../core/model/Montre.interface";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ShopService} from "../shared/services/shop.service";
 import {Subject, takeUntil, tap} from "rxjs";
 import {SwiperComponent} from "swiper/angular";
@@ -33,7 +33,7 @@ export class DetailMontrePageComponent implements OnInit{
   idMontre = this.route.snapshot.paramMap.get('montre');
   nomCoutureMobile = '';
   @ViewChild('swiper', { static: false }) swiper?: SwiperComponent;
-  constructor(private route: ActivatedRoute, private shopService: ShopService, private cd:ChangeDetectorRef) {
+  constructor(private route: ActivatedRoute, private shopService: ShopService, private cd:ChangeDetectorRef, private router: Router) {
     this.montre = route.snapshot.data['montre'];
     shopService.switchTheme(this.montre.brand.name.toLowerCase())
   }
@@ -41,26 +41,31 @@ export class DetailMontrePageComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.urlImageLogoMontre += this.montre?.brand.name.toLowerCase() + '-logo.png';
-    this.montreIsInCard = this.shopService.checkIfMontreIsInCard(this.montre);
-    switch (this.montre.brand.name.toLowerCase()) {
-      case 'omega':
-        this.nomCoutureMobile = '../../assets/coutures-brown.png';
-        break;
-      case 'longines':
-        this.nomCoutureMobile = '../../assets/coutures-blue.png';
-        break;
-      default :
-        this.nomCoutureMobile = '../../assets/coutures-b&w.png';
-        break;
+    if(this.montre.available) {
+      this.urlImageLogoMontre += this.montre?.brand.name.toLowerCase() + '-logo.png';
+      this.montreIsInCard = this.shopService.checkIfMontreIsInCard(this.montre);
+      switch (this.montre.brand.name.toLowerCase()) {
+        case 'omega':
+          this.nomCoutureMobile = '../../assets/coutures-brown.png';
+          break;
+        case 'longines':
+          this.nomCoutureMobile = '../../assets/coutures-blue.png';
+          break;
+        default :
+          this.nomCoutureMobile = '../../assets/coutures-b&w.png';
+          break;
+      }
+      this.shopService.montreWasDeletedSubject.pipe(
+        tap(data => {
+          if(data) {
+            this.checkIfExists()
+          }
+        }), takeUntil(this.ngUnsubscribed)
+      ).subscribe()
+    } else {
+      this.router.navigate(['/']);
     }
-    this.shopService.montreWasDeletedSubject.pipe(
-      tap(data => {
-        if(data) {
-          this.checkIfExists()
-        }
-      }), takeUntil(this.ngUnsubscribed)
-    ).subscribe()
+
   }
 
   checkIfExists() {

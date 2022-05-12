@@ -1,18 +1,26 @@
 <div class="wrap ">
   <div class="intro" *ngIf="!isLoading">
-    <ng-container *ngIf="nombreMontres >= 1">
+    <ng-container *ngIf="nombreMontres >= 1 && !noMontresAvailable">
       <span class="number">{{nombreMontres}}</span>
       <span> montres trouvées</span>
     </ng-container><span *ngIf="nombreMontres == 0">Aucune montre trouvée</span>
   </div>
-  <div class="filters" *ngIf="!isLoading">
+  <div class="filters" *ngIf="!isLoading && !noMontresAvailable">
     <app-filtres-mobile></app-filtres-mobile>
     <app-filtres-dsktop></app-filtres-dsktop>
   </div>
   <div class="wrap-shop" *ngIf="!isLoading">
-    <ng-container *ngFor="let listeMontre of finalListeMontre">
-      <app-liste-montres-shop  [listeMontres]="listeMontre"></app-liste-montres-shop>
+    <ng-container *ngIf="!noMontresAvailable">
+      <ng-container *ngFor="let listeMontre of finalListeMontre">
+        <app-liste-montres-shop  [listeMontres]="listeMontre"></app-liste-montres-shop>
+      </ng-container>
     </ng-container>
+    <ng-container *ngIf="noMontresAvailable">
+      <div class="no-montre-available">
+        <span>Il n'y a aucune montre disponible pour le moment... Revenez un peu plus tard !</span>
+      </div>
+    </ng-container>
+
   </div>
     <div class="loader" *ngIf="isLoading">
       <app-loader></app-loader>

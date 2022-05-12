@@ -17,6 +17,7 @@ export class ShopComponent implements OnInit {
   finalListeMontre : any[] = [];
   listeSearchEnCours : Montre[] = [];
   isLoading = false;
+  noMontresAvailable = false;
 
   constructor(private shopService: ShopService, private utilService: UtilsService) { }
 
@@ -29,7 +30,18 @@ export class ShopComponent implements OnInit {
         this.shopService.allMontres = data;
         this.nombreMontres = this.listeMontres.length;
         this.isLoading = false;
-        this.createListesMontre();
+        let nbNombreAvailable = 0;
+        this.listeMontres.forEach(montre => {
+          if(montre.available) {
+            nbNombreAvailable += 1;
+          }
+        })
+        if(nbNombreAvailable > 0) {
+          this.noMontresAvailable = false;
+          this.createListesMontre();
+        } else {
+          this.noMontresAvailable= true;
+        }
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
 

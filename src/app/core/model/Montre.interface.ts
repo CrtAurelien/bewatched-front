@@ -9,6 +9,7 @@ export interface Montre {
   genre: string;
   strap: string;
   dimensions: string;
+  available: boolean;
   hands: string;
   crown: string;
   year: number;

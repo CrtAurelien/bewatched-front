@@ -3,6 +3,15 @@
   width: 100%;
 }
 
+.no-montre-available {
+  width: 100%;
+  text-align: center;
+  span {
+    font-family: "Louis George Cafe", sans-serif;
+    font-size:22px !important;
+  }
+
+}
 
 .wrap {
   z-index: 11;
