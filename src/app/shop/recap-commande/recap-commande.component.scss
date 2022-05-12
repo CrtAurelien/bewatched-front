@@ -43,21 +43,32 @@
   align-items: center;
   flex-direction: column;
   .container {
-    max-width: 50%;
+    @media screen and(min-width: $desktop-breakpoint) {
+      max-width: 50%;
+
+    }
   }
 }
 
 .total {
   color: #1e1d23;
   font-family: "Louis George Cafe", sans-serif;
-  font-size: 26px;
+  font-size: 20px;
   margin: 50px 0 0;
   font-weight: bold;
+  justify-content: center;
+  @media screen and(min-width: $desktop-breakpoint) {
+    justify-content: flex-end;
+    font-size: 26px;
+  }
 }
 
 .checkbox {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  @media screen and(min-width: $desktop-breakpoint) {
+    justify-content: flex-end;
+  }
   span {
     display: flex;
     align-items: center;

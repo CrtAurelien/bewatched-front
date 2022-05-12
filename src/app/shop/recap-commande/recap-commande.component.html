@@ -17,7 +17,7 @@
           <button  type="button" class="btn btn-mobile" (click)="redirectToShop()" >Retourner à la boutique</button>
         </div>
       </div>
-      <div class="total d-flex justify-content-end">
+      <div class="total d-flex">
         Total de votre panier : {{totalPanier}}€
       </div>
       <div [formGroup]="cgvControl" class="cgv {{hasError ? 'error' : ''}}">
@@ -28,7 +28,7 @@
       <div class="error">
         <span *ngIf="hasError">Veuillez cocher les Conditions Générales de Vente pour continuer</span>
       </div>
-      <div class="button d-flex justify-content-end">
+      <div class="button d-flex ">
         <button  type="button" class="btn btn-mobile" (click)="redirectToLivraison()" >Continuer vers les informations de livraison</button>
       </div>
     </div>

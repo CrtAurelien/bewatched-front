@@ -98,11 +98,7 @@ export class LivraisonComponent implements OnInit {
   }
 
   openPaypalModule() {
-    if(this.commande.valid) {
-      this.showPaypalBtn = true;
-    } else {
-      this.showPaypalBtn = false;
-    }
+      this.showPaypalBtn = this.commande.valid;
   }
 
 }
