@@ -1,9 +1,28 @@
 @import "../../../../variable";
 
-.shop-container{
+.shop-container {
   width: 100%;
   flex-wrap: wrap;
+  cursor: pointer;
+  padding: 10px 0;
+  &:hover{
+    background: #f0f0f0;;
+  }
+  .img {
+    flex: 1;
+    padding-left: 20px;
+  }
+  .info{
+    flex: 2;
+    padding: 0;
+  }
+  .icon-delete-montre-panier {
+    flex: 1;
+    text-align: center;
+  }
+
 }
+
 .marque, .modele {
   font-family: "Louis George Cafe", sans-serif;
   font-size: 14px;
@@ -12,7 +31,15 @@
 }
 
 .icon-delete-montre-panier {
+  svg{
+    transition: .5s;
+  }
   &:hover {
-    transform: scale(0.8);
+    svg {
+      fill: #963434 !important;
+      transform: scale(.9);
+      border-radius: 50px;
+      transition: .5s;
+    }
   }
 }

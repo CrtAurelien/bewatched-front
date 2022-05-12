@@ -96,11 +96,12 @@
     <span>Votre panier est actuellement vide.</span>
   </ng-template>
   <ng-template #casItems>
+    <span class="shop-title">Votre panier</span>
     <ng-container *ngFor="let montre of panier">
       <app-montre-item-panier [montre]="montre"></app-montre-item-panier>
     </ng-container>
     <div class="d-flex align-items-center justify-content-center">
-      <button (click)="goToRecapPanier()" type="button" class="btn btn-valider-panier">Valider la commande</button>
+      <button (click)="goToRecapPanier()" type="button" class="btn btn-valider-panier">Aller au panier</button>
 
     </div>
   </ng-template>
