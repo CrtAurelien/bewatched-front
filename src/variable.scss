@@ -43,8 +43,17 @@ popover-container {
   }
   @media screen and(min-width: $desktop-breakpoint) {
     top:10px !important;
-    left: -18px !important;
   }
+}
+
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::before, .bs-popover-bottom>.popover-arrow::before{
+  content: "";
+  border:none;
+}
+
+.bs-popover-auto[data-popper-placement^=bottom]>.popover-arrow::after, .bs-popover-bottom>.popover-arrow::after{
+  content: "";
+  border:none;
 }
 
 @keyframes checkboxCheckedAnimation {

@@ -32,6 +32,9 @@ export class ShopService {
   redirectFromSearch = false;
   redirectFromSearchSubject = new Subject<boolean>();
   tarifCommande: number = 0;
+  montreIsInCard! : boolean;
+  textButton = "Ajouter au panier";
+
 
   constructor(private utilService: UtilsService, private http: HttpClient) { }
 
@@ -49,6 +52,8 @@ export class ShopService {
     sessionStorage.setItem('panier', JSON.stringify(this.panier));
   }
 
+
+
   removeToCart(montre: Montre) {
     if (this.badgeShopItems > 0){
       // TODO verfier si la montre est déjà présente dans la panier
@@ -58,6 +63,7 @@ export class ShopService {
       this.panierSubject.next(this.panier)
       this.badgeShopItemsSubject.next(this.badgeShopItems)
       this.montreWasDeletedSubject.next(this.montreWasDeleted);
+
       sessionStorage.setItem('panier', JSON.stringify(this.panier));
     }
   }
