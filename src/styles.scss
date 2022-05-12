@@ -82,6 +82,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center !important;
 }
 
+.mat-checkbox-checked {
+  .mat-checkbox-background {
+    background-color: $secondaryColor !important;
+  }
+}
+
+
 
 
 .paypal-button-container {

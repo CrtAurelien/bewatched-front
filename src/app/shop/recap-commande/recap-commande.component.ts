@@ -4,6 +4,7 @@ import {ShopService} from "../../shared/services/shop.service";
 import {Subject, takeUntil, tap} from "rxjs";
 import {UtilsService} from "../../shared/services/utils.service";
 import {Router} from "@angular/router";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-recap-commande',
@@ -15,6 +16,10 @@ export class RecapCommandeComponent implements OnInit {
   ngUnsubscribed = new Subject();
   totalPanier:number = 0;
   activeTemplatePanierVide = false;
+  cgvControl = new FormGroup({
+    checkCGV: new FormControl(false, Validators.required),
+  })
+  hasError = false;
 
   constructor(private shopService : ShopService, private utilService : UtilsService, private router: Router) {
     utilService.setActiveFlexSubject(true);
@@ -33,6 +38,10 @@ export class RecapCommandeComponent implements OnInit {
         this.calculerTotalPanier();
         this.activeTemplatePanierVide = false;
       }
+
+      this.cgvControl.valueChanges.subscribe( _=> {
+        this.hasError = false;
+      })
 
     }
     this.shopService.panierSubject.pipe(
@@ -54,7 +63,12 @@ export class RecapCommandeComponent implements OnInit {
   }
 
   redirectToLivraison() {
-    this.router.navigate(['commande'])
+    if(this.cgvControl.controls['checkCGV'].value) {
+      this.router.navigate(['commande'])
+    } else {
+      this.hasError = true;
+    }
+    //
   }
 
   calculerTotalPanier() {

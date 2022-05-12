@@ -75,11 +75,11 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     AppRoutingModule,
     BrowserAnimationsModule,
     PopoverModule.forRoot(),
-    MatCheckboxModule,
     SwiperModule,
     NgxPayPalModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCheckboxModule
   ],
   providers: [HomeResolver, DetailMontreResolver,
     {provide: LocationStrategy, useClass: HashLocationStrategy},
