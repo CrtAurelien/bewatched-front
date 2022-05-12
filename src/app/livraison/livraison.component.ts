@@ -14,6 +14,7 @@ export class LivraisonComponent implements OnInit {
   tarifCommande!: number;
   tarifCommandeFormate!: any;
   public payPalConfig!: IPayPalConfig;
+  showPaypalBtn = false;
   panier! : Montre[];
   commande = new FormGroup({
     nom: new FormControl('', Validators.required),
@@ -94,6 +95,14 @@ export class LivraisonComponent implements OnInit {
       configItem.push(config)
     })
     return configItem
+  }
+
+  openPaypalModule() {
+    if(this.commande.valid) {
+      this.showPaypalBtn = true;
+    } else {
+      this.showPaypalBtn = false;
+    }
   }
 
 }

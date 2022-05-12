@@ -71,6 +71,23 @@ popover-container {
   }
 }
 
+.back-to-shop{
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  width: 240px;
+  justify-content: center;
+  padding: 10px 30px;
+  background-color: #432f2466;
+  border: none;
+  color: white;
+  font-family: "Louis George Cafe", sans-serif;
+  text-transform: uppercase;
+  &:hover {
+    transform: scale(0.9);
+  }
+}
+
 @keyframes checkboxUncheckedAnimation {
   0% {
     width: 100vw;
