@@ -7,7 +7,9 @@
   <div class="wrapper">
     <div class="container" >
       <ng-container *ngFor="let montre of panier">
-        <app-montre-item-recap [montre]="montre"></app-montre-item-recap>
+        <a routerLink="../detail/{{montre.id}}">
+          <app-montre-item-recap [montre]="montre"></app-montre-item-recap>
+        </a>
       </ng-container>
       <div class="container" *ngIf="activeTemplatePanierVide">
         <span>Votre panier est vide ...</span>

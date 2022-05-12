@@ -72,6 +72,9 @@ export class HeaderComponent implements OnInit {
   goToRecapPanier() {
     this.router.navigate(['recapitulatif-panier']);
     this.openPanier(this.pop);
+    if (this.showBurgerMenu){
+      this.toggleBurgerMenu();
+    }
   }
 
   onHidden(): void {
