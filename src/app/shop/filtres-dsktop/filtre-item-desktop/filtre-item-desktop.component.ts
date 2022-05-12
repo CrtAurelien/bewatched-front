@@ -35,6 +35,7 @@ export class FiltreItemDesktopComponent implements OnInit {
     } else {
       this.shopService.removeAFilter(filtre)
     }
+    this.toggleFiltre();
   }
 
   /**
