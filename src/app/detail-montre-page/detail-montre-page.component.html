@@ -4,7 +4,7 @@
     <div class="main-wrap">
       <swiper #swiper class="swiper"
               [autoplay]="{delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: false, stopOnLastSlide : false}"
-              [slidesPerView]="1" [preloadImages]="true" [effect]="'coverflow'"
+              [slidesPerView]="1" [preloadImages]="true" [effect]="'coverflow'" [navigation]="true"
               [coverflowEffect]="{rotate: 30, slideShadows: false}" [speed]="850" [simulateTouch]="false"
               [thumbs]="{ swiper: thumbsSwiper }">
         <ng-template swiperSlide><app-montre-detail-image [montre]="montre"></app-montre-detail-image></ng-template>
@@ -65,7 +65,7 @@
         slideClass="little"
         [centeredSlides]="true"
         [loop]="true"
-        [pagination]="false"
+        [pagination]="true"
         class="mySwiper"
       >
         <ng-container *ngFor="let photo of montre.photos">

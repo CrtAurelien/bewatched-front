@@ -63,6 +63,9 @@ flex:1;
         outline: none !important;
         box-shadow: none;
         border: 0;
+        &:hover {
+          font-size: 15px;
+        }
 
 
         .search {

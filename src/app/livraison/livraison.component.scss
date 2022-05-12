@@ -44,8 +44,28 @@
       font-weight: bold;
     }
   }
-  .total, .paiement {
+  .total, .paiement, .btn {
     width: 100%;
+  }
+  .btn, .total, .paiement {
+    padding: 20px 0 0 !important;
+  }
+  .back-to-shop {
+    text-transform: initial !important;
+    padding: 5px 15px !important;
+    width: auto !important;;
+    &.disabled {
+      &:hover {
+        transform: scale(1) !important;
+        cursor: not-allowed;
+      }
+    }
+    &.valid {
+      background-color: $secondaryColor !important;
+      &:hover {
+        transform: scale(1.1) !important;
+      }
+    }
   }
 }
 
@@ -56,5 +76,7 @@
 .flex-one + .flex-one {
   margin-left:20px;
 }
+
+
 
 

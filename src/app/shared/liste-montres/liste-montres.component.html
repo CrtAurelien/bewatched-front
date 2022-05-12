@@ -4,13 +4,14 @@
   <swiper
     [slidesPerView]="3"
     [initialSlide]="1"
+    [autoplay]="{delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: false, stopOnLastSlide : false}"
     [spaceBetween]="180"
     [slideToClickedSlide]="true"
     slideActiveClass="realWidth"
     slideClass="little"
     [centeredSlides]="true"
     [loop]="true"
-    [pagination]="false"
+    [pagination]="true"
     class="mySwiper"
   >
 
