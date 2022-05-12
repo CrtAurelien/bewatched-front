@@ -27,6 +27,11 @@ p{
   .empty-shop{
     padding: 20px;
   }
+  .shop-link-watch{
+    &:hover{
+      color: inherit;
+    }
+  }
   span.shop-title.ng-star-inserted {
     text-align: center;
     font-size: 22px;
