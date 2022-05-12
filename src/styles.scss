@@ -20,10 +20,13 @@ p{
 }
 
 .popover-body{
-  padding: 0 0 20px 0;
+  padding: 0 !important;
   color: #212529;
   display: flex;
   flex-direction: column;
+  .empty-shop{
+    padding: 20px;
+  }
   span.shop-title.ng-star-inserted {
     text-align: center;
     font-size: 22px;

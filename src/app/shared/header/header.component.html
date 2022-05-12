@@ -93,7 +93,7 @@
 <ng-template #popTemplate>
   <ng-container *ngIf="badgePanier === 0 then casVide else casItems"></ng-container>
   <ng-template #casVide>
-    <span>Votre panier est actuellement vide.</span>
+    <span class="empty-shop">Votre panier est actuellement vide.</span>
   </ng-template>
   <ng-template #casItems>
     <span class="shop-title">Votre panier</span>
@@ -102,7 +102,6 @@
     </ng-container>
     <div class="d-flex align-items-center justify-content-center">
       <button (click)="goToRecapPanier()" type="button" class="btn btn-valider-panier">Aller au panier</button>
-
     </div>
   </ng-template>
 </ng-template>
