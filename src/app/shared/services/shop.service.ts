@@ -132,6 +132,10 @@ export class ShopService {
     this.searchingSubject.next(nomFiltreActive)
   }
 
+  resetFilter() {
+    this.filtresActifs = [];
+  }
+
   removeAFilter(filtre: FiltreObject) {
     this.filtresActifs.splice(this.filtresActifs.indexOf(filtre.nom), 1);
     this.resetAFilterSubject.next(filtre);
