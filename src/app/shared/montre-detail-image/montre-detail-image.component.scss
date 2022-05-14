@@ -508,6 +508,7 @@
             right: -35px;
             position: relative;
             animation: displayTrait 0.7s;
+            min-width: 130px;
             &:before {
               content: "";
               display: inline-block;
