@@ -95,7 +95,43 @@ export class LivraisonComponent implements OnInit {
   }
 
   openPaypalModule() {
-      this.showPaypalBtn = this.commande.valid;
+    if(this.commande.valid) {
+      this.showPaypalBtn = true;
+      this.constituerObjetCommande();
+    } else {
+      this.showPaypalBtn = false;
+    }
+  }
+
+  constituerObjetCommande() {
+    let commande = {
+      watches: this.constituerObjetMontreCommande(),
+      totalPaiement: this.tarifCommande,
+      emailClient: this.commande.controls['email'].value,
+      nomClient: this.commande.controls['nom'].value,
+      prenomClient: this.commande.controls['prenom'].value,
+      adresse: this.constituerObjetAdresseCommande()
+    }
+  }
+
+  constituerObjetMontreCommande() : any[] {
+    let watches: any[] = [];
+    this.panier.forEach(montre => {
+      let config = {
+        name: montre.model,
+        watchesId: montre.id,
+        quantity: '1',
+      }
+      watches.push(config)
+    })
+    return watches
+  }
+
+  constituerObjetAdresseCommande(): string {
+    let adresse: string = ''
+      adresse += this.commande.controls['numEtNomRue'] + ' ' + this.commande.controls['numEtageAppart'] + ' ' +
+        this.commande.controls['codePostal'] + ' ' + this.commande.controls['ville'] + ' ' + this.commande.controls['pays']
+    return adresse;
   }
 
 }
