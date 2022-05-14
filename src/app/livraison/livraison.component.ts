@@ -62,10 +62,7 @@ export class LivraisonComponent implements OnInit {
         commit: 'true'
       },
       style: {
-        label: 'paypal',
-        layout: 'horizontal',
-        color: 'black',
-        shape: 'pill'
+
       },
       onApprove: (data, actions) => {
       },

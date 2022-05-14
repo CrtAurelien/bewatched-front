@@ -99,7 +99,7 @@
   <div class="btn d-flex justify-content-end" *ngIf="!showPaypalBtn">
     <button (click)="openPaypalModule()" class="back-to-shop {{!commande.valid ? 'disabled' : 'valid'}}" [disabled]="!commande.valid">Continuer</button>
   </div>
-  <div class=" d-flex justify-content-end" *ngIf="commande.valid && showPaypalBtn">
+  <div class=" d-flex justify-content-end paypal" *ngIf="commande.valid && showPaypalBtn">
     <ngx-paypal [config]="payPalConfig"></ngx-paypal>
   </div>
 </div>
