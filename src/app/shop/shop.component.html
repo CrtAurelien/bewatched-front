@@ -1,4 +1,4 @@
-<div class="wrap ">
+<div *ngIf="!servorError" class="wrap ">
   <div class="intro" *ngIf="!isLoading">
     <ng-container *ngIf="nombreMontres >= 1 && !noMontresAvailable">
       <span class="number">{{nombreMontres}}</span>
@@ -25,4 +25,8 @@
     <div class="loader" *ngIf="isLoading">
       <app-loader></app-loader>
     </div>
+</div>
+
+<div *ngIf="servorError" class="erreur-serveur">
+  Un problème technique est survenu, veuillez réessayer utlérieurement.
 </div>

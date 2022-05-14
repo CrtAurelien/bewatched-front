@@ -18,6 +18,7 @@ export class ShopComponent implements OnInit {
   listeSearchEnCours : Montre[] = [];
   isLoading = false;
   noMontresAvailable = false;
+  servorError = false;
 
   constructor(private shopService: ShopService, private utilService: UtilsService) { }
 
@@ -26,6 +27,7 @@ export class ShopComponent implements OnInit {
     this.shopService.switchTheme('default')
     this.shopService.getAllMontres().pipe(
       tap((data)  => {
+        this.servorError = false;
         this.listeMontres = [...data] as Montre[]
         this.shopService.allMontres = data;
         this.nombreMontres = this.listeMontres.length;
@@ -43,7 +45,10 @@ export class ShopComponent implements OnInit {
           this.noMontresAvailable= true;
         }
       }), takeUntil(this.ngUnsubscribed)
-    ).subscribe()
+    ).subscribe(_ => {},
+        error => {
+      this.servorError = true;
+    })
 
     this.shopService.searchingSubject.pipe(
       tap(data => {
