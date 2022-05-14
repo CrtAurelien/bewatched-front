@@ -21,6 +21,14 @@ export class FiltreItemDesktopComponent implements OnInit {
   constructor(private shopService: ShopService) { }
 
   ngOnInit(): void {
+    this.shopService.resetSubject.subscribe(data => {
+      if(data) {
+        this.filtre.values.forEach(filterItem => {
+          filterItem.estCoche = false;
+          this.shopService.removeAFilter(filterItem)
+        })
+      }
+    })
   }
 
   /**

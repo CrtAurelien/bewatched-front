@@ -31,6 +31,7 @@ export class ShopService {
   montreMiseEnAvant!: Montre;
   redirectFromSearch = false;
   redirectFromSearchSubject = new Subject<boolean>();
+  resetSubject = new Subject<boolean>();
   tarifCommande: number = 0;
   montreIsInCard! : boolean;
   textButton = "Ajouter au panier";
@@ -134,6 +135,10 @@ export class ShopService {
 
   resetFilter() {
     this.filtresActifs = [];
+  }
+  resetAllFilters() {
+    this.filtresActifs = [];
+    this.resetSubject.next(true)
   }
 
   removeAFilter(filtre: FiltreObject) {

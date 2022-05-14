@@ -58,6 +58,11 @@ export class ShopComponent implements OnInit {
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
 
+    this.shopService.resetSubject.subscribe(data => {
+      if(data) {
+        this.reset()
+      }
+    })
 
     this.shopService.resetAFilterSubject.pipe(
       tap(data => {
@@ -89,7 +94,6 @@ export class ShopComponent implements OnInit {
     let allFiltreActifs = this.shopService.getFiltresActifs();
     if(allFiltreActifs.length > 0) {
       this.startSearching(allFiltreActifs, filtreObj.nom);
-
     }
 
   }

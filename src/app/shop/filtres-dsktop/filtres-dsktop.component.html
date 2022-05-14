@@ -3,5 +3,8 @@
     <ng-container *ngFor="let filtre of listeFiltres">
       <app-filtre-item-desktop [filtre]="filtre" [nomFiltre]="filtre.nomFiltre" [values]="filtre.values"></app-filtre-item-desktop>
     </ng-container>
+    <div class="reset-filter" (click)="resetFilters()" *ngIf="showFilterReset">
+      reset
+    </div>
   </div>
 </div>
