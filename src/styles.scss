@@ -6,14 +6,14 @@ ul,li{
   padding: 0;
 }
 .swiper-button-prev, .swiper-rtl .swiper-button-next{
-  left:50px;
+  left:30px;
   right: auto;
   &:after{
     color: white;
   }
 }
 .swiper-button-next, .swiper-rtl .swiper-button-prev{
-  right: 50px;
+  right: 30px;
   left: auto;
   &:after{
     color: white;
