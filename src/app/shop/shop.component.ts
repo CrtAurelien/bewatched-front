@@ -87,7 +87,10 @@ export class ShopComponent implements OnInit {
     const categorieFiltreEnCours = this.shopService.getCategorieFiltre(filtreObj.nom);
     // recuperer tous les filtres actuellement actif
     let allFiltreActifs = this.shopService.getFiltresActifs();
-    this.startSearching(allFiltreActifs, filtreObj.nom);
+    if(allFiltreActifs.length > 0) {
+      this.startSearching(allFiltreActifs, filtreObj.nom);
+
+    }
 
   }
 
