@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Montre} from "../core/model/Montre.interface";
 import {ShopService} from "../shared/services/shop.service";
 import {last, Observable, Subject, take, takeUntil, tap} from "rxjs";
@@ -10,7 +10,7 @@ import {BurgerService} from "../shared/services/burger-service.service";
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss']
 })
-export class ShopComponent implements OnInit {
+export class ShopComponent implements OnInit, OnDestroy {
   listeMontres: Montre[] = [];
   nombreMontres = 0;
   ngUnsubscribed = new Subject();
@@ -23,6 +23,12 @@ export class ShopComponent implements OnInit {
   constructor(private shopService: ShopService, private utilService: UtilsService) {
     shopService.resetAllFilters();
   }
+
+  ngOnDestroy() {
+    this.shopService.resetAllFilters();
+
+  }
+
 
   ngOnInit(): void {
     this.isLoading = true;

@@ -71,7 +71,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     LoaderComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     PopoverModule.forRoot(),
