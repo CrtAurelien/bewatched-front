@@ -20,7 +20,9 @@ export class ShopComponent implements OnInit {
   noMontresAvailable = false;
   servorError = false;
 
-  constructor(private shopService: ShopService, private utilService: UtilsService) { }
+  constructor(private shopService: ShopService, private utilService: UtilsService) {
+    shopService.resetAllFilters();
+  }
 
   ngOnInit(): void {
     this.isLoading = true;

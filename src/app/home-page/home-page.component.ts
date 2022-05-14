@@ -24,7 +24,6 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.shopService.switchTheme('default')
-    this.shopService.resetAllFilters();
   }
 
   ngAfterViewChecked() {
