@@ -30,15 +30,21 @@
                 <span *ngSwitchCase="'quartz'">Quartz</span>
               </ng-container>
             </div>
-            <div class="sexe" *ngIf="montre.dial">
-              <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>Cadran : {{montre.dial}}</span>
+            <div class="cadran" *ngIf="montre.dial">
+              <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>{{montre.dial}}</span>
             </div>
-            <div class="strap" *ngIf="montre.strap">
+            <div class="bracelet" *ngIf="montre.strap">
               <img src="../../assets/icones/engrenage.svg" width="30" alt="">
               <ng-container [ngSwitch]="montre.strap">
-                <span *ngSwitchCase="'cuir'">BRACELET : Cuir</span>
-                <span *ngSwitchCase="'synthetic'">BRACELET : Synthétique</span>
+                <span *ngSwitchCase="'cuir'">Cuir</span>
+                <span *ngSwitchCase="'synthetic'">Synthétique</span>
               </ng-container>
+            </div>
+            <div class="couronne" *ngIf="montre.crown">
+              <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>{{montre.crown}}</span>
+            </div>
+            <div class="boitier" *ngIf="montre.case">
+              <img src="../../assets/icones/sexe.svg" width="30" alt=""><span>{{montre.case}}</span>
             </div>
           </div>
           <div class="informations d-flex flex-wrap">
