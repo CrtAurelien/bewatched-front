@@ -63,6 +63,7 @@ input {
   border-radius: 17.5px;
   color: #593c30;
   transition: height 0.5s;
+
   &.open {
     height: min-content;
     transition: all 0.5s;
