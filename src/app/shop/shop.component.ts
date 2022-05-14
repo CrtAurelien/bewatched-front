@@ -5,6 +5,7 @@ import {last, Observable, Subject, take, takeUntil, tap} from "rxjs";
 import {UtilsService} from "../shared/services/utils.service";
 import {FiltreObject} from "../core/model/Filtre.interface";
 import {BurgerService} from "../shared/services/burger-service.service";
+import {Meta, Title} from "@angular/platform-browser";
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -19,8 +20,9 @@ export class ShopComponent implements OnInit, OnDestroy {
   isLoading = false;
   noMontresAvailable = false;
   servorError = false;
+  title = "bewatched - Boutique"
 
-  constructor(private shopService: ShopService, private utilService: UtilsService) {
+  constructor(private titleService: Title, private metaTagService: Meta,private shopService: ShopService, private utilService: UtilsService) {
     shopService.resetAllFilters();
   }
 
@@ -79,6 +81,13 @@ export class ShopComponent implements OnInit, OnDestroy {
         }
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
+    this.titleService.setTitle(this.title);
+    this.metaTagService.updateTag(
+      {property: 'description', content: 'Boutique'},
+    )
+    this.metaTagService.updateTag(
+      {name: 'description', content: 'Boutique'},
+    )
   }
 
   createListesMontre() {
