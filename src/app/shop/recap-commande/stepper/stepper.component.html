@@ -1,13 +1,17 @@
 <mat-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup" label="Votre commande">>
+  <mat-step [stepControl]="firstFormGroup" label="Votre commande">
     <app-confirmation-commande [panier]="panier"
                                [hasError]="hasError"
                                [activeTemplatePanierVide]="activeTemplatePanierVide"
                                [totalPanier]="totalPanier"></app-confirmation-commande>
+    <div class="button d-flex btn-next-shop">
+      <button mat-button [disabled]="!canGoingToLivraisonInfo" matStepperNext type="button" class="btn btn-mobile" >Continuer vers les informations de livraison</button>
+    </div>
   </mat-step>
   <mat-step [stepControl]="secondFormGroup" label="Informations de livraisons">
     <form [formGroup]="secondFormGroup">
       <div>
+        <app-livraison></app-livraison>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
       </div>

@@ -5,13 +5,12 @@
   </h1>
   <div class="coutures"></div>
   <div class="wrapper">
-
-
+    <app-stepper [panier]="panier"
+                 [hasError]="hasError"
+                 [activeTemplatePanierVide]="activeTemplatePanierVide"
+                 [totalPanier]="totalPanier"></app-stepper>
   </div>
-  <app-stepper [panier]="panier"
-               [hasError]="hasError"
-               [activeTemplatePanierVide]="activeTemplatePanierVide"
-               [totalPanier]="totalPanier"></app-stepper>
+
 </ng-container>
 
 

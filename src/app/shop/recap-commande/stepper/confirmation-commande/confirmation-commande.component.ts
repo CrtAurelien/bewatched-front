@@ -26,6 +26,10 @@ export class ConfirmationCommandeComponent implements OnInit {
   constructor(private shopService: ShopService, private router: Router) { }
 
   ngOnInit(): void {
+    this.cgvControl.valueChanges.subscribe( value=> {
+      this.hasError = false;
+      this.shopService.toggleCgvControlChecked(value.checkCGV)
+    })
   }
 
   addEcrins() {

@@ -42,6 +42,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {StepperComponent} from "./shop/recap-commande/stepper/stepper.component";
 import {MatStepperModule} from "@angular/material/stepper";
 import {ConfirmationCommandeComponent} from "./shop/recap-commande/stepper/confirmation-commande/confirmation-commande.component";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -76,7 +77,7 @@ import {ConfirmationCommandeComponent} from "./shop/recap-commande/stepper/confi
     ConfirmationCommandeComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     PopoverModule.forRoot(),
@@ -85,7 +86,8 @@ import {ConfirmationCommandeComponent} from "./shop/recap-commande/stepper/confi
     ReactiveFormsModule,
     HttpClientModule,
     MatCheckboxModule,
-    MatStepperModule
+    MatStepperModule,
+    MatButtonModule
   ],
   providers: [HomeResolver, DetailMontreResolver,
     {provide: LocationStrategy, useClass: HashLocationStrategy},

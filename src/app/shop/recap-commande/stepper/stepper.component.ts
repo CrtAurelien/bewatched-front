@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {Montre} from "../../../core/model/Montre.interface";
+import {ShopService} from "../../../shared/services/shop.service";
 
 @Component({
   selector: 'app-stepper',
@@ -23,10 +24,14 @@ export class StepperComponent implements OnInit {
   activeTemplatePanierVide!: boolean;
   @Input()
   hasError!: boolean;
+  canGoingToLivraisonInfo = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private shopService: ShopService) {}
 
   ngOnInit(): void {
+    this.shopService.cgvControlCheckedSubject.subscribe(data => {
+      this.canGoingToLivraisonInfo = data;
+    })
   }
 
 }

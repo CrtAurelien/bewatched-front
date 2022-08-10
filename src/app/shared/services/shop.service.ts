@@ -35,6 +35,8 @@ export class ShopService {
   tarifCommande: number = 0;
   montreIsInCard! : boolean;
   textButton = "Ajouter au panier";
+  cgvControlChecked = false;
+  cgvControlCheckedSubject = new Subject<boolean>()
 
 
   constructor(private utilService: UtilsService, private http: HttpClient) { }
@@ -53,6 +55,10 @@ export class ShopService {
     sessionStorage.setItem('panier', JSON.stringify(this.panier));
   }
 
+  toggleCgvControlChecked(value: boolean) {
+    this.cgvControlChecked = value;
+    this.cgvControlCheckedSubject.next(this.cgvControlChecked);
+  }
 
 
   removeToCart(montre: Montre) {

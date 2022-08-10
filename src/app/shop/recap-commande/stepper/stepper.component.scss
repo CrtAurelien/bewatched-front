@@ -9,3 +9,31 @@
 mat-stepper {
   background: transparent !important;
 }
+
+:host{
+  width: 70%;
+}
+
+.button {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.btn {
+  background: #eddaca;
+  border: 0 !important;
+  border-radius: 50px;
+  position: relative;
+  font-size: 16px;
+  color:#272727;
+  box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 18%);
+  font-family: "Louis George Cafe", sans-serif;
+  font-weight: bold;
+  width: auto;
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+}
