@@ -105,3 +105,22 @@
     transition: transform 0.2s;
   }
 }
+
+
+.bw-container-accessoires {
+  width: 100%;
+  justify-content: space-between;
+  .bw-img {
+
+  }
+  .bw--infos-ecrins {
+    flex:2;
+    align-items: center;
+    justify-content: center;
+    span {
+      display: block;
+      flex:1;
+      text-align: center;
+    }
+  }
+}

@@ -11,6 +11,23 @@
           <app-montre-item-recap [montre]="montre"></app-montre-item-recap>
         </a>
       </ng-container>
+      <ng-container>
+        <div class="bw-container-accessoires d-flex flex-column">
+          <span>Laissez-vous tenter par nos écrins: </span>
+          <div class="d-flex">
+            <div class="bw-img">
+              <img src="https://via.placeholder.com/100" alt="">
+            </div>
+            <div class="bw--infos-ecrins d-flex">
+              <span>infos érins</span>
+              <div class="button d-flex btn-next-shop">
+                <button  type="button" class="btn btn-mobile">X,XX €</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </ng-container>
       <div class="container" *ngIf="activeTemplatePanierVide">
         <span>Votre panier est vide ...</span>
         <div class="button d-flex">
