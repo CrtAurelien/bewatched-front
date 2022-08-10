@@ -77,4 +77,10 @@ export class RecapCommandeComponent implements OnInit {
     this.shopService.tarifCommande = this.totalPanier;
   }
 
+  addEcrins() {
+    this.totalPanier += 5.00;
+    this.shopService.tarifCommande = this.totalPanier;
+
+  }
+
 }
