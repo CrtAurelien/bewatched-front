@@ -20,6 +20,7 @@ export class RecapCommandeComponent implements OnInit {
     checkCGV: new FormControl(false, Validators.required),
   })
   hasError = false;
+  ecrinIsAdd = false;
 
   constructor(private shopService : ShopService, private utilService : UtilsService, private router: Router) {
     shopService.switchTheme('default')
@@ -78,7 +79,12 @@ export class RecapCommandeComponent implements OnInit {
   }
 
   addEcrins() {
-    this.totalPanier += 5.00;
+    if(!this.ecrinIsAdd) {
+      this.totalPanier += 5.00;
+    } else {
+      this.totalPanier -= 5.00;
+    }
+    this.ecrinIsAdd = !this.ecrinIsAdd;
     this.shopService.tarifCommande = this.totalPanier;
 
   }

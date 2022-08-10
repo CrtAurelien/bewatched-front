@@ -17,6 +17,7 @@ export interface Montre {
   case: string;
   dial: string;
   glass:string;
+  certificat: string;
   photos: Photo[];
 }
 
