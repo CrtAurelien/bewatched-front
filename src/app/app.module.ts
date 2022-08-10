@@ -39,6 +39,9 @@ import { ErreurTechniqueComponent } from './erreur-technique/erreur-technique.co
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {StepperComponent} from "./shop/recap-commande/stepper/stepper.component";
+import {MatStepperModule} from "@angular/material/stepper";
+import {ConfirmationCommandeComponent} from "./shop/recap-commande/stepper/confirmation-commande/confirmation-commande.component";
 
 @NgModule({
   declarations: [
@@ -69,6 +72,8 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     ErreurTechniqueComponent,
     PageNotFoundComponent,
     LoaderComponent,
+    StepperComponent,
+    ConfirmationCommandeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -79,7 +84,8 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     NgxPayPalModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatStepperModule
   ],
   providers: [HomeResolver, DetailMontreResolver,
     {provide: LocationStrategy, useClass: HashLocationStrategy},

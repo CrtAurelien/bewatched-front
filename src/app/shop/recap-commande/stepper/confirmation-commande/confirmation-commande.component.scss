@@ -1,0 +1,107 @@
+@import "../../../../../variable";
+.cgv {
+  padding: 20px 0 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.error {
+  padding: 0 0 20px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  span {
+    color: #b02727;
+    font-weight: bold;
+  }
+}
+
+.btn-next-shop{
+  justify-content: flex-end;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .container {
+    @media screen and(min-width: $desktop-breakpoint) {
+      max-width: 50%;
+
+    }
+  }
+}
+
+.total {
+  color: #1e1d23;
+  font-family: "Louis George Cafe", sans-serif;
+  font-size: 20px;
+  margin: 50px 0 0;
+  font-weight: bold;
+  justify-content: center;
+  @media screen and(min-width: $desktop-breakpoint) {
+    justify-content: flex-end;
+    font-size: 26px;
+  }
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  @media screen and(min-width: $desktop-breakpoint) {
+    justify-content: flex-end;
+  }
+  span {
+    display: flex;
+    align-items: center;
+    color: #1e1d23;
+    font-family: "Louis George Cafe", sans-serif;
+    font-size: 1em;
+    margin: 50px 0 50px 0;
+    input[type="checkbox"]{
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.btn {
+  background: #eddaca;
+  border: 0 !important;
+  border-radius: 50px;
+  position: relative;
+  font-size: 16px;
+  color:#272727;
+  box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 18%);
+  font-family: "Louis George Cafe", sans-serif;
+  font-weight: bold;
+  width: auto;
+  transition: all 0.2s;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+}
+
+
+.bw-container-accessoires {
+  width: 100%;
+  justify-content: space-between;
+  .bw-img {
+
+  }
+  .bw--infos-ecrins {
+    flex:2;
+    align-items: center;
+    justify-content: center;
+    span {
+      display: block;
+      flex:1;
+      text-align: center;
+    }
+  }
+}
