@@ -1,5 +1,5 @@
-<mat-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup" label="Votre commande">
+<mat-stepper [linear]="isLinear"  #stepper>
+  <mat-step [stepControl]="firstFormGroup" [completed]="canGoingToLivraisonInfo" label="Votre commande">
     <app-confirmation-commande [panier]="panier"
                                [hasError]="hasError"
                                [activeTemplatePanierVide]="activeTemplatePanierVide"
@@ -8,13 +8,11 @@
       <button mat-button [disabled]="!canGoingToLivraisonInfo" matStepperNext type="button" class="btn btn-mobile" >Continuer vers les informations de livraison</button>
     </div>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup" label="Informations de livraisons">
+  <mat-step [stepControl]="secondFormGroup"  label="Informations de livraisons">
     <form [formGroup]="secondFormGroup">
-      <div>
         <app-livraison></app-livraison>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
-      </div>
     </form>
   </mat-step>
   <mat-step>
