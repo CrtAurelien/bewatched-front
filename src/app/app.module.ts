@@ -43,6 +43,8 @@ import {StepperComponent} from "./shop/recap-commande/stepper/stepper.component"
 import {MatStepperModule} from "@angular/material/stepper";
 import {ConfirmationCommandeComponent} from "./shop/recap-commande/stepper/confirmation-commande/confirmation-commande.component";
 import {MatButtonModule} from "@angular/material/button";
+import {MatRipple, MatRippleModule} from "@angular/material/core";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -87,7 +89,9 @@ import {MatButtonModule} from "@angular/material/button";
     HttpClientModule,
     MatCheckboxModule,
     MatStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    MatRippleModule,
+    MatTooltipModule
   ],
   providers: [HomeResolver, DetailMontreResolver,
     {provide: LocationStrategy, useClass: HashLocationStrategy},

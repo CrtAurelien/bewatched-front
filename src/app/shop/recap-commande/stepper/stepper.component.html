@@ -11,16 +11,13 @@
   <mat-step [stepControl]="secondFormGroup"  label="Informations de livraisons">
     <form [formGroup]="secondFormGroup">
         <app-livraison></app-livraison>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
     </form>
+    <div class="button d-flex btn-next-shop">
+      <button mat-button [disabled]="!showPaypalBtn" matStepperNext type="button" class="btn btn-mobile" >Continuer vers le paiement</button>
+    </div>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
+    <ng-template matStepLabel>Paiement</ng-template>
+    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
   </mat-step>
 </mat-stepper>

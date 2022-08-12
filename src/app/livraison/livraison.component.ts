@@ -28,70 +28,15 @@ export class LivraisonComponent implements OnInit {
     pays: new FormControl('', Validators.required),
     telephone: new FormControl('',  [Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
   });
+
   constructor(private shopService: ShopService, private utilService: UtilsService) { }
 
   ngOnInit(): void {
     this.tarifCommande =  this.shopService.tarifCommande;
     this.panier = this.shopService.getPanierEnCours();
-    this.initConfig()
-  }
-  private initConfig(): void {
-    this.tarifCommandeFormate = this.utilService.retournerArrondiNSignificatif(this.tarifCommande);
-    this.payPalConfig = {
-      currency: 'EUR',
-      clientId: 'sb',
-      createOrderOnClient: (data) => <ICreateOrderRequest>{
-        intent: 'CAPTURE',
-        purchase_units: [
-          {
-            amount: {
-              currency_code: 'EUR',
-              value: this.tarifCommandeFormate,
-              breakdown: {
-                item_total: {
-                  currency_code: 'EUR',
-                  value:this.tarifCommandeFormate,
-                }
-              }
-            },
-            items: this.createMontreItemPaypal()
-          }
-        ]
-      },
-      advanced: {
-        commit: 'true'
-      },
-      style: {
-
-      },
-      onApprove: (data, actions) => {
-      },
-      onClientAuthorization: (data) => {
-        // SUCCESS
-      },
-      onCancel: (data, actions) => {
-      },
-      onError: err => {
-      },
-      onClick: (data, actions) => {
-      },
-    };
-  }
-
-  createMontreItemPaypal(): any[] {
-    let configItem: any[] = [];
-    this.panier.forEach(montre => {
-      let config = {
-        name: montre.model,
-        quantity: '1',
-        unit_amount: {
-          currency_code: 'EUR',
-          value:montre.price,
-        },
-      }
-      configItem.push(config)
+    this.commande.valueChanges.subscribe(data => {
+      this.openPaypalModule();
     })
-    return configItem
   }
 
   openPaypalModule() {
@@ -104,7 +49,7 @@ export class LivraisonComponent implements OnInit {
   }
 
   constituerObjetCommande() {
-    let commande = {
+    const commandeEnCours = {
       watches: this.constituerObjetMontreCommande(),
       totalPaiement: this.tarifCommande,
       emailClient: this.commande.controls['email'].value,
@@ -112,6 +57,8 @@ export class LivraisonComponent implements OnInit {
       prenomClient: this.commande.controls['prenom'].value,
       adresse: this.constituerObjetAdresseCommande()
     }
+    this.shopService.commande = commandeEnCours;
+    this.shopService.toggleCommandIsValidSubject(true);
   }
 
   constituerObjetMontreCommande() : any[] {

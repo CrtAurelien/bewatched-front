@@ -37,6 +37,9 @@ export class ShopService {
   textButton = "Ajouter au panier";
   cgvControlChecked = false;
   cgvControlCheckedSubject = new Subject<boolean>()
+  commandIsValid = false;
+  commandIsValidSubject = new Subject<boolean>();
+  commande: any;
 
 
   constructor(private utilService: UtilsService, private http: HttpClient) { }
@@ -58,6 +61,11 @@ export class ShopService {
   toggleCgvControlChecked(value: boolean) {
     this.cgvControlChecked = value;
     this.cgvControlCheckedSubject.next(this.cgvControlChecked);
+  }
+
+  toggleCommandIsValidSubject(value: boolean) {
+    this.commandIsValid = value;
+    this.commandIsValidSubject.next(this.commandIsValid);
   }
 
 

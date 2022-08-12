@@ -8,7 +8,7 @@
     <div class="bw-container-accessoires d-flex flex-column">
       <span class="bw-title">Laissez-vous tenter par nos écrins: </span>
       <div class="d-flex bw-ecrins">
-        <div class="bw-img" (click)="openEcrinsPictures(popEcrinPicture)" [popover]="popEcrins" placement="bottom" triggers="" #popEcrinPicture="bs-popover">
+        <div matRipple matTooltip="Cliquer pour voir plus !" class="bw-img" (click)="openEcrinsPictures(popEcrinPicture)" [popover]="popEcrins" placement="bottom" triggers="" #popEcrinPicture="bs-popover">
           <img src="assets/ecrins1.png" width="125" alt="">
         </div>
         <div class="bw--infos-ecrins d-flex">
