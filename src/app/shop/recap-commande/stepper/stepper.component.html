@@ -1,5 +1,8 @@
 <mat-stepper [linear]="isLinear"  #stepper>
-  <mat-step [stepControl]="firstFormGroup" [completed]="canGoingToLivraisonInfo" label="Votre commande">
+  <mat-step [stepControl]="firstFormGroup"
+            [completed]="canGoingToLivraisonInfo"
+            [hasError]="!canGoingToLivraisonInfo"
+            label="Votre commande">
     <app-confirmation-commande [panier]="panier"
                                [hasError]="hasError"
                                [activeTemplatePanierVide]="activeTemplatePanierVide"

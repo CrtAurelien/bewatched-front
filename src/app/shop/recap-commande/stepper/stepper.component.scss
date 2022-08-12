@@ -14,7 +14,9 @@ mat-stepper {
   width: 70%;
 }
 
-
+::ng-deep .mat-horizontal-stepper-header{
+  pointer-events: none !important;
+}
 
 .button {
   display: flex;

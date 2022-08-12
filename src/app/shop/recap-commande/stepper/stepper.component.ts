@@ -43,6 +43,8 @@ export class StepperComponent implements OnInit {
     this.initConfig();
   }
 
+
+
   private initConfig(): void {
     const tarifCommande =  this.shopService.tarifCommande;
     this.tarifCommandeFormate = this.utilService.retournerArrondiNSignificatif(tarifCommande);
