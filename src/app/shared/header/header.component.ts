@@ -94,10 +94,12 @@ export class HeaderComponent implements OnInit {
   }
 
   searchCertificat() {
-    const montreCertif = this.allMontresForSearch.find(elm => elm.certificat.includes(this.inputCertif));
+    const montreCertif = this.allMontresForSearch.find(elm => elm.certificat.toLowerCase() === this.inputCertif.toLowerCase());
     if(montreCertif) {
-      this.resultatSearchCertificat = montreCertif
+      this.resultatSearchCertificat = montreCertif;
+      this.noCertificatFound = false;
     } else {
+      this.resultatSearchCertificat = null;
       this.noCertificatFound = true;
     }
   }
@@ -112,6 +114,8 @@ export class HeaderComponent implements OnInit {
     if(this.certifIsOpen) {
       this.certifIsOpen = !this.certifIsOpen;
       this.resultatSearchCertificat = null;
+      this.noCertificatFound = false;
+      this.inputCertif = ''
     }
   }
 
@@ -122,6 +126,10 @@ export class HeaderComponent implements OnInit {
   search(event: any) {
     this.searchString = event.target.value;
     this.searchResult = this.shopService.generalSearch(this.searchString, this.allMontresForSearch);
+  }
+
+  createCertif(event :any) {
+    this.inputCertif = event.target.value;
   }
 
   deleteSearch() {

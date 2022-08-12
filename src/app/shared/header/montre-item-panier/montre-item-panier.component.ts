@@ -12,6 +12,8 @@ export class MontreItemPanierComponent implements OnInit {
   montre!: Montre
   montreIsDeleted = false;
   pathImageDetail!: string;
+  @Input()
+  activeTemplateCertif = false;
 
   constructor(private shopService : ShopService) { }
 
