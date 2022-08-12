@@ -513,3 +513,11 @@ nav {
     }
   }
 }
+
+
+.form {
+  padding: 5px 20px;
+  input::placeholder {
+    color: grey;
+  }
+}
