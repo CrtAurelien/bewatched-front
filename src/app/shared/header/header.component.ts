@@ -24,6 +24,9 @@ export class HeaderComponent implements OnInit {
   allMontresForSearch: Montre[] = [];
   searchResult: Montre[] = [];
   toggleMobileSearch = false;
+  resultatSearchCertificat!: any;
+  noCertificatFound = false;
+
   constructor(private burgerService: BurgerService, private cd: ChangeDetectorRef, private shopService: ShopService, private router: Router) { }
 
 
@@ -91,12 +94,24 @@ export class HeaderComponent implements OnInit {
   }
 
   searchCertificat() {
-
+    const montreCertif = this.allMontresForSearch.find(elm => elm.certificat.includes(this.inputCertif));
+    if(montreCertif) {
+      this.resultatSearchCertificat = montreCertif
+    } else {
+      this.noCertificatFound = true;
+    }
   }
 
   onHidden(): void {
     if(this.panierIsOpen) {
       this.panierIsOpen = !this.panierIsOpen;
+    }
+  }
+
+  onHiddenCertif(): void {
+    if(this.certifIsOpen) {
+      this.certifIsOpen = !this.certifIsOpen;
+      this.resultatSearchCertificat = null;
     }
   }
 

@@ -63,7 +63,7 @@
       </span>
       <!-- icones certificat -->
       <span class="navbar-text panier position-relative {{certifIsOpen ? 'open' : ''}} {{showBurgerMenu ? 'menu-open' : ''}}"
-            (onHidden)="onHidden()" [outsideClick]="true" (click)="openCertif(popCertif)" [popover]="popCertificat" placement="bottom right" triggers="" #popCertif="bs-popover">
+            (onHidden)="onHiddenCertif()" [outsideClick]="true" (click)="openCertif(popCertif)" [popover]="popCertificat" placement="bottom right" triggers="" #popCertif="bs-popover">
       <img src="assets/icones/certificate.svg" width="50" alt="">
     </span>
     </div>
@@ -115,13 +115,19 @@
 </ng-template>
 
 <ng-template #popCertificat>
-  <span class="empty-shop">Rechercher un certificat Bewatched</span>
-  <div class="form">
-    <input type="text"  [value]="inputCertif" placeholder="BW-..." class="form-control">
-  </div>
-  <div class="d-flex align-items-center justify-content-center">
-    <button (click)="searchCertificat()" type="button" class="btn btn-valider-panier">Rechercher</button>
-  </div>
+
+    <span class="empty-shop">Rechercher un certificat Bewatched</span>
+    <div class="form">
+      <input type="text"  [value]="inputCertif" placeholder="BW-..." class="form-control">
+    </div>
+    <div class="d-flex align-items-center justify-content-center">
+      <button (click)="searchCertificat()" type="button" class="btn btn-valider-panier">Rechercher</button>
+    </div>
+    <ng-container *ngIf="!!resultatSearchCertificat">
+      <div>
+        Montre trouvée : {{resultatSearchCertificat?.model}}
+      </div>
+    </ng-container>
 
 </ng-template>
 
