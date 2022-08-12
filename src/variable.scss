@@ -28,6 +28,12 @@ $variable-menu-animation-function:    cubic-bezier(.25, .1, .25, 1);
 $variable-menu-animation-function2:    cubic-bezier(1, .25, .1, .25);
 $variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
 
+.bw-title {
+  font-family: "Louis George Cafe", sans-serif;
+  font-weight: bold;
+  font-size:18px;
+}
+
 popover-container {
   top:0 !important;
   left: 0!important;

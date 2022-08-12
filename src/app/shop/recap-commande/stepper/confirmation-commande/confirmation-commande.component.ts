@@ -22,6 +22,8 @@ export class ConfirmationCommandeComponent implements OnInit {
   cgvControl = new FormGroup({
     checkCGV: new FormControl(false, Validators.required),
   })
+  popEcrinPicture: any;
+  ecrinIsOpen = false;
 
   constructor(private shopService: ShopService, private router: Router) { }
 
@@ -30,6 +32,16 @@ export class ConfirmationCommandeComponent implements OnInit {
       this.hasError = false;
       this.shopService.toggleCgvControlChecked(value.checkCGV)
     })
+  }
+
+  openEcrinsPictures(pop: any) {
+    this.ecrinIsOpen = !this.ecrinIsOpen;
+    this.popEcrinPicture = pop;
+    if(this.ecrinIsOpen) {
+      pop.show();
+    } else {
+      pop.hide();
+    }
   }
 
   addEcrins() {

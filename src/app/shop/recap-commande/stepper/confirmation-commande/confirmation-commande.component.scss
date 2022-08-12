@@ -64,8 +64,13 @@
 .bw-container-accessoires {
   width: 100%;
   justify-content: space-between;
+  margin-top: 30px;
+  .bw-ecrins {
+    margin: 30px 30px 0;
+    border: 3px dashed $secondaryColor;
+  }
   .bw-img {
-
+    cursor: pointer;
   }
   .bw--infos-ecrins {
     flex:2;

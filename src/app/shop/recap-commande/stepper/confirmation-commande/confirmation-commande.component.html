@@ -6,10 +6,10 @@
   </ng-container>
   <ng-container>
     <div class="bw-container-accessoires d-flex flex-column">
-      <span>Laissez-vous tenter par nos écrins: </span>
-      <div class="d-flex">
-        <div class="bw-img">
-          <img src="https://via.placeholder.com/100" alt="">
+      <span class="bw-title">Laissez-vous tenter par nos écrins: </span>
+      <div class="d-flex bw-ecrins">
+        <div class="bw-img" (click)="openEcrinsPictures(popEcrinPicture)" [popover]="popEcrins" placement="bottom" triggers="" #popEcrinPicture="bs-popover">
+          <img src="assets/ecrins1.png" width="125" alt="">
         </div>
         <div class="bw--infos-ecrins d-flex">
           <span>infos érins</span>
@@ -40,3 +40,40 @@
   </div>
 
 </div>
+
+
+
+
+<ng-template #popEcrins>
+
+  <div>
+    <swiper
+      [slidesPerView]="1"
+      [initialSlide]="1"
+      [spaceBetween]="10"
+      [slideToClickedSlide]="true"
+      [centeredSlides]="true"
+      [autoplay]="true"
+      [loop]="true"
+      [pagination]="true"
+      class="mySwiper"
+    >
+        <ng-template swiperSlide>
+          <img src="assets/ecrins1.png" width="160px"/>
+        </ng-template>
+      <ng-template swiperSlide>
+        <img src="assets/ecrins2.png" width="160px"/>
+      </ng-template>
+      <ng-template swiperSlide>
+        <img src="assets/ecrins3.png" width="160px"/>
+      </ng-template>
+      <ng-template swiperSlide>
+        <img src="assets/ecrins4.png" width="160px"/>
+      </ng-template>
+      <ng-template swiperSlide>
+        <img src="assets/ecrins5.png" width="160px"/>
+      </ng-template>
+    </swiper>
+  </div>
+
+</ng-template>
