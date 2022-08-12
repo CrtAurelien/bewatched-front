@@ -31,7 +31,12 @@ $variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
 .bw-title {
   font-family: "Louis George Cafe", sans-serif;
   font-weight: bold;
-  font-size:18px;
+  font-size:16px;
+  padding-right: 5px;
+}
+
+.bw-input-certif{
+  flex: 2;
 }
 
 popover-container {
