@@ -79,6 +79,8 @@ export class StepperComponent implements OnInit {
       },
       onClientAuthorization: (data) => {
         // SUCCESS
+        sessionStorage.removeItem('panier');
+        // POST commande
       },
       onCancel: (data, actions) => {
       },
