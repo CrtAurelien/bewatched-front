@@ -34,6 +34,7 @@
           </ul>
         </div>
       </div>
+      <!-- icone panier -->
       <span class="navbar-text panier position-relative {{panierIsOpen ? 'open' : ''}} {{showBurgerMenu ? 'menu-open' : ''}}"
             (onHidden)="onHidden()" [outsideClick]="true" (click)="openPanier(pop)" [popover]="popTemplate" placement="bottom right" triggers="" #pop="bs-popover">
       <span class="position-absolute top-0 start-100 translate-middle {{showBurgerMenu ? 'menu-open' : ''}} badge rounded-pill bg-danger">{{badgePanier}}
@@ -60,6 +61,11 @@
         <svg *ngIf="showBurgerMenu" xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="#ffffff" viewBox="0 0 192.53637 200.16239">
           <defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:10.34239px;}</style></defs><g id="Calque_2" data-name="Calque 2"><g id="Calque_1-2" data-name="Calque 1"><path class="cls-1" d="M29.17119,29.17119l67.097,70.91,67.097,70.91m-134.194,0,67.097-70.91,67.097-70.91"/></g></g></svg>
       </span>
+      <!-- icones certificat -->
+      <span class="navbar-text panier position-relative {{certifIsOpen ? 'open' : ''}} {{showBurgerMenu ? 'menu-open' : ''}}"
+            (onHidden)="onHidden()" [outsideClick]="true" (click)="openCertif(popCertif)" [popover]="popCertificat" placement="bottom right" triggers="" #popCertif="bs-popover">
+      <img src="assets/icones/certificate.svg" width="50" alt="">
+    </span>
     </div>
     <div class="navbar-text nav-wrap d-flex desktop">
       <div (click)="toggleBurgerMenu()" class="navbar-text burger {{showBurgerMenu ? 'open' : 'close'}}">
@@ -106,6 +112,10 @@
       <button (click)="goToRecapPanier()" type="button" class="btn btn-valider-panier">Aller au panier</button>
     </div>
   </ng-template>
+</ng-template>
+
+<ng-template #popCertificat>
+  <div class="content">content</div>
 </ng-template>
 
 

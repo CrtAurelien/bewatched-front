@@ -13,10 +13,12 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
   showBurgerMenu = false;
   panierIsOpen = false;
+  certifIsOpen = false;
   ngUnsubscribe$ = new Subject();
   badgePanier = 0;
   panier: Montre[] = [];
   pop: any;
+  popCertif: any;
   searchString = '';
   allMontresForSearch: Montre[] = [];
   searchResult: Montre[] = [];
@@ -63,6 +65,16 @@ export class HeaderComponent implements OnInit {
     this.panierIsOpen = !this.panierIsOpen;
     this.pop = pop;
     if(this.panierIsOpen) {
+      pop.show();
+    } else {
+      pop.hide();
+    }
+  }
+
+  openCertif(pop: any) {
+    this.certifIsOpen = !this.certifIsOpen;
+    this.popCertif = pop;
+    if(this.certifIsOpen) {
       pop.show();
     } else {
       pop.hide();
