@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   pop: any;
   popCertif: any;
   searchString = '';
+  inputCertif = '';
   allMontresForSearch: Montre[] = [];
   searchResult: Montre[] = [];
   toggleMobileSearch = false;
@@ -87,6 +88,10 @@ export class HeaderComponent implements OnInit {
     if (this.showBurgerMenu){
       this.toggleBurgerMenu();
     }
+  }
+
+  searchCertificat() {
+
   }
 
   onHidden(): void {
