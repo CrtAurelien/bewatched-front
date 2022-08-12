@@ -2,7 +2,7 @@
   <div class="d-flex wrapper-montres flex-wrap justify-content-between">
     <div class="d-flex sub-wrap flex-wrap">
       <ng-container *ngFor="let montre of listeMontres">
-        <app-montre-item *ngIf="montre.available" [montre]="montre"></app-montre-item>
+        <app-montre-item [montre]="montre"></app-montre-item>
       </ng-container>
     </div>
   </div>

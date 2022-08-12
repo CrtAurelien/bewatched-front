@@ -38,7 +38,9 @@ export class ShopComponent implements OnInit, OnDestroy {
     this.shopService.getAllMontres().pipe(
       tap((data)  => {
         this.servorError = false;
+        console.log(data);
         this.listeMontres = [...data] as Montre[]
+        console.log(this.listeMontres)
         this.shopService.allMontres = data;
         this.nombreMontres = this.listeMontres.length;
         this.isLoading = false;
