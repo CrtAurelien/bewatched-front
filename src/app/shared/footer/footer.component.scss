@@ -2,6 +2,7 @@
 
 .text-white {
   color: white !important;
+
   a {
     color: white !important;
 
@@ -9,14 +10,19 @@
 }
 
 .footer-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  z-index: 120;
-  position: relative;
-  width: 100%;
-  justify-content: center;
-  margin: 10px 50px;
+  .insta{
+    display: none;
+  }
+  @media screen and(min-width: $desktop-breakpoint) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 120;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 50px;
+  }
 }
 
 .content-footer {
@@ -24,21 +30,24 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+
   .insta {
     @media screen and(min-width: $desktop-breakpoint) {
       flex: 1;
-      img{
+      img {
         border-radius: 50px;
         animation: pulse-white 1.5s infinite;
         transition: 0.4s ease-out;
       }
     }
   }
+
   @media screen and(min-width: $desktop-breakpoint) {
     flex-direction: row;
     align-items: center;
   }
-  ul {
+
+  .footer-items {
     flex-direction: column;
     padding: 0;
     margin: 20px 0;
@@ -46,8 +55,10 @@
       flex-direction: row;
       order: unset;
       justify-content: center;
-      margin: 0 30px 0 0;    }
+      margin: 0 30px 0 0;
+    }
   }
+
   ul, li {
     display: flex;
     list-style: none;
@@ -57,7 +68,7 @@
       order: unset;
       justify-content: center;
       margin: 0 0 0 30px;
-      a{
+      a {
         color: #252525;
       }
     }

@@ -54,6 +54,7 @@
         align-items: center;
         justify-content: space-evenly;
         width: 300px;
+        transition: .5s;
         background-image: url('../../assets/background-brown.png');
         background-size: 40%;
         border-radius: 50px;
@@ -65,7 +66,7 @@
         box-shadow: none;
         border: 0;
         &:hover {
-          font-size: 15px;
+          transform: scale(0.96);
         }
 
 
