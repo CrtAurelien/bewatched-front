@@ -2,6 +2,8 @@ $primaryColor: #f0c58f;
 $secondaryColor: #593c30;
 $thirdColor: #e3c4a4;
 
+
+
 @font-face {
   font-family: "Louis George Cafe";
   src: url("assets/fonts/Louis-George-Cafe.ttf") format("truetype")
@@ -37,6 +39,20 @@ $variable-burger-animation-function:  cubic-bezier(.68, -.55, .265, 1.55);
 
 .bw-input-certif{
   flex: 2;
+}
+
+.bw-flex-desktop {
+  display: none;
+  @media screen and(min-width: $desktop-breakpoint) {
+    display: flex;
+  }
+}
+
+.bw-flex-mobile {
+  display: flex;
+  @media screen and(min-width: $desktop-breakpoint) {
+    display: none;
+  }
 }
 
 popover-container {

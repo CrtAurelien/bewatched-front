@@ -1,30 +1,65 @@
-<mat-stepper [linear]="isLinear"  #stepper>
-  <mat-step [stepControl]="firstFormGroup"
-            label="Commande">
-    <app-confirmation-commande [panier]="panier"
-                               [hasError]="hasError"
-                               [activeTemplatePanierVide]="activeTemplatePanierVide"
-                               [totalPanier]="totalPanier"></app-confirmation-commande>
-    <div class="button d-flex btn-next-shop">
-      <button mat-button [disabled]="!canGoingToLivraisonInfo" matStepperNext type="button" class="btn btn-mobile" >Continuer vers les informations de livraison</button>
-    </div>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup"  label="Livraison">
-    <form [formGroup]="secondFormGroup">
-        <app-livraison></app-livraison>
-    </form>
-    <div class="button bw-step-livraison d-flex btn-next-shop">
-      <button mat-button matStepperPrevious type="button" class="btn btn-mobile" >Retour</button>
-      <button mat-button [disabled]="!showPaypalBtn" matStepperNext type="button" class="btn btn-mobile" >Continuer vers le paiement</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Paiement</ng-template>
-    <div class="d-flex flex-column align-items-center justify-content-center">
-      <span class="d-flex bw-title">Choisissez votre méthode de paiement :</span>
-      <div class="bw-paypal-wrapper">
-        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+<div class="stepper-desktop">
+  <mat-stepper [linear]="isLinear"  #stepper>
+    <mat-step [stepControl]="firstFormGroup"
+              label="Commande">
+      <app-confirmation-commande [panier]="panier"
+                                 [hasError]="hasError"
+                                 [activeTemplatePanierVide]="activeTemplatePanierVide"
+                                 [totalPanier]="totalPanier"></app-confirmation-commande>
+      <div class="button d-flex btn-next-shop">
+        <button mat-button [disabled]="!canGoingToLivraisonInfo" matStepperNext type="button" class="btn btn-mobile" >Continuer vers les informations de livraison</button>
       </div>
-    </div>
-  </mat-step>
-</mat-stepper>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup"  label="Livraison">
+      <form [formGroup]="secondFormGroup">
+        <app-livraison></app-livraison>
+      </form>
+      <div class="button bw-step-livraison d-flex btn-next-shop">
+        <button mat-button matStepperPrevious type="button" class="btn btn-mobile" >Retour</button>
+        <button mat-button [disabled]="!showPaypalBtn" matStepperNext type="button" class="btn btn-mobile" >Continuer vers le paiement</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Paiement</ng-template>
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <span class="d-flex bw-title">Choisissez votre méthode de paiement :</span>
+        <div class="bw-paypal-wrapper">
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+<div class="stepper-mobile">
+  <mat-stepper [linear]="isLinear" orientation="vertical"  #stepperMobile>
+    <mat-step [stepControl]="firstFormGroup"
+              label="Commande">
+      <app-confirmation-commande [panier]="panier"
+                                 [hasError]="hasError"
+                                 [activeTemplatePanierVide]="activeTemplatePanierVide"
+                                 [totalPanier]="totalPanier"></app-confirmation-commande>
+      <div class="button d-flex btn-next-shop">
+        <button mat-button [disabled]="!canGoingToLivraisonInfo" matStepperNext type="button" class="btn btn-mobile" >Continuer</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup"  label="Livraison">
+      <form [formGroup]="secondFormGroup">
+        <app-livraison></app-livraison>
+      </form>
+      <div class="button bw-step-livraison d-flex btn-next-shop">
+        <button mat-button matStepperPrevious type="button" class="btn btn-mobile" >Retour</button>
+        <button mat-button [disabled]="!showPaypalBtn" matStepperNext type="button" class="btn btn-mobile" >Continuer vers le paiement</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Paiement</ng-template>
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <span class="d-flex bw-title">Choisissez votre méthode de paiement :</span>
+        <div class="bw-paypal-wrapper">
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+

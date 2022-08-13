@@ -3,26 +3,44 @@
   width: 100%;
 }
 
+
+
 .wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  @media screen and (min-width: $desktop-breakpoint){
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
 }
 
 
 .our-story-title{
-  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px;
+  font-size: 40px;
+  padding:30px 20px 20px;
+  span {
+    display: block;
+    text-align: center;
+  }
   @media screen and (min-width: $desktop-breakpoint){
     font-size: 70px;
+    display: flex;
+    flex-direction: row;
+    gap:15px;
   }
 }
 .coutures{
   background-image: url("../../../assets/coutures-brown.png");
   height: 7px;
-  margin-bottom: 65px;
+  margin-bottom: 15px;
+  @media screen and (min-width: $desktop-breakpoint){
+    margin-bottom: 65px;
+
+  }
 }
 
 

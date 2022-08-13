@@ -1,5 +1,23 @@
 @import "../../../../variable";
+.stepper-desktop {
+  display:none;
+  @media screen and(min-width: $desktop-breakpoint) {
+    display: flex;
+    mat-stepper {
+      width: 100%;
+    }
+  }
+}
 
+.stepper-mobile {
+  display:flex;
+  mat-stepper {
+    max-width: 100%;
+  }
+  @media screen and(min-width: $desktop-breakpoint) {
+    display: none;
+  }
+}
 
 .mat-stepper-horizontal {
   margin-top: 8px;
