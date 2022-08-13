@@ -205,6 +205,12 @@
 .mobile-template {
   display: block;
   padding-top:20px;
+  .bw-logo-marque-mobile {
+    img {
+      width:250px;
+      margin-bottom:25px;
+    }
+  }
   .info-completes {
     margin-top:25px;
     padding-bottom: 25px;
