@@ -4,6 +4,10 @@ import {Montre} from "../../../core/model/Montre.interface";
 import {ShopService} from "../../../shared/services/shop.service";
 import {ICreateOrderRequest, IPayPalConfig} from "ngx-paypal";
 import {UtilsService} from "../../../shared/services/utils.service";
+import {Sale} from "../../../core/model/Sale.interface";
+import {Accessory} from "../../../core/model/Accessory.interface";
+import {SaleService} from "../../../shared/services/sale.service";
+import {MatStepper, MatStepperModule} from "@angular/material/stepper";
 
 @Component({
   selector: 'app-stepper',
@@ -31,7 +35,7 @@ export class StepperComponent implements OnInit {
   payPalConfig!: IPayPalConfig;
   tarifCommandeFormate!: number;
 
-  constructor(private _formBuilder: FormBuilder, private shopService: ShopService, private utilService: UtilsService) {}
+  constructor(private _formBuilder: FormBuilder, private saleService: SaleService, private shopService: ShopService, private utilService: UtilsService) {}
 
   ngOnInit(): void {
     this.shopService.cgvControlCheckedSubject.subscribe(data => {
@@ -107,5 +111,31 @@ export class StepperComponent implements OnInit {
     return configItem
   }
 
+  emitCommmande(stepper: MatStepper) {
+    let saleToPost: Sale;
+    saleToPost = {
+      price: this.totalPanier,
+      firstname: this.shopService.commande.nomClient,
+      lastname: this.shopService.commande.prenomClient,
+      address: this.shopService.commande.adresse,
+      zipcode: this.shopService.commande.codePostal,
+      city: this.shopService.commande.ville,
+      country: this.shopService.commande.pays,
+      email: this.shopService.commande.emailClient,
+      phone: this.shopService.commande.phone
+    }
+    saleToPost.watchesSale = [];
+    this.panier.forEach((montre: Montre) => {
+      saleToPost.watchesSale?.push({
+        id: montre.id
+      })
+    })
+
+    this.saleService.postSale(saleToPost).subscribe(data => {
+      stepper.next()
+    })
+
+
+  }
 
 }

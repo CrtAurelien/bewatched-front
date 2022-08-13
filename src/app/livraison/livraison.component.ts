@@ -53,9 +53,13 @@ export class LivraisonComponent implements OnInit {
       watches: this.constituerObjetMontreCommande(),
       totalPaiement: this.tarifCommande,
       emailClient: this.commande.controls['email'].value,
+      phone: this.commande.controls['telephone'].value,
       nomClient: this.commande.controls['nom'].value,
       prenomClient: this.commande.controls['prenom'].value,
-      adresse: this.constituerObjetAdresseCommande()
+      adresse: this.constituerObjetAdresseCommande(),
+      codePostal:  this.commande.controls['codePostal'].value,
+      ville: this.commande.controls['ville'].value,
+      pays:  this.commande.controls['pays'].value
     }
     this.shopService.commande = commandeEnCours;
     this.shopService.toggleCommandIsValidSubject(true);
@@ -76,8 +80,7 @@ export class LivraisonComponent implements OnInit {
 
   constituerObjetAdresseCommande(): string {
     let adresse: string = ''
-      adresse += this.commande.controls['numEtNomRue'] + ' ' + this.commande.controls['numEtageAppart'] + ' ' +
-        this.commande.controls['codePostal'] + ' ' + this.commande.controls['ville'] + ' ' + this.commande.controls['pays']
+      adresse += this.commande.controls['numEtageAppart'].value + ' ' + this.commande.controls['numEtNomRue'].value
     return adresse;
   }
 
