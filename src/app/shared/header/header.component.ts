@@ -94,7 +94,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchCertificat() {
-    const montreCertif = this.allMontresForSearch.find(elm => elm.certificat.toLowerCase() === this.inputCertif.toLowerCase());
+    const montreCertif = this.allMontresForSearch.find(elm => elm.certificat?.toLowerCase() === this.inputCertif?.toLowerCase());
     if(montreCertif) {
       this.resultatSearchCertificat = montreCertif;
       this.noCertificatFound = false;
@@ -129,6 +129,7 @@ export class HeaderComponent implements OnInit {
   }
 
   createCertif(event :any) {
+    this.noCertificatFound = false;
     this.inputCertif = event.target.value;
   }
 
