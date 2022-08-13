@@ -37,10 +37,9 @@ export class ShopComponent implements OnInit, OnDestroy {
     this.shopService.switchTheme('default')
     this.shopService.getAllMontres().pipe(
       tap((data)  => {
+        this.finalListeMontre = [];
         this.servorError = false;
-        console.log(data);
         this.listeMontres = [...data] as Montre[]
-        console.log(this.listeMontres)
         this.shopService.allMontres = data;
         this.nombreMontres = this.listeMontres.length;
         this.isLoading = false;
@@ -95,6 +94,7 @@ export class ShopComponent implements OnInit, OnDestroy {
   createListesMontre() {
     let nbBoucle = 0;
     if (this.listeMontres.length >= 5){
+      console.log('ici')
       nbBoucle = Math.round((this.listeMontres.length + 1) / 5);
     }else{
       nbBoucle = ((this.listeMontres.length + 1) / 5);
@@ -103,6 +103,7 @@ export class ShopComponent implements OnInit, OnDestroy {
       const sousListe = this.listeMontres.splice(0, 5);
       this.finalListeMontre.push(sousListe);
     }
+    console.log(this.finalListeMontre);
   }
 
 
