@@ -94,7 +94,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchCertificat() {
-    const montreCertif = this.allMontresForSearch.find(elm => elm.certificat?.toLowerCase() === this.inputCertif?.toLowerCase());
+    const montreCertif = this.allMontresForSearch.find(elm => elm.certificat?.toLowerCase() === ('BW-' + this.inputCertif).toLowerCase());
     if(montreCertif) {
       this.resultatSearchCertificat = montreCertif;
       this.noCertificatFound = false;
