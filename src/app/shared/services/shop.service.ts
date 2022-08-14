@@ -181,12 +181,23 @@ export class ShopService {
 
   initCustomData() {
     const storage = sessionStorage.getItem('panier')
+    const storageAccessories = sessionStorage.getItem('accessories');
+    let badgeTmp = 0;
     if(storage) {
       this.panier = JSON.parse(storage) as Montre[]
-      this.badgeShopItems = this.panier.length;
+      badgeTmp = this.panier.length;
       this.panierSubject.next(this.panier);
-      this.badgeShopItemsSubject.next(this.badgeShopItems);
     }
+    if(storageAccessories) {
+      this.accessoiresCommande = JSON.parse(storageAccessories) as Accessory[]
+      this.accessoiresCommande.forEach(accessory => {
+        badgeTmp += accessory.quantity || 1;
+      })
+      this.accessoiresCommandeSubject.next(this.accessoiresCommande);
+    }
+    this.badgeShopItems = badgeTmp;
+    console.log(this.badgeShopItems);
+    this.badgeShopItemsSubject.next(this.badgeShopItems);
   }
 
   prevenirChangementTheme(theme: string) {

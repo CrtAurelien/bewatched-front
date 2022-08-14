@@ -47,13 +47,8 @@ export class RecapCommandeComponent implements OnInit {
       })
 
     }
-    this.shopService.accessoiresCommandeSubject.pipe(
-      tap(data => {
-          this.accessoriesPanier = data;
-          this.activeTemplatePanierVide = false;
-          this.calculerTotalAccessoire();
-      }), takeUntil(this.ngUnsubscribed)
-    ).subscribe()
+
+
     this.shopService.panierSubject.pipe(
       tap(data => {
         if(data.length > 0) {
@@ -64,6 +59,14 @@ export class RecapCommandeComponent implements OnInit {
           this.totalPanier = 0;
           this.activeTemplatePanierVide = true;
         }
+      }), takeUntil(this.ngUnsubscribed)
+    ).subscribe()
+
+    this.shopService.accessoiresCommandeSubject.pipe(
+      tap(data => {
+        this.accessoriesPanier = data;
+        this.activeTemplatePanierVide = false;
+        this.calculerTotalAccessoire();
       }), takeUntil(this.ngUnsubscribed)
     ).subscribe()
   }
@@ -81,28 +84,29 @@ export class RecapCommandeComponent implements OnInit {
   }
 
   calculerTotalPanier() {
+    let totalTemp = 0;
     this.panier.forEach(montre => {
-      this.totalPanier += parseInt(montre.price) || 0
+      totalTemp += parseInt(montre.price) || 0
     })
-
-    this.shopService.tarifCommande = this.totalPanier;
+    this.totalPanier = totalTemp;
+    this.shopService.updateTarifCommande(this.totalPanier);
   }
 
   calculerTotalAccessoire() {
     let totalTemp = 0;
+    this.panier.forEach(montre => {
+      totalTemp += parseInt(montre.price) || 0
+    })
     this.accessoriesPanier.forEach(accessory => {
       if(!!accessory.quantity && accessory.quantity > 1) {
-        this.panier.forEach(montre => {
-          totalTemp += parseInt(montre.price) || 0
-        })
         for(let i =0; i< accessory.quantity; i++) {
           totalTemp += accessory.price
         }
-      this.totalPanier = totalTemp;
       } else {
-        this.totalPanier += accessory.price
+        totalTemp += accessory.price
       }
     })
+    this.totalPanier = totalTemp;
     this.shopService.updateTarifCommande(this.totalPanier);
   }
 
