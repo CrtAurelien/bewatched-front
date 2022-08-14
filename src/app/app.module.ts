@@ -38,13 +38,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ErreurTechniqueComponent } from './erreur-technique/erreur-technique.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoaderComponent } from './shared/loader/loader.component';
-import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {CurrencyPipe, HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {StepperComponent} from "./shop/recap-commande/stepper/stepper.component";
 import {MatStepperModule} from "@angular/material/stepper";
 import {ConfirmationCommandeComponent} from "./shop/recap-commande/stepper/confirmation-commande/confirmation-commande.component";
 import {MatButtonModule} from "@angular/material/button";
 import {MatRipple, MatRippleModule} from "@angular/material/core";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {AccessoiresComponent} from "./shop/recap-commande/stepper/confirmation-commande/accessoires/accessoires.component";
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     PageNotFoundComponent,
     LoaderComponent,
     StepperComponent,
-    ConfirmationCommandeComponent
+    ConfirmationCommandeComponent,
+    AccessoiresComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -91,9 +93,10 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MatStepperModule,
     MatButtonModule,
     MatRippleModule,
-    MatTooltipModule
+    MatTooltipModule,
+
   ],
-  providers: [HomeResolver, DetailMontreResolver,
+  providers: [HomeResolver, DetailMontreResolver,   CurrencyPipe,
     {provide: LocationStrategy, useClass: HashLocationStrategy},
   ],
   bootstrap: [AppComponent]

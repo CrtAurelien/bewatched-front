@@ -4,20 +4,26 @@ import {BehaviorSubject, Observable, Subject, tap} from "rxjs";
 import {Filtre, FiltreObject} from "../../core/model/Filtre.interface";
 import {UtilsService} from "./utils.service";
 import {HttpClient} from "@angular/common/http";
+import {Accessory} from "../../core/model/Accessory.interface";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
   panier: Montre[] = [];
+  accessoiresCommande: Accessory[] = [];
   panierSubject = new BehaviorSubject<Montre[]>(this.panier)
+  accessoiresCommandeSubject = new BehaviorSubject<Accessory[]>(this.accessoiresCommande)
   badgeShopItems = 0;
   badgeShopItemsSubject = new Subject<number>();
   montreWasDeleted = false;
+  accessoryWasDeleted = false;
   montreWasDeletedSubject = new Subject<boolean>();
+  accessoryWasDeletedSubject = new Subject<boolean>();
   urlMontres = "https://bewatched.fr/api-bewatched/public/api/watches"
   urlDetailMontre = "https://bewatched.fr/api-bewatched/public/api/watch/"
   urlHomeMontre = "https://bewatched.fr/api-bewatched/public/api/watch/home"
+  urlAccessories = "https://bewatched.fr/api-bewatched/public/api/accessories"
   allMontres : Montre[] = [];
   montresSave: Montre[] = [];
   theme = 'theme-default';
@@ -33,6 +39,7 @@ export class ShopService {
   redirectFromSearchSubject = new Subject<boolean>();
   resetSubject = new Subject<boolean>();
   tarifCommande: number = 0;
+  tarifCommandeSubject = new Subject<number>();
   montreIsInCard! : boolean;
   textButton = "Ajouter au panier";
   cgvControlChecked = false;
@@ -40,6 +47,7 @@ export class ShopService {
   commandIsValid = false;
   commandIsValidSubject = new Subject<boolean>();
   commande: any;
+  updateTarifCommandeSubject = new Subject<number>()
 
 
   constructor(private utilService: UtilsService, private http: HttpClient) { }
@@ -58,6 +66,29 @@ export class ShopService {
     sessionStorage.setItem('panier', JSON.stringify(this.panier));
   }
 
+
+  /**
+   * Cette méthode ajouter au panier la montre passée en paramètre
+   * Et met à jour le badge du panier
+   * @param montre
+   */
+  addToCartAccessory(accessory: Accessory) {
+    // TODO verfier si la montre est déjà présente dans la panier
+    const accessoireDejaAjoute = this.accessoiresCommande.find(elm => elm.id === accessory.id)
+    if(accessoireDejaAjoute) {
+      if(accessoireDejaAjoute.quantity) {
+        accessoireDejaAjoute.quantity += 1
+      }
+    } else {
+      accessory.quantity = 1;
+      this.accessoiresCommande.push(accessory);
+    }
+    this.badgeShopItems += 1;
+    this.accessoiresCommandeSubject.next(this.accessoiresCommande);
+    this.badgeShopItemsSubject.next(this.badgeShopItems);
+    sessionStorage.setItem('accessories', JSON.stringify(this.accessoiresCommande));
+  }
+
   toggleCgvControlChecked(value: boolean) {
     this.cgvControlChecked = value;
     this.cgvControlCheckedSubject.next(this.cgvControlChecked);
@@ -66,6 +97,11 @@ export class ShopService {
   toggleCommandIsValidSubject(value: boolean) {
     this.commandIsValid = value;
     this.commandIsValidSubject.next(this.commandIsValid);
+  }
+
+  updateTarifCommande(value: number) {
+    this.tarifCommande = value;
+    this.tarifCommandeSubject.next(this.tarifCommande);
   }
 
 
@@ -83,8 +119,26 @@ export class ShopService {
     }
   }
 
+  removeToCartAccessories(accessory: Accessory) {
+    if (this.badgeShopItems > 0){
+      // TODO verfier si la montre est déjà présente dans la panier
+      this.accessoryWasDeleted = true;
+      this.accessoiresCommande.splice(this.accessoiresCommande.indexOf(accessory, 1))
+      this.badgeShopItems -= 1;
+      this.accessoiresCommandeSubject.next(this.accessoiresCommande)
+      this.badgeShopItemsSubject.next(this.badgeShopItems)
+      this.accessoryWasDeletedSubject.next(this.accessoryWasDeleted);
+
+      sessionStorage.setItem('accessories', JSON.stringify(this.panier));
+    }
+  }
+
   getAllMontres() : Observable<Montre[]>{
     return this.http.get<Montre[]>(this.urlMontres);
+  }
+
+  getAccessories(): Observable<Accessory[]> {
+    return this.http.get<Accessory[]>(this.urlAccessories);
   }
 
   checkIfMontreIsInCard(montre: Montre):boolean{

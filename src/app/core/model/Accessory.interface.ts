@@ -3,4 +3,6 @@ export interface Accessory {
   name: string,
   description: string,
   price: number
+  isSuggestion?: boolean;
+  quantity?: number;
 }

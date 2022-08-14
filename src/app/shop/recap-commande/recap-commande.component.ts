@@ -5,6 +5,7 @@ import {Subject, takeUntil, tap} from "rxjs";
 import {UtilsService} from "../../shared/services/utils.service";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Accessory} from "../../core/model/Accessory.interface";
 
 @Component({
   selector: 'app-recap-commande',
@@ -13,6 +14,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class RecapCommandeComponent implements OnInit {
   panier : Montre[] = [];
+  accessoriesPanier: Accessory[] = [];
   ngUnsubscribed = new Subject();
   totalPanier:number = 0;
   activeTemplatePanierVide = false;
@@ -45,6 +47,13 @@ export class RecapCommandeComponent implements OnInit {
       })
 
     }
+    this.shopService.accessoiresCommandeSubject.pipe(
+      tap(data => {
+          this.accessoriesPanier = data;
+          this.activeTemplatePanierVide = false;
+          this.calculerTotalAccessoire();
+      }), takeUntil(this.ngUnsubscribed)
+    ).subscribe()
     this.shopService.panierSubject.pipe(
       tap(data => {
         if(data.length > 0) {
@@ -75,17 +84,28 @@ export class RecapCommandeComponent implements OnInit {
     this.panier.forEach(montre => {
       this.totalPanier += parseInt(montre.price) || 0
     })
+
     this.shopService.tarifCommande = this.totalPanier;
   }
 
-  addEcrins() {
-    if(!this.ecrinIsAdd) {
-      this.totalPanier += 5.00;
-    } else {
-      this.totalPanier -= 5.00;
-    }
-    this.ecrinIsAdd = !this.ecrinIsAdd;
-    this.shopService.tarifCommande = this.totalPanier;
+  calculerTotalAccessoire() {
+    let totalTemp = 0;
+    this.accessoriesPanier.forEach(accessory => {
+      if(!!accessory.quantity && accessory.quantity > 1) {
+        this.panier.forEach(montre => {
+          totalTemp += parseInt(montre.price) || 0
+        })
+        for(let i =0; i< accessory.quantity; i++) {
+          totalTemp += accessory.price
+        }
+      this.totalPanier = totalTemp;
+      } else {
+        this.totalPanier += accessory.price
+      }
+    })
+    this.shopService.updateTarifCommande(this.totalPanier);
   }
+
+
 
 }

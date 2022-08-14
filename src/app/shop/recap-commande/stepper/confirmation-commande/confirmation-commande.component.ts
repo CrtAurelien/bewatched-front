@@ -3,6 +3,7 @@ import {Montre} from "../../../../core/model/Montre.interface";
 import {ShopService} from "../../../../shared/services/shop.service";
 import {Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Accessory} from "../../../../core/model/Accessory.interface";
 
 @Component({
   selector: 'app-confirmation-commande',
@@ -22,8 +23,8 @@ export class ConfirmationCommandeComponent implements OnInit {
   cgvControl = new FormGroup({
     checkCGV: new FormControl(false, Validators.required),
   })
-  popEcrinPicture: any;
-  ecrinIsOpen = false;
+
+  accessories!: Accessory[];
 
   constructor(private shopService: ShopService, private router: Router) { }
 
@@ -32,27 +33,17 @@ export class ConfirmationCommandeComponent implements OnInit {
       this.hasError = false;
       this.shopService.toggleCgvControlChecked(value.checkCGV)
     })
+    this.shopService.getAccessories().subscribe(data=> {
+      this.accessories = data;
+      this.accessories.forEach(elm => {
+        elm.quantity = 0;
+      })
+    })
   }
 
-  openEcrinsPictures(pop: any) {
-    this.ecrinIsOpen = !this.ecrinIsOpen;
-    this.popEcrinPicture = pop;
-    if(this.ecrinIsOpen) {
-      pop.show();
-    } else {
-      pop.hide();
-    }
-  }
 
-  addEcrins() {
-    if(!this.ecrinIsAdd) {
-      this.totalPanier += 5.00;
-    } else {
-      this.totalPanier -= 5.00;
-    }
-    this.ecrinIsAdd = !this.ecrinIsAdd;
-    this.shopService.tarifCommande = this.totalPanier;
-  }
+
+
 
   redirectToShop() {
     this.router.navigate(['shop'])

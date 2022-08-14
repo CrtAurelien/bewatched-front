@@ -1,0 +1,18 @@
+@import "../../../../../../variable";
+
+.bw-ecrins {
+  border: 3px dashed $secondaryColor;
+}
+.bw-img {
+  cursor: pointer;
+}
+.bw--infos-ecrins {
+  flex:2;
+  align-items: center;
+  justify-content: center;
+  span {
+    display: block;
+    flex:1;
+    text-align: center;
+  }
+}

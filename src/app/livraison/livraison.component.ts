@@ -37,6 +37,9 @@ export class LivraisonComponent implements OnInit {
     this.commande.valueChanges.subscribe(data => {
       this.openPaypalModule();
     })
+    this.shopService.tarifCommandeSubject.subscribe(data => {
+      this.tarifCommande = data;
+    })
   }
 
   openPaypalModule() {
