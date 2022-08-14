@@ -123,7 +123,15 @@ export class ShopService {
     if (this.badgeShopItems > 0){
       // TODO verfier si la montre est déjà présente dans la panier
       this.accessoryWasDeleted = true;
-      this.accessoiresCommande.splice(this.accessoiresCommande.indexOf(accessory, 1))
+      let accessoryContext = this.accessoiresCommande.find(elm => elm.id === accessory?.id);
+      if(!!accessoryContext?.quantity && accessoryContext.quantity > 1) {
+        accessoryContext.quantity -= 1;
+        if(accessoryContext.quantity === 0) {
+          this.accessoiresCommande.splice(this.accessoiresCommande.indexOf(accessory, 1))
+        }
+      } else {
+        this.accessoiresCommande.splice(this.accessoiresCommande.indexOf(accessory, 1))
+      }
       this.badgeShopItems -= 1;
       this.accessoiresCommandeSubject.next(this.accessoiresCommande)
       this.badgeShopItemsSubject.next(this.badgeShopItems)

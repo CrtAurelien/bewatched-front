@@ -46,6 +46,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatRipple, MatRippleModule} from "@angular/material/core";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {AccessoiresComponent} from "./shop/recap-commande/stepper/confirmation-commande/accessoires/accessoires.component";
+import {AccessoryItemPanierComponent} from "./shared/header/accessory-item-panier/accessory-item-panier.component";
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import {AccessoiresComponent} from "./shop/recap-commande/stepper/confirmation-c
     LoaderComponent,
     StepperComponent,
     ConfirmationCommandeComponent,
-    AccessoiresComponent
+    AccessoiresComponent,
+    AccessoryItemPanierComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),

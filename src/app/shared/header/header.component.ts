@@ -4,6 +4,7 @@ import {ShopService} from "../services/shop.service";
 import {Subject, take, takeUntil, tap} from "rxjs";
 import {Montre} from "../../core/model/Montre.interface";
 import {Router} from "@angular/router";
+import {Accessory} from "../../core/model/Accessory.interface";
 
 @Component({
   selector: 'app-header',
@@ -26,6 +27,7 @@ export class HeaderComponent implements OnInit {
   toggleMobileSearch = false;
   resultatSearchCertificat!: any;
   noCertificatFound = false;
+  accessories: Accessory[]= [];
 
   constructor(private burgerService: BurgerService, private cd: ChangeDetectorRef, private shopService: ShopService, private router: Router) { }
 
@@ -35,6 +37,7 @@ export class HeaderComponent implements OnInit {
       this.shopService.initCustomData();
       this.panier = this.shopService.getPanierEnCours()
       this.badgePanier = this.shopService.badgeShopItems;
+      this.accessories = this.shopService.accessoiresCommande;
     }
     this.shopService.badgeShopItemsSubject.pipe(
       tap(data => {
@@ -55,6 +58,9 @@ export class HeaderComponent implements OnInit {
         }), takeUntil(this.ngUnsubscribe$)
       ).subscribe()
     }
+    this.shopService.accessoiresCommandeSubject.subscribe(data => {
+      this.accessories = data;
+    })
   }
 
   toggleBurgerMenu() {

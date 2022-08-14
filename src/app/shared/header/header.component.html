@@ -108,6 +108,15 @@
         <app-montre-item-panier [montre]="montre"></app-montre-item-panier>
       </a>
     </ng-container>
+    <ng-container *ngFor="let montre of panier">
+      <a (click)="redirectTo('/detail/' + montre.id)" class="shop-link-watch">
+        <app-montre-item-panier [montre]="montre"></app-montre-item-panier>
+      </a>
+    </ng-container>
+    <ng-container *ngFor="let accessory of accessories">
+        <app-accessory-item-panier [accessory]="accessory"></app-accessory-item-panier>
+
+    </ng-container>
     <div class="d-flex align-items-center justify-content-center">
       <button (click)="goToRecapPanier()" type="button" class="btn btn-valider-panier">Aller au panier</button>
     </div>
