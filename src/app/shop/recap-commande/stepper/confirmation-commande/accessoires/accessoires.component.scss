@@ -3,6 +3,9 @@
 .bw-ecrins {
   border: 1px solid $secondaryColor;
   background: rgba(255, 255, 255, 0.3);
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
 }
 .bw-img {
   cursor: pointer;
@@ -12,8 +15,18 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  .bw-accessory-name {
+    background: $secondaryColor;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 50px;
+    margin-top: 10px;
+    font-family: "Louis George Cafe", sans-serif;
+    font-size: 1em;
+  }
   .bw-accessory-description {
-
+    font-family: "Louis George Cafe", sans-serif;
+    font-size: 1em;
   }
   span {
     display: block;
