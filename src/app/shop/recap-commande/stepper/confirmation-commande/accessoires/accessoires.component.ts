@@ -16,6 +16,7 @@ export class AccessoiresComponent implements OnInit {
   accessory!: Accessory;
   @Input()
   totalPanier!: number
+  activeMessageMaxQuantity = false;
 
   constructor(private shopService: ShopService, private cd: ChangeDetectorRef) { }
 
@@ -42,12 +43,17 @@ export class AccessoiresComponent implements OnInit {
   }
 
   shopButton(){
+    if(this.accessory.quantity && this.accessory.quantity === 14) {
+      this.activeMessageMaxQuantity = true;
+    }
     this.shopService.addToCartAccessory(this.accessory);
     this.cd.detectChanges()
+
   }
 
   deleteButton() {
     this.shopService.removeToCartAccessories(this.accessory);
+    this.activeMessageMaxQuantity = false;
     if(this.shopService.checkIfAccessoryIsInCard(this.accessory) === undefined) {
       this.accessory.quantity = 0;
     }

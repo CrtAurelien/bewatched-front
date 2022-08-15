@@ -6,14 +6,20 @@
     <span>{{accessory.name}}</span>
     <span class="bw-accessory-description">{{accessory.description}}</span>
     <span>{{accessory.price}}€</span>
+    <ng-container *ngIf="accessory.stock === 0">
+      <span>Ce produit est victime de son succès</span>
+    </ng-container>
     <div class="button d-flex btn-next-shop align-items-center justify-content-center">
-      <span class="btn quantity" *ngIf="accessory.quantity && accessory.quantity > 0">{{accessory.quantity}}</span>
-      <button (click)="shopButton()"  type="button" class="btn">Ajouter</button>
-      <span (click)="deleteButton()" *ngIf="accessory.quantity && accessory.quantity > 0" class="btn delete">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#af3755" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-      </svg>
+      <ng-container *ngIf="accessory.stock > 0">
+        <span class="btn quantity" *ngIf="accessory.quantity && accessory.quantity > 0">{{accessory.quantity}}</span>
+        <button (click)="shopButton()" [disabled]="activeMessageMaxQuantity" type="button" class="btn">{{activeMessageMaxQuantity ? 'Maximum atteind' : 'Ajouter'}}</button>
+        <span (click)="deleteButton()" *ngIf="accessory.quantity && accessory.quantity > 0" class="btn delete">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#af3755" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+          </svg>
       </span>
+      </ng-container>
+
     </div>
   </div>
 </div>

@@ -8,4 +8,5 @@ export interface Accessory {
   isSuggestion?: boolean;
   quantity?: number;
   photos: Photo[];
+  stock: number;
 }

@@ -9,7 +9,10 @@
       <span class="bw-title">Laissez-vous tenter par nos accessoires: </span>
       <div class="d-flex bw-container">
         <ng-container *ngFor="let accessory of accessories">
-          <app-accessoires [totalPanier]="totalPanier" [accessory]="accessory"> </app-accessoires>
+          <ng-container *ngIf="accessory.isSuggestion">
+            <app-accessoires [totalPanier]="totalPanier" [accessory]="accessory"> </app-accessoires>
+
+          </ng-container>
         </ng-container>
       </div>
 
