@@ -12,7 +12,7 @@
 
 .main-wrapper {
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 60px;
   @media screen and(min-width: $desktop-breakpoint) {
     flex-direction: row;
     width: 100%;
@@ -96,8 +96,9 @@
       }
     }
     img {
-      padding-top:15px;
-      width: 150px;
+      position: relative;
+      top: -20px;
+      width: 250px;
       @media screen and(min-width: $desktop-breakpoint) {
         width: 345px;
         position: relative;
@@ -106,7 +107,7 @@
     }
   }
   .montres {
-    padding-top: 38px;
+    padding-top: 15px;
     z-index: 999;
     @media screen and(min-width: $desktop-breakpoint) {
       flex:1;

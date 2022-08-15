@@ -12,6 +12,9 @@
   display: none;
   @media screen and(min-width: $desktop-breakpoint) {
     display: block;
+    .back-shop-button{
+      display: flex;
+    }
     .main-wrap{
       display: flex;
       position: relative;
@@ -58,12 +61,62 @@
     }
 
 
-    .back-to-shop{
-      margin-left: 20px;
-      margin-top: 30px;
-      &:hover {
-        transform: scale(0.9);
+    .back-to-shop {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-radius: 50px;
+      padding: 10px 30px;
+      background-color: #432f2466;
+      border: none;
+      color: white;
+      font-family: "Louis George Cafe", sans-serif;
+      text-transform: uppercase;
+      transition: .6s;
+      min-height: 44px;
+      width: auto;
+      min-width: 240px;
+      line-height: 25px;
+      span{
+        transition: .6s;
+        transform: translateX(0px);
+        position: absolute;
       }
+
+      &::before {
+        content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='b' xmlns='http://www.w3.org/2000/svg' width='20' viewBox='0 0 166.1132 134.8703'%3E%3Cdefs%3E%3Cstyle%3E.d%7Bstroke-miterlimit:10;%7D.d,.e%7Bfill:none;stroke:%23fff;stroke-linecap:round;stroke-width:7px;%7D.e%7Bstroke-linejoin:round;%7D%3C/style%3E%3C/defs%3E%3Cg id='c'%3E%3Cpath class='d' d='M3.5,42.3843H118.1202c24.5728,0,44.493,19.9202,44.493,44.493h0c0,24.5729-19.9202,44.4931-44.493,44.4931h-53.9591'/%3E%3Cpolyline class='e' points='42.3843 81.2686 3.5 42.3843 42.3843 3.5'/%3E%3C/g%3E%3C/svg%3E");
+        display: inline-block;
+
+        height: 22px;
+        opacity: 0;
+        transform: translateX(0px);
+        transition: .6s;
+        position: absolute;
+        left: 25px;
+
+      }
+
+      &:hover {
+        background: #432f24 !important;
+        transition: .6s;
+
+        span {
+          position: absolute;
+          display: inline;
+          transform: translateX(10px);
+          transition: .6s;
+        }
+
+        &::before {
+          display: inline;
+          position: absolute;
+          opacity: 1;
+          transform: translateX(-10px);
+          transition: .6s;
+        }
+      }
+
       @media screen and(min-width: $desktop-breakpoint) {
         margin: 60px 100px;
       }
@@ -75,22 +128,28 @@
       display: flex;
       align-items: center;
       border-radius: 50px;
-      height: 50px;
+      height: 45px;
       background-color: #432f2466;
       border: none;
       color: white;
       padding: 0 30px;
       width: auto;
+      font-size: 14px;
       justify-content: center;
       font-family: "Louis George Cafe", sans-serif;
       text-transform: uppercase;
+      transition: .4s;
+      &:hover{
+        background: #432f24 !important;
+        transition: .4s;
+      }
 
       span{
         height: 20px;
       }
       svg{
         fill: white;
-        width: 25px;
+        width: 20px;
         margin-right: 10px;
         &:hover{
           transition: 0.3s ease-out;
@@ -185,7 +244,7 @@
       justify-content: flex-start;
       align-items: center;
       height: auto;
-      gap: 20px;
+      gap: 40px;
       flex-wrap: wrap;
 
       img {

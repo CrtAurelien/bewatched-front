@@ -107,20 +107,50 @@ popover-container {
   }
 }
 
-.back-to-shop{
-  display: flex;
-  align-items: center;
+.back-to-shop {
   border-radius: 50px;
-  width: 240px;
-  justify-content: center;
+  width: auto;
   padding: 10px 30px;
   background-color: #432f2466;
   border: none;
   color: white;
   font-family: "Louis George Cafe", sans-serif;
   text-transform: uppercase;
+  transition: .6s;
+
+  span{
+    transition: .6s;
+    transform: translateX(0px);
+
+  }
+
+  &::before {
+    content: '<-';
+    opacity: 0;
+    transform: translateX(0px);
+    transition: .6s;
+    position: absolute;
+
+  }
+
   &:hover {
-    transform: scale(0.9);
+    background: #432f24 !important;
+    transition: .6s;
+
+    span {
+      position: absolute;
+      display: inline;
+      transform: translateX(10px);
+      transition: .6s;
+    }
+
+    &::before {
+      display: inline;
+      position: absolute;
+      opacity: 1;
+      transform: translateX(-10px);
+      transition: .6s;
+    }
   }
 }
 

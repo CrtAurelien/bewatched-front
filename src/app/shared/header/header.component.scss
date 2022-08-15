@@ -2,6 +2,7 @@
 :host{
   z-index: 99;
 }
+
 .container-fluid {
   @media screen and(min-width: $desktop-breakpoint) {
     height: 100%;
@@ -9,7 +10,60 @@
     padding-left: 0;
   }
 }
-
+.menu-desktop{
+  @media screen and (min-width: $desktop-breakpoint){
+    display: flex;
+    position: absolute;
+    transform: translateY(0%);
+    opacity: 1;
+    left: 0;
+    z-index: 120;
+    width: 100%;
+    height: calc(100vh - 150px);
+    background-image: url('../../../assets/background-brown.png');
+    background-size: 13%;
+    transition: 0.7s cubic-bezier(0.1, -0.77, 0.35, 1.46);
+    &.close{
+      transform: translateY(-100%);
+      transition: 0.9s cubic-bezier(0.62, -0.3, 0.35, 1.46);
+      opacity: 0;
+      display: flex;
+      position: absolute;
+      left: 0;
+      z-index: 120;
+      width: 100%;
+      height: calc(100vh - 150px);
+      background-image: url('../../../assets/background-brown.png');
+      background-size: 13%;
+    }
+    div{
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    ul {
+      display: flex;
+      width: 100%;
+      height: 30vh;
+      align-items: center;
+      justify-content: center;
+      gap: 10vw;
+      li{
+        text-transform: uppercase;
+        font-size: 70px;
+        color: #593c30;
+        line-height: 55px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Bebas Neue", cursive;
+        cursor: pointer;
+      }
+    }
+  }
+}
 .navbar {
   &.open {
     position: relative;
@@ -21,6 +75,7 @@ nav {
   height: 80px;
   padding-bottom: 0;
   padding-top: 0;
+  z-index: 999;
   @media screen and(min-width: $desktop-breakpoint){
     background-size: 13%;
 
@@ -61,9 +116,9 @@ nav {
       width: 450px;
       display: flex;
       z-index: 1000;
-      justify-content: center;
       align-items: center;
       position: relative;
+      margin-left: 40px;
       padding: 0;
       a{
 
@@ -145,8 +200,6 @@ nav {
         position: relative;
         padding-left:130px;
         width: auto;
-        margin-left: auto;
-        margin-right: 200px;
 
         .panier {
           width: 60px;
@@ -373,9 +426,8 @@ nav {
   }
 
   .burger {
-    position: relative;
-    top: 0px;
-
+    margin: 0 30px 0 40px;
+    cursor: pointer;
     svg {
       .cls-1 {
         stroke-width: 10px;
