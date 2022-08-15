@@ -34,6 +34,7 @@ export class StepperComponent implements OnInit {
   showPaypalBtn = false;
   payPalConfig!: IPayPalConfig;
   tarifCommandeFormate!: number;
+  displayMsgErreurCreateSale = false
 
   constructor(private _formBuilder: FormBuilder, private saleService: SaleService, private shopService: ShopService, private utilService: UtilsService) {}
 
@@ -133,6 +134,8 @@ export class StepperComponent implements OnInit {
 
     this.saleService.postSale(saleToPost).subscribe(data => {
       stepper.next()
+    }, error => {
+      this.displayMsgErreurCreateSale = true;
     })
 
 

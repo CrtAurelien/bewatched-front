@@ -1,7 +1,8 @@
 @import "../../../../../../variable";
 
 .bw-ecrins {
-  border: 3px dashed $secondaryColor;
+  border: 1px solid $secondaryColor;
+  background: rgba(255, 255, 255, 0.3);
 }
 .bw-img {
   cursor: pointer;
@@ -10,9 +11,59 @@
   flex:2;
   align-items: center;
   justify-content: center;
+  position: relative;
+  .bw-accessory-description {
+
+  }
   span {
     display: block;
+    padding: 10px 20px 0;
     flex:1;
     text-align: center;
+  }
+
+  .btn-next-shop {
+      .btn {
+        background: #eddaca;
+        border: 0 !important;
+        border-radius: 50px;
+        position: relative;
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-top:10px;
+        color:#272727;
+        box-shadow: 0 0 20px 0px #36363614, 0 0 20px 0 rgb(47 47 47 / 18%);
+        font-family: "Louis George Cafe", sans-serif;
+        font-weight: bold;
+        width: 135px;
+        transition: all 0.2s;
+        &.quantity, &.delete {
+          width: 30px;
+          height: 30px;
+          display: flex;
+          color:white;
+          align-items: center;
+          position: absolute;
+          background: $secondaryColor;
+          left: 15px;
+          justify-content: center;
+        }
+        &.delete {
+          left:auto;
+          width: auto;
+          background: transparent;
+          box-shadow: none;
+          padding: 0;
+          right: 20px !important;
+        }
+        &:hover {
+          transform: scale(1.1);
+          transition: transform 0.2s;
+        }
+
+    }
+    span {
+      padding: 0
+    }
   }
 }

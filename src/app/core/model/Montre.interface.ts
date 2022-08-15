@@ -3,7 +3,6 @@ export interface Montre {
   description: string;
   brand: Brand;
   model: string;
-  reference : string;
   complication: string;
   movement : any;
   genre: string;

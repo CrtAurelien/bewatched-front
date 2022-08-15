@@ -20,6 +20,14 @@ export class AccessoiresComponent implements OnInit {
   constructor(private shopService: ShopService, private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    if(this.shopService.checkIfAccessoryIsInCard(this.accessory) !== undefined) {
+      this.accessory = this.shopService.checkIfAccessoryIsInCard(this.accessory) || this.accessory;
+    }
+    this.shopService.accessoryUpdateSubject.subscribe(data => {
+      if(data.id === this.accessory.id) {
+        this.accessory = data;
+      }
+    })
 
   }
 
@@ -34,20 +42,15 @@ export class AccessoiresComponent implements OnInit {
   }
 
   shopButton(){
-   // if (this.montreIsInCard) {
-     // this.shopService.removeToCart(montre);
-    //  this.textButton = "Ajouter au panier"
-  //  }else {
-
-      this.shopService.addToCartAccessory(this.accessory);
-    //  this.textButton = "Supprimer du panier"
-  //  }
-   // this.montreIsInCard = !this.montreIsInCard
+    this.shopService.addToCartAccessory(this.accessory);
     this.cd.detectChanges()
   }
 
   deleteButton() {
     this.shopService.removeToCartAccessories(this.accessory);
+    if(this.shopService.checkIfAccessoryIsInCard(this.accessory) === undefined) {
+      this.accessory.quantity = 0;
+    }
     this.cd.detectChanges()
   }
 

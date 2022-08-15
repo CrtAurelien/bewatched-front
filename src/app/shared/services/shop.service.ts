@@ -48,6 +48,7 @@ export class ShopService {
   commandIsValidSubject = new Subject<boolean>();
   commande: any;
   updateTarifCommandeSubject = new Subject<number>()
+  accessoryUpdateSubject = new Subject<Accessory>()
 
 
   constructor(private utilService: UtilsService, private http: HttpClient) { }
@@ -84,8 +85,10 @@ export class ShopService {
       this.accessoiresCommande.push(accessory);
     }
     this.badgeShopItems += 1;
+    this.accessoryUpdateSubject.next(accessory);
     this.accessoiresCommandeSubject.next(this.accessoiresCommande);
     this.badgeShopItemsSubject.next(this.badgeShopItems);
+    console.log(this.accessoiresCommande);
     sessionStorage.setItem('accessories', JSON.stringify(this.accessoiresCommande));
   }
 
@@ -136,7 +139,6 @@ export class ShopService {
       this.accessoiresCommandeSubject.next(this.accessoiresCommande)
       this.badgeShopItemsSubject.next(this.badgeShopItems)
       this.accessoryWasDeletedSubject.next(this.accessoryWasDeleted);
-
       sessionStorage.setItem('accessories', JSON.stringify(this.panier));
     }
   }
@@ -152,6 +154,14 @@ export class ShopService {
   checkIfMontreIsInCard(montre: Montre):boolean{
     const isInCard = this.getPanierEnCours().find(elm => elm.id === montre.id)
     return !!isInCard;
+  }
+
+  checkIfAccessoryIsInCard(accessory: Accessory): Accessory | undefined {
+    const accessoryInCard = this.accessoiresCommande.find(elm => elm.id === accessory.id);
+    if(!!accessoryInCard) {
+      accessory = accessoryInCard
+    }
+    return accessoryInCard
   }
 
   getMontreById(id: any): Observable<Montre>{
