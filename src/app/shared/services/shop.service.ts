@@ -114,6 +114,9 @@ export class ShopService {
       this.montreWasDeleted = true;
       this.panier.splice(this.panier.indexOf(montre, 1))
       this.badgeShopItems -= 1;
+      if(this.panier.length === 0) {
+        sessionStorage.removeItem('accessories');
+      }
       this.panierSubject.next(this.panier)
       this.badgeShopItemsSubject.next(this.badgeShopItems)
       this.montreWasDeletedSubject.next(this.montreWasDeleted);
@@ -136,6 +139,9 @@ export class ShopService {
         this.accessoiresCommande.splice(this.accessoiresCommande.indexOf(accessory, 1))
       }
       this.badgeShopItems -= 1;
+      if(this.accessoiresCommande.length === 0) {
+        sessionStorage.removeItem('accessories');
+      }
       this.accessoiresCommandeSubject.next(this.accessoiresCommande)
       this.badgeShopItemsSubject.next(this.badgeShopItems)
       this.accessoryWasDeletedSubject.next(this.accessoryWasDeleted);
