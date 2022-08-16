@@ -129,13 +129,24 @@
   </div>
 </nav>
 <div class="menu-desktop {{showBurgerMenu ? 'open' : 'close'}}">
-  <div>
+  <div *ngIf="!activeNewHeader">
   <ul *ngIf="showBurgerMenu" class="desktop-menu">
     <li><a routerLink="" (click)="toggleBurgerMenu()">Accueil</a></li>
     <li><a routerLink="shop" (click)="toggleBurgerMenu()">La<br>boutique</a></li>
     <li><a routerLink="our-story" (click)="toggleBurgerMenu()">Notre<br>histoire</a></li>
     <li><a routerLink="contact" (click)="toggleBurgerMenu()">Contact</a></li>
   </ul>
+  </div>
+  <div class="d-flex new-burger" *ngIf="activeNewHeader">
+    <div class=" d-flex flex-column">
+      <div class="rond"></div>
+      <div class="strap"></div>
+      <div class="item-nav">Accueil</div>
+      <div class="item-nav">La boutique</div>
+      <div class="item-nav">Notre histoire</div>
+      <div class="item-nav">Contact</div>
+    </div>
+
   </div>
 </div>
 

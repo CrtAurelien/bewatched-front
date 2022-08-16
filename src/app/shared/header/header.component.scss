@@ -10,6 +10,46 @@
     padding-left: 0;
   }
 }
+
+
+
+.new-burger {
+  margin-top:50px;
+  padding: 100px 0;
+  .rond {
+    position: absolute;
+    height: 500px;
+    border-radius: 50%;
+    width: 500px;
+    border:5px solid rgba(255, 255, 255, 0.3);
+    background: $primaryColor;
+    z-index: -1;
+  }
+  .strap {
+    position: absolute;
+    border:5px solid rgba(255, 255, 255, 0.3);
+    height: 200px;
+    left: 0;
+    right: 0;
+    background: $primaryColor;
+    z-index: -2;
+  }
+  .item-nav {
+    color: $secondaryColor;
+    font-size:50px;
+    font-family: "Bebas Neue", cursive;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    &:hover {
+      color:transparent;
+      letter-spacing: 2px;
+      transition: 0.2s ease-in;
+      //background-image: url('../../../assets/background-home.png');
+      -webkit-text-stroke: 2px $secondaryColor;
+    }
+  }
+}
+
 .menu-desktop{
   @media screen and (min-width: $desktop-breakpoint){
     display: flex;
@@ -19,20 +59,21 @@
     left: 0;
     z-index: 120;
     width: 100%;
-    height: calc(100vh - 150px);
+    top:0;
+    bottom: 0;
     background-image: url('../../../assets/background-brown.png');
     background-size: 13%;
-    transition: 0.7s cubic-bezier(0.1, -0.77, 0.35, 1.46);
+    transition: 0.7s;
     &.close{
       transform: translateY(-100%);
-      transition: 0.9s cubic-bezier(0.62, -0.3, 0.35, 1.46);
+      transition: 0.7s;
       opacity: 0;
       display: flex;
       position: absolute;
       left: 0;
       z-index: 120;
       width: 100%;
-      height: calc(100vh - 150px);
+      bottom:0;
       background-image: url('../../../assets/background-brown.png');
       background-size: 13%;
     }

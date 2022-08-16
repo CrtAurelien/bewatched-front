@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
   resultatSearchCertificat!: any;
   noCertificatFound = false;
   accessories: Accessory[]= [];
+  activeNewHeader = false;
 
   constructor(private burgerService: BurgerService, private cd: ChangeDetectorRef, private shopService: ShopService, private router: Router) { }
 
