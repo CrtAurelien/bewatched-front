@@ -6,6 +6,13 @@ import {Montre} from "../../core/model/Montre.interface";
 import {Router} from "@angular/router";
 import {Accessory} from "../../core/model/Accessory.interface";
 
+// GSAP
+import { gsap } from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {MotionPathPlugin} from "gsap/MotionPathPlugin";
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -33,6 +40,15 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
+    gsap.to("#navbar", {
+      scrub: 1,
+      opacity:1,
+      motionPath: {
+        path: [{y: 0}]
+      },
+      transitionDuration: 0.7,
+    })
+
     if(this.panier.length === 0) {
       this.shopService.initCustomData();
       this.panier = this.shopService.getPanierEnCours()
@@ -167,7 +183,7 @@ export class HeaderComponent implements OnInit {
     if (window.matchMedia("(max-width: 768px)").matches) {
       this.toggleMobileSearch = !this.toggleMobileSearch;
     }
-
   }
+
 
 }
