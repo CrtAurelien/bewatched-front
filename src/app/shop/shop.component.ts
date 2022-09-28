@@ -94,8 +94,7 @@ export class ShopComponent implements OnInit, OnDestroy {
   createListesMontre() {
     let nbBoucle = 0;
     if (this.listeMontres.length >= 5){
-      console.log('ici')
-      nbBoucle = Math.round((this.listeMontres.length + 1) / 5);
+      nbBoucle = Math.ceil((this.listeMontres.length + 1) / 5);
     }else{
       nbBoucle = ((this.listeMontres.length + 1) / 5);
     }
