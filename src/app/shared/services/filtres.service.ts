@@ -8,8 +8,10 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class FiltresService {
-  urlApiFiltres = 'https://bewatched.fr/api-bewatched/public/api/brands'
+  urlApiFiltresMarque = 'https://bewatched.fr/api-bewatched/public/api/brands'
+  urlApiFiltresAnnee = 'https://bewatched.fr/api-bewatched/public/api/years'
   listeBrands: Brand[] = [];
+  listeYears: string[] = [];
   listeFiltres : Filtre[] = [
     {
       nom: 'Marque',
@@ -18,26 +20,6 @@ export class FiltresService {
     {
       nom: 'Années',
       values: [
-        {
-          name: '1950',
-          estCoche: false
-        },
-        {
-          name: '1960',
-          estCoche: false
-        },
-        {
-          name: '1970',
-          estCoche: false
-        },
-        {
-          name: '1980',
-          estCoche: false
-        },
-        {
-          name: '1990',
-          estCoche: false
-        }
       ]
     },
     {
@@ -66,7 +48,11 @@ export class FiltresService {
   }
 
   getMarquesBdd(): Observable<Brand[]> {
-    return this.http.get<Brand[]>(this.urlApiFiltres);
+    return this.http.get<Brand[]>(this.urlApiFiltresMarque);
+  }
+
+  getYearsBdd(): Observable<string[]> {
+    return this.http.get<string[]>(this.urlApiFiltresAnnee);
   }
 
 }

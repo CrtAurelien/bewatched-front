@@ -52,6 +52,7 @@ export class ShopService {
   accessoryUpdateSubject = new Subject<Accessory>()
 
 
+
   constructor(private utilService: UtilsService,private filtreService: FiltresService, private http: HttpClient) { }
 
   /**
@@ -254,20 +255,11 @@ export class ShopService {
     if(this.filtreService.listeBrands.find(elm => elm.name.includes(nomFiltre))) {
       return 'Marque'
     }
-
-
-    switch (nomFiltre) {
-      case '1950':
-      case '1960':
-      case '1970':
-      case '1980':
-      case '1990':
-        return 'annee'
-      case 'Manuel':
-        return 'mouvement'
-      default:
-        return ''
+    if(this.filtreService.listeYears.find(elm => elm === nomFiltre)) {
+      return 'annee'
     }
+    return 'movement'
+
   }
 
   getFiltresActifs() : string[] {
@@ -279,6 +271,7 @@ export class ShopService {
     const searchFormate = this.utilService.removeDiacritics(stringSearch).toLowerCase();
     const filterByName = [...listeMontre.filter(elm => this.utilService.removeDiacritics(elm.model).toLowerCase().includes(searchFormate))];
     const filterByBrand = [...listeMontre.filter(elm => this.utilService.removeDiacritics(elm.brand.name).toLowerCase().includes(searchFormate))];
+
     const searchResult = [...new Set([...filterByName ,...filterByBrand])]
     return searchResult
   }
