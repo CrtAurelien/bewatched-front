@@ -4,6 +4,7 @@ export interface Filtre {
 }
 
 export interface FiltreObject {
-  nom: string,
+  id?: number,
+  name: string,
   estCoche: boolean
 }

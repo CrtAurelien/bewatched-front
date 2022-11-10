@@ -17,7 +17,24 @@ export class FiltresDsktopComponent implements OnInit {
   constructor(private filtreSerice: FiltresService, private shopService: ShopService) { }
 
   ngOnInit(): void {
-    this.listeFiltres = this.filtreSerice.getFiltres();
+    this.filtreSerice.getMarquesBdd().pipe(
+      tap(data => {
+        this.listeFiltres = this.filtreSerice.getFiltres();
+        let filtresMarques = this.listeFiltres.find(elm => elm.nom === 'Marque')
+        this.filtreSerice.listeBrands = data;
+        if(data && data.length > 0) {
+            data.forEach(marque => {
+              const objectMarque = {
+                name: marque.name,
+                estCoche: false
+              }
+              filtresMarques.values.push(objectMarque)
+            })
+        }
+        console.log(this.listeFiltres)
+      }), takeUntil(this.ngUnsubscribed)
+    ).subscribe()
+
     this.shopService.searchingSubject.pipe(
       tap(data => {
         if(data !== '') {

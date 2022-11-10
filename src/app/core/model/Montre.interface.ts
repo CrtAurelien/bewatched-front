@@ -21,6 +21,7 @@ export interface Montre {
 }
 
 export interface Brand {
+  id: number,
   name: string
 }
 

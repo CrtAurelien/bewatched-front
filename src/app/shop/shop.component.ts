@@ -102,17 +102,17 @@ export class ShopComponent implements OnInit, OnDestroy {
       const sousListe = this.listeMontres.splice(0, 5);
       this.finalListeMontre.push(sousListe);
     }
-    console.log(this.finalListeMontre);
   }
 
 
   searchByFilter(filtreObj: FiltreObject){
     // Recuperer la categorie du filtre en cours
-    const categorieFiltreEnCours = this.shopService.getCategorieFiltre(filtreObj.nom);
+    const categorieFiltreEnCours = this.shopService.getCategorieFiltre(filtreObj.name);
     // recuperer tous les filtres actuellement actif
     let allFiltreActifs = this.shopService.getFiltresActifs();
     if(allFiltreActifs.length > 0) {
-      this.startSearching(allFiltreActifs, filtreObj.nom);
+      console.log('on va chercher', filtreObj.name)
+      this.startSearching(allFiltreActifs, filtreObj.name);
     }
 
   }
@@ -132,7 +132,7 @@ export class ShopComponent implements OnInit, OnDestroy {
     let resultatYears: any[] = [];
     let resultatsMouvement: any[] = [];
     filtre.forEach(filter => {
-      if(this.shopService.getCategorieFiltre(filter) === 'marque') {
+      if(this.shopService.getCategorieFiltre(filter) === 'Marque') {
         const filterFormate = this.utilService.removeDiacritics(filter).toLowerCase();
         resultatMarque.push(allMontresDisponibles.filter(elm => this.utilService.removeDiacritics(elm?.brand?.name)?.toLowerCase().includes(filterFormate)))
       }
@@ -189,7 +189,7 @@ export class ShopComponent implements OnInit, OnDestroy {
     if(allFiltreActifs.length === 0) {
       this.reset()
     } else {
-      this.startSearching(allFiltreActifs, filtreObj.nom)
+      this.startSearching(allFiltreActifs, filtreObj.name)
     }
   }
 }

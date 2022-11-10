@@ -1,69 +1,41 @@
 import { Injectable } from '@angular/core';
 import {Filtre} from "../../core/model/Filtre.interface";
+import {HttpClient} from "@angular/common/http";
+import {Brand} from "../../core/model/Montre.interface";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FiltresService {
+  urlApiFiltres = 'https://bewatched.fr/api-bewatched/public/api/brands'
+  listeBrands: Brand[] = [];
   listeFiltres : Filtre[] = [
     {
       nom: 'Marque',
-      values: [
-        {
-          nom: 'Oméga',
-          estCoche: false
-        },
-        {
-          nom: 'Jaeger Lecoultre',
-          estCoche: false
-        },
-        {
-          nom: 'Tissot',
-          estCoche: false
-        },
-        {
-          nom: 'Longines',
-          estCoche: false
-        },
-        {
-          nom: 'Seiko',
-          estCoche: false
-        },
-        {
-          nom: 'LIP',
-          estCoche: false
-        },
-        {
-          nom: 'Zénith',
-          estCoche: false
-        },
-        {
-          nom: 'Autres',
-          estCoche: false
-        }
-      ]
+      values: []
     },
     {
       nom: 'Années',
       values: [
         {
-          nom: '1950',
+          name: '1950',
           estCoche: false
         },
         {
-          nom: '1960',
+          name: '1960',
           estCoche: false
         },
         {
-          nom: '1970',
+          name: '1970',
           estCoche: false
         },
         {
-          nom: '1980',
+          name: '1980',
           estCoche: false
         },
         {
-          nom: '1990',
+          name: '1990',
           estCoche: false
         }
       ]
@@ -72,24 +44,29 @@ export class FiltresService {
       nom: 'Mouvement',
       values: [
         {
-          nom: 'Automatique',
+          name: 'Automatique',
           estCoche: false
         },
         {
-          nom: 'Manuel',
+          name: 'Manuel',
           estCoche: false
         },
         {
-          nom: 'Quartz',
+          name: 'Quartz',
           estCoche: false
         }
       ]
     }
   ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getFiltres(): any[] {
     return this.listeFiltres
   }
+
+  getMarquesBdd(): Observable<Brand[]> {
+    return this.http.get<Brand[]>(this.urlApiFiltres);
+  }
+
 }

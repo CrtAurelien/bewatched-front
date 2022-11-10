@@ -5,6 +5,7 @@ import {Filtre, FiltreObject} from "../../core/model/Filtre.interface";
 import {UtilsService} from "./utils.service";
 import {HttpClient} from "@angular/common/http";
 import {Accessory} from "../../core/model/Accessory.interface";
+import {FiltresService} from "./filtres.service";
 
 @Injectable({
   providedIn: 'root'
@@ -51,7 +52,7 @@ export class ShopService {
   accessoryUpdateSubject = new Subject<Accessory>()
 
 
-  constructor(private utilService: UtilsService, private http: HttpClient) { }
+  constructor(private utilService: UtilsService,private filtreService: FiltresService, private http: HttpClient) { }
 
   /**
    * Cette méthode ajouter au panier la montre passée en paramètre
@@ -230,8 +231,8 @@ export class ShopService {
   }
 
   searchWithFilter(filtre: Filtre, nomFiltreActive: FiltreObject) {
-    if(!this.filtresActifs.find(elm => elm === nomFiltreActive.nom)) {
-      this.filtresActifs.push(nomFiltreActive.nom);
+    if(!this.filtresActifs.find(elm => elm === nomFiltreActive.name)) {
+      this.filtresActifs.push(nomFiltreActive.name);
     }
     this.searchingSubject.next(nomFiltreActive)
   }
@@ -245,21 +246,17 @@ export class ShopService {
   }
 
   removeAFilter(filtre: FiltreObject) {
-    this.filtresActifs.splice(this.filtresActifs.indexOf(filtre.nom), 1);
+    this.filtresActifs.splice(this.filtresActifs.indexOf(filtre.name), 1);
     this.resetAFilterSubject.next(filtre);
   }
 
   getCategorieFiltre(nomFiltre: string) : string{
+    if(this.filtreService.listeBrands.find(elm => elm.name.includes(nomFiltre))) {
+      return 'Marque'
+    }
+
+
     switch (nomFiltre) {
-      case 'Oméga':
-      case 'Longines':
-      case 'Jaeger Lecoultre':
-      case 'Tissot':
-      case 'Zénith':
-      case 'LIP':
-      case 'Seiko':
-      case 'Autres':
-        return 'marque'
       case '1950':
       case '1960':
       case '1970':
