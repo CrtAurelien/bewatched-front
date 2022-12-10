@@ -37,7 +37,8 @@ export class ShopComponent implements OnInit, OnDestroy, AfterViewChecked {
       this.shopService.redirectToSearchMarqueSubject.subscribe(data => {
         if(data && this.finalListeMontre) {
           this.shopService.searchWithFilter( this.shopService.filtreWanted, this.shopService.filterValueSelected )
-         
+        } else {
+          this.reset()
         }
       })
   }

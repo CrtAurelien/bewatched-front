@@ -26,7 +26,7 @@ export class HomePageComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     this.shopService.switchTheme('default');
-
+    this.shopService.setredirectToSearchMarque(false);
     this.titleService.setTitle(this.title);
     this.metaTagService.updateTag(
       {property: 'description', content: 'Description du site web'},
