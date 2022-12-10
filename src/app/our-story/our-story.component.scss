@@ -40,9 +40,14 @@
     font-weight: bold;
     font-style: italic;
   }
-  .signature{
-    font-family: "Belove", sans-serif;
-    font-size: 36px;
-    text-align: right;
-  }
+
+}
+
+.signature{
+  font-family: "Belove", sans-serif;
+  font-size: 36px;
+  width: 100%;
+  display: block;
+  padding: 0 200px;
+  text-align: right;
 }

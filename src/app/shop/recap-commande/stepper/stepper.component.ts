@@ -8,6 +8,7 @@ import {Sale} from "../../../core/model/Sale.interface";
 import {Accessory} from "../../../core/model/Accessory.interface";
 import {SaleService} from "../../../shared/services/sale.service";
 import {MatStepper, MatStepperModule} from "@angular/material/stepper";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-stepper',
@@ -36,16 +37,17 @@ export class StepperComponent implements OnInit {
   tarifCommandeFormate!: number;
   displayMsgErreurCreateSale = false
 
-  constructor(private _formBuilder: FormBuilder, private saleService: SaleService, private shopService: ShopService, private utilService: UtilsService) {}
+  constructor(private _formBuilder: FormBuilder, private router: Router, private saleService: SaleService, private shopService: ShopService, private utilService: UtilsService) {}
 
   ngOnInit(): void {
     this.shopService.cgvControlCheckedSubject.subscribe(data => {
       this.canGoingToLivraisonInfo = data;
     })
     this.shopService.commandIsValidSubject.subscribe(data => {
+      this.initConfig();
       this.showPaypalBtn = data;
     })
-    this.initConfig();
+
   }
 
 
@@ -54,18 +56,18 @@ export class StepperComponent implements OnInit {
     const tarifCommande =  this.shopService.tarifCommande;
     this.tarifCommandeFormate = this.utilService.retournerArrondiNSignificatif(tarifCommande);
     this.payPalConfig = {
-      currency: 'EUR',
-      clientId: 'sb',
+      currency: 'CHF',
+      clientId: 'AZh2cb-Hpm75h2-4fz9uEfe17vJ5fTF2QOF3TR0y4_QRvtDcQAF0RgBKOJ7pX9VHDFInUdiGe84nk03m',
       createOrderOnClient: (data) => <ICreateOrderRequest><any>{
         intent: 'CAPTURE',
         purchase_units: [
           {
             amount: {
-              currency_code: 'EUR',
+              currency_code: 'CHF',
               value: this.tarifCommandeFormate,
               breakdown: {
                 item_total: {
-                  currency_code: 'EUR',
+                  currency_code: 'CHF',
                   value: this.tarifCommandeFormate,
                 }
               }
@@ -86,6 +88,7 @@ export class StepperComponent implements OnInit {
         // SUCCESS
         sessionStorage.removeItem('panier');
         // POST commande
+        this.router.navigate(['confirmation'])
       },
       onCancel: (data, actions) => {
       },
@@ -103,7 +106,7 @@ export class StepperComponent implements OnInit {
         name: montre.model,
         quantity: '1',
         unit_amount: {
-          currency_code: 'EUR',
+          currency_code: 'CHF',
           value:montre.price,
         },
       }
@@ -131,12 +134,12 @@ export class StepperComponent implements OnInit {
         id: montre.id
       })
     })
+    stepper.next()
+    /**this.saleService.postSale(saleToPost).subscribe(data => {
 
-    this.saleService.postSale(saleToPost).subscribe(data => {
-      stepper.next()
     }, error => {
       this.displayMsgErreurCreateSale = true;
-    })
+    })*/
 
 
   }

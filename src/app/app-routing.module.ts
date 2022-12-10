@@ -16,6 +16,7 @@ import {HomeResolver} from "./template-generique/home.resolver";
 import {DetailMontreResolver} from "./detail-montre-page/detail-montre.resolver";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {ErreurTechniqueComponent} from "./erreur-technique/erreur-technique.component";
+import {ConfirmationCommandePageComponent} from "./confirmation-commande/confirmation-commande.component";
 
 const routes: Routes = [
   {
@@ -70,6 +71,7 @@ const routes: Routes = [
         canActivate: [LivraisonGuard]
       },
       { path: '404', component: PageNotFoundComponent},
+      { path: 'confirmation', component: ConfirmationCommandePageComponent},
       { path: '**', redirectTo: '/404'},
       { path: 'erreur-technique', component: ErreurTechniqueComponent},
     ]
