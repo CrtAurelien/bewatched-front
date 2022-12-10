@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, OnDestroy, OnInit} from '@angular/core';
 import {Montre} from "../core/model/Montre.interface";
 import {ShopService} from "../shared/services/shop.service";
 import {last, Observable, Subject, take, takeUntil, tap} from "rxjs";
@@ -6,12 +6,13 @@ import {UtilsService} from "../shared/services/utils.service";
 import {FiltreObject} from "../core/model/Filtre.interface";
 import {BurgerService} from "../shared/services/burger-service.service";
 import {Meta, Title} from "@angular/platform-browser";
+import {FiltresService} from "../shared/services/filtres.service";
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss']
 })
-export class ShopComponent implements OnInit, OnDestroy {
+export class ShopComponent implements OnInit, OnDestroy, AfterViewChecked {
   listeMontres: Montre[] = [];
   nombreMontres = 0;
   ngUnsubscribed = new Subject();
@@ -21,16 +22,25 @@ export class ShopComponent implements OnInit, OnDestroy {
   noMontresAvailable = false;
   servorError = false;
   title = "bewatched - Boutique"
+  traitementSearchDone = false;
 
-  constructor(private titleService: Title, private metaTagService: Meta,private shopService: ShopService, private utilService: UtilsService) {
+  constructor(private titleService: Title,private filterService: FiltresService, private metaTagService: Meta,private shopService: ShopService, private utilService: UtilsService) {
     shopService.resetAllFilters();
   }
 
   ngOnDestroy() {
+    this.traitementSearchDone = false;
     this.shopService.resetAllFilters();
-
   }
 
+  ngAfterViewChecked() {
+      this.shopService.redirectToSearchMarqueSubject.subscribe(data => {
+        if(data && this.finalListeMontre) {
+          this.shopService.searchWithFilter( this.shopService.filtreWanted, this.shopService.filterValueSelected )
+         
+        }
+      })
+  }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -89,6 +99,7 @@ export class ShopComponent implements OnInit, OnDestroy {
     this.metaTagService.updateTag(
       {name: 'description', content: 'Boutique'},
     )
+
   }
 
   createListesMontre() {
@@ -103,7 +114,6 @@ export class ShopComponent implements OnInit, OnDestroy {
       this.finalListeMontre.push(sousListe);
     }
   }
-
 
   searchByFilter(filtreObj: FiltreObject){
     // Recuperer la categorie du filtre en cours

@@ -31,6 +31,9 @@
         </span>
         <div class="search-result desktop {{searchString !== '' ? 'd-flex' : 'd-none'}}">
           <ul *ngIf="searchString !== ''">
+            <ng-container *ngFor="let marque of searchMarqueResult">
+              <li class="search-item" (click)="test(marque.name)">Voir l'ensemble des {{marque.name}}</li>
+            </ng-container>
             <ng-container *ngFor="let montre of searchResult">
               <li class="search-item" (click)="redirectMontreDetailFromSearch(montre.id)">{{montre.brand.name}}
                 - {{montre.model}}</li>
@@ -221,6 +224,9 @@
   </div>
   <div class="search-result mobile {{searchString !== '' ? 'd-flex' : 'd-none'}}">
     <ul *ngIf="searchString !== ''">
+      <ng-container *ngFor="let marque of searchMarqueResult">
+        <li class="search-item">{{marque.name}}</li>
+      </ng-container>
       <ng-container *ngFor="let montre of searchResult">
         <li class="search-item" (click)="redirectMontreDetailFromSearch(montre.id)">{{montre.brand.name}}
           - {{montre.model}}</li>

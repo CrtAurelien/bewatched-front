@@ -2,7 +2,7 @@ import {ChangeDetectorRef, Component, HostListener, OnInit} from '@angular/core'
 import {BurgerService} from "../services/burger-service.service";
 import {ShopService} from "../services/shop.service";
 import {Subject, take, takeUntil, tap} from "rxjs";
-import {Montre} from "../../core/model/Montre.interface";
+import {Brand, Montre} from "../../core/model/Montre.interface";
 import {Router} from "@angular/router";
 import {Accessory} from "../../core/model/Accessory.interface";
 
@@ -10,6 +10,8 @@ import {Accessory} from "../../core/model/Accessory.interface";
 import { gsap } from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {MotionPathPlugin} from "gsap/MotionPathPlugin";
+import {Filtre, FiltreObject} from "../../core/model/Filtre.interface";
+import {FiltresService} from "../services/filtres.service";
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 
@@ -28,16 +30,18 @@ export class HeaderComponent implements OnInit {
   pop: any;
   popCertif: any;
   searchString = '';
+  searchMarque = ''
   inputCertif = '';
   allMontresForSearch: Montre[] = [];
   searchResult: Montre[] = [];
+  searchMarqueResult : Brand[] = [];
   toggleMobileSearch = false;
   resultatSearchCertificat!: any;
   noCertificatFound = false;
   accessories: Accessory[]= [];
   activeNewHeader = false;
 
-  constructor(private burgerService: BurgerService, private cd: ChangeDetectorRef, private shopService: ShopService, private router: Router) { }
+  constructor(private burgerService: BurgerService, private cd: ChangeDetectorRef, private filtreService: FiltresService, private shopService: ShopService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -149,6 +153,23 @@ export class HeaderComponent implements OnInit {
   search(event: any) {
     this.searchString = event.target.value;
     this.searchResult = this.shopService.generalSearch(this.searchString, this.allMontresForSearch);
+    this.searchMarque = event.target.value
+    this.searchMarqueResult = this.shopService.brandSearch(this.searchString, [...this.allMontresForSearch])
+    console.log(this.searchMarqueResult)
+  }
+
+  test(name: string) {
+    let filtre: FiltreObject = {
+      name: name,
+      estCoche: true
+    }
+    let test = this.filtreService.getFiltres().find(elm => elm.nom === 'Marque');
+    this.shopService.filtreWanted = test;
+    this.shopService.filterValueSelected = filtre;
+    this.shopService.setredirectToSearchMarque(true);
+    this.router.navigate(['shop']);
+
+
   }
 
   createCertif(event :any) {

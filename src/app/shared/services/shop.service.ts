@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Montre} from "../../core/model/Montre.interface";
+import {Brand, Montre} from "../../core/model/Montre.interface";
 import {BehaviorSubject, Observable, Subject, tap} from "rxjs";
 import {Filtre, FiltreObject} from "../../core/model/Filtre.interface";
 import {UtilsService} from "./utils.service";
@@ -50,7 +50,10 @@ export class ShopService {
   commande: any;
   updateTarifCommandeSubject = new Subject<number>()
   accessoryUpdateSubject = new Subject<Accessory>()
-
+  redirectToSearchMarque = false;
+  redirectToSearchMarqueSubject = new BehaviorSubject<boolean>(this.redirectToSearchMarque)
+  filtreWanted!: Filtre;
+  filterValueSelected!: FiltreObject
 
 
   constructor(private utilService: UtilsService,private filtreService: FiltresService, private http: HttpClient) { }
@@ -107,6 +110,11 @@ export class ShopService {
   updateTarifCommande(value: number) {
     this.tarifCommande = value;
     this.tarifCommandeSubject.next(this.tarifCommande);
+  }
+
+  setredirectToSearchMarque(value: boolean) {
+    this.redirectToSearchMarque = value;
+    this.redirectToSearchMarqueSubject.next(this.redirectToSearchMarque);
   }
 
 
@@ -274,6 +282,23 @@ export class ShopService {
 
     const searchResult = [...new Set([...filterByName ,...filterByBrand])]
     return searchResult
+  }
+
+  brandSearch(stringSearch: string, listeMontre: Montre[]) : Brand[] | [] {
+    const searchFormate = this.utilService.removeDiacritics(stringSearch).toLowerCase();
+    let listBrandTmp: Brand[] = [];
+    let finalListBrand: Brand[] = [];
+    listeMontre.forEach(elm => {
+      listBrandTmp.push(elm.brand)
+    })
+    finalListBrand = listBrandTmp.filter(elm => this.utilService.removeDiacritics(elm.name).toLowerCase().includes(searchFormate))
+    let final: Brand[] = [];
+    finalListBrand.forEach(elm => {
+      if(!final.find(el => el.name === elm.name)) {
+        final.push(elm)
+      }
+    })
+    return final;
   }
 
   setRedirectFromSearch(value: boolean) {
